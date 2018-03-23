@@ -24,7 +24,7 @@
   </span>
     <ul class="search-result"></ul>
   </div>
-<a style="position:relative; top:3px;" href="https://github.com/liqueurdetoile/splash-loader-js.git"><img width="20px" src="./image/github.png"></a></header>
+<a style="position:relative; top:3px;" href="https://github.com/liqueurdetoile/beloader.git"><img width="20px" src="./image/github.png"></a></header>
 
 <nav class="navigation" data-ice="nav"><div>
   <ul>
@@ -62,10 +62,23 @@
 <p></p>
 <h1 id="beloader">Beloader</h1><p>Beloader is a lightweight asset loader library. It provides simple means to trigger and monitor download of any asset (css, script, font...).</p>
 <p>Its fine-grained event management and simple interface for plugins let anyone extends it with ease to own needs.</p>
-<p>It particularly shines as a front-end loader. </p>
-<h2 id="why-beloader--">Why Beloader ?</h2><h2 id="features">Features</h2><h2 id="installation--how-to-and-api-reference">Installation, how-to and API reference</h2><p>You can access <a href="https://liqueurdetoile.github.io/beloader/manual/index.html">Beloader manual</a> or <a href="https://liqueurdetoile.github.io/beloader/identifiers.html">API reference</a></p>
+<p>It particularly shines as a front-end loader because it can manage all kinds of assets and not only scripts or stylesheets.</p>
+<h2 id="why-beloader--">Why Beloader ?</h2><ul>
+<li>ultra-lightweight (24 KB minified, 7/8 KB minified and gzipped) </li>
+<li>No more dealing with race loading in a web page or app</li>
+<li>Highly customizable loaders, callbacks and pluglins</li>
+</ul>
+<h2 id="features">Features</h2><ul>
+<li>Can load assets asynchronously (except binary data if base64 format not available)</li>
+<li>Promise based : Each asset loading (item) exposes a promise interface that is resolved when asset ready or rejected in case of error</li>
+<li>Defer mode : each asset promise will be resolved exactly in the same order that they have been requested</li>
+<li>Awaiting mode : an asset promise will be resolved only when its declared dependencies are resolved</li>
+<li>Event based : You can hook callbacks at each loading step</li>
+<li>Plugin friendly : Beloader architecture makes adding plugins a breeze</li>
+</ul>
+<h2 id="installation--how-to-and-api-reference">Installation, how-to and API reference</h2><p>You can access <a href="https://liqueurdetoile.github.io/beloader/manual/index.html">Beloader manual</a> or <a href="https://liqueurdetoile.github.io/beloader/identifiers.html">API reference</a></p>
 <h2 id="bugs-and-features-requests">Bugs and features requests</h2><p>Beloader is test-driven though it did not prevent all issues. Please report <a href="https://github.com/liqueurdetoile/beloader/issues">here</a> any trouble or features request.</p>
-<h2 id="want-to-help--">Want to help ?</h2><p>There is many more to do, implements features or create plugins. Don&apos;t mind to fork Beloader, tweak it and submit a pull request :wink:</p>
+<h2 id="want-to-help--">Want to help ?</h2><p>There is many more to do, implements specific loaders or create plugins. Don&apos;t mind to fork Beloader, tweak it and submit a pull request :wink:</p>
 </div>
 </div>
 

@@ -19,13 +19,20 @@ Beloader is a lightweight asset loader library. It provides simple means to trig
 
 Its fine-grained event management and simple interface for plugins let anyone extends it with ease to own needs.
 
-It particularly shines as a front-end loader. 
+It particularly shines as a front-end loader because it can manage all kinds of assets and not only scripts or stylesheets.
 
 ## Why Beloader ?
-
+- ultra-lightweight (24 KB minified, 7/8 KB minified and gzipped) 
+- No more dealing with race loading in a web page or app
+- Highly customizable loaders, callbacks and pluglins
 
 ## Features
-
+- Can load assets asynchronously (except binary data if base64 format not available)
+- Promise based : Each asset loading (item) exposes a promise interface that is resolved when asset ready or rejected in case of error
+- Defer mode : each asset promise will be resolved exactly in the same order that they have been requested
+- Awaiting mode : an asset promise will be resolved only when its declared dependencies are resolved
+- Event based : You can hook callbacks at each loading step
+- Plugin friendly : Beloader architecture makes adding plugins a breeze
 
 ## Installation, how-to and API reference
 You can access [Beloader manual](https://liqueurdetoile.github.io/beloader/manual/index.html) or [API reference](https://liqueurdetoile.github.io/beloader/identifiers.html)
@@ -34,5 +41,5 @@ You can access [Beloader manual](https://liqueurdetoile.github.io/beloader/manua
 Beloader is test-driven though it did not prevent all issues. Please report [here](https://github.com/liqueurdetoile/beloader/issues) any trouble or features request.
 
 ## Want to help ?
-There is many more to do, implements features or create plugins. Don't mind to fork Beloader, tweak it and submit a pull request :wink:
+There is many more to do, implements specific loaders or create plugins. Don't mind to fork Beloader, tweak it and submit a pull request :wink:
 
