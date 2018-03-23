@@ -1,0 +1,2940 @@
+[
+  {
+    "__docId__": 1,
+    "kind": "external",
+    "name": "Infinity",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Infinity",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Infinity",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 2,
+    "kind": "external",
+    "name": "NaN",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~NaN",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 3,
+    "kind": "external",
+    "name": "undefined",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~undefined",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 4,
+    "kind": "external",
+    "name": "null",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~null",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 5,
+    "kind": "external",
+    "name": "Object",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Object",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 6,
+    "kind": "external",
+    "name": "object",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~object",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 7,
+    "kind": "external",
+    "name": "Function",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Function",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 8,
+    "kind": "external",
+    "name": "function",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~function",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 9,
+    "kind": "external",
+    "name": "Boolean",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Boolean",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 10,
+    "kind": "external",
+    "name": "boolean",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~boolean",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 11,
+    "kind": "external",
+    "name": "Symbol",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Symbol",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 12,
+    "kind": "external",
+    "name": "Error",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Error",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 13,
+    "kind": "external",
+    "name": "EvalError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/EvalError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~EvalError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 14,
+    "kind": "external",
+    "name": "InternalError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/InternalError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~InternalError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 15,
+    "kind": "external",
+    "name": "RangeError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RangeError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~RangeError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 16,
+    "kind": "external",
+    "name": "ReferenceError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ReferenceError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~ReferenceError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 17,
+    "kind": "external",
+    "name": "SyntaxError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SyntaxError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~SyntaxError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 18,
+    "kind": "external",
+    "name": "TypeError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~TypeError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 19,
+    "kind": "external",
+    "name": "URIError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/URIError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~URIError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 20,
+    "kind": "external",
+    "name": "Number",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Number",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 21,
+    "kind": "external",
+    "name": "number",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~number",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 22,
+    "kind": "external",
+    "name": "Date",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Date",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 23,
+    "kind": "external",
+    "name": "String",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~String",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 24,
+    "kind": "external",
+    "name": "string",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~string",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 25,
+    "kind": "external",
+    "name": "RegExp",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~RegExp",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 26,
+    "kind": "external",
+    "name": "Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 27,
+    "kind": "external",
+    "name": "Int8Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int8Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Int8Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 28,
+    "kind": "external",
+    "name": "Uint8Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint8Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 29,
+    "kind": "external",
+    "name": "Uint8ClampedArray",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8ClampedArray",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint8ClampedArray",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 30,
+    "kind": "external",
+    "name": "Int16Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int16Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Int16Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 31,
+    "kind": "external",
+    "name": "Uint16Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint16Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint16Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 32,
+    "kind": "external",
+    "name": "Int32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int32Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Int32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 33,
+    "kind": "external",
+    "name": "Uint32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint32Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 34,
+    "kind": "external",
+    "name": "Float32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Float32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 35,
+    "kind": "external",
+    "name": "Float64Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float64Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Float64Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 36,
+    "kind": "external",
+    "name": "Map",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Map",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 37,
+    "kind": "external",
+    "name": "Set",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Set",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 38,
+    "kind": "external",
+    "name": "WeakMap",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~WeakMap",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 39,
+    "kind": "external",
+    "name": "WeakSet",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~WeakSet",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 40,
+    "kind": "external",
+    "name": "ArrayBuffer",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~ArrayBuffer",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 41,
+    "kind": "external",
+    "name": "DataView",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~DataView",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 42,
+    "kind": "external",
+    "name": "JSON",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~JSON",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 43,
+    "kind": "external",
+    "name": "Promise",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Promise",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 44,
+    "kind": "external",
+    "name": "Generator",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Generator",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 45,
+    "kind": "external",
+    "name": "GeneratorFunction",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/GeneratorFunction",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~GeneratorFunction",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 46,
+    "kind": "external",
+    "name": "Reflect",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Reflect",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 47,
+    "kind": "external",
+    "name": "Proxy",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Proxy",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 48,
+    "kind": "file",
+    "name": "src/animations/AbstractAnimation.js",
+    "content": "import ObjectArray from 'dot-object-array';\nimport uniqid from 'uniqid';\n\nexport default class AbstractAnimation {\n  constructor(options = {}) {\n    this.id = uniqid.time('animation-');\n    this.options = new ObjectArray(options);\n    this.animation = undefined;\n  }\n\n  checkOpts(opts) {\n    if (typeof opts === 'string') opts = [opts];\n    opts.forEach(p => {\n      if (!this.options.has(p)) throw new TypeError(`Missing option ${p} for animation`);\n    });\n  }\n}\n",
+    "static": true,
+    "longname": "F:/Projets/beloader/src/animations/AbstractAnimation.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 49,
+    "kind": "class",
+    "name": "AbstractAnimation",
+    "memberof": "src/animations/AbstractAnimation.js",
+    "static": true,
+    "longname": "src/animations/AbstractAnimation.js~AbstractAnimation",
+    "access": "public",
+    "export": true,
+    "importPath": "beloader/src/animations/AbstractAnimation.js",
+    "importStyle": "AbstractAnimation",
+    "description": null,
+    "lineNumber": 4,
+    "undocument": true,
+    "interface": false
+  },
+  {
+    "__docId__": 50,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/animations/AbstractAnimation.js~AbstractAnimation",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/animations/AbstractAnimation.js~AbstractAnimation#constructor",
+    "access": "public",
+    "description": null,
+    "lineNumber": 5,
+    "undocument": true
+  },
+  {
+    "__docId__": 51,
+    "kind": "member",
+    "name": "id",
+    "memberof": "src/animations/AbstractAnimation.js~AbstractAnimation",
+    "static": false,
+    "longname": "src/animations/AbstractAnimation.js~AbstractAnimation#id",
+    "access": "public",
+    "description": null,
+    "lineNumber": 6,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 52,
+    "kind": "member",
+    "name": "options",
+    "memberof": "src/animations/AbstractAnimation.js~AbstractAnimation",
+    "static": false,
+    "longname": "src/animations/AbstractAnimation.js~AbstractAnimation#options",
+    "access": "public",
+    "description": null,
+    "lineNumber": 7,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 53,
+    "kind": "member",
+    "name": "animation",
+    "memberof": "src/animations/AbstractAnimation.js~AbstractAnimation",
+    "static": false,
+    "longname": "src/animations/AbstractAnimation.js~AbstractAnimation#animation",
+    "access": "public",
+    "description": null,
+    "lineNumber": 8,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 54,
+    "kind": "method",
+    "name": "checkOpts",
+    "memberof": "src/animations/AbstractAnimation.js~AbstractAnimation",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/animations/AbstractAnimation.js~AbstractAnimation#checkOpts",
+    "access": "public",
+    "description": null,
+    "lineNumber": 11,
+    "undocument": true,
+    "params": [
+      {
+        "name": "opts",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 55,
+    "kind": "file",
+    "name": "src/animations/BackgroundColor.js",
+    "content": "import anime from 'animejs';\nimport {Q} from 'elementify';\nimport AbstractAnimation from 'core/AbstractAnimation';\n\nexport default class BackgroundColor extends AbstractAnimation {\n  constructor(options = {}) {\n    super(options);\n\n    this.checkOpts(['targets', 'from', 'to']);\n    this.options.define('duration', 3000);\n    this.options.define('easing', 'easeInOutQuad');\n    this.options.define('direction', 'alternate');\n    this.options.define('loop', true);\n\n    if (!this.options.has('targets')) throw new TypeError('No target defined for backgroundColor fx');\n    if (!this.options.has('from')) throw new TypeError('No start color defined for backgroundColor fx');\n    if (!this.options.has('to')) throw new TypeError('No end color defined for backgroundColor fx');\n  }\n\n  start() {\n    // Setting start color\n    Q(this.options.pull('targets')).style('backgroundColor', this.options.pull('from'));\n\n    this.animation = anime({\n      targets: this.options.pull('targets'),\n      backgroundColor: this.options.pull('to'),\n      direction: this.options.pull('direction'),\n      loop: this.options.pull('loop'),\n      easing: this.options.pull('easing'),\n      duration: this.options.pull('duration')\n    });\n  }\n}\n",
+    "static": true,
+    "longname": "F:/Projets/beloader/src/animations/BackgroundColor.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 56,
+    "kind": "class",
+    "name": "BackgroundColor",
+    "memberof": "src/animations/BackgroundColor.js",
+    "static": true,
+    "longname": "src/animations/BackgroundColor.js~BackgroundColor",
+    "access": "public",
+    "export": true,
+    "importPath": "beloader/src/animations/BackgroundColor.js",
+    "importStyle": "BackgroundColor",
+    "description": null,
+    "lineNumber": 5,
+    "undocument": true,
+    "interface": false,
+    "extends": [
+      "core/AbstractAnimation~AbstractAnimation"
+    ]
+  },
+  {
+    "__docId__": 57,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/animations/BackgroundColor.js~BackgroundColor",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/animations/BackgroundColor.js~BackgroundColor#constructor",
+    "access": "public",
+    "description": null,
+    "lineNumber": 6,
+    "undocument": true
+  },
+  {
+    "__docId__": 58,
+    "kind": "method",
+    "name": "start",
+    "memberof": "src/animations/BackgroundColor.js~BackgroundColor",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/animations/BackgroundColor.js~BackgroundColor#start",
+    "access": "public",
+    "description": null,
+    "lineNumber": 20,
+    "undocument": true,
+    "params": [],
+    "return": null
+  },
+  {
+    "__docId__": 59,
+    "kind": "member",
+    "name": "animation",
+    "memberof": "src/animations/BackgroundColor.js~BackgroundColor",
+    "static": false,
+    "longname": "src/animations/BackgroundColor.js~BackgroundColor#animation",
+    "access": "public",
+    "description": null,
+    "lineNumber": 24,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 60,
+    "kind": "file",
+    "name": "src/animations/ThreeDotsBouncing.js",
+    "content": "import anime from 'animejs';\nimport {Q} from 'elementify';\nimport AbstractAnimation from 'core/AbstractAnimation';\n\nexport default class ThreeDotsBouncing extends AbstractAnimation {\n  constructor(options = {}) {\n    super(options);\n\n    this.options.define('duration', 3000);\n    this.options.define('offset', 1000);\n    this.options.define('dots.width', 30);\n    this.options.define('dots.height', 30);\n    this.options.define('dots.color', '#fff');\n    this.build();\n  }\n\n  build() {\n    let dd = [\n      this.options.pull('duration') + this.options.pull('offset'),\n      this.options.pull('duration') / 2,\n      this.options.pull('duration') - this.options.pull('offset')\n    ];\n    let ddr = dd.reverse();\n\n    this.block = Q('+div', {\n      id: this.id,\n      class: 'tbd',\n      style: {\n        margin: '0 auto'\n      }\n    });\n\n    dd.forEach((d, i) => {\n      let line = Q('+div', {\n        class: 'tbd-line',\n        style: 'margin: 1em 0'\n      });\n\n      line.append(Q('+div', {\n        class: 'tbd-dot',\n        style: {\n          width: this.options.pull('dots.width'),\n          height: this.options.pull('dots.height'),\n          backgroundColor: this.options.pull('dots.color')\n        },\n        data: {\n          duration: d,\n          'duration-rev': ddr[i]\n        }\n      }));\n\n      this.block.append(line);\n    });\n  }\n\n  start() {\n    let timeline = anime.timeline({\n      loop: true,\n      autoplay: true\n    });\n\n    timeline.add({\n      targets: `#${this.id} .tbd-dot`,\n      translateX: Q(`#${this.id}`).width - this.options.pull('dots.width'),\n      rotate: 180,\n      duration: function (target) {\n        return target.getAttribute('data-duration');\n      },\n      delay: function (target, index) {\n        return index * 100;\n      },\n      elasticity: function (target, index, totalTargets) {\n        return 200 + ((totalTargets - index) * 200);\n      }\n    });\n\n    timeline.add({\n      targets: `#${this.id} .tbd-dot`,\n      translateX: 0,\n      rotate: 0,\n      duration: function (target) {\n        return target.getAttribute('data-duration-rev');\n      },\n      delay: function (target, index, totalTargets) {\n        return 100 + ((totalTargets - index) * 100);\n      },\n      elasticity: function (target, index, totalTargets) {\n        return 200 + ((index - totalTargets) * 200);\n      }\n    });\n\n    this.animation = timeline;\n  }\n}\n",
+    "static": true,
+    "longname": "F:/Projets/beloader/src/animations/ThreeDotsBouncing.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 61,
+    "kind": "class",
+    "name": "ThreeDotsBouncing",
+    "memberof": "src/animations/ThreeDotsBouncing.js",
+    "static": true,
+    "longname": "src/animations/ThreeDotsBouncing.js~ThreeDotsBouncing",
+    "access": "public",
+    "export": true,
+    "importPath": "beloader/src/animations/ThreeDotsBouncing.js",
+    "importStyle": "ThreeDotsBouncing",
+    "description": null,
+    "lineNumber": 5,
+    "undocument": true,
+    "interface": false,
+    "extends": [
+      "core/AbstractAnimation~AbstractAnimation"
+    ]
+  },
+  {
+    "__docId__": 62,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/animations/ThreeDotsBouncing.js~ThreeDotsBouncing",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/animations/ThreeDotsBouncing.js~ThreeDotsBouncing#constructor",
+    "access": "public",
+    "description": null,
+    "lineNumber": 6,
+    "undocument": true
+  },
+  {
+    "__docId__": 63,
+    "kind": "method",
+    "name": "build",
+    "memberof": "src/animations/ThreeDotsBouncing.js~ThreeDotsBouncing",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/animations/ThreeDotsBouncing.js~ThreeDotsBouncing#build",
+    "access": "public",
+    "description": null,
+    "lineNumber": 17,
+    "undocument": true,
+    "params": [],
+    "return": null
+  },
+  {
+    "__docId__": 64,
+    "kind": "member",
+    "name": "block",
+    "memberof": "src/animations/ThreeDotsBouncing.js~ThreeDotsBouncing",
+    "static": false,
+    "longname": "src/animations/ThreeDotsBouncing.js~ThreeDotsBouncing#block",
+    "access": "public",
+    "description": null,
+    "lineNumber": 25,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 65,
+    "kind": "method",
+    "name": "start",
+    "memberof": "src/animations/ThreeDotsBouncing.js~ThreeDotsBouncing",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/animations/ThreeDotsBouncing.js~ThreeDotsBouncing#start",
+    "access": "public",
+    "description": null,
+    "lineNumber": 56,
+    "undocument": true,
+    "params": [],
+    "return": null
+  },
+  {
+    "__docId__": 66,
+    "kind": "member",
+    "name": "animation",
+    "memberof": "src/animations/ThreeDotsBouncing.js~ThreeDotsBouncing",
+    "static": false,
+    "longname": "src/animations/ThreeDotsBouncing.js~ThreeDotsBouncing#animation",
+    "access": "public",
+    "description": null,
+    "lineNumber": 92,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 67,
+    "kind": "file",
+    "name": "src/beloader.js",
+    "content": "/**\n*  @file beloader.js\n*  @author Liqueur de Toile <contact@liqueurdetoile.com>\n*  @licence AGPL-3.0-only {@link https://spdx.org/licenses/AGPL-3.0-only.html}\n*/\n\n/**\n*  @external {DotObjectArray} https://liqueurdetoile.github.io/DotObjectArray/\n*/\n\n/**\n*  Stores a BeLoader instance real time progress\n*\n*  @typedef {DotObjectArray}  BeloaderProgress\n*/\n\nimport 'es6-promise/auto';\nimport ObjectArray from 'dot-object-array';\nimport QueueItem from 'queueitem';\n\n/**\n*  Highly customizable and lightweight assets loader based on\n*  dynamic imports with splash screen, animated blocks and more\n*\n*  You can create as many loaders instance as needed. Between one instance, you can access\n*  specific loaders or functionnalities and order loading sequence with the use\n*  of defer or awaiting options, see {@link Beloader#add}.\n*\n*  @version 1.0.0\n*  @since 1.0.0\n*  @author Liqueur de Toile <contact@liqueurdetoile.com>\n*  @license AGPL-3.0-only\n*\n*  @example\n*  var loader = new Beloader();\n*\n*  // Display a text only when font is ready to avoit FOUT\n*  // It relies on webfontloader\n*  loader.fetch('font', {\n*    webfont: {\n*      google: {\n*        families: ['Droid Sans', 'Droid Serif']\n*      }\n*    }\n*  }).then(function() {\n*    document.body.innerHTML += '<div style=\"font-family:\\'Droid Sans\\'\">Fixture</div>';\n*  });\n*\n*  // ********************\n*  // Load external libraries and only run custom script when they're loaded\n*  // *********************\n*\n*  // Example with defer\n*  // Not the best use case because the two external libraries don't depend on each other\n*  // Lodash loading will not resolve until elementify resolved\n*  loader.fetch('script', {\n*    url: 'https://cdn.jsdelivr.net/npm/elementify@latest',\n*    defer: true;\n*  });\n*\n*  loader.fetch('script', {\n*    url: 'https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.5/lodash.min.js',\n*    defer: true;\n*  });\n*\n*  loader.fetch('script', {\n*   url: 'myscript',\n*   defer: true\n*  });\n*\n*  // Example with await\n*  // More suitable to optimize loading\n*  loader.fetch('script', {\n*   url: 'myscript',\n*   awaiting: ['elementify', 'lodash']\n*  });\n*\n*  loader.fetch('script', {\n*    id: 'elementify',\n*    url: 'https://cdn.jsdelivr.net/npm/elementify@latest'\n*  });\n*\n*  loader.fetch('script', {\n*    id: 'lodash',\n*    url: 'https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.5/lodash.min.js'\n*  });\n*\n*/\nexport class Beloader {\n  /**\n  *  Beloader constructor\n  *\n  *  @version 1.0.0\n  *  @since 1.0.0\n  *  @author Liqueur de Toile <contact@liqueurdetoile.com>\n  *\n  *  @returns {Beloader} Beloader instance\n  */\n  constructor(options = {}) {\n    /**\n    *  List of queued items in Beloader instance\n    *\n    *  @since 1.0.0\n    *  @type {Array}\n    *\n    */\n    this._items = [];\n\n    /**\n    *  List of named queued items in Beloader instance\n    *\n    *  @since 1.0.0\n    *  @type {Object}\n    */\n    this._awaitables = {};\n\n    /**\n    *  Options for the Beloader instance. See {@link Beloader#constructor}\n    *\n    *  @since 1.0.0\n    *  @type {DotObjectArray}\n    */\n    this.options = new ObjectArray(options);\n\n    /**\n    *  Progress statistics for the Beloader instance.\n    *\n    *  @since 1.0.0\n    *  @type {BeloaderProgress}\n    */\n    this.progress = new ObjectArray({\n      items: {\n        total: 0,\n        waiting: 0,\n        pending: 0,\n        processed: 0,\n        loaded: 0,\n        error: 0,\n        abort: 0,\n        timeout: 0,\n        ready: 0\n      },\n      loading: {\n        complete: 0,\n        elapsed: 0,\n        loaded: 0,\n        rate: 0\n      }\n    });\n  }\n\n  /**\n  *  Add an item to the loading queue and return a promise\n  *\n  *  An item is resolved (or failed) under several conditions :\n  *  - Item have been loaded\n  *  - Item is ready (webfontloader for instance)\n  *  - If deferred, all previously defferred items in the queue are resolved\n  *  - If awaiting items, all required items are resolved\n  *\n  *  Supported types relies on loaders that may accept/require specific options :\n  *  - `font`, `webfont` : {@link FontLoader}\n  *  - `css`, `style`, `styles`, `stylesheet` : {@link StylesheetLoader}\n  *  - `js`, `javascript` : {@link ScriptLoader}\n  *\n  *  @version 1.0.0\n  *  @since 1.0.0\n  *  @author Liqueur de Toile <contact@liqueurdetoile.com>\n  *\n  *  @param {!String} type  Type of item to load (see above)\n  *\n  *  @param {Object|DotObjectArray} [options] Options (see below)\n  *\n  *  @param {Boolean} [options.async=true]\n  *  __Async / Sync mode__\n  *\n  *  If set to `true`, Beloader will try to load asset asynchronously.\n  *\n  *  @param {Boolean}  [options.fallbackSync=true]\n  *  __Fallback when async loading fails__\n  *\n  *  If async loading failed, Beloader will try\n  *  to load asset synchronously if this mode is available in the used loader.\n  *\n  *  It can be useful when dealing with CORS issues.\n  *\n  *\n  *  @param {String} [options.id]\n  *  __ID for naming the item__\n  *\n  *  It can then be used with the awaiting option (see below).\n  *\n  *  @param {String|Array} [options.awaiting]\n  *  __Dependency ID or array of dependencies IDs__\n  *\n  *  This loading mode forces Beloader to resolve items only\n  *\n  *  The item will not be resolved until each declared dependency is previously resolved.\n  *\n  *  _You must take care of avoiding any circular dependency that may lead to\n  *  a never resolved item. Beloader doesn't check ID's validity. A typo error may also\n  *  lead to a never resolved item._\n  *\n  *  @param {Boolean} [options.defer=false]\n  *  __Defer loading mode__\n  *\n  *  This mode forces Beloader to resolve deferred items in the same order that they have\n  *  been added to the queue. It is possible to mix loading modes in a same queue.\n  *\n  *  If `true`, Beloader will resolve the item only when previous\n  *  declared items with `defer` option set to true are resolved\n  *\n  *  @param {Object}  [options.xhr]\n  *  __XHR options__\n  *\n  *  See {@link AbstractLoader#async}\n  *\n  *  @param {Function|Object} [options.loader]\n  *  __Custom loader or loader(s) override__\n  *\n  *  When using this option with a custom type, Beloader will run the provided\n  *  callback and pass the QueueItem and options as parameters (see {@link QueueItem#constructor}).\n  *\n  *  When using this option with a registered type, Beloader will look for a callback in\n  *  `options.loader.async` to override async loader\n  *  (see {@link AbstractLoader#async}) and/or `options.loader.sync` to override\n  *  sync loader (see {@link AbstractLoader#sync}).\n  *\n  *  Provided callbacks must return a Promise and, optionnaly, trigger events at item level\n  *\n  *  @return {QueueItem} Item queued\n  */\n  fetch(type, options = {}) {\n    let item;\n\n    options = new ObjectArray(options);\n    options.define('async', true);\n    options.define('defer', false);\n    options.define('fallbackSync', true);\n\n    item = new QueueItem(type, this, options);\n    this._items.push(item);\n    if (options.data.id) this._awaitables[options.data.id] = false;\n    this.fire('itemAdded', item);\n\n    this.progress.push('items.total', this._items.length);\n    this.progress.push('items.waiting', this.progress.pull('items.waiting') + 1);\n\n    return item;\n  }\n\n  fetchAll(items) {\n    let queuedItems = [];\n    let promises = [];\n\n    items = new ObjectArray(items);\n    items.forEach(function (options, type) {\n      let item = this.fetch(type, options);\n\n      queuedItems.push(item);\n      promises.push(item.promise);\n    }.bind(this));\n\n    queuedItems.promise = Promise.all(promises);\n    return queuedItems;\n  }\n\n  fire(eventName, item, event = null) {\n    let cb, eventCallbackName = 'on' + eventName;\n\n    item = item || this;\n    // Private callbacks\n    if (this[eventCallbackName] instanceof Function) this[eventCallbackName].call(this, item, event);\n    // User-defined callbacks\n    if ((cb = this.options.pull('on.' + eventName)) instanceof Function) cb.call(this, item, event);\n    // Plugins bubbling (plugin context)\n    if (this.options.has('plugins')) {\n      this.options.forEach(function (plugin) {\n        plugin.fire.call(plugin, eventName, item, event);\n      });\n    }\n  }\n\n  onloadstart(item) {\n    if (!this.progress.has('loading.start')) {\n      this.fire('beforeprocess', this);\n      this.progress.push('loading.start', +new Date());\n    }\n    this.progress.data.items.waiting -= 1;\n    this.progress.data.items.pending += 1;\n  }\n\n  onprogress(item) {\n    this._updateProgress();\n  }\n\n  onload() {\n    this.progress.data.items.loaded += 1;\n  }\n\n  onerror(item) {\n    this.progress.data.items.error += 1;\n  }\n\n  onabort(item) {\n    this.progress.data.items.abort += 1;\n  }\n\n  ontimeout(item) {\n    this.progress.data.items.timeout += 1;\n  }\n\n  onloadend() {\n    let previousDeferResolved = true;\n\n    // Resolve item or defer resolving\n    this._items.forEach(item => {\n      // Resolvable except if deferred and previous deffered not solved\n      let resolvable = item.defer ? previousDeferResolved : true;\n\n      // Check dependencies and update resolvable if dependencies not loaded\n      if (item.awaiting) {\n        item.awaiting.forEach(function (dependency) {\n          if (!this._awaitables[dependency]) resolvable = false;\n        }.bind(this));\n      }\n\n      // Resolve item\n      if (item.state.processed && !item.state.resolved && resolvable) {\n        // Update progress\n        this.progress.data.items.pending -= 1;\n        this.progress.data.items.processed += 1;\n        this._updateProgress();\n        item.state.resolved = true;\n        if (item.state.loaded) {\n          item._resolve(item);\n          item.fire.call(item, 'ready');\n          item.state.ready = true;\n          this.progress.data.items.ready += 1;\n        } else {\n          item._reject(item);\n        }\n      }\n\n      // Update previous defer\n      if (item.defer && !item.state.processed) previousDeferResolved = false;\n    });\n\n    // After event\n    if (this.progress.data.items.processed === this.progress.data.items.total) {\n      this.fire('afterprocess', this);\n      this.progress.push('loading.end', +new Date());\n    }\n  }\n\n  _updateProgress() {\n    let loaded = 0, total = 0, elapsed;\n\n    this.progress.push('loading.end', +new Date());\n    elapsed = this.progress.data.loading.end - this.progress.data.loading.start;\n    this._items.forEach(function (item) {\n      loaded += item.progress.data.loaded;\n      total += item.progress.data.total;\n    });\n\n    this.progress.push('loading.elapsed', elapsed); // milliseconds\n    this.progress.push('loading.loaded', loaded); // Bytes\n    this.progress.push('loading.rate', loaded / elapsed * 1000); // Bytes/s\n    if (total) {\n      this.progress.push('loading.total', total); // Bytes\n      this.progress.push('loading.complete', loaded / total * 100); // Bytes\n    }\n  }\n}\n\nexport default Beloader;\n",
+    "static": true,
+    "longname": "F:/Projets/beloader/src/beloader.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 68,
+    "kind": "external",
+    "name": "DotObjectArray",
+    "externalLink": "https://liqueurdetoile.github.io/DotObjectArray/",
+    "memberof": "src/beloader.js",
+    "static": true,
+    "longname": "src/beloader.js~DotObjectArray",
+    "access": "public",
+    "description": ""
+  },
+  {
+    "__docId__": 69,
+    "kind": "typedef",
+    "name": "BeloaderProgress",
+    "memberof": "src/beloader.js",
+    "static": true,
+    "longname": "src/beloader.js~BeloaderProgress",
+    "access": "public",
+    "description": " Stores a BeLoader instance real time progress",
+    "lineNumber": 17,
+    "type": {
+      "types": [
+        "DotObjectArray"
+      ],
+      "optional": false,
+      "name": "BeloaderProgress"
+    }
+  },
+  {
+    "__docId__": 70,
+    "kind": "class",
+    "name": "Beloader",
+    "memberof": "src/beloader.js",
+    "static": true,
+    "longname": "src/beloader.js~Beloader",
+    "access": "public",
+    "export": true,
+    "importPath": "beloader/src/beloader.js",
+    "importStyle": "{Beloader}",
+    "description": " Highly customizable and lightweight assets loader based on\n dynamic imports with splash screen, animated blocks and more\n\n You can create as many loaders instance as needed. Between one instance, you can access\n specific loaders or functionnalities and order loading sequence with the use\n of defer or awaiting options, see {@link Beloader#add}.",
+    "examples": [
+      " var loader = new Beloader();\n\n // Display a text only when font is ready to avoit FOUT\n // It relies on webfontloader\n loader.fetch('font', {\n   webfont: {\n     google: {\n       families: ['Droid Sans', 'Droid Serif']\n     }\n   }\n }).then(function() {\n   document.body.innerHTML += '<div style=\"font-family:\\'Droid Sans\\'\">Fixture</div>';\n });\n\n // ********************\n // Load external libraries and only run custom script when they're loaded\n // *********************\n\n // Example with defer\n // Not the best use case because the two external libraries don't depend on each other\n // Lodash loading will not resolve until elementify resolved\n loader.fetch('script', {\n   url: 'https://cdn.jsdelivr.net/npm/elementify@latest',\n   defer: true;\n });\n\n loader.fetch('script', {\n   url: 'https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.5/lodash.min.js',\n   defer: true;\n });\n\n loader.fetch('script', {\n  url: 'myscript',\n  defer: true\n });\n\n // Example with await\n // More suitable to optimize loading\n loader.fetch('script', {\n  url: 'myscript',\n  awaiting: ['elementify', 'lodash']\n });\n\n loader.fetch('script', {\n   id: 'elementify',\n   url: 'https://cdn.jsdelivr.net/npm/elementify@latest'\n });\n\n loader.fetch('script', {\n   id: 'lodash',\n   url: 'https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.5/lodash.min.js'\n });"
+    ],
+    "lineNumber": 89,
+    "since": "1.0.0",
+    "version": "1.0.0",
+    "unknown": [
+      {
+        "tagName": "@author",
+        "tagValue": "Liqueur de Toile <contact@liqueurdetoile.com>"
+      },
+      {
+        "tagName": "@license",
+        "tagValue": "AGPL-3.0-only"
+      }
+    ],
+    "interface": false
+  },
+  {
+    "__docId__": 71,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/beloader.js~Beloader",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/beloader.js~Beloader#constructor",
+    "access": "public",
+    "description": " Beloader constructor",
+    "lineNumber": 99,
+    "since": "1.0.0",
+    "version": "1.0.0",
+    "unknown": [
+      {
+        "tagName": "@author",
+        "tagValue": "Liqueur de Toile <contact@liqueurdetoile.com>"
+      },
+      {
+        "tagName": "@returns",
+        "tagValue": "{Beloader} Beloader instance"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Beloader"
+      ],
+      "spread": false,
+      "description": "Beloader instance"
+    }
+  },
+  {
+    "__docId__": 72,
+    "kind": "member",
+    "name": "_items",
+    "memberof": "src/beloader.js~Beloader",
+    "static": false,
+    "longname": "src/beloader.js~Beloader#_items",
+    "access": "private",
+    "description": " List of queued items in Beloader instance",
+    "lineNumber": 107,
+    "since": "1.0.0",
+    "type": {
+      "nullable": null,
+      "types": [
+        "Array"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 73,
+    "kind": "member",
+    "name": "_awaitables",
+    "memberof": "src/beloader.js~Beloader",
+    "static": false,
+    "longname": "src/beloader.js~Beloader#_awaitables",
+    "access": "private",
+    "description": " List of named queued items in Beloader instance",
+    "lineNumber": 115,
+    "since": "1.0.0",
+    "type": {
+      "nullable": null,
+      "types": [
+        "Object"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 74,
+    "kind": "member",
+    "name": "options",
+    "memberof": "src/beloader.js~Beloader",
+    "static": false,
+    "longname": "src/beloader.js~Beloader#options",
+    "access": "public",
+    "description": " Options for the Beloader instance. See {@link Beloader#constructor}",
+    "lineNumber": 123,
+    "since": "1.0.0",
+    "type": {
+      "nullable": null,
+      "types": [
+        "DotObjectArray"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 75,
+    "kind": "member",
+    "name": "progress",
+    "memberof": "src/beloader.js~Beloader",
+    "static": false,
+    "longname": "src/beloader.js~Beloader#progress",
+    "access": "public",
+    "description": " Progress statistics for the Beloader instance.",
+    "lineNumber": 131,
+    "since": "1.0.0",
+    "type": {
+      "nullable": null,
+      "types": [
+        "BeloaderProgress"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 76,
+    "kind": "method",
+    "name": "fetch",
+    "memberof": "src/beloader.js~Beloader",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/beloader.js~Beloader#fetch",
+    "access": "public",
+    "description": " Add an item to the loading queue and return a promise\n\n An item is resolved (or failed) under several conditions :\n - Item have been loaded\n - Item is ready (webfontloader for instance)\n - If deferred, all previously defferred items in the queue are resolved\n - If awaiting items, all required items are resolved\n\n Supported types relies on loaders that may accept/require specific options :\n - `font`, `webfont` : {@link FontLoader}\n - `css`, `style`, `styles`, `stylesheet` : {@link StylesheetLoader}\n - `js`, `javascript` : {@link ScriptLoader}",
+    "lineNumber": 233,
+    "since": "1.0.0",
+    "version": "1.0.0",
+    "unknown": [
+      {
+        "tagName": "@author",
+        "tagValue": "Liqueur de Toile <contact@liqueurdetoile.com>"
+      }
+    ],
+    "params": [
+      {
+        "nullable": false,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "type",
+        "description": "Type of item to load (see above)"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Object",
+          "DotObjectArray"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "options",
+        "description": "Options (see below)"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Boolean"
+        ],
+        "spread": false,
+        "optional": true,
+        "defaultValue": "true",
+        "defaultRaw": true,
+        "name": "options.async",
+        "description": "__Async / Sync mode__\n\n If set to `true`, Beloader will try to load asset asynchronously."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Boolean"
+        ],
+        "spread": false,
+        "optional": true,
+        "defaultValue": "true",
+        "defaultRaw": true,
+        "name": "options.fallbackSync",
+        "description": "__Fallback when async loading fails__\n\n If async loading failed, Beloader will try\n to load asset synchronously if this mode is available in the used loader.\n\n It can be useful when dealing with CORS issues."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "options.id",
+        "description": "__ID for naming the item__\n\n It can then be used with the awaiting option (see below)."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String",
+          "Array"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "options.awaiting",
+        "description": "__Dependency ID or array of dependencies IDs__\n\n This loading mode forces Beloader to resolve items only\n\n The item will not be resolved until each declared dependency is previously resolved.\n\n _You must take care of avoiding any circular dependency that may lead to\n a never resolved item. Beloader doesn't check ID's validity. A typo error may also\n lead to a never resolved item._"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Boolean"
+        ],
+        "spread": false,
+        "optional": true,
+        "defaultValue": "false",
+        "defaultRaw": false,
+        "name": "options.defer",
+        "description": "__Defer loading mode__\n\n This mode forces Beloader to resolve deferred items in the same order that they have\n been added to the queue. It is possible to mix loading modes in a same queue.\n\n If `true`, Beloader will resolve the item only when previous\n declared items with `defer` option set to true are resolved"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "options.xhr",
+        "description": "__XHR options__\n\n See {@link AbstractLoader#async}"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Function",
+          "Object"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "options.loader",
+        "description": "__Custom loader or loader(s) override__\n\n When using this option with a custom type, Beloader will run the provided\n callback and pass the QueueItem and options as parameters (see {@link QueueItem#constructor}).\n\n When using this option with a registered type, Beloader will look for a callback in\n `options.loader.async` to override async loader\n (see {@link AbstractLoader#async}) and/or `options.loader.sync` to override\n sync loader (see {@link AbstractLoader#sync}).\n\n Provided callbacks must return a Promise and, optionnaly, trigger events at item level"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "QueueItem"
+      ],
+      "spread": false,
+      "description": "Item queued"
+    }
+  },
+  {
+    "__docId__": 77,
+    "kind": "method",
+    "name": "fetchAll",
+    "memberof": "src/beloader.js~Beloader",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/beloader.js~Beloader#fetchAll",
+    "access": "public",
+    "description": null,
+    "lineNumber": 252,
+    "undocument": true,
+    "params": [
+      {
+        "name": "items",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 78,
+    "kind": "method",
+    "name": "fire",
+    "memberof": "src/beloader.js~Beloader",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/beloader.js~Beloader#fire",
+    "access": "public",
+    "description": null,
+    "lineNumber": 268,
+    "undocument": true,
+    "params": [
+      {
+        "name": "eventName",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "item",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "event",
+        "optional": true,
+        "types": [
+          "undefined"
+        ],
+        "defaultValue": "undefined"
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 79,
+    "kind": "method",
+    "name": "onloadstart",
+    "memberof": "src/beloader.js~Beloader",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/beloader.js~Beloader#onloadstart",
+    "access": "public",
+    "description": null,
+    "lineNumber": 284,
+    "undocument": true,
+    "params": [
+      {
+        "name": "item",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 80,
+    "kind": "method",
+    "name": "onprogress",
+    "memberof": "src/beloader.js~Beloader",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/beloader.js~Beloader#onprogress",
+    "access": "public",
+    "description": null,
+    "lineNumber": 293,
+    "undocument": true,
+    "params": [
+      {
+        "name": "item",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 81,
+    "kind": "method",
+    "name": "onload",
+    "memberof": "src/beloader.js~Beloader",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/beloader.js~Beloader#onload",
+    "access": "public",
+    "description": null,
+    "lineNumber": 297,
+    "undocument": true,
+    "params": [],
+    "return": null
+  },
+  {
+    "__docId__": 82,
+    "kind": "method",
+    "name": "onerror",
+    "memberof": "src/beloader.js~Beloader",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/beloader.js~Beloader#onerror",
+    "access": "public",
+    "description": null,
+    "lineNumber": 301,
+    "undocument": true,
+    "params": [
+      {
+        "name": "item",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 83,
+    "kind": "method",
+    "name": "onabort",
+    "memberof": "src/beloader.js~Beloader",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/beloader.js~Beloader#onabort",
+    "access": "public",
+    "description": null,
+    "lineNumber": 305,
+    "undocument": true,
+    "params": [
+      {
+        "name": "item",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 84,
+    "kind": "method",
+    "name": "ontimeout",
+    "memberof": "src/beloader.js~Beloader",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/beloader.js~Beloader#ontimeout",
+    "access": "public",
+    "description": null,
+    "lineNumber": 309,
+    "undocument": true,
+    "params": [
+      {
+        "name": "item",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 85,
+    "kind": "method",
+    "name": "onloadend",
+    "memberof": "src/beloader.js~Beloader",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/beloader.js~Beloader#onloadend",
+    "access": "public",
+    "description": null,
+    "lineNumber": 313,
+    "undocument": true,
+    "params": [],
+    "return": null
+  },
+  {
+    "__docId__": 86,
+    "kind": "method",
+    "name": "_updateProgress",
+    "memberof": "src/beloader.js~Beloader",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/beloader.js~Beloader#_updateProgress",
+    "access": "private",
+    "description": null,
+    "lineNumber": 356,
+    "undocument": true,
+    "params": [],
+    "return": null
+  },
+  {
+    "__docId__": 87,
+    "kind": "file",
+    "name": "src/core/AbstractLoader.js",
+    "content": "/**\n*  @file AbstractLoader.js\n*  @author Liqueur de Toile <contact@liqueurdetoile.com>\n*  @licence AGPL-3.0-only {@link https://spdx.org/licenses/AGPL-3.0-only.html}\n*/\n\nexport default class AbstractLoader {\n  constructor(item, options) {\n    this.item = item;\n    this.options = options;\n  }\n\n  get promise() {\n    if (this.options.data.async) return this.async();\n    return this.sync();\n  }\n\n  sync() {\n    const _this = this;\n\n    // Sync loader override\n    if (this.options.pull('loader.sync') instanceof Function) return this.options.pull('loader.sync')(this);\n\n    return new Promise((resolve, reject) => {\n      _this.item.fire.call(_this.item, 'loadstart');\n      _this.node.onprogress = (ev) => _this.item.fire.call(_this.item, 'progress', ev);\n      _this.node.onload = (ev) => {\n        _this.item.fire.call(_this.item, 'load', ev);\n        resolve(200);\n      };\n      _this.node.onerror = (ev) => {\n        _this.item.fire.call(_this.item, 'error', ev);\n        reject('Loading error');\n      };\n      _this.node.onabort = (ev) => {\n        _this.item.fire.call(_this.item, 'abort', ev);\n        reject('Loading aborted');\n      };\n      _this.node.ontimeout = (ev) => {\n        _this.item.fire.call(_this.item, 'timeout', ev);\n        reject('Loading timeout');\n      };\n    });\n  }\n\n  async() {\n    const _this = this;\n\n    // Async loader override\n    if (this.options.pull('loader.async') instanceof Function) return this.options.pull('loader.async')(this);\n\n    return new Promise((resolve, reject) => {\n      // XHR object override\n      _this.xhr = _this.options.pull('xhr.instance') || new XMLHttpRequest();\n\n      // Configure basic XHR instance for request\n      if (!_this.options.has('xhr.instance')) {\n        _this.options.define('xhr.method', 'GET');\n\n        // Events\n        _this.xhr.onprogress = (ev) => _this.item.fire.call(_this.item, 'progress', ev);\n        _this.xhr.onerror = (ev) => {\n          _this.item.fire.call(_this.item, 'error', ev);\n          reject('Loading error');\n        };\n        _this.xhr.onabort = (ev) => {\n          _this.item.fire.call(_this.item, 'abort', ev);\n          reject('Loading aborted');\n        };\n        _this.xhr.ontimeout = (ev) => {\n          _this.item.fire.call(_this.item, 'timeout', ev);\n          reject('Loading timeout');\n        };\n\n        _this.xhr.open(_this.options.pull('xhr.method'), _this.options.data.url, true);\n\n        _this.xhr.onreadystatechange = () => {\n          _this.item.fire.call(_this.item, 'readystatechange', _this.xhr.readyState);\n\n          if (_this.xhr.readyState === 4) {\n            if (_this.xhr.status === 200) {\n              _this.item.fire.call(_this.item, 'load');\n              resolve(_this.xhr.response);\n            } else {\n              if (_this.options.data.fallbackSync) {\n                _this.options.data.async = false;\n                delete _this._node; // reset node\n                _this.sync().then(\n                  success => {\n                    resolve(false);\n                  },\n                  error => {\n                    reject(error);\n                  }\n                );\n              } else {\n                _this.item.fire.call(_this.item, 'error');\n                reject(_this.xhr.status);\n              }\n            }\n          }\n        };\n      }\n\n      _this.item.fire.call(_this.item, 'loadstart');\n      _this.xhr.send(_this.options.data.xhrData);\n    });\n  }\n}\n",
+    "static": true,
+    "longname": "F:/Projets/beloader/src/core/AbstractLoader.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 88,
+    "kind": "class",
+    "name": "AbstractLoader",
+    "memberof": "src/core/AbstractLoader.js",
+    "static": true,
+    "longname": "src/core/AbstractLoader.js~AbstractLoader",
+    "access": "public",
+    "export": true,
+    "importPath": "beloader/src/core/AbstractLoader.js",
+    "importStyle": "AbstractLoader",
+    "description": "",
+    "lineNumber": 7,
+    "unknown": [
+      {
+        "tagName": "@file",
+        "tagValue": "AbstractLoader.js"
+      },
+      {
+        "tagName": "@author",
+        "tagValue": "Liqueur de Toile <contact@liqueurdetoile.com>"
+      },
+      {
+        "tagName": "@licence",
+        "tagValue": "AGPL-3.0-only {@link https://spdx.org/licenses/AGPL-3.0-only.html}"
+      }
+    ],
+    "interface": false
+  },
+  {
+    "__docId__": 89,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/core/AbstractLoader.js~AbstractLoader",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/core/AbstractLoader.js~AbstractLoader#constructor",
+    "access": "public",
+    "description": null,
+    "lineNumber": 8,
+    "undocument": true
+  },
+  {
+    "__docId__": 90,
+    "kind": "member",
+    "name": "item",
+    "memberof": "src/core/AbstractLoader.js~AbstractLoader",
+    "static": false,
+    "longname": "src/core/AbstractLoader.js~AbstractLoader#item",
+    "access": "public",
+    "description": null,
+    "lineNumber": 9,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 91,
+    "kind": "member",
+    "name": "options",
+    "memberof": "src/core/AbstractLoader.js~AbstractLoader",
+    "static": false,
+    "longname": "src/core/AbstractLoader.js~AbstractLoader#options",
+    "access": "public",
+    "description": null,
+    "lineNumber": 10,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 92,
+    "kind": "get",
+    "name": "promise",
+    "memberof": "src/core/AbstractLoader.js~AbstractLoader",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/core/AbstractLoader.js~AbstractLoader#promise",
+    "access": "public",
+    "description": null,
+    "lineNumber": 13,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 93,
+    "kind": "method",
+    "name": "sync",
+    "memberof": "src/core/AbstractLoader.js~AbstractLoader",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/core/AbstractLoader.js~AbstractLoader#sync",
+    "access": "public",
+    "description": null,
+    "lineNumber": 18,
+    "undocument": true,
+    "params": [],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 94,
+    "kind": "method",
+    "name": "async",
+    "memberof": "src/core/AbstractLoader.js~AbstractLoader",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/core/AbstractLoader.js~AbstractLoader#async",
+    "access": "public",
+    "description": null,
+    "lineNumber": 46,
+    "undocument": true,
+    "params": [],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 95,
+    "kind": "file",
+    "name": "src/core/AbstractPlugin.js",
+    "content": "/**\n*  @file AbstractPlugin.js\n*  @author Liqueur de Toile <contact@liqueurdetoile.com>\n*  @licence AGPL-3.0-only {@link https://spdx.org/licenses/AGPL-3.0-only.html}\n*/\n\nimport ObjectArray from 'dot-object-array';\n\nexport default class AbstractPlugin {\n  constructor(options = {}) {\n    this.options = new ObjectArray(options);\n  }\n  \n  fire(eventName, item, event) {\n    // Private callbacks\n    if (this[eventCallbackName] instanceof Function) this[eventCallbackName].call(this, item, event);\n    // User-defined callbacks\n    if ((cb = this.options.pull('on.' + eventName)) instanceof Function) cb.call(this, item, event);\n  }\n}",
+    "static": true,
+    "longname": "F:/Projets/beloader/src/core/AbstractPlugin.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 96,
+    "kind": "class",
+    "name": "AbstractPlugin",
+    "memberof": "src/core/AbstractPlugin.js",
+    "static": true,
+    "longname": "src/core/AbstractPlugin.js~AbstractPlugin",
+    "access": "public",
+    "export": true,
+    "importPath": "beloader/src/core/AbstractPlugin.js",
+    "importStyle": "AbstractPlugin",
+    "description": null,
+    "lineNumber": 9,
+    "undocument": true,
+    "interface": false
+  },
+  {
+    "__docId__": 97,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/core/AbstractPlugin.js~AbstractPlugin",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/core/AbstractPlugin.js~AbstractPlugin#constructor",
+    "access": "public",
+    "description": null,
+    "lineNumber": 10,
+    "undocument": true
+  },
+  {
+    "__docId__": 98,
+    "kind": "member",
+    "name": "options",
+    "memberof": "src/core/AbstractPlugin.js~AbstractPlugin",
+    "static": false,
+    "longname": "src/core/AbstractPlugin.js~AbstractPlugin#options",
+    "access": "public",
+    "description": null,
+    "lineNumber": 11,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 99,
+    "kind": "method",
+    "name": "fire",
+    "memberof": "src/core/AbstractPlugin.js~AbstractPlugin",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/core/AbstractPlugin.js~AbstractPlugin#fire",
+    "access": "public",
+    "description": null,
+    "lineNumber": 14,
+    "undocument": true,
+    "params": [
+      {
+        "name": "eventName",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "item",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "event",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 100,
+    "kind": "file",
+    "name": "src/layouts/abstractlayout.js",
+    "content": "",
+    "static": true,
+    "longname": "F:/Projets/beloader/src/layouts/abstractlayout.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 101,
+    "kind": "file",
+    "name": "src/layouts/box.js",
+    "content": "",
+    "static": true,
+    "longname": "F:/Projets/beloader/src/layouts/box.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 102,
+    "kind": "file",
+    "name": "src/layouts/inline.js",
+    "content": "",
+    "static": true,
+    "longname": "F:/Projets/beloader/src/layouts/inline.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 103,
+    "kind": "file",
+    "name": "src/layouts/modal.js",
+    "content": "import {Q} from 'elementify';\n\nexport default class Splash {\n  constructor(options = {}) {\n    this.container = Q('+div', {\n      id: options.id || 'splash-loader',\n      style: {\n        position: options.position || 'fixed',\n        top: options.top || 0,\n        left: options.left || 0,\n        width: options.width || '100%',\n        height: options.height || '100%',\n        zIndex: options.zIndex || 1000,\n        display: options.display || 'flex',\n        flexDirection: options.flexDirection || 'column',\n        background: options.background || '#000'\n      }\n    });\n  }\n\n  open() {\n    Q('body').append(this.container);\n    return this;\n  }\n\n  close() {\n    this.container.remove();\n    return this;\n  }\n\n  fadeIn(options = {}) {\n    this.container.opacity = 0;\n    this.open();\n    return this.container.fadeIn(options);\n  }\n\n  fadeOut(options = {}) {\n    let p = this.container.fadeOut(options);\n\n    this.close();\n    return p;\n  }\n\n  append(content) {\n    this.container.append(content);\n    return this;\n  }\n\n  prepend(content) {\n    this.container.prepend(content);\n    return this;\n  }\n\n  insert(n, content) {\n    if (this.container.child(n).length) {\n      this.container.child(n).before(content);\n      return this;\n    }\n    return this.append(content);\n  }\n}\n",
+    "static": true,
+    "longname": "F:/Projets/beloader/src/layouts/modal.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 104,
+    "kind": "class",
+    "name": "Splash",
+    "memberof": "src/layouts/modal.js",
+    "static": true,
+    "longname": "src/layouts/modal.js~Splash",
+    "access": "public",
+    "export": true,
+    "importPath": "beloader/src/layouts/modal.js",
+    "importStyle": "Splash",
+    "description": null,
+    "lineNumber": 3,
+    "undocument": true,
+    "interface": false
+  },
+  {
+    "__docId__": 105,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/layouts/modal.js~Splash",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/layouts/modal.js~Splash#constructor",
+    "access": "public",
+    "description": null,
+    "lineNumber": 4,
+    "undocument": true
+  },
+  {
+    "__docId__": 106,
+    "kind": "member",
+    "name": "container",
+    "memberof": "src/layouts/modal.js~Splash",
+    "static": false,
+    "longname": "src/layouts/modal.js~Splash#container",
+    "access": "public",
+    "description": null,
+    "lineNumber": 5,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 107,
+    "kind": "method",
+    "name": "open",
+    "memberof": "src/layouts/modal.js~Splash",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/layouts/modal.js~Splash#open",
+    "access": "public",
+    "description": null,
+    "lineNumber": 21,
+    "undocument": true,
+    "params": [],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 108,
+    "kind": "method",
+    "name": "close",
+    "memberof": "src/layouts/modal.js~Splash",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/layouts/modal.js~Splash#close",
+    "access": "public",
+    "description": null,
+    "lineNumber": 26,
+    "undocument": true,
+    "params": [],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 109,
+    "kind": "method",
+    "name": "fadeIn",
+    "memberof": "src/layouts/modal.js~Splash",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/layouts/modal.js~Splash#fadeIn",
+    "access": "public",
+    "description": null,
+    "lineNumber": 31,
+    "undocument": true,
+    "params": [
+      {
+        "name": "options",
+        "optional": true,
+        "types": [
+          "{}"
+        ],
+        "defaultRaw": {},
+        "defaultValue": "{}"
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 110,
+    "kind": "method",
+    "name": "fadeOut",
+    "memberof": "src/layouts/modal.js~Splash",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/layouts/modal.js~Splash#fadeOut",
+    "access": "public",
+    "description": null,
+    "lineNumber": 37,
+    "undocument": true,
+    "params": [
+      {
+        "name": "options",
+        "optional": true,
+        "types": [
+          "{}"
+        ],
+        "defaultRaw": {},
+        "defaultValue": "{}"
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 111,
+    "kind": "method",
+    "name": "append",
+    "memberof": "src/layouts/modal.js~Splash",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/layouts/modal.js~Splash#append",
+    "access": "public",
+    "description": null,
+    "lineNumber": 44,
+    "undocument": true,
+    "params": [
+      {
+        "name": "content",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 112,
+    "kind": "method",
+    "name": "prepend",
+    "memberof": "src/layouts/modal.js~Splash",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/layouts/modal.js~Splash#prepend",
+    "access": "public",
+    "description": null,
+    "lineNumber": 49,
+    "undocument": true,
+    "params": [
+      {
+        "name": "content",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 113,
+    "kind": "method",
+    "name": "insert",
+    "memberof": "src/layouts/modal.js~Splash",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/layouts/modal.js~Splash#insert",
+    "access": "public",
+    "description": null,
+    "lineNumber": 54,
+    "undocument": true,
+    "params": [
+      {
+        "name": "n",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "content",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 114,
+    "kind": "file",
+    "name": "src/loaders/FontLoader.js",
+    "content": "import AbstractLoader from 'core/AbstractLoader';\nimport webfont from 'webfontloader';\n\n/**\n*  FontLoader is solely porting webfontloader as a loader\n*\n*  The main goal of this loader is to trigger a ready state\n*  only when the font(s) are ready to be parsed to avoid\n*  FOUT artifacts\n*\n*  @version 1.0.0\n*  @since 1.0.0\n*  @author Liqueur de Toile <contact@liqueurdetoile.com>\n*\n*  @see https://github.com/typekit/webfontloader\n*/\nexport default class FontLoader extends AbstractLoader {\n  /**\n  *  Always throw an error because method is not allowed\n  *\n  *  @version 1.0.0\n  *  @since 1.0.0\n  *  @author Liqueur de Toile <contact@liqueurdetoile.com>\n  *\n  *  @returns {void}\n  *  @override\n  *  @throws {TypeError} Always thrown if method requested\n  */\n  sync() {\n    throw new TypeError('BeLoader : webfont only works in async mode');\n  }\n\n  /**\n  *  Load a font using webfontloader\n  *\n  *  This loader expect a webfont configuration object to be provided with the options\n  *  as `options.webfont`. For available webfont options, please check\n  *  webfontloader website.\n  *\n  *  @version 1.0.0\n  *  @since 1.0.0\n  *  @author Liqueur de Toile <contact@liqueurdetoile.com>\n  *\n  *  @returns {Promise} Promise resolved or rejected at load end\n  *  @override\n  *  @emits {loadstart} CSS Font requesting begins\n  *  @emits {load} Font is active and available\n  *  @emits {error} Loading or font parsing fails\n  *  @throws {TypeError} If webfont configuration object is not provided in options\n  *  @see https://github.com/typekit/webfontloader\n  */\n  async() {\n    const _this = this;\n    let p = new Promise((resolve, reject) => {\n      _this._resolve = resolve;\n      _this._reject = reject;\n    });\n\n    this.options.push('fallbackSync', false); // No sync fallback allowed\n    if (!this.options.has('webfont')) throw new TypeError('BeLoader : webfont configuration required for loader');\n\n    this.options.push('webfont.active', function () {\n      this.item.fire.call(this.item, 'load');\n      this._resolve();\n    }.bind(this));\n    this.options.push('webfont.inactive', function () {\n      this.item.fire.call(this.item, 'error');\n      this._error();\n    }.bind(this));\n\n    this.item.fire.call(this.item, 'loadstart');\n    webfont.load(this.options.data.webfont);\n\n    return p;\n  }\n}\n",
+    "static": true,
+    "longname": "F:/Projets/beloader/src/loaders/FontLoader.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 115,
+    "kind": "class",
+    "name": "FontLoader",
+    "memberof": "src/loaders/FontLoader.js",
+    "static": true,
+    "longname": "src/loaders/FontLoader.js~FontLoader",
+    "access": "public",
+    "export": true,
+    "importPath": "beloader/src/loaders/FontLoader.js",
+    "importStyle": "FontLoader",
+    "description": " FontLoader is solely porting webfontloader as a loader\n\n The main goal of this loader is to trigger a ready state\n only when the font(s) are ready to be parsed to avoid\n FOUT artifacts",
+    "see": [
+      "https://github.com/typekit/webfontloader"
+    ],
+    "lineNumber": 17,
+    "since": "1.0.0",
+    "version": "1.0.0",
+    "unknown": [
+      {
+        "tagName": "@author",
+        "tagValue": "Liqueur de Toile <contact@liqueurdetoile.com>"
+      }
+    ],
+    "interface": false,
+    "extends": [
+      "core/AbstractLoader~AbstractLoader"
+    ]
+  },
+  {
+    "__docId__": 116,
+    "kind": "method",
+    "name": "sync",
+    "memberof": "src/loaders/FontLoader.js~FontLoader",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/loaders/FontLoader.js~FontLoader#sync",
+    "access": "public",
+    "description": " Always throw an error because method is not allowed",
+    "lineNumber": 29,
+    "since": "1.0.0",
+    "version": "1.0.0",
+    "unknown": [
+      {
+        "tagName": "@author",
+        "tagValue": "Liqueur de Toile <contact@liqueurdetoile.com>"
+      },
+      {
+        "tagName": "@returns",
+        "tagValue": "{void}"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "void"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "override": true,
+    "throws": [
+      {
+        "types": [
+          "TypeError"
+        ],
+        "description": "Always thrown if method requested"
+      }
+    ],
+    "params": []
+  },
+  {
+    "__docId__": 117,
+    "kind": "method",
+    "name": "async",
+    "memberof": "src/loaders/FontLoader.js~FontLoader",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/loaders/FontLoader.js~FontLoader#async",
+    "access": "public",
+    "description": " Load a font using webfontloader\n\n This loader expect a webfont configuration object to be provided with the options\n as `options.webfont`. For available webfont options, please check\n webfontloader website.",
+    "see": [
+      "https://github.com/typekit/webfontloader"
+    ],
+    "lineNumber": 52,
+    "since": "1.0.0",
+    "version": "1.0.0",
+    "unknown": [
+      {
+        "tagName": "@author",
+        "tagValue": "Liqueur de Toile <contact@liqueurdetoile.com>"
+      },
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise} Promise resolved or rejected at load end"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise"
+      ],
+      "spread": false,
+      "description": "Promise resolved or rejected at load end"
+    },
+    "override": true,
+    "throws": [
+      {
+        "types": [
+          "TypeError"
+        ],
+        "description": "If webfont configuration object is not provided in options"
+      }
+    ],
+    "emits": [
+      {
+        "types": [
+          "loadstart"
+        ],
+        "description": "CSS Font requesting begins"
+      },
+      {
+        "types": [
+          "load"
+        ],
+        "description": "Font is active and available"
+      },
+      {
+        "types": [
+          "error"
+        ],
+        "description": "Loading or font parsing fails"
+      }
+    ],
+    "params": []
+  },
+  {
+    "__docId__": 118,
+    "kind": "file",
+    "name": "src/loaders/ScriptLoader.js",
+    "content": "import AbstractLoader from 'core/AbstractLoader';\n\nexport default class ScriptLoader extends AbstractLoader {\n  constructor(item, options) {\n    super(item, options);\n    if (!options.has('url')) throw new TypeError('Beloader : Asset url must be defined');\n  }\n\n  get node() {\n    if (typeof this._node === 'undefined') {\n      this._node = document.createElement('script');\n      this._node.setAttribute('type', 'text/javascript');\n      if (!this.options.data.async) {\n        this._node.setAttribute('src', this.options.data.url);\n      }\n    }\n    return this._node;\n  }\n\n  sync() {\n    document.querySelector('head').appendChild(this.node);\n    return super.sync();\n  }\n\n  async() {\n    const _this = this;\n    let p = super.async();\n\n    p.then(response => {\n      if (response) {\n        _this.node.innerHTML = response;\n        document.querySelector('head').appendChild(_this.node);\n      }\n    });\n\n    return p;\n  }\n}\n",
+    "static": true,
+    "longname": "F:/Projets/beloader/src/loaders/ScriptLoader.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 119,
+    "kind": "class",
+    "name": "ScriptLoader",
+    "memberof": "src/loaders/ScriptLoader.js",
+    "static": true,
+    "longname": "src/loaders/ScriptLoader.js~ScriptLoader",
+    "access": "public",
+    "export": true,
+    "importPath": "beloader/src/loaders/ScriptLoader.js",
+    "importStyle": "ScriptLoader",
+    "description": null,
+    "lineNumber": 3,
+    "undocument": true,
+    "interface": false,
+    "extends": [
+      "core/AbstractLoader~AbstractLoader"
+    ]
+  },
+  {
+    "__docId__": 120,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/loaders/ScriptLoader.js~ScriptLoader",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/loaders/ScriptLoader.js~ScriptLoader#constructor",
+    "access": "public",
+    "description": null,
+    "lineNumber": 4,
+    "undocument": true
+  },
+  {
+    "__docId__": 121,
+    "kind": "get",
+    "name": "node",
+    "memberof": "src/loaders/ScriptLoader.js~ScriptLoader",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/loaders/ScriptLoader.js~ScriptLoader#node",
+    "access": "public",
+    "description": null,
+    "lineNumber": 9,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 122,
+    "kind": "member",
+    "name": "_node",
+    "memberof": "src/loaders/ScriptLoader.js~ScriptLoader",
+    "static": false,
+    "longname": "src/loaders/ScriptLoader.js~ScriptLoader#_node",
+    "access": "private",
+    "description": null,
+    "lineNumber": 11,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 123,
+    "kind": "method",
+    "name": "sync",
+    "memberof": "src/loaders/ScriptLoader.js~ScriptLoader",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/loaders/ScriptLoader.js~ScriptLoader#sync",
+    "access": "public",
+    "description": null,
+    "lineNumber": 20,
+    "undocument": true,
+    "params": [],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 124,
+    "kind": "method",
+    "name": "async",
+    "memberof": "src/loaders/ScriptLoader.js~ScriptLoader",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/loaders/ScriptLoader.js~ScriptLoader#async",
+    "access": "public",
+    "description": null,
+    "lineNumber": 25,
+    "undocument": true,
+    "params": [],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 125,
+    "kind": "file",
+    "name": "src/loaders/StylesheetLoader.js",
+    "content": "import AbstractLoader from 'core/AbstractLoader';\n\nexport default class StylesheetLoader extends AbstractLoader {\n  constructor(item, options) {\n    super(item, options);\n    if (!options.has('url')) throw new TypeError('Beloader : stylesheet url must be defined');\n  }\n\n  get node() {\n    if (typeof this._node === 'undefined') {\n      if (this.options.data.async) {\n        this._node = document.createElement('style');\n        this._node.setAttribute('type', 'text/css');\n      } else {\n        this._node = document.createElement('link');\n        this._node.setAttribute('rel', 'stylesheet');\n        this._node.setAttribute('type', 'text/css');\n        this._node.setAttribute('href', this.options.data.url);\n      }\n    }\n    return this._node;\n  }\n\n  sync() {\n    document.querySelector('head').appendChild(this.node);\n    return super.sync();\n  }\n\n  async() {\n    const _this = this;\n    let p = super.async();\n\n    p.then(response => {\n      if (response) {\n        _this.node.innerHTML = response;\n        document.querySelector('head').appendChild(_this.node);\n      }\n    });\n\n    return p;\n  }\n}\n",
+    "static": true,
+    "longname": "F:/Projets/beloader/src/loaders/StylesheetLoader.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 126,
+    "kind": "class",
+    "name": "StylesheetLoader",
+    "memberof": "src/loaders/StylesheetLoader.js",
+    "static": true,
+    "longname": "src/loaders/StylesheetLoader.js~StylesheetLoader",
+    "access": "public",
+    "export": true,
+    "importPath": "beloader/src/loaders/StylesheetLoader.js",
+    "importStyle": "StylesheetLoader",
+    "description": null,
+    "lineNumber": 3,
+    "undocument": true,
+    "interface": false,
+    "extends": [
+      "core/AbstractLoader~AbstractLoader"
+    ]
+  },
+  {
+    "__docId__": 127,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/loaders/StylesheetLoader.js~StylesheetLoader",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/loaders/StylesheetLoader.js~StylesheetLoader#constructor",
+    "access": "public",
+    "description": null,
+    "lineNumber": 4,
+    "undocument": true
+  },
+  {
+    "__docId__": 128,
+    "kind": "get",
+    "name": "node",
+    "memberof": "src/loaders/StylesheetLoader.js~StylesheetLoader",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/loaders/StylesheetLoader.js~StylesheetLoader#node",
+    "access": "public",
+    "description": null,
+    "lineNumber": 9,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 129,
+    "kind": "member",
+    "name": "_node",
+    "memberof": "src/loaders/StylesheetLoader.js~StylesheetLoader",
+    "static": false,
+    "longname": "src/loaders/StylesheetLoader.js~StylesheetLoader#_node",
+    "access": "private",
+    "description": null,
+    "lineNumber": 12,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 131,
+    "kind": "method",
+    "name": "sync",
+    "memberof": "src/loaders/StylesheetLoader.js~StylesheetLoader",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/loaders/StylesheetLoader.js~StylesheetLoader#sync",
+    "access": "public",
+    "description": null,
+    "lineNumber": 24,
+    "undocument": true,
+    "params": [],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 132,
+    "kind": "method",
+    "name": "async",
+    "memberof": "src/loaders/StylesheetLoader.js~StylesheetLoader",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/loaders/StylesheetLoader.js~StylesheetLoader#async",
+    "access": "public",
+    "description": null,
+    "lineNumber": 29,
+    "undocument": true,
+    "params": [],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 133,
+    "kind": "file",
+    "name": "src/queueitem.js",
+    "content": "/**\n*  @file queueitem.js\n*  @author Liqueur de Toile <contact@liqueurdetoile.com>\n*  @licence AGPL-3.0-only {@link https://spdx.org/licenses/AGPL-3.0-only.html}\n*/\n\nimport ObjectArray from 'dot-object-array';\n\nexport default class QueueItem {\n  constructor(type, beloader, options) {\n    const _this = this;\n    let loader;\n\n    this.beloader = beloader;\n    options = new ObjectArray(options);\n    this.progress = new ObjectArray();\n    this.state = {\n      waiting: true,\n      pending: false,\n      loaded: false,\n      error: false,\n      abort: false,\n      timeout: false,\n      processed: false,\n      resolved: false,\n      ready: false\n    };\n\n    this.id = options.data.id;\n    this.async = options.data.async;\n    this.defer = options.data.defer;\n    if (typeof options.data.awaiting !== 'undefined') {\n      if (options.data.awaiting instanceof Array) this.awaiting = options.data.awaiting;\n      else this.awaiting = [options.data.awaiting];\n    }\n\n    // Set promise property\n    this.promise = new Promise((resolve, reject) => {\n      _this._resolve = resolve;\n      _this._reject = reject;\n    });\n\n    // Import loader\n    switch (type) {\n      case 'webfont':\n      case 'font':\n        loader = 'FontLoader';\n        break;\n      case 'js':\n      case 'script':\n      case 'javascript':\n        loader = 'ScriptLoader';\n        break;\n      case 'style':\n      case 'styles':\n      case 'stylesheet':\n      case 'css':\n        loader = 'StylesheetLoader';\n        break;\n      default:\n        // Custom type loader\n        // Must expose a promise property\n        if (options.data.loader instanceof Function) {\n          options.data.loader(this, options).then(\n            function () {},\n            function (error) {\n              _this.error = error;\n            }\n          ).then(() => _this.fire.call(_this, 'loadend'));;\n        } else if (options.data.loader) throw new TypeError('BeLoader : Custom type loader is not a callback');\n        else throw new TypeError('BeLoader : No loader for assets with type ' + type);\n    }\n\n    if (loader) {\n      import(\n        /* webpackChunkName: \"[request]\" */\n        'loaders/' + loader\n      ).then(function (Loader) {\n        _this.loader = new Loader.default(_this, options); // eslint-disable-line\n\n        _this.loader.promise.then(\n          function () {},\n          function (error) {\n            _this.error = error;\n          }\n        ).then(() => _this.fire.call(_this, 'loadend'));\n      });\n    }\n  }\n\n  fire(eventName, event = null) {\n    let cb, eventCallbackName = 'on' + eventName;\n\n    // Fire at item level\n    if (this[eventCallbackName] instanceof Function) this[eventCallbackName](this, event);\n    if ((cb = this.loader.options.pull('on.' + eventName)) instanceof Function) cb(this, event);\n\n    // Bubbles down to loader level in loader context\n    if (this.loader[eventCallbackName] instanceof Function) {\n      this.loader[eventCallbackName].call(this.loader, this, event);\n    }\n\n    // Bubbles up to beloader level in beloader context\n    this.beloader.fire.call(this.beloader, eventName, this, event);\n  }\n\n  onloadstart(item) {\n    let start = +new Date();\n\n    // Update state\n    item.state.waiting = false;\n    item.state.pending = true;\n\n    // Initialize loading statistics\n    item.progress.push('start', start);\n    item.progress.push('details', [{\n      timestamp: start,\n      duration: 0,\n      chunked: 0,\n      chunkrate: 0,\n      elapsed: 0,\n      loaded: 0,\n      rate: 0,\n      complete: 0\n    }]);\n    item.progress.push('loaded', 0);\n  }\n\n  onload(item) {\n    // Update state\n    item.state.loaded = true;\n    // Update data loading progress\n    item.progress.data.complete = 100;\n  }\n\n  onerror(item) {\n    item.state.error = true;\n  }\n\n  onabort(item) {\n    item.state.abort = true;\n  }\n\n  ontimeout(item) {\n    item.state.timeout = true;\n  }\n\n  onloadend(item) {\n    // Update state\n    item.state.pending = false;\n    item.state.processed = true;\n\n    item.progress.push('end', +new Date());\n    item.progress.push('elapsed', item.progress.data.end - item.progress.data.start);\n  }\n\n  onready(item) {\n    if (item.id) {\n      // Update awaitables\n      item.beloader._awaitables[item.id] = true;\n      // Relaunch onloadend on beloader to trigger waiting dependents\n      item.beloader.onloadend();\n    }\n  }\n\n  onprogress(item, ev) {\n    let t = +new Date();\n    let pt = item.progress.data.details[item.progress.data.details.length - 1];\n    let details;\n\n    // Update total\n    if (ev.lengthComputable) item.progress.push('total', ev.total);\n\n    // Store step detail\n    details = {\n      timestamp: t,\n      duration: t - pt.timestamp, // milliseconds\n      chunked: ev.loaded - pt.loaded, // Bytes\n      chunkrate: (ev.loaded - pt.loaded) / ((t - pt.timestamp) / 1000), // Bytes/s\n      elapsed: t - item.progress.data.start, // milliseconds\n      loaded: ev.loaded, // Bytes\n      rate: ev.loaded / ((t - item.progress.data.start) / 1000), // Bytes/s\n      complete: (item.progress.data.total ? (ev.loaded / item.progress.data.total) * 100 : 0) // Percent\n    };\n\n    item.progress.data.details.push(details);\n\n    // Update globals instant state\n    item.progress.push('elapsed', details.elapsed);\n    item.progress.push('loaded', details.loaded);\n    item.progress.push('rate', details.rate);\n    item.progress.push('complete', details.complete);\n  }\n}\n",
+    "static": true,
+    "longname": "F:/Projets/beloader/src/queueitem.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 134,
+    "kind": "class",
+    "name": "QueueItem",
+    "memberof": "src/queueitem.js",
+    "static": true,
+    "longname": "src/queueitem.js~QueueItem",
+    "access": "public",
+    "export": true,
+    "importPath": "beloader/src/queueitem.js",
+    "importStyle": "QueueItem",
+    "description": null,
+    "lineNumber": 9,
+    "undocument": true,
+    "interface": false
+  },
+  {
+    "__docId__": 135,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/queueitem.js~QueueItem",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/queueitem.js~QueueItem#constructor",
+    "access": "public",
+    "description": null,
+    "lineNumber": 10,
+    "undocument": true
+  },
+  {
+    "__docId__": 136,
+    "kind": "member",
+    "name": "beloader",
+    "memberof": "src/queueitem.js~QueueItem",
+    "static": false,
+    "longname": "src/queueitem.js~QueueItem#beloader",
+    "access": "public",
+    "description": null,
+    "lineNumber": 14,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 137,
+    "kind": "member",
+    "name": "progress",
+    "memberof": "src/queueitem.js~QueueItem",
+    "static": false,
+    "longname": "src/queueitem.js~QueueItem#progress",
+    "access": "public",
+    "description": null,
+    "lineNumber": 16,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 138,
+    "kind": "member",
+    "name": "state",
+    "memberof": "src/queueitem.js~QueueItem",
+    "static": false,
+    "longname": "src/queueitem.js~QueueItem#state",
+    "access": "public",
+    "description": null,
+    "lineNumber": 17,
+    "undocument": true,
+    "type": {
+      "types": [
+        "{\"waiting\": boolean, \"pending\": *, \"loaded\": *, \"error\": *, \"abort\": *, \"timeout\": *, \"processed\": *, \"resolved\": *, \"ready\": *}"
+      ]
+    }
+  },
+  {
+    "__docId__": 139,
+    "kind": "member",
+    "name": "id",
+    "memberof": "src/queueitem.js~QueueItem",
+    "static": false,
+    "longname": "src/queueitem.js~QueueItem#id",
+    "access": "public",
+    "description": null,
+    "lineNumber": 29,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 140,
+    "kind": "member",
+    "name": "async",
+    "memberof": "src/queueitem.js~QueueItem",
+    "static": false,
+    "longname": "src/queueitem.js~QueueItem#async",
+    "access": "public",
+    "description": null,
+    "lineNumber": 30,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 141,
+    "kind": "member",
+    "name": "defer",
+    "memberof": "src/queueitem.js~QueueItem",
+    "static": false,
+    "longname": "src/queueitem.js~QueueItem#defer",
+    "access": "public",
+    "description": null,
+    "lineNumber": 31,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 142,
+    "kind": "member",
+    "name": "awaiting",
+    "memberof": "src/queueitem.js~QueueItem",
+    "static": false,
+    "longname": "src/queueitem.js~QueueItem#awaiting",
+    "access": "public",
+    "description": null,
+    "lineNumber": 33,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 144,
+    "kind": "member",
+    "name": "promise",
+    "memberof": "src/queueitem.js~QueueItem",
+    "static": false,
+    "longname": "src/queueitem.js~QueueItem#promise",
+    "access": "public",
+    "description": null,
+    "lineNumber": 38,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 145,
+    "kind": "method",
+    "name": "fire",
+    "memberof": "src/queueitem.js~QueueItem",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/queueitem.js~QueueItem#fire",
+    "access": "public",
+    "description": null,
+    "lineNumber": 91,
+    "undocument": true,
+    "params": [
+      {
+        "name": "eventName",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "event",
+        "optional": true,
+        "types": [
+          "undefined"
+        ],
+        "defaultValue": "undefined"
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 146,
+    "kind": "method",
+    "name": "onloadstart",
+    "memberof": "src/queueitem.js~QueueItem",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/queueitem.js~QueueItem#onloadstart",
+    "access": "public",
+    "description": null,
+    "lineNumber": 107,
+    "undocument": true,
+    "params": [
+      {
+        "name": "item",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 147,
+    "kind": "method",
+    "name": "onload",
+    "memberof": "src/queueitem.js~QueueItem",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/queueitem.js~QueueItem#onload",
+    "access": "public",
+    "description": null,
+    "lineNumber": 129,
+    "undocument": true,
+    "params": [
+      {
+        "name": "item",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 148,
+    "kind": "method",
+    "name": "onerror",
+    "memberof": "src/queueitem.js~QueueItem",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/queueitem.js~QueueItem#onerror",
+    "access": "public",
+    "description": null,
+    "lineNumber": 136,
+    "undocument": true,
+    "params": [
+      {
+        "name": "item",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 149,
+    "kind": "method",
+    "name": "onabort",
+    "memberof": "src/queueitem.js~QueueItem",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/queueitem.js~QueueItem#onabort",
+    "access": "public",
+    "description": null,
+    "lineNumber": 140,
+    "undocument": true,
+    "params": [
+      {
+        "name": "item",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 150,
+    "kind": "method",
+    "name": "ontimeout",
+    "memberof": "src/queueitem.js~QueueItem",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/queueitem.js~QueueItem#ontimeout",
+    "access": "public",
+    "description": null,
+    "lineNumber": 144,
+    "undocument": true,
+    "params": [
+      {
+        "name": "item",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 151,
+    "kind": "method",
+    "name": "onloadend",
+    "memberof": "src/queueitem.js~QueueItem",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/queueitem.js~QueueItem#onloadend",
+    "access": "public",
+    "description": null,
+    "lineNumber": 148,
+    "undocument": true,
+    "params": [
+      {
+        "name": "item",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 152,
+    "kind": "method",
+    "name": "onready",
+    "memberof": "src/queueitem.js~QueueItem",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/queueitem.js~QueueItem#onready",
+    "access": "public",
+    "description": null,
+    "lineNumber": 157,
+    "undocument": true,
+    "params": [
+      {
+        "name": "item",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 153,
+    "kind": "method",
+    "name": "onprogress",
+    "memberof": "src/queueitem.js~QueueItem",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/queueitem.js~QueueItem#onprogress",
+    "access": "public",
+    "description": null,
+    "lineNumber": 166,
+    "undocument": true,
+    "params": [
+      {
+        "name": "item",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "ev",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null
+  },
+  {
+    "kind": "index",
+    "content": "BeLoader",
+    "longname": "F:\\Projets\\beloader\\README.md",
+    "name": "./README.md",
+    "static": true,
+    "access": "public"
+  },
+  {
+    "kind": "packageJSON",
+    "content": "{\n  \"name\": \"beloader\",\n  \"version\": \"1.0.0\",\n  \"description\": \"Highly customizable and lightweight loader based on dynamic imports with splash screen, animated blocks and more\",\n  \"main\": \"dist/animatables.min.js\",\n  \"publishConfig\": {\n    \"access\": \"public\"\n  },\n  \"scripts\": {\n    \"build\": \"webpack --config webpack.conf/build.js -p\",\n    \"dev\": \"webpack --progress --colors --watch --config webpack.conf/dev.js\",\n    \"test\": \"./node_modules/.bin/karma start --single-run --browsers PhantomJS && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage\",\n    \"test:dry\": \"./node_modules/.bin/karma start --single-run --browsers ChromeHeadless\",\n    \"test:dev\": \"karma start --browsers ChromeHeadless\",\n    \"docs\": \"./node_modules/.bin/esdoc\",\n    \"prepub\": \"npm run test:dry && npm run build && npm run docs\"\n  },\n  \"devDependencies\": {\n    \"babel-cli\": \"^6.26.0\",\n    \"babel-core\": \"^6.26.0\",\n    \"babel-eslint\": \"^8.2.2\",\n    \"babel-loader\": \"^7.1.3\",\n    \"babel-plugin-syntax-dynamic-import\": \"^6.18.0\",\n    \"babel-preset-env\": \"^1.6.1\",\n    \"chai\": \"^4.1.2\",\n    \"clean-webpack-plugin\": \"^0.1.19\",\n    \"color-themes-for-google-code-prettify\": \"^2.0.4\",\n    \"coveralls\": \"^3.0.0\",\n    \"css-loader\": \"^0.28.11\",\n    \"esdoc\": \"^1.0.4\",\n    \"esdoc-ecmascript-proposal-plugin\": \"^1.0.0\",\n    \"esdoc-inject-script-plugin\": \"^1.0.0\",\n    \"esdoc-inject-style-plugin\": \"^1.0.0\",\n    \"esdoc-standard-plugin\": \"^1.0.0\",\n    \"eslint\": \"^4.19.0\",\n    \"eslint-loader\": \"^1.9.0\",\n    \"html-loader\": \"^0.5.1\",\n    \"istanbul-instrumenter-loader\": \"^3.0.0\",\n    \"karma\": \"^2.0.0\",\n    \"karma-babel-preprocessor\": \"^7.0.0\",\n    \"karma-chai\": \"^0.1.0\",\n    \"karma-chrome-launcher\": \"^2.2.0\",\n    \"karma-coverage-istanbul-reporter\": \"^1.4.1\",\n    \"karma-firefox-launcher\": \"^1.1.0\",\n    \"karma-ie-launcher\": \"^1.0.0\",\n    \"karma-mocha\": \"^1.3.0\",\n    \"karma-opera-launcher\": \"^1.0.0\",\n    \"karma-phantomjs-launcher\": \"^1.0.4\",\n    \"karma-safari-launcher\": \"^1.0.0\",\n    \"karma-sinon\": \"^1.0.5\",\n    \"karma-sourcemap-loader\": \"^0.3.7\",\n    \"karma-webpack\": \"2.0.6\",\n    \"mocha\": \"^5.0.1\",\n    \"phantomjs-prebuilt\": \"^2.1.16\",\n    \"postcss-cssnext\": \"^3.1.0\",\n    \"postcss-loader\": \"^2.1.3\",\n    \"postcss-reporter\": \"^5.0.0\",\n    \"puppeteer\": \"^1.2.0\",\n    \"semantic-release\": \"^15.1.3\",\n    \"sinon\": \"^4.4.8\",\n    \"style-loader\": \"^0.20.2\",\n    \"sugarss\": \"^1.0.1\",\n    \"webpack\": \"^3.11.0\",\n    \"webpack-bundle-analyzer\": \"^2.11.0\",\n    \"webpack-merge\": \"^4.1.2\"\n  },\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"https://github.com/liqueurdetoile/splash-loader-js.git\"\n  },\n  \"keywords\": [\n    \"loader\",\n    \"splash screen\",\n    \"animated\",\n    \"app loader\",\n    \"waiting screen\",\n    \"animejs\",\n    \"elementify\"\n  ],\n  \"author\": \"Liqueur de Toile\",\n  \"license\": \"MIT\",\n  \"bugs\": {\n    \"url\": \"https://github.com/liqueurdetoile/splash-loader-js/issues\"\n  },\n  \"homepage\": \"https://github.com/liqueurdetoile/splash-loader-js\",\n  \"dependencies\": {\n    \"animejs\": \"^2.2.0\",\n    \"dot-object-array\": \"^3.1.0\",\n    \"elementify\": \"^1.2.0\",\n    \"es6-promise\": \"^4.2.4\",\n    \"uniqid\": \"^4.1.1\",\n    \"webfontloader\": \"^1.6.28\"\n  }\n}\n",
+    "longname": "F:\\Projets\\beloader\\package.json",
+    "name": "package.json",
+    "static": true,
+    "access": "public"
+  },
+  {
+    "kind": "manualIndex",
+    "globalIndex": false,
+    "content": null,
+    "longname": "",
+    "static": true,
+    "access": "public"
+  },
+  {
+    "kind": "manual",
+    "longname": "F:\\Projets\\beloader\\docs\\manual\\md\\index.md",
+    "name": "./docs/manual/md/index.md",
+    "content": "# Beloader\n\nBeloader is an asset loading manager.\n\n",
+    "static": true,
+    "access": "public"
+  },
+  {
+    "__docId__": 154,
+    "kind": "testFile",
+    "name": "tests/abstractloader.spec.js",
+    "content": "// import Beloader from 'beloader';\n// import AbstractLoader from 'core/AbstractLoader';\n\n",
+    "static": true,
+    "longname": "F:/Projets/beloader/tastes/tests/abstractloader.spec.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 155,
+    "kind": "testFile",
+    "name": "tests/beloader.spec.js",
+    "content": "import {Beloader} from 'beloader';\nimport QueueItem from 'queueitem';\n\n/**\n*  @test {Beloader#constructor}\n*/\ndescribe('Constructor', function () {\n  it('should create an instance with no debug', function () {\n    var loader = new Beloader();\n\n    loader.should.be.instanceof(Beloader);\n  });\n});\n\n/**\n*  @test {Beloader#fetch}\n*/\ndescribe('Fetching an item', function () {\n  it('should fetch css', function () {\n    var loader = new Beloader();\n    var item = loader.fetch('css', {url: 'https://fonts.googleapis.com/css?family=Poppins:900'});\n\n    item.promise.should.be.instanceof(Promise);\n    item.state.processed.should.be.false;\n\n    return item.promise.then(i => {\n      i.should.be.instanceof(QueueItem);\n      i.state.resolved.should.be.true;\n      i.state.loaded.should.be.true;\n      i.state.ready.should.be.true;\n      i.state.error.should.be.false;\n    });\n  });\n\n  it('should fetch a script and fail loading without fallback', function () {\n    var loader = new Beloader();\n    var item = loader.fetch('script', {\n      url: 'https://code.jquery.com/jquery-3.3.5.js',\n      fallbackSync: false\n    });\n\n    return item.promise['catch'](i => {\n      i.should.be.instanceof(QueueItem);\n      i.state.resolved.should.be.true;\n      i.state.loaded.should.be.false;\n      i.state.ready.should.be.false;\n      i.state.error.should.be.true;\n    });\n  });\n\n  it('should fetch a script and fail loading with fallback to sync', function () {\n    var loader = new Beloader();\n    var item = loader.fetch('script', {\n      url: 'https://code.jquery.com/jquery-3.3.5.js'\n    });\n\n    return item.promise['catch'](i => {\n      i.should.be.instanceof(QueueItem);\n      i.state.resolved.should.be.true;\n      i.state.loaded.should.be.false;\n      i.state.ready.should.be.false;\n      i.state.error.should.be.true;\n    });\n  });\n});\n\ndescribe('Fetching and defer items', function () {\n  it('should defer loading', function () {\n    var spy1 = sinon.spy();\n    var spy2 = sinon.spy();\n    var spy3 = sinon.spy();\n    var loader = new Beloader();\n\n    loader.fetch('font', {\n      webfont: {\n        google: {\n          families: ['Droid Sans', 'Droid Serif']\n        }\n      },\n      defer: true\n    }).promise.then(() => spy1());\n\n    loader.fetch('script', {\n      url: 'https://code.jquery.com/jquery-3.3.1.js',\n      defer: true\n    }).promise.then(() => spy2());\n\n    return loader.fetch('style', {\n      url: 'https://fonts.googleapis.com/css?family=Poppins:900',\n      defer: true\n    }).promise.then(() => spy3()).then(() => {\n      spy1.calledBefore(spy2).should.be.true;\n      spy2.calledBefore(spy3).should.be.true;\n    });\n  });\n});\n\ndescribe('Fetching and awaiting dependencies', function () {\n  it('should await dependencies', function () {\n    var spy1 = sinon.spy();\n    var spy2 = sinon.spy();\n    var spy3 = sinon.spy();\n    var loader = new Beloader();\n\n    loader.fetch('font', {\n      id: 'font',\n      awaiting: 'jquery',\n      webfont: {\n        google: {\n          families: ['Droid Sans', 'Droid Serif']\n        }\n      },\n      on: {\n        loadend: () => console.log('loadend : font')\n      }\n    }).promise.then(() => {\n      console.log('ready: font');\n      spy2();\n    });\n\n    loader.fetch('script', {\n      id: 'jquery',\n      url: 'https://code.jquery.com/jquery-3.3.1.js',\n      on: {\n        loadend: () => console.log('loadend : jquery')\n      }\n    }).promise.then(() => {\n      console.log('ready: jquery');\n      spy1();\n    });\n\n    return loader.fetch('stylesheet', {\n      url: 'https://fonts.googleapis.com/css?family=Poppins:900',\n      awaiting: ['jquery', 'font'],\n      on: {\n        loadend: () => console.log('loadend : css')\n      }\n    }).promise.then(() => {\n      console.log('ready: css');\n      spy3();\n    }).then(() => {\n      spy1.calledBefore(spy2).should.be.true;\n      spy2.calledBefore(spy3).should.be.true;\n    });\n  });\n});\n",
+    "static": true,
+    "longname": "F:/Projets/beloader/tastes/tests/beloader.spec.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 156,
+    "kind": "test",
+    "name": "describe0",
+    "testId": 0,
+    "memberof": "tests/beloader.spec.js",
+    "testDepth": 0,
+    "static": true,
+    "longname": "tests/beloader.spec.js~describe0",
+    "access": null,
+    "description": "Constructor",
+    "lineNumber": 7,
+    "testTargets": [
+      "Beloader#constructor"
+    ]
+  },
+  {
+    "__docId__": 157,
+    "kind": "test",
+    "name": "it1",
+    "testId": 1,
+    "memberof": "tests/beloader.spec.js~describe0",
+    "testDepth": 1,
+    "static": true,
+    "longname": "tests/beloader.spec.js~describe0.it1",
+    "access": null,
+    "description": "should create an instance with no debug",
+    "lineNumber": 8
+  },
+  {
+    "__docId__": 158,
+    "kind": "test",
+    "name": "describe2",
+    "testId": 2,
+    "memberof": "tests/beloader.spec.js",
+    "testDepth": 0,
+    "static": true,
+    "longname": "tests/beloader.spec.js~describe2",
+    "access": null,
+    "description": "Fetching an item",
+    "lineNumber": 18,
+    "testTargets": [
+      "Beloader#fetch"
+    ]
+  },
+  {
+    "__docId__": 159,
+    "kind": "test",
+    "name": "it3",
+    "testId": 3,
+    "memberof": "tests/beloader.spec.js~describe2",
+    "testDepth": 1,
+    "static": true,
+    "longname": "tests/beloader.spec.js~describe2.it3",
+    "access": null,
+    "description": "should fetch css",
+    "lineNumber": 19
+  },
+  {
+    "__docId__": 160,
+    "kind": "test",
+    "name": "it4",
+    "testId": 4,
+    "memberof": "tests/beloader.spec.js~describe2",
+    "testDepth": 1,
+    "static": true,
+    "longname": "tests/beloader.spec.js~describe2.it4",
+    "access": null,
+    "description": "should fetch a script and fail loading without fallback",
+    "lineNumber": 35
+  },
+  {
+    "__docId__": 161,
+    "kind": "test",
+    "name": "it5",
+    "testId": 5,
+    "memberof": "tests/beloader.spec.js~describe2",
+    "testDepth": 1,
+    "static": true,
+    "longname": "tests/beloader.spec.js~describe2.it5",
+    "access": null,
+    "description": "should fetch a script and fail loading with fallback to sync",
+    "lineNumber": 51
+  },
+  {
+    "__docId__": 162,
+    "kind": "test",
+    "name": "describe6",
+    "testId": 6,
+    "memberof": "tests/beloader.spec.js",
+    "testDepth": 0,
+    "static": true,
+    "longname": "tests/beloader.spec.js~describe6",
+    "access": null,
+    "description": "Fetching and defer items",
+    "lineNumber": 67
+  },
+  {
+    "__docId__": 163,
+    "kind": "test",
+    "name": "it7",
+    "testId": 7,
+    "memberof": "tests/beloader.spec.js~describe6",
+    "testDepth": 1,
+    "static": true,
+    "longname": "tests/beloader.spec.js~describe6.it7",
+    "access": null,
+    "description": "should defer loading",
+    "lineNumber": 68
+  },
+  {
+    "__docId__": 164,
+    "kind": "test",
+    "name": "describe8",
+    "testId": 8,
+    "memberof": "tests/beloader.spec.js",
+    "testDepth": 0,
+    "static": true,
+    "longname": "tests/beloader.spec.js~describe8",
+    "access": null,
+    "description": "Fetching and awaiting dependencies",
+    "lineNumber": 98
+  },
+  {
+    "__docId__": 165,
+    "kind": "test",
+    "name": "it9",
+    "testId": 9,
+    "memberof": "tests/beloader.spec.js~describe8",
+    "testDepth": 1,
+    "static": true,
+    "longname": "tests/beloader.spec.js~describe8.it9",
+    "access": null,
+    "description": "should await dependencies",
+    "lineNumber": 99
+  },
+  {
+    "__docId__": 166,
+    "kind": "testFile",
+    "name": "tests/queueitem.spec.js",
+    "content": "import {Beloader} from 'beloader';\nimport QueueItem from 'queueitem';\n\ndescribe('CSS Loader', function () {\n  it('should create an instance of a css loader', function () {\n    var loader = new Beloader();\n    var item = loader.fetch('css', {\n      url: 'https://fonts.googleapis.com/css?family=Poppins:900'\n    });\n\n    item.should.be.instanceof(QueueItem);\n  });\n});\n",
+    "static": true,
+    "longname": "F:/Projets/beloader/tastes/tests/queueitem.spec.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 167,
+    "kind": "test",
+    "name": "describe10",
+    "testId": 10,
+    "memberof": "tests/queueitem.spec.js",
+    "testDepth": 0,
+    "static": true,
+    "longname": "tests/queueitem.spec.js~describe10",
+    "access": null,
+    "description": "CSS Loader",
+    "lineNumber": 4
+  },
+  {
+    "__docId__": 168,
+    "kind": "test",
+    "name": "it11",
+    "testId": 11,
+    "memberof": "tests/queueitem.spec.js~describe10",
+    "testDepth": 1,
+    "static": true,
+    "longname": "tests/queueitem.spec.js~describe10.it11",
+    "access": null,
+    "description": "should create an instance of a css loader",
+    "lineNumber": 5
+  }
+]

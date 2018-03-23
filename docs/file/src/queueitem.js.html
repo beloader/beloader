@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../">
+  <title data-ice="title">src/queueitem.js | BeLoader | Highly customizable and lightweight loader based on dynamic imports with splash screen, animated blocks and more</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<link rel="stylesheet" href="./inject/css/0-styles.css"><script src="./inject/script/0-docs.js"></script><meta name="description" content="Highly customizable and lightweight loader based on dynamic imports with splash screen, animated blocks and more"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="BeLoader | Highly customizable and lightweight loader based on dynamic imports with splash screen, animated blocks and more"><meta property="twitter:description" content="Highly customizable and lightweight loader based on dynamic imports with splash screen, animated blocks and more"></head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./" style="display: flex; align-items: center;"><img src="./image/brand_logo.png" style="width:34px;"></a>
+  <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  <a href="test.html" data-ice="testLink">Test</a>
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+<a style="position:relative; top:3px;" href="https://github.com/liqueurdetoile/splash-loader-js.git"><img width="20px" src="./image/github.png"></a></header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/beloader.js~Beloader.html">Beloader</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/queueitem.js~QueueItem.html">QueueItem</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-BeloaderProgress">BeloaderProgress</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-external">E</span><span data-ice="name"><span><a href="https://liqueurdetoile.github.io/DotObjectArray/">DotObjectArray</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#animations">animations</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animations/AbstractAnimation.js~AbstractAnimation.html">AbstractAnimation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animations/BackgroundColor.js~BackgroundColor.html">BackgroundColor</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animations/ThreeDotsBouncing.js~ThreeDotsBouncing.html">ThreeDotsBouncing</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#core">core</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/core/AbstractLoader.js~AbstractLoader.html">AbstractLoader</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/core/AbstractPlugin.js~AbstractPlugin.html">AbstractPlugin</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#layouts">layouts</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/layouts/modal.js~Splash.html">Splash</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#loaders">loaders</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/loaders/FontLoader.js~FontLoader.html">FontLoader</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/loaders/ScriptLoader.js~ScriptLoader.html">ScriptLoader</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/loaders/StylesheetLoader.js~StylesheetLoader.html">StylesheetLoader</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/queueitem.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+*  @file queueitem.js
+*  @author Liqueur de Toile &lt;contact@liqueurdetoile.com&gt;
+*  @licence AGPL-3.0-only {@link https://spdx.org/licenses/AGPL-3.0-only.html}
+*/
+
+import ObjectArray from &apos;dot-object-array&apos;;
+
+export default class QueueItem {
+  constructor(type, beloader, options) {
+    const _this = this;
+    let loader;
+
+    this.beloader = beloader;
+    options = new ObjectArray(options);
+    this.progress = new ObjectArray();
+    this.state = {
+      waiting: true,
+      pending: false,
+      loaded: false,
+      error: false,
+      abort: false,
+      timeout: false,
+      processed: false,
+      resolved: false,
+      ready: false
+    };
+
+    this.id = options.data.id;
+    this.async = options.data.async;
+    this.defer = options.data.defer;
+    if (typeof options.data.awaiting !== &apos;undefined&apos;) {
+      if (options.data.awaiting instanceof Array) this.awaiting = options.data.awaiting;
+      else this.awaiting = [options.data.awaiting];
+    }
+
+    // Set promise property
+    this.promise = new Promise((resolve, reject) =&gt; {
+      _this._resolve = resolve;
+      _this._reject = reject;
+    });
+
+    // Import loader
+    switch (type) {
+      case &apos;webfont&apos;:
+      case &apos;font&apos;:
+        loader = &apos;FontLoader&apos;;
+        break;
+      case &apos;js&apos;:
+      case &apos;script&apos;:
+      case &apos;javascript&apos;:
+        loader = &apos;ScriptLoader&apos;;
+        break;
+      case &apos;style&apos;:
+      case &apos;styles&apos;:
+      case &apos;stylesheet&apos;:
+      case &apos;css&apos;:
+        loader = &apos;StylesheetLoader&apos;;
+        break;
+      default:
+        // Custom type loader
+        // Must expose a promise property
+        if (options.data.loader instanceof Function) {
+          options.data.loader(this, options).then(
+            function () {},
+            function (error) {
+              _this.error = error;
+            }
+          ).then(() =&gt; _this.fire.call(_this, &apos;loadend&apos;));;
+        } else if (options.data.loader) throw new TypeError(&apos;BeLoader : Custom type loader is not a callback&apos;);
+        else throw new TypeError(&apos;BeLoader : No loader for assets with type &apos; + type);
+    }
+
+    if (loader) {
+      import(
+        /* webpackChunkName: &quot;[request]&quot; */
+        &apos;loaders/&apos; + loader
+      ).then(function (Loader) {
+        _this.loader = new Loader.default(_this, options); // eslint-disable-line
+
+        _this.loader.promise.then(
+          function () {},
+          function (error) {
+            _this.error = error;
+          }
+        ).then(() =&gt; _this.fire.call(_this, &apos;loadend&apos;));
+      });
+    }
+  }
+
+  fire(eventName, event = null) {
+    let cb, eventCallbackName = &apos;on&apos; + eventName;
+
+    // Fire at item level
+    if (this[eventCallbackName] instanceof Function) this[eventCallbackName](this, event);
+    if ((cb = this.loader.options.pull(&apos;on.&apos; + eventName)) instanceof Function) cb(this, event);
+
+    // Bubbles down to loader level in loader context
+    if (this.loader[eventCallbackName] instanceof Function) {
+      this.loader[eventCallbackName].call(this.loader, this, event);
+    }
+
+    // Bubbles up to beloader level in beloader context
+    this.beloader.fire.call(this.beloader, eventName, this, event);
+  }
+
+  onloadstart(item) {
+    let start = +new Date();
+
+    // Update state
+    item.state.waiting = false;
+    item.state.pending = true;
+
+    // Initialize loading statistics
+    item.progress.push(&apos;start&apos;, start);
+    item.progress.push(&apos;details&apos;, [{
+      timestamp: start,
+      duration: 0,
+      chunked: 0,
+      chunkrate: 0,
+      elapsed: 0,
+      loaded: 0,
+      rate: 0,
+      complete: 0
+    }]);
+    item.progress.push(&apos;loaded&apos;, 0);
+  }
+
+  onload(item) {
+    // Update state
+    item.state.loaded = true;
+    // Update data loading progress
+    item.progress.data.complete = 100;
+  }
+
+  onerror(item) {
+    item.state.error = true;
+  }
+
+  onabort(item) {
+    item.state.abort = true;
+  }
+
+  ontimeout(item) {
+    item.state.timeout = true;
+  }
+
+  onloadend(item) {
+    // Update state
+    item.state.pending = false;
+    item.state.processed = true;
+
+    item.progress.push(&apos;end&apos;, +new Date());
+    item.progress.push(&apos;elapsed&apos;, item.progress.data.end - item.progress.data.start);
+  }
+
+  onready(item) {
+    if (item.id) {
+      // Update awaitables
+      item.beloader._awaitables[item.id] = true;
+      // Relaunch onloadend on beloader to trigger waiting dependents
+      item.beloader.onloadend();
+    }
+  }
+
+  onprogress(item, ev) {
+    let t = +new Date();
+    let pt = item.progress.data.details[item.progress.data.details.length - 1];
+    let details;
+
+    // Update total
+    if (ev.lengthComputable) item.progress.push(&apos;total&apos;, ev.total);
+
+    // Store step detail
+    details = {
+      timestamp: t,
+      duration: t - pt.timestamp, // milliseconds
+      chunked: ev.loaded - pt.loaded, // Bytes
+      chunkrate: (ev.loaded - pt.loaded) / ((t - pt.timestamp) / 1000), // Bytes/s
+      elapsed: t - item.progress.data.start, // milliseconds
+      loaded: ev.loaded, // Bytes
+      rate: ev.loaded / ((t - item.progress.data.start) / 1000), // Bytes/s
+      complete: (item.progress.data.total ? (ev.loaded / item.progress.data.total) * 100 : 0) // Percent
+    };
+
+    item.progress.data.details.push(details);
+
+    // Update globals instant state
+    item.progress.push(&apos;elapsed&apos;, details.elapsed);
+    item.progress.push(&apos;loaded&apos;, details.loaded);
+    item.progress.push(&apos;rate&apos;, details.rate);
+    item.progress.push(&apos;complete&apos;, details.complete);
+  }
+}
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.0.4)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

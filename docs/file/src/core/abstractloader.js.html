@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../">
+  <title data-ice="title">src/core/AbstractLoader.js | BeLoader | Highly customizable and lightweight loader based on dynamic imports with splash screen, animated blocks and more</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<link rel="stylesheet" href="./inject/css/0-styles.css"><script src="./inject/script/0-docs.js"></script><meta name="description" content="Highly customizable and lightweight loader based on dynamic imports with splash screen, animated blocks and more"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="BeLoader | Highly customizable and lightweight loader based on dynamic imports with splash screen, animated blocks and more"><meta property="twitter:description" content="Highly customizable and lightweight loader based on dynamic imports with splash screen, animated blocks and more"></head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./" style="display: flex; align-items: center;"><img src="./image/brand_logo.png" style="width:34px;"></a>
+  <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  <a href="test.html" data-ice="testLink">Test</a>
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+<a style="position:relative; top:3px;" href="https://github.com/liqueurdetoile/splash-loader-js.git"><img width="20px" src="./image/github.png"></a></header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/beloader.js~Beloader.html">Beloader</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/queueitem.js~QueueItem.html">QueueItem</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-BeloaderProgress">BeloaderProgress</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-external">E</span><span data-ice="name"><span><a href="https://liqueurdetoile.github.io/DotObjectArray/">DotObjectArray</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#animations">animations</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animations/AbstractAnimation.js~AbstractAnimation.html">AbstractAnimation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animations/BackgroundColor.js~BackgroundColor.html">BackgroundColor</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animations/ThreeDotsBouncing.js~ThreeDotsBouncing.html">ThreeDotsBouncing</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#core">core</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/core/AbstractLoader.js~AbstractLoader.html">AbstractLoader</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/core/AbstractPlugin.js~AbstractPlugin.html">AbstractPlugin</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#layouts">layouts</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/layouts/modal.js~Splash.html">Splash</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#loaders">loaders</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/loaders/FontLoader.js~FontLoader.html">FontLoader</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/loaders/ScriptLoader.js~ScriptLoader.html">ScriptLoader</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/loaders/StylesheetLoader.js~StylesheetLoader.html">StylesheetLoader</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/core/AbstractLoader.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+*  @file AbstractLoader.js
+*  @author Liqueur de Toile &lt;contact@liqueurdetoile.com&gt;
+*  @licence AGPL-3.0-only {@link https://spdx.org/licenses/AGPL-3.0-only.html}
+*/
+
+export default class AbstractLoader {
+  constructor(item, options) {
+    this.item = item;
+    this.options = options;
+  }
+
+  get promise() {
+    if (this.options.data.async) return this.async();
+    return this.sync();
+  }
+
+  sync() {
+    const _this = this;
+
+    // Sync loader override
+    if (this.options.pull(&apos;loader.sync&apos;) instanceof Function) return this.options.pull(&apos;loader.sync&apos;)(this);
+
+    return new Promise((resolve, reject) =&gt; {
+      _this.item.fire.call(_this.item, &apos;loadstart&apos;);
+      _this.node.onprogress = (ev) =&gt; _this.item.fire.call(_this.item, &apos;progress&apos;, ev);
+      _this.node.onload = (ev) =&gt; {
+        _this.item.fire.call(_this.item, &apos;load&apos;, ev);
+        resolve(200);
+      };
+      _this.node.onerror = (ev) =&gt; {
+        _this.item.fire.call(_this.item, &apos;error&apos;, ev);
+        reject(&apos;Loading error&apos;);
+      };
+      _this.node.onabort = (ev) =&gt; {
+        _this.item.fire.call(_this.item, &apos;abort&apos;, ev);
+        reject(&apos;Loading aborted&apos;);
+      };
+      _this.node.ontimeout = (ev) =&gt; {
+        _this.item.fire.call(_this.item, &apos;timeout&apos;, ev);
+        reject(&apos;Loading timeout&apos;);
+      };
+    });
+  }
+
+  async() {
+    const _this = this;
+
+    // Async loader override
+    if (this.options.pull(&apos;loader.async&apos;) instanceof Function) return this.options.pull(&apos;loader.async&apos;)(this);
+
+    return new Promise((resolve, reject) =&gt; {
+      // XHR object override
+      _this.xhr = _this.options.pull(&apos;xhr.instance&apos;) || new XMLHttpRequest();
+
+      // Configure basic XHR instance for request
+      if (!_this.options.has(&apos;xhr.instance&apos;)) {
+        _this.options.define(&apos;xhr.method&apos;, &apos;GET&apos;);
+
+        // Events
+        _this.xhr.onprogress = (ev) =&gt; _this.item.fire.call(_this.item, &apos;progress&apos;, ev);
+        _this.xhr.onerror = (ev) =&gt; {
+          _this.item.fire.call(_this.item, &apos;error&apos;, ev);
+          reject(&apos;Loading error&apos;);
+        };
+        _this.xhr.onabort = (ev) =&gt; {
+          _this.item.fire.call(_this.item, &apos;abort&apos;, ev);
+          reject(&apos;Loading aborted&apos;);
+        };
+        _this.xhr.ontimeout = (ev) =&gt; {
+          _this.item.fire.call(_this.item, &apos;timeout&apos;, ev);
+          reject(&apos;Loading timeout&apos;);
+        };
+
+        _this.xhr.open(_this.options.pull(&apos;xhr.method&apos;), _this.options.data.url, true);
+
+        _this.xhr.onreadystatechange = () =&gt; {
+          _this.item.fire.call(_this.item, &apos;readystatechange&apos;, _this.xhr.readyState);
+
+          if (_this.xhr.readyState === 4) {
+            if (_this.xhr.status === 200) {
+              _this.item.fire.call(_this.item, &apos;load&apos;);
+              resolve(_this.xhr.response);
+            } else {
+              if (_this.options.data.fallbackSync) {
+                _this.options.data.async = false;
+                delete _this._node; // reset node
+                _this.sync().then(
+                  success =&gt; {
+                    resolve(false);
+                  },
+                  error =&gt; {
+                    reject(error);
+                  }
+                );
+              } else {
+                _this.item.fire.call(_this.item, &apos;error&apos;);
+                reject(_this.xhr.status);
+              }
+            }
+          }
+        };
+      }
+
+      _this.item.fire.call(_this.item, &apos;loadstart&apos;);
+      _this.xhr.send(_this.options.data.xhrData);
+    });
+  }
+}
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.0.4)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

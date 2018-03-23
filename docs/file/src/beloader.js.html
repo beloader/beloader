@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../">
+  <title data-ice="title">src/beloader.js | BeLoader | Highly customizable and lightweight loader based on dynamic imports with splash screen, animated blocks and more</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<link rel="stylesheet" href="./inject/css/0-styles.css"><script src="./inject/script/0-docs.js"></script><meta name="description" content="Highly customizable and lightweight loader based on dynamic imports with splash screen, animated blocks and more"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="BeLoader | Highly customizable and lightweight loader based on dynamic imports with splash screen, animated blocks and more"><meta property="twitter:description" content="Highly customizable and lightweight loader based on dynamic imports with splash screen, animated blocks and more"></head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./" style="display: flex; align-items: center;"><img src="./image/brand_logo.png" style="width:34px;"></a>
+  <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  <a href="test.html" data-ice="testLink">Test</a>
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+<a style="position:relative; top:3px;" href="https://github.com/liqueurdetoile/splash-loader-js.git"><img width="20px" src="./image/github.png"></a></header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/beloader.js~Beloader.html">Beloader</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/queueitem.js~QueueItem.html">QueueItem</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-BeloaderProgress">BeloaderProgress</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-external">E</span><span data-ice="name"><span><a href="https://liqueurdetoile.github.io/DotObjectArray/">DotObjectArray</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#animations">animations</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animations/AbstractAnimation.js~AbstractAnimation.html">AbstractAnimation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animations/BackgroundColor.js~BackgroundColor.html">BackgroundColor</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animations/ThreeDotsBouncing.js~ThreeDotsBouncing.html">ThreeDotsBouncing</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#core">core</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/core/AbstractLoader.js~AbstractLoader.html">AbstractLoader</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/core/AbstractPlugin.js~AbstractPlugin.html">AbstractPlugin</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#layouts">layouts</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/layouts/modal.js~Splash.html">Splash</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#loaders">loaders</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/loaders/FontLoader.js~FontLoader.html">FontLoader</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/loaders/ScriptLoader.js~ScriptLoader.html">ScriptLoader</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/loaders/StylesheetLoader.js~StylesheetLoader.html">StylesheetLoader</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/beloader.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+*  @file beloader.js
+*  @author Liqueur de Toile &lt;contact@liqueurdetoile.com&gt;
+*  @licence AGPL-3.0-only {@link https://spdx.org/licenses/AGPL-3.0-only.html}
+*/
+
+/**
+*  @external {DotObjectArray} https://liqueurdetoile.github.io/DotObjectArray/
+*/
+
+/**
+*  Stores a BeLoader instance real time progress
+*
+*  @typedef {DotObjectArray}  BeloaderProgress
+*/
+
+import &apos;es6-promise/auto&apos;;
+import ObjectArray from &apos;dot-object-array&apos;;
+import QueueItem from &apos;queueitem&apos;;
+
+/**
+*  Highly customizable and lightweight assets loader based on
+*  dynamic imports with splash screen, animated blocks and more
+*
+*  You can create as many loaders instance as needed. Between one instance, you can access
+*  specific loaders or functionnalities and order loading sequence with the use
+*  of defer or awaiting options, see {@link Beloader#add}.
+*
+*  @version 1.0.0
+*  @since 1.0.0
+*  @author Liqueur de Toile &lt;contact@liqueurdetoile.com&gt;
+*  @license AGPL-3.0-only
+*
+*  @example
+*  var loader = new Beloader();
+*
+*  // Display a text only when font is ready to avoit FOUT
+*  // It relies on webfontloader
+*  loader.fetch(&apos;font&apos;, {
+*    webfont: {
+*      google: {
+*        families: [&apos;Droid Sans&apos;, &apos;Droid Serif&apos;]
+*      }
+*    }
+*  }).then(function() {
+*    document.body.innerHTML += &apos;&lt;div style=&quot;font-family:\&apos;Droid Sans\&apos;&quot;&gt;Fixture&lt;/div&gt;&apos;;
+*  });
+*
+*  // ********************
+*  // Load external libraries and only run custom script when they&apos;re loaded
+*  // *********************
+*
+*  // Example with defer
+*  // Not the best use case because the two external libraries don&apos;t depend on each other
+*  // Lodash loading will not resolve until elementify resolved
+*  loader.fetch(&apos;script&apos;, {
+*    url: &apos;https://cdn.jsdelivr.net/npm/elementify@latest&apos;,
+*    defer: true;
+*  });
+*
+*  loader.fetch(&apos;script&apos;, {
+*    url: &apos;https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.5/lodash.min.js&apos;,
+*    defer: true;
+*  });
+*
+*  loader.fetch(&apos;script&apos;, {
+*   url: &apos;myscript&apos;,
+*   defer: true
+*  });
+*
+*  // Example with await
+*  // More suitable to optimize loading
+*  loader.fetch(&apos;script&apos;, {
+*   url: &apos;myscript&apos;,
+*   awaiting: [&apos;elementify&apos;, &apos;lodash&apos;]
+*  });
+*
+*  loader.fetch(&apos;script&apos;, {
+*    id: &apos;elementify&apos;,
+*    url: &apos;https://cdn.jsdelivr.net/npm/elementify@latest&apos;
+*  });
+*
+*  loader.fetch(&apos;script&apos;, {
+*    id: &apos;lodash&apos;,
+*    url: &apos;https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.5/lodash.min.js&apos;
+*  });
+*
+*/
+export class Beloader {
+  /**
+  *  Beloader constructor
+  *
+  *  @version 1.0.0
+  *  @since 1.0.0
+  *  @author Liqueur de Toile &lt;contact@liqueurdetoile.com&gt;
+  *
+  *  @returns {Beloader} Beloader instance
+  */
+  constructor(options = {}) {
+    /**
+    *  List of queued items in Beloader instance
+    *
+    *  @since 1.0.0
+    *  @type {Array}
+    *
+    */
+    this._items = [];
+
+    /**
+    *  List of named queued items in Beloader instance
+    *
+    *  @since 1.0.0
+    *  @type {Object}
+    */
+    this._awaitables = {};
+
+    /**
+    *  Options for the Beloader instance. See {@link Beloader#constructor}
+    *
+    *  @since 1.0.0
+    *  @type {DotObjectArray}
+    */
+    this.options = new ObjectArray(options);
+
+    /**
+    *  Progress statistics for the Beloader instance.
+    *
+    *  @since 1.0.0
+    *  @type {BeloaderProgress}
+    */
+    this.progress = new ObjectArray({
+      items: {
+        total: 0,
+        waiting: 0,
+        pending: 0,
+        processed: 0,
+        loaded: 0,
+        error: 0,
+        abort: 0,
+        timeout: 0,
+        ready: 0
+      },
+      loading: {
+        complete: 0,
+        elapsed: 0,
+        loaded: 0,
+        rate: 0
+      }
+    });
+  }
+
+  /**
+  *  Add an item to the loading queue and return a promise
+  *
+  *  An item is resolved (or failed) under several conditions :
+  *  - Item have been loaded
+  *  - Item is ready (webfontloader for instance)
+  *  - If deferred, all previously defferred items in the queue are resolved
+  *  - If awaiting items, all required items are resolved
+  *
+  *  Supported types relies on loaders that may accept/require specific options :
+  *  - `font`, `webfont` : {@link FontLoader}
+  *  - `css`, `style`, `styles`, `stylesheet` : {@link StylesheetLoader}
+  *  - `js`, `javascript` : {@link ScriptLoader}
+  *
+  *  @version 1.0.0
+  *  @since 1.0.0
+  *  @author Liqueur de Toile &lt;contact@liqueurdetoile.com&gt;
+  *
+  *  @param {!String} type  Type of item to load (see above)
+  *
+  *  @param {Object|DotObjectArray} [options] Options (see below)
+  *
+  *  @param {Boolean} [options.async=true]
+  *  __Async / Sync mode__
+  *
+  *  If set to `true`, Beloader will try to load asset asynchronously.
+  *
+  *  @param {Boolean}  [options.fallbackSync=true]
+  *  __Fallback when async loading fails__
+  *
+  *  If async loading failed, Beloader will try
+  *  to load asset synchronously if this mode is available in the used loader.
+  *
+  *  It can be useful when dealing with CORS issues.
+  *
+  *
+  *  @param {String} [options.id]
+  *  __ID for naming the item__
+  *
+  *  It can then be used with the awaiting option (see below).
+  *
+  *  @param {String|Array} [options.awaiting]
+  *  __Dependency ID or array of dependencies IDs__
+  *
+  *  This loading mode forces Beloader to resolve items only
+  *
+  *  The item will not be resolved until each declared dependency is previously resolved.
+  *
+  *  _You must take care of avoiding any circular dependency that may lead to
+  *  a never resolved item. Beloader doesn&apos;t check ID&apos;s validity. A typo error may also
+  *  lead to a never resolved item._
+  *
+  *  @param {Boolean} [options.defer=false]
+  *  __Defer loading mode__
+  *
+  *  This mode forces Beloader to resolve deferred items in the same order that they have
+  *  been added to the queue. It is possible to mix loading modes in a same queue.
+  *
+  *  If `true`, Beloader will resolve the item only when previous
+  *  declared items with `defer` option set to true are resolved
+  *
+  *  @param {Object}  [options.xhr]
+  *  __XHR options__
+  *
+  *  See {@link AbstractLoader#async}
+  *
+  *  @param {Function|Object} [options.loader]
+  *  __Custom loader or loader(s) override__
+  *
+  *  When using this option with a custom type, Beloader will run the provided
+  *  callback and pass the QueueItem and options as parameters (see {@link QueueItem#constructor}).
+  *
+  *  When using this option with a registered type, Beloader will look for a callback in
+  *  `options.loader.async` to override async loader
+  *  (see {@link AbstractLoader#async}) and/or `options.loader.sync` to override
+  *  sync loader (see {@link AbstractLoader#sync}).
+  *
+  *  Provided callbacks must return a Promise and, optionnaly, trigger events at item level
+  *
+  *  @return {QueueItem} Item queued
+  */
+  fetch(type, options = {}) {
+    let item;
+
+    options = new ObjectArray(options);
+    options.define(&apos;async&apos;, true);
+    options.define(&apos;defer&apos;, false);
+    options.define(&apos;fallbackSync&apos;, true);
+
+    item = new QueueItem(type, this, options);
+    this._items.push(item);
+    if (options.data.id) this._awaitables[options.data.id] = false;
+    this.fire(&apos;itemAdded&apos;, item);
+
+    this.progress.push(&apos;items.total&apos;, this._items.length);
+    this.progress.push(&apos;items.waiting&apos;, this.progress.pull(&apos;items.waiting&apos;) + 1);
+
+    return item;
+  }
+
+  fetchAll(items) {
+    let queuedItems = [];
+    let promises = [];
+
+    items = new ObjectArray(items);
+    items.forEach(function (options, type) {
+      let item = this.fetch(type, options);
+
+      queuedItems.push(item);
+      promises.push(item.promise);
+    }.bind(this));
+
+    queuedItems.promise = Promise.all(promises);
+    return queuedItems;
+  }
+
+  fire(eventName, item, event = null) {
+    let cb, eventCallbackName = &apos;on&apos; + eventName;
+
+    item = item || this;
+    // Private callbacks
+    if (this[eventCallbackName] instanceof Function) this[eventCallbackName].call(this, item, event);
+    // User-defined callbacks
+    if ((cb = this.options.pull(&apos;on.&apos; + eventName)) instanceof Function) cb.call(this, item, event);
+    // Plugins bubbling (plugin context)
+    if (this.options.has(&apos;plugins&apos;)) {
+      this.options.forEach(function (plugin) {
+        plugin.fire.call(plugin, eventName, item, event);
+      });
+    }
+  }
+
+  onloadstart(item) {
+    if (!this.progress.has(&apos;loading.start&apos;)) {
+      this.fire(&apos;beforeprocess&apos;, this);
+      this.progress.push(&apos;loading.start&apos;, +new Date());
+    }
+    this.progress.data.items.waiting -= 1;
+    this.progress.data.items.pending += 1;
+  }
+
+  onprogress(item) {
+    this._updateProgress();
+  }
+
+  onload() {
+    this.progress.data.items.loaded += 1;
+  }
+
+  onerror(item) {
+    this.progress.data.items.error += 1;
+  }
+
+  onabort(item) {
+    this.progress.data.items.abort += 1;
+  }
+
+  ontimeout(item) {
+    this.progress.data.items.timeout += 1;
+  }
+
+  onloadend() {
+    let previousDeferResolved = true;
+
+    // Resolve item or defer resolving
+    this._items.forEach(item =&gt; {
+      // Resolvable except if deferred and previous deffered not solved
+      let resolvable = item.defer ? previousDeferResolved : true;
+
+      // Check dependencies and update resolvable if dependencies not loaded
+      if (item.awaiting) {
+        item.awaiting.forEach(function (dependency) {
+          if (!this._awaitables[dependency]) resolvable = false;
+        }.bind(this));
+      }
+
+      // Resolve item
+      if (item.state.processed &amp;&amp; !item.state.resolved &amp;&amp; resolvable) {
+        // Update progress
+        this.progress.data.items.pending -= 1;
+        this.progress.data.items.processed += 1;
+        this._updateProgress();
+        item.state.resolved = true;
+        if (item.state.loaded) {
+          item._resolve(item);
+          item.fire.call(item, &apos;ready&apos;);
+          item.state.ready = true;
+          this.progress.data.items.ready += 1;
+        } else {
+          item._reject(item);
+        }
+      }
+
+      // Update previous defer
+      if (item.defer &amp;&amp; !item.state.processed) previousDeferResolved = false;
+    });
+
+    // After event
+    if (this.progress.data.items.processed === this.progress.data.items.total) {
+      this.fire(&apos;afterprocess&apos;, this);
+      this.progress.push(&apos;loading.end&apos;, +new Date());
+    }
+  }
+
+  _updateProgress() {
+    let loaded = 0, total = 0, elapsed;
+
+    this.progress.push(&apos;loading.end&apos;, +new Date());
+    elapsed = this.progress.data.loading.end - this.progress.data.loading.start;
+    this._items.forEach(function (item) {
+      loaded += item.progress.data.loaded;
+      total += item.progress.data.total;
+    });
+
+    this.progress.push(&apos;loading.elapsed&apos;, elapsed); // milliseconds
+    this.progress.push(&apos;loading.loaded&apos;, loaded); // Bytes
+    this.progress.push(&apos;loading.rate&apos;, loaded / elapsed * 1000); // Bytes/s
+    if (total) {
+      this.progress.push(&apos;loading.total&apos;, total); // Bytes
+      this.progress.push(&apos;loading.complete&apos;, loaded / total * 100); // Bytes
+    }
+  }
+}
+
+export default Beloader;
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.0.4)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

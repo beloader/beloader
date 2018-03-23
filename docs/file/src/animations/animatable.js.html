@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../">
+  <title data-ice="title">src/animations/animatable.js | DotObjectArray | Implements array-like methods for Object with support for dotted notation keys</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<link rel="stylesheet" href="./inject/css/0-styles.css"><script src="./inject/script/0-docs.js"></script><meta name="description" content="Highly customizable and lightweight loader based on dynamic imports with splash screen, animated blocks and more"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="DotObjectArray | Implements array-like methods for Object with support for dotted notation keys"><meta property="twitter:description" content="Highly customizable and lightweight loader based on dynamic imports with splash screen, animated blocks and more"></head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./" style="display: flex; align-items: center;"><img src="./image/brand_logo.png" style="width:34px;"></a>
+  <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  <a href="test.html" data-ice="testLink">Test</a>
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+<a style="position:relative; top:3px;" href="https://github.com/liqueurdetoile/splash-loader-js.git"><img width="20px" src="./image/github.png"></a></header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/beloader.js~BeLoader.html">BeLoader</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/queueitem.js~QueueItem.html">QueueItem</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#animations">animations</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animations/animatable.js~Animatable.html">Animatable</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#animations-backgroundcolor">animations/backgroundColor</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animations/backgroundColor/index.js~BackgroundColor.html">BackgroundColor</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#animations-threedotsbouncing">animations/threeDotsBouncing</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animations/threeDotsBouncing/index.js~ThreeDotsBouncing.html">ThreeDotsBouncing</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#core">core</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/core/abstractloader.js~AbstractLoader.html">AbstractLoader</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#layouts">layouts</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/layouts/modal.js~Splash.html">Splash</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#loaders">loaders</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/loaders/fontloader.js~FontLoader.html">FontLoader</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/loaders/scriptloader.js~ScriptLoader.html">ScriptLoader</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/loaders/stylesheetloader.js~StylesheetLoader.html">StylesheetLoader</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/animations/animatable.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import ObjectArray from &apos;dot-object-array&apos;;
+import uniqid from &apos;uniqid&apos;;
+
+export default class Animatable {
+  constructor(options = {}) {
+    this.id = uniqid.time(&apos;animation-&apos;);
+    this.options = new ObjectArray(options);
+    this.animation = undefined;
+  }
+
+  checkOpts(opts) {
+    if (typeof opts === &apos;string&apos;) opts = [opts];
+    opts.forEach(p =&gt; {
+      if (!this.options.has(p)) throw new TypeError(`Missing option ${p} for animation`);
+    });
+  }
+}
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.0.4)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>
