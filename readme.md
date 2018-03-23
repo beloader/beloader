@@ -19,3 +19,13 @@ Beloader is a lightweight asset loader library. It provides simple means to trig
 
 It particularly shines as a front-end loader. Its fine-grained event management and simple interface for plugins
 let anyone extends it with ease to own needs.
+
+## Why Beloader ?
+
+
+## Features
+
+
+## Installation, how-to and API reference
+You can access [Beloader manual](https://liqueurdetoile.github.io/beloader/manual/index.html) or [API reference](https://liqueurdetoile.github.io/beloader/identifiers.html)
+

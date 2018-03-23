@@ -9,7 +9,7 @@
   "scripts": {
     "build": "webpack --config webpack.conf/build.js -p",
     "dev": "webpack --progress --colors --watch --config webpack.conf/dev.js",
-    "test": "./node_modules/.bin/karma start --single-run --browsers PhantomJS && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
+    "test": "./node_modules/.bin/karma start --single-run --browsers ChromeHeadless && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
     "test:dry": "./node_modules/.bin/karma start --single-run --browsers ChromeHeadless",
     "test:dev": "karma start --browsers ChromeHeadless",
     "docs": "./node_modules/.bin/esdoc",

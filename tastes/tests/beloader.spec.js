@@ -16,6 +16,8 @@ describe('Constructor', function () {
 *  @test {Beloader#fetch}
 */
 describe('Fetching an item', function () {
+  this.timeout(5000);
+
   it('should fetch css', function () {
     var loader = new Beloader();
     var item = loader.fetch('css', {url: 'https://fonts.googleapis.com/css?family=Poppins:900'});
@@ -65,6 +67,8 @@ describe('Fetching an item', function () {
 });
 
 describe('Fetching and defer items', function () {
+  this.timeout(5000);
+
   it('should defer loading', function () {
     var spy1 = sinon.spy();
     var spy2 = sinon.spy();
@@ -96,6 +100,8 @@ describe('Fetching and defer items', function () {
 });
 
 describe('Fetching and awaiting dependencies', function () {
+  this.timeout(5000);
+
   it('should await dependencies', function () {
     var spy1 = sinon.spy();
     var spy2 = sinon.spy();
@@ -109,34 +115,22 @@ describe('Fetching and awaiting dependencies', function () {
         google: {
           families: ['Droid Sans', 'Droid Serif']
         }
-      },
-      on: {
-        loadend: () => console.log('loadend : font')
       }
     }).promise.then(() => {
-      console.log('ready: font');
       spy2();
     });
 
     loader.fetch('script', {
       id: 'jquery',
-      url: 'https://code.jquery.com/jquery-3.3.1.js',
-      on: {
-        loadend: () => console.log('loadend : jquery')
-      }
+      url: 'https://code.jquery.com/jquery-3.3.1.js'
     }).promise.then(() => {
-      console.log('ready: jquery');
       spy1();
     });
 
     return loader.fetch('stylesheet', {
       url: 'https://fonts.googleapis.com/css?family=Poppins:900',
-      awaiting: ['jquery', 'font'],
-      on: {
-        loadend: () => console.log('loadend : css')
-      }
+      awaiting: ['jquery', 'font']
     }).promise.then(() => {
-      console.log('ready: css');
       spy3();
     }).then(() => {
       spy1.calledBefore(spy2).should.be.true;
