@@ -4,6 +4,9 @@ node_js:
 cache:
   directories:
     - "node_modules"
+sudo: required
+addons:
+  chrome: stable
 deploy:
   provider: script
   skip_cleanup: true
