@@ -97,43 +97,43 @@ window.esdocSearchIndex = [
   ],
   [
     "",
-    "test-file/tests/beloader.spec.js.html#lineNumber51",
+    "test-file/tests/beloader.spec.js.html#lineNumber53",
     "Fetching an item should fetch a script and fail loading with fallback to sync",
     "test"
   ],
   [
     "",
-    "test-file/tests/beloader.spec.js.html#lineNumber35",
+    "test-file/tests/beloader.spec.js.html#lineNumber37",
     "Fetching an item should fetch a script and fail loading without fallback",
     "test"
   ],
   [
     "",
-    "test-file/tests/beloader.spec.js.html#lineNumber19",
+    "test-file/tests/beloader.spec.js.html#lineNumber21",
     "Fetching an item should fetch css",
     "test"
   ],
   [
     "",
-    "test-file/tests/beloader.spec.js.html#lineNumber98",
+    "test-file/tests/beloader.spec.js.html#lineNumber102",
     "Fetching and awaiting dependencies",
     "test"
   ],
   [
     "",
-    "test-file/tests/beloader.spec.js.html#lineNumber99",
+    "test-file/tests/beloader.spec.js.html#lineNumber105",
     "Fetching and awaiting dependencies should await dependencies",
     "test"
   ],
   [
     "",
-    "test-file/tests/beloader.spec.js.html#lineNumber67",
+    "test-file/tests/beloader.spec.js.html#lineNumber69",
     "Fetching and defer items",
     "test"
   ],
   [
     "",
-    "test-file/tests/beloader.spec.js.html#lineNumber68",
+    "test-file/tests/beloader.spec.js.html#lineNumber72",
     "Fetching and defer items should defer loading",
     "test"
   ],

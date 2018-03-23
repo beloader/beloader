@@ -2,7 +2,7 @@
   "name": "beloader",
   "version": "1.0.0",
   "description": "Highly customizable and lightweight assets loader based on dynamic imports",
-  "main": "dist/animatables.min.js",
+  "main": "dist/beloader.min.js",
   "publishConfig": {
     "access": "public"
   },

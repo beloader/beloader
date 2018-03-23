@@ -65,6 +65,8 @@ describe(&apos;Constructor&apos;, function () {
 *  @test {Beloader#fetch}
 */
 describe(&apos;Fetching an item&apos;, function () {
+  this.timeout(5000);
+
   it(&apos;should fetch css&apos;, function () {
     var loader = new Beloader();
     var item = loader.fetch(&apos;css&apos;, {url: &apos;https://fonts.googleapis.com/css?family=Poppins:900&apos;});
@@ -114,6 +116,8 @@ describe(&apos;Fetching an item&apos;, function () {
 });
 
 describe(&apos;Fetching and defer items&apos;, function () {
+  this.timeout(5000);
+
   it(&apos;should defer loading&apos;, function () {
     var spy1 = sinon.spy();
     var spy2 = sinon.spy();
@@ -145,6 +149,8 @@ describe(&apos;Fetching and defer items&apos;, function () {
 });
 
 describe(&apos;Fetching and awaiting dependencies&apos;, function () {
+  this.timeout(5000);
+
   it(&apos;should await dependencies&apos;, function () {
     var spy1 = sinon.spy();
     var spy2 = sinon.spy();
@@ -158,34 +164,22 @@ describe(&apos;Fetching and awaiting dependencies&apos;, function () {
         google: {
           families: [&apos;Droid Sans&apos;, &apos;Droid Serif&apos;]
         }
-      },
-      on: {
-        loadend: () =&gt; console.log(&apos;loadend : font&apos;)
       }
     }).promise.then(() =&gt; {
-      console.log(&apos;ready: font&apos;);
       spy2();
     });
 
     loader.fetch(&apos;script&apos;, {
       id: &apos;jquery&apos;,
-      url: &apos;https://code.jquery.com/jquery-3.3.1.js&apos;,
-      on: {
-        loadend: () =&gt; console.log(&apos;loadend : jquery&apos;)
-      }
+      url: &apos;https://code.jquery.com/jquery-3.3.1.js&apos;
     }).promise.then(() =&gt; {
-      console.log(&apos;ready: jquery&apos;);
       spy1();
     });
 
     return loader.fetch(&apos;stylesheet&apos;, {
       url: &apos;https://fonts.googleapis.com/css?family=Poppins:900&apos;,
-      awaiting: [&apos;jquery&apos;, &apos;font&apos;],
-      on: {
-        loadend: () =&gt; console.log(&apos;loadend : css&apos;)
-      }
+      awaiting: [&apos;jquery&apos;, &apos;font&apos;]
     }).promise.then(() =&gt; {
-      console.log(&apos;ready: css&apos;);
       spy3();
     }).then(() =&gt; {
       spy1.calledBefore(spy2).should.be.true;

@@ -17,8 +17,9 @@
 # Beloader
 Beloader is a lightweight asset loader library. It provides simple means to trigger and monitor download of any asset (css, script, font...).
 
-It particularly shines as a front-end loader. Its fine-grained event management and simple interface for plugins
-let anyone extends it with ease to own needs.
+Its fine-grained event management and simple interface for plugins let anyone extends it with ease to own needs.
+
+It particularly shines as a front-end loader. 
 
 ## Why Beloader ?
 
@@ -28,4 +29,10 @@ let anyone extends it with ease to own needs.
 
 ## Installation, how-to and API reference
 You can access [Beloader manual](https://liqueurdetoile.github.io/beloader/manual/index.html) or [API reference](https://liqueurdetoile.github.io/beloader/identifiers.html)
+
+## Bugs and features requests
+Beloader is test-driven though it did not prevent all issues. Please report [here](https://github.com/liqueurdetoile/beloader/issues) any trouble or features request.
+
+## Want to help ?
+There is many more to do, implements features or create plugins. Don't mind to fork Beloader, tweak it and submit a pull request :wink:
 

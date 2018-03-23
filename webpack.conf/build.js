@@ -19,7 +19,7 @@ module.exports = merge(base, {
       sourceMap: false,
       output: {comments: false}
     }),
-    new BundleAnalyzerPlugin(),
+    // new BundleAnalyzerPlugin(),
     new webpack.optimize.ModuleConcatenationPlugin()
   ]
 });
