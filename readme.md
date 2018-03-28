@@ -36,7 +36,7 @@ It particularly shines as a front-end loader cause it can manage all kinds of as
 - Plugin friendly : Beloader architecture makes adding plugins a breeze
 
 ## Installation, how-to and API reference
-You can read [Beloader manual](https://liqueurdetoile.github.io/beloader/manual/index.html) or [API reference](https://liqueurdetoile.github.io/beloader/identifiers.html)
+You can read [Beloader manual](https://beloader.github.io/beloader/manual/index.html) or [API reference](https://beloader.github.io/beloader/identifiers.html)
 
 ## Bugs and features requests
 Beloader is test-driven though it did not prevent all issues. Please report [here](https://github.com/liqueurdetoile/beloader/issues) any trouble or features request.
