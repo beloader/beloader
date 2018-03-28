@@ -5,7 +5,7 @@
 [![Build Status](https://travis-ci.org/liqueurdetoile/beloader.svg?branch=master)](https://travis-ci.org/liqueurdetoile/beloader)
 [![Coverage Status](https://coveralls.io/repos/github/liqueurdetoile/beloader/badge.svg?branch=master)](https://coveralls.io/github/liqueurdetoile/beloader?branch=master)
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
-[![Documentation](https://liqueurdetoile.github.io/beloader/badge.svg)](https://liqueurdetoile.github.io/beloader/)
+[![Documentation](https://beloader.github.io/beloader/badge.svg)](https://beloader.github.io/beloader/)
 
 [![bitHound Overall Score](https://www.bithound.io/github/liqueurdetoile/beloader/badges/score.svg)](https://www.bithound.io/github/liqueurdetoile/beloader)
 [![bitHound Code](https://www.bithound.io/github/liqueurdetoile/beloader/badges/code.svg)](https://www.bithound.io/github/liqueurdetoile/beloader)
