@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../">
+  <title data-ice="title">src/loaders/ImageLoader.js | BeLoader | Highly customizable and lightweight loader based on dynamic imports with splash screen, animated blocks and more</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<link rel="stylesheet" href="./inject/css/0-styles.css"><script src="./inject/script/0-docs.js"></script><meta name="description" content="Highly customizable and lightweight assets loader based on dynamic imports"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="BeLoader | Highly customizable and lightweight loader based on dynamic imports with splash screen, animated blocks and more"><meta property="twitter:description" content="Highly customizable and lightweight assets loader based on dynamic imports"></head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./" style="display: flex; align-items: center;"><img src="./image/brand_logo.png" style="width:34px;"></a>
+  <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  <a href="test.html" data-ice="testLink">Test</a>
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+<a style="position:relative; top:3px;" href="https://github.com/beloader/beloader.git"><img width="20px" src="./image/github.png"></a></header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/beloader.js~Beloader.html">Beloader</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/queueitem.js~QueueItem.html">QueueItem</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#core">core</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/core/AbstractEventManager.js~AbstractEventManager.html">AbstractEventManager</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/core/AbstractLoader.js~AbstractLoader.html">AbstractLoader</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/core/AbstractPlugin.js~AbstractPlugin.html">AbstractPlugin</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#events">events</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/events/BeloaderEvent.js~BeloaderEvent.html">BeloaderEvent</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-abort">abort</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-afterprocess">afterprocess</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-beforeprocess">beforeprocess</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-error">error</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-load">load</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-loadend">loadend</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-loadstart">loadstart</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-loadstarted">loadstarted</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-progress">progress</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-ready">ready</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-readystatechange">readystatechange</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-timeout">timeout</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-external">E</span><span data-ice="name"><span><a href="https://developer.mozilla.org/en-US/docs/Web/API/ProgressEvent">ProgressEvent</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#loaders">loaders</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/loaders/CustomLoader.js~CustomLoader.html">CustomLoader</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/loaders/FontLoader.js~FontLoader.html">FontLoader</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/loaders/ImageLoader.js~ImageLoader.html">ImageLoader</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/loaders/JsonLoader.js~JsonLoader.html">JsonLoader</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/loaders/NoneLoader.js~AbstractLoader.html">AbstractLoader</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/loaders/PluginLoader.js~PluginLoader.html">PluginLoader</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/loaders/ScriptLoader.js~ScriptLoader.html">ScriptLoader</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/loaders/StylesheetLoader.js~StylesheetLoader.html">StylesheetLoader</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#types">types</a><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-BeloaderOptions">BeloaderOptions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-BeloaderProgress">BeloaderProgress</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-Loader">Loader</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-Plugin">Plugin</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-QueueItemOptions">QueueItemOptions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-external">E</span><span data-ice="name"><span><a href="https://liqueurdetoile.github.io/DotObjectArray/">DotObjectArray</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-external">E</span><span data-ice="name"><span><a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement">HTMLElement</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-external">E</span><span data-ice="name"><span><a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest">XMLHttpRequest</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-external">E</span><span data-ice="name"><span><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Date/now">timestamp</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/loaders/ImageLoader.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+*  @file ImageLoader.js
+*  @author Liqueur de Toile &lt;contact@liqueurdetoile.com&gt;
+*  @licence AGPL-3.0 {@link https://github.com/liqueurdetoile/beloader/blob/master/LICENSE}
+*/
+
+import AbstractLoader from &apos;core/AbstractLoader&apos;;
+
+/**
+*  If loaded async, the response will be added as a blob reference in src unless
+*  an option `base64` set to `true` is provided. In that case, the image will
+*  be parsed as a DataURI.
+*
+*  Image loader also accepts a `attributes` option to customize
+*  resulting HtmlElement.
+*
+*  The resulting HtmlElement will not be inserted in DOM but provided
+*  as a `image` property of the parent QueueItem. The property will be available
+*  as soon as loader will be available to permit DOM insertion at
+*  creation. It can be retrieved with the `loaderReady` promise exposed
+*  by QueueItem.
+*
+*  @version 1.0.0
+*  @since 1.0.0
+*  @author Liqueur de Toile &lt;contact@liqueurdetoile.com&gt;
+*  @extends {AbstractLoader}
+*
+*  @example
+*  var loader = new Beloader();
+*
+*  // Sync mode with display only when loaded
+*  var img = loader.fetch(&apos;img&apos;, {
+*    url: &apos;http://myserver.com/image.jpg&apos;,
+*    async: false,
+*    attributes : {
+*      alt: &apos;My image&apos;,
+*      width: &apos;100px&apos;,
+*      height: &apos;100px&apos;
+*    }
+*  }).then(item =&gt; {
+*    document.body.appendChild(item.image);
+*  });
+*
+*  // Async mode with display only when loaded (as a blob object)
+*  var img = loader.fetch(&apos;img&apos;, {
+*    url: &apos;http://myserver.com/image.jpg&apos;,
+*    attributes : {
+*      alt: &apos;My image&apos;,
+*      width: &apos;100px&apos;,
+*      height: &apos;100px&apos;
+*    }
+*  }).then(item =&gt; {
+*    document.body.appendChild(item.image);
+*  });
+*
+*  // Async mode with display only when loaded (as a DataURI string)
+*  var img = loader.fetch(&apos;img&apos;, {
+*    url: &apos;http://myserver.com/image.jpg&apos;,
+*    base64: true,
+*    attributes : {
+*      alt: &apos;My image&apos;,
+*      width: &apos;100px&apos;,
+*      height: &apos;100px&apos;
+*    }
+*  }).then(item =&gt; {
+*    document.body.appendChild(item.image);
+*  });
+*/
+
+export default class ImageLoader extends AbstractLoader {
+  /**
+  *  @version 1.0.0
+  *  @since 1.0.0
+  *  @author Liqueur de Toile &lt;contact@liqueurdetoile.com&gt;
+  *
+  *  @param {QueueItem} parent Calling QueueItem
+  *  @param {DotObjectArray} options Options for the loader
+  *  @throws {TypeError}  if `options.url` is not defined
+  */
+  constructor(parent, options) {
+    super(parent, options);
+    if (!options.has(&apos;url&apos;)) throw new TypeError(&apos;Beloader : image url must be defined&apos;);
+    options.define(&apos;base64&apos;, false);
+    this.options.define(&apos;attributes&apos;, {});
+    /**
+    *  Underlying node for insertion
+    *  @type {HTMLElement}
+    */
+    this._node = this.node;
+    this.parent.image = this.node;
+  }
+
+  /**
+  *  Getter that generates HTMLElement to contain image (sync or async)
+  *
+  *  @version 1.0.0
+  *  @since 1.0.0
+  *  @author Liqueur de Toile &lt;contact@liqueurdetoile.com&gt;
+  *  @type {HTMLElement} HTMLElement
+  */
+  get node() {
+    if (typeof this._node === &apos;undefined&apos;) {
+      this._node = document.createElement(&apos;img&apos;);
+      this.options.forEach(function (val, attr) {
+        this._node.setAttribute(attr, val);
+      }.bind(this), &apos;attributes&apos;);
+    }
+
+    return this._node;
+  }
+
+  /**
+  *  Load image
+  *
+  *  @version 1.0.0
+  *  @since 1.0.0
+  *  @author Liqueur de Toile &lt;contact@liqueurdetoile.com&gt;
+  *
+  *  @returns {Promise} Loading promise
+  */
+  sync() {
+    this.node.src = this.options.data.url;
+    return super.sync();
+  }
+
+  /**
+  *  Event hook to add specific Blob request headers to
+  *  XMLHttpRequest instance
+  *
+  *  @version 1.0.0
+  *  @since 1.0.0
+  *  @author Liqueur de Toile &lt;contact@liqueurdetoile.com&gt;
+  */
+  _loadstart() {
+    if (this.xhr) this.xhr.responseType = &apos;blob&apos;;
+  }
+
+  /**
+  *  Load image binary (blob) or dataUri (base64) and update src attribute
+  *
+  *  @version 1.0.0
+  *  @since 1.0.0
+  *  @author Liqueur de Toile &lt;contact@liqueurdetoile.com&gt;
+  *
+  *  @returns {Promise} Loading promise
+  */
+  async() {
+    const _this = this;
+
+    return new Promise((resolve, reject) =&gt; {
+      super.async().then(response =&gt; {
+        if (_this.options.data.base64) {
+          // Decode binary as base64
+          let reader = new window.FileReader();
+
+          reader.readAsDataURL(response);
+          reader.onload = () =&gt; {
+            _this.node.src = reader.result;
+            resolve();
+          };
+          reader.onerror = () =&gt; {
+            reject(reader.error);
+          };
+        } else { // Decode as binary blob
+          let url = window.URL || window.webkitURL;
+
+          try {
+            _this.node.src = url.createObjectURL(response);
+            resolve();
+          } catch (e) {
+            reject(e);
+          }
+        }
+      });
+    });
+  }
+}
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.0.4)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

@@ -1,0 +1,690 @@
+{
+  "type": "File",
+  "start": 0,
+  "end": 3391,
+  "loc": {
+    "start": {
+      "line": 1,
+      "column": 0
+    },
+    "end": {
+      "line": 125,
+      "column": 2
+    }
+  },
+  "program": {
+    "type": "Program",
+    "start": 0,
+    "end": 3391,
+    "loc": {
+      "start": {
+        "line": 1,
+        "column": 0
+      },
+      "end": {
+        "line": 125,
+        "column": 2
+      }
+    },
+    "sourceType": "module",
+    "body": [],
+    "directives": [],
+    "leadingComments": null,
+    "innerComments": [
+      {
+        "type": "CommentBlock",
+        "value": "*\n*  The `loadstart` event is fired :\n*  - In sync and async loading mode\n*  - Just after insertion of the requesting inline tag for sync loading\n*  - After XMLHttpRequest instance initialization but before sending request for async loading\n*  \n*  \n*  If you want to tweak XHR instance without providing a full one, you can use this callback. The\n*  XHR instance will be available as a loader property (see example).\n*  \n*  @typedef {BeloaderEvent} loadstart\n*  @property {Loader} target Loader instance\n*  \n*  @example\n*  var loader = new Beloader() ;\n*  \n*  loader.fetch('json', {\n*   url: 'http://jsonserverwithbadheaders.com/api',\n*   on: {\n*     loadstart: function(event) {\n*       // loader is available in event.target\n*       // Override the default json responseType value to prevent errors\n*       event.target.xhr.responseType = \"text\"\n*     }\n*   }\n*  }).then((item) => var myGoodJson = strangeStringProcess(item.loader.xhr.response));\n",
+        "start": 0,
+        "end": 953,
+        "loc": {
+          "start": {
+            "line": 1,
+            "column": 0
+          },
+          "end": {
+            "line": 27,
+            "column": 2
+          }
+        }
+      },
+      {
+        "type": "CommentBlock",
+        "value": "*\n*  The `loadstarted` event is fired :\n*  - Only in async mode\n*  - Just after sending the request\n*  \n*  @typedef {BeloaderEvent} loadstarted\n*  @property {Loader} target Loader instance\n",
+        "start": 955,
+        "end": 1148,
+        "loc": {
+          "start": {
+            "line": 29,
+            "column": 0
+          },
+          "end": {
+            "line": 36,
+            "column": 2
+          }
+        }
+      },
+      {
+        "type": "CommentBlock",
+        "value": "*\n*  @external {ProgressEvent} https://developer.mozilla.org/en-US/docs/Web/API/ProgressEvent\n",
+        "start": 1150,
+        "end": 1248,
+        "loc": {
+          "start": {
+            "line": 38,
+            "column": 0
+          },
+          "end": {
+            "line": 40,
+            "column": 2
+          }
+        }
+      },
+      {
+        "type": "CommentBlock",
+        "value": "*\n*  The `progress` event is fired :\n*  - Always in async mode\n*  - If available in sync mode\n*  \n*  @typedef {BeloaderEvent} progress\n*  @property {Loader} target Loader instance\n*  @property {ProgressEvent} data Native `progress` event\n",
+        "start": 1250,
+        "end": 1492,
+        "loc": {
+          "start": {
+            "line": 42,
+            "column": 0
+          },
+          "end": {
+            "line": 50,
+            "column": 2
+          }
+        }
+      },
+      {
+        "type": "CommentBlock",
+        "value": "*\n*  The `progress` event is fired only in async mode\n*  \n*  @typedef {BeloaderEvent} readystatechange\n*  @property {Loader} target Loader instance\n*  @property {XMLHttpRequest} data Loader xhr instance\n",
+        "start": 1494,
+        "end": 1701,
+        "loc": {
+          "start": {
+            "line": 52,
+            "column": 0
+          },
+          "end": {
+            "line": 58,
+            "column": 2
+          }
+        }
+      },
+      {
+        "type": "CommentBlock",
+        "value": "*\n*  The `load` event is fired :\n*  - Only if loading is succesful\n*  - Only if loader complete all its task (rendering fonts for instance)\n*  \n*  @typedef {BeloaderEvent} load\n*  @property {QueueItem} target QueueItem instance\n",
+        "start": 1703,
+        "end": 1935,
+        "loc": {
+          "start": {
+            "line": 60,
+            "column": 0
+          },
+          "end": {
+            "line": 67,
+            "column": 2
+          }
+        }
+      },
+      {
+        "type": "CommentBlock",
+        "value": "*\n*  The `error` event is fired if loading is not completed. It will be fired\n*  in case of error, abort or timeout\n*  \n*  @typedef {BeloaderEvent} error\n*  @property {QueueItem} target QueueItem instance\n*  @property {mixed}  data  Additionnal informations or native event\n",
+        "start": 1937,
+        "end": 2215,
+        "loc": {
+          "start": {
+            "line": 69,
+            "column": 0
+          },
+          "end": {
+            "line": 76,
+            "column": 2
+          }
+        }
+      },
+      {
+        "type": "CommentBlock",
+        "value": "*\n*  The `timeout` event is fired in case of timeout\n*  \n*  @typedef {BeloaderEvent} timeout\n*  @property {Loader} target Loader instance\n*  @property {Event} data Native `timeout` event\n",
+        "start": 2217,
+        "end": 2408,
+        "loc": {
+          "start": {
+            "line": 78,
+            "column": 0
+          },
+          "end": {
+            "line": 84,
+            "column": 2
+          }
+        }
+      },
+      {
+        "type": "CommentBlock",
+        "value": "*\n*  The `abort` event is fired in case of abort\n*  \n*  @typedef {BeloaderEvent} abort\n*  @property {Loader} target Loader instance\n*  @property {Event} data Native `abort` event\n",
+        "start": 2410,
+        "end": 2593,
+        "loc": {
+          "start": {
+            "line": 86,
+            "column": 0
+          },
+          "end": {
+            "line": 92,
+            "column": 2
+          }
+        }
+      },
+      {
+        "type": "CommentBlock",
+        "value": "*\n*  The `loadend event` is emitted at the very end\n*  of the loading request. It will occur whenever\n*  the loading succeeds or fails\n*  \n*  @typedef {BeloaderEvent} loadend\n*  @property {QueueItem} target QueueItem instance\n",
+        "start": 2595,
+        "end": 2825,
+        "loc": {
+          "start": {
+            "line": 94,
+            "column": 0
+          },
+          "end": {
+            "line": 101,
+            "column": 2
+          }
+        }
+      },
+      {
+        "type": "CommentBlock",
+        "value": "*\n*  The`ready` event is fired at the very end of the\n*  item initialization\n*  \n*  @typedef {BeloaderEvent} ready\n*  @property {QueueItem} target QueueItem instance\n",
+        "start": 2827,
+        "end": 2997,
+        "loc": {
+          "start": {
+            "line": 103,
+            "column": 0
+          },
+          "end": {
+            "line": 109,
+            "column": 2
+          }
+        }
+      },
+      {
+        "type": "CommentBlock",
+        "value": "*\n*  The `beforeprocess` event is fired once at the\n*  very beginning of the loading queue process\n*  \n*  @typedef {BeloaderEvent} beforeprocess\n*  @property {Beloader} target  Beloader instance\n",
+        "start": 2999,
+        "end": 3198,
+        "loc": {
+          "start": {
+            "line": 111,
+            "column": 0
+          },
+          "end": {
+            "line": 117,
+            "column": 2
+          }
+        }
+      },
+      {
+        "type": "CommentBlock",
+        "value": "*\n*  The `afterprocess` event is fired once at the\n*  very end of the loading queue process\n*  \n*  @typedef {BeloaderEvent} afterprocess\n*  @property {Beloader} target  Beloader instance\n",
+        "start": 3200,
+        "end": 3391,
+        "loc": {
+          "start": {
+            "line": 119,
+            "column": 0
+          },
+          "end": {
+            "line": 125,
+            "column": 2
+          }
+        }
+      }
+    ]
+  },
+  "comments": [
+    {
+      "type": "CommentBlock",
+      "value": "*\n*  The `loadstart` event is fired :\n*  - In sync and async loading mode\n*  - Just after insertion of the requesting inline tag for sync loading\n*  - After XMLHttpRequest instance initialization but before sending request for async loading\n*  \n*  \n*  If you want to tweak XHR instance without providing a full one, you can use this callback. The\n*  XHR instance will be available as a loader property (see example).\n*  \n*  @typedef {BeloaderEvent} loadstart\n*  @property {Loader} target Loader instance\n*  \n*  @example\n*  var loader = new Beloader() ;\n*  \n*  loader.fetch('json', {\n*   url: 'http://jsonserverwithbadheaders.com/api',\n*   on: {\n*     loadstart: function(event) {\n*       // loader is available in event.target\n*       // Override the default json responseType value to prevent errors\n*       event.target.xhr.responseType = \"text\"\n*     }\n*   }\n*  }).then((item) => var myGoodJson = strangeStringProcess(item.loader.xhr.response));\n",
+      "start": 0,
+      "end": 953,
+      "loc": {
+        "start": {
+          "line": 1,
+          "column": 0
+        },
+        "end": {
+          "line": 27,
+          "column": 2
+        }
+      }
+    },
+    {
+      "type": "CommentBlock",
+      "value": "*\n*  The `loadstarted` event is fired :\n*  - Only in async mode\n*  - Just after sending the request\n*  \n*  @typedef {BeloaderEvent} loadstarted\n*  @property {Loader} target Loader instance\n",
+      "start": 955,
+      "end": 1148,
+      "loc": {
+        "start": {
+          "line": 29,
+          "column": 0
+        },
+        "end": {
+          "line": 36,
+          "column": 2
+        }
+      }
+    },
+    {
+      "type": "CommentBlock",
+      "value": "*\n*  @external {ProgressEvent} https://developer.mozilla.org/en-US/docs/Web/API/ProgressEvent\n",
+      "start": 1150,
+      "end": 1248,
+      "loc": {
+        "start": {
+          "line": 38,
+          "column": 0
+        },
+        "end": {
+          "line": 40,
+          "column": 2
+        }
+      }
+    },
+    {
+      "type": "CommentBlock",
+      "value": "*\n*  The `progress` event is fired :\n*  - Always in async mode\n*  - If available in sync mode\n*  \n*  @typedef {BeloaderEvent} progress\n*  @property {Loader} target Loader instance\n*  @property {ProgressEvent} data Native `progress` event\n",
+      "start": 1250,
+      "end": 1492,
+      "loc": {
+        "start": {
+          "line": 42,
+          "column": 0
+        },
+        "end": {
+          "line": 50,
+          "column": 2
+        }
+      }
+    },
+    {
+      "type": "CommentBlock",
+      "value": "*\n*  The `progress` event is fired only in async mode\n*  \n*  @typedef {BeloaderEvent} readystatechange\n*  @property {Loader} target Loader instance\n*  @property {XMLHttpRequest} data Loader xhr instance\n",
+      "start": 1494,
+      "end": 1701,
+      "loc": {
+        "start": {
+          "line": 52,
+          "column": 0
+        },
+        "end": {
+          "line": 58,
+          "column": 2
+        }
+      }
+    },
+    {
+      "type": "CommentBlock",
+      "value": "*\n*  The `load` event is fired :\n*  - Only if loading is succesful\n*  - Only if loader complete all its task (rendering fonts for instance)\n*  \n*  @typedef {BeloaderEvent} load\n*  @property {QueueItem} target QueueItem instance\n",
+      "start": 1703,
+      "end": 1935,
+      "loc": {
+        "start": {
+          "line": 60,
+          "column": 0
+        },
+        "end": {
+          "line": 67,
+          "column": 2
+        }
+      }
+    },
+    {
+      "type": "CommentBlock",
+      "value": "*\n*  The `error` event is fired if loading is not completed. It will be fired\n*  in case of error, abort or timeout\n*  \n*  @typedef {BeloaderEvent} error\n*  @property {QueueItem} target QueueItem instance\n*  @property {mixed}  data  Additionnal informations or native event\n",
+      "start": 1937,
+      "end": 2215,
+      "loc": {
+        "start": {
+          "line": 69,
+          "column": 0
+        },
+        "end": {
+          "line": 76,
+          "column": 2
+        }
+      }
+    },
+    {
+      "type": "CommentBlock",
+      "value": "*\n*  The `timeout` event is fired in case of timeout\n*  \n*  @typedef {BeloaderEvent} timeout\n*  @property {Loader} target Loader instance\n*  @property {Event} data Native `timeout` event\n",
+      "start": 2217,
+      "end": 2408,
+      "loc": {
+        "start": {
+          "line": 78,
+          "column": 0
+        },
+        "end": {
+          "line": 84,
+          "column": 2
+        }
+      }
+    },
+    {
+      "type": "CommentBlock",
+      "value": "*\n*  The `abort` event is fired in case of abort\n*  \n*  @typedef {BeloaderEvent} abort\n*  @property {Loader} target Loader instance\n*  @property {Event} data Native `abort` event\n",
+      "start": 2410,
+      "end": 2593,
+      "loc": {
+        "start": {
+          "line": 86,
+          "column": 0
+        },
+        "end": {
+          "line": 92,
+          "column": 2
+        }
+      }
+    },
+    {
+      "type": "CommentBlock",
+      "value": "*\n*  The `loadend event` is emitted at the very end\n*  of the loading request. It will occur whenever\n*  the loading succeeds or fails\n*  \n*  @typedef {BeloaderEvent} loadend\n*  @property {QueueItem} target QueueItem instance\n",
+      "start": 2595,
+      "end": 2825,
+      "loc": {
+        "start": {
+          "line": 94,
+          "column": 0
+        },
+        "end": {
+          "line": 101,
+          "column": 2
+        }
+      }
+    },
+    {
+      "type": "CommentBlock",
+      "value": "*\n*  The`ready` event is fired at the very end of the\n*  item initialization\n*  \n*  @typedef {BeloaderEvent} ready\n*  @property {QueueItem} target QueueItem instance\n",
+      "start": 2827,
+      "end": 2997,
+      "loc": {
+        "start": {
+          "line": 103,
+          "column": 0
+        },
+        "end": {
+          "line": 109,
+          "column": 2
+        }
+      }
+    },
+    {
+      "type": "CommentBlock",
+      "value": "*\n*  The `beforeprocess` event is fired once at the\n*  very beginning of the loading queue process\n*  \n*  @typedef {BeloaderEvent} beforeprocess\n*  @property {Beloader} target  Beloader instance\n",
+      "start": 2999,
+      "end": 3198,
+      "loc": {
+        "start": {
+          "line": 111,
+          "column": 0
+        },
+        "end": {
+          "line": 117,
+          "column": 2
+        }
+      }
+    },
+    {
+      "type": "CommentBlock",
+      "value": "*\n*  The `afterprocess` event is fired once at the\n*  very end of the loading queue process\n*  \n*  @typedef {BeloaderEvent} afterprocess\n*  @property {Beloader} target  Beloader instance\n",
+      "start": 3200,
+      "end": 3391,
+      "loc": {
+        "start": {
+          "line": 119,
+          "column": 0
+        },
+        "end": {
+          "line": 125,
+          "column": 2
+        }
+      }
+    }
+  ],
+  "tokens": [
+    {
+      "type": "CommentBlock",
+      "value": "*\n*  The `loadstart` event is fired :\n*  - In sync and async loading mode\n*  - Just after insertion of the requesting inline tag for sync loading\n*  - After XMLHttpRequest instance initialization but before sending request for async loading\n*  \n*  \n*  If you want to tweak XHR instance without providing a full one, you can use this callback. The\n*  XHR instance will be available as a loader property (see example).\n*  \n*  @typedef {BeloaderEvent} loadstart\n*  @property {Loader} target Loader instance\n*  \n*  @example\n*  var loader = new Beloader() ;\n*  \n*  loader.fetch('json', {\n*   url: 'http://jsonserverwithbadheaders.com/api',\n*   on: {\n*     loadstart: function(event) {\n*       // loader is available in event.target\n*       // Override the default json responseType value to prevent errors\n*       event.target.xhr.responseType = \"text\"\n*     }\n*   }\n*  }).then((item) => var myGoodJson = strangeStringProcess(item.loader.xhr.response));\n",
+      "start": 0,
+      "end": 953,
+      "loc": {
+        "start": {
+          "line": 1,
+          "column": 0
+        },
+        "end": {
+          "line": 27,
+          "column": 2
+        }
+      }
+    },
+    {
+      "type": "CommentBlock",
+      "value": "*\n*  The `loadstarted` event is fired :\n*  - Only in async mode\n*  - Just after sending the request\n*  \n*  @typedef {BeloaderEvent} loadstarted\n*  @property {Loader} target Loader instance\n",
+      "start": 955,
+      "end": 1148,
+      "loc": {
+        "start": {
+          "line": 29,
+          "column": 0
+        },
+        "end": {
+          "line": 36,
+          "column": 2
+        }
+      }
+    },
+    {
+      "type": "CommentBlock",
+      "value": "*\n*  @external {ProgressEvent} https://developer.mozilla.org/en-US/docs/Web/API/ProgressEvent\n",
+      "start": 1150,
+      "end": 1248,
+      "loc": {
+        "start": {
+          "line": 38,
+          "column": 0
+        },
+        "end": {
+          "line": 40,
+          "column": 2
+        }
+      }
+    },
+    {
+      "type": "CommentBlock",
+      "value": "*\n*  The `progress` event is fired :\n*  - Always in async mode\n*  - If available in sync mode\n*  \n*  @typedef {BeloaderEvent} progress\n*  @property {Loader} target Loader instance\n*  @property {ProgressEvent} data Native `progress` event\n",
+      "start": 1250,
+      "end": 1492,
+      "loc": {
+        "start": {
+          "line": 42,
+          "column": 0
+        },
+        "end": {
+          "line": 50,
+          "column": 2
+        }
+      }
+    },
+    {
+      "type": "CommentBlock",
+      "value": "*\n*  The `progress` event is fired only in async mode\n*  \n*  @typedef {BeloaderEvent} readystatechange\n*  @property {Loader} target Loader instance\n*  @property {XMLHttpRequest} data Loader xhr instance\n",
+      "start": 1494,
+      "end": 1701,
+      "loc": {
+        "start": {
+          "line": 52,
+          "column": 0
+        },
+        "end": {
+          "line": 58,
+          "column": 2
+        }
+      }
+    },
+    {
+      "type": "CommentBlock",
+      "value": "*\n*  The `load` event is fired :\n*  - Only if loading is succesful\n*  - Only if loader complete all its task (rendering fonts for instance)\n*  \n*  @typedef {BeloaderEvent} load\n*  @property {QueueItem} target QueueItem instance\n",
+      "start": 1703,
+      "end": 1935,
+      "loc": {
+        "start": {
+          "line": 60,
+          "column": 0
+        },
+        "end": {
+          "line": 67,
+          "column": 2
+        }
+      }
+    },
+    {
+      "type": "CommentBlock",
+      "value": "*\n*  The `error` event is fired if loading is not completed. It will be fired\n*  in case of error, abort or timeout\n*  \n*  @typedef {BeloaderEvent} error\n*  @property {QueueItem} target QueueItem instance\n*  @property {mixed}  data  Additionnal informations or native event\n",
+      "start": 1937,
+      "end": 2215,
+      "loc": {
+        "start": {
+          "line": 69,
+          "column": 0
+        },
+        "end": {
+          "line": 76,
+          "column": 2
+        }
+      }
+    },
+    {
+      "type": "CommentBlock",
+      "value": "*\n*  The `timeout` event is fired in case of timeout\n*  \n*  @typedef {BeloaderEvent} timeout\n*  @property {Loader} target Loader instance\n*  @property {Event} data Native `timeout` event\n",
+      "start": 2217,
+      "end": 2408,
+      "loc": {
+        "start": {
+          "line": 78,
+          "column": 0
+        },
+        "end": {
+          "line": 84,
+          "column": 2
+        }
+      }
+    },
+    {
+      "type": "CommentBlock",
+      "value": "*\n*  The `abort` event is fired in case of abort\n*  \n*  @typedef {BeloaderEvent} abort\n*  @property {Loader} target Loader instance\n*  @property {Event} data Native `abort` event\n",
+      "start": 2410,
+      "end": 2593,
+      "loc": {
+        "start": {
+          "line": 86,
+          "column": 0
+        },
+        "end": {
+          "line": 92,
+          "column": 2
+        }
+      }
+    },
+    {
+      "type": "CommentBlock",
+      "value": "*\n*  The `loadend event` is emitted at the very end\n*  of the loading request. It will occur whenever\n*  the loading succeeds or fails\n*  \n*  @typedef {BeloaderEvent} loadend\n*  @property {QueueItem} target QueueItem instance\n",
+      "start": 2595,
+      "end": 2825,
+      "loc": {
+        "start": {
+          "line": 94,
+          "column": 0
+        },
+        "end": {
+          "line": 101,
+          "column": 2
+        }
+      }
+    },
+    {
+      "type": "CommentBlock",
+      "value": "*\n*  The`ready` event is fired at the very end of the\n*  item initialization\n*  \n*  @typedef {BeloaderEvent} ready\n*  @property {QueueItem} target QueueItem instance\n",
+      "start": 2827,
+      "end": 2997,
+      "loc": {
+        "start": {
+          "line": 103,
+          "column": 0
+        },
+        "end": {
+          "line": 109,
+          "column": 2
+        }
+      }
+    },
+    {
+      "type": "CommentBlock",
+      "value": "*\n*  The `beforeprocess` event is fired once at the\n*  very beginning of the loading queue process\n*  \n*  @typedef {BeloaderEvent} beforeprocess\n*  @property {Beloader} target  Beloader instance\n",
+      "start": 2999,
+      "end": 3198,
+      "loc": {
+        "start": {
+          "line": 111,
+          "column": 0
+        },
+        "end": {
+          "line": 117,
+          "column": 2
+        }
+      }
+    },
+    {
+      "type": "CommentBlock",
+      "value": "*\n*  The `afterprocess` event is fired once at the\n*  very end of the loading queue process\n*  \n*  @typedef {BeloaderEvent} afterprocess\n*  @property {Beloader} target  Beloader instance\n",
+      "start": 3200,
+      "end": 3391,
+      "loc": {
+        "start": {
+          "line": 119,
+          "column": 0
+        },
+        "end": {
+          "line": 125,
+          "column": 2
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "eof",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 3391,
+      "end": 3391,
+      "loc": {
+        "start": {
+          "line": 125,
+          "column": 2
+        },
+        "end": {
+          "line": 125,
+          "column": 2
+        }
+      }
+    }
+  ]
+}

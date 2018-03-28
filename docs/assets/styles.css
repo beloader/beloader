@@ -61,8 +61,8 @@
 }
 
 .content h2 {
-  margin-top: 3em;
-  font-size: 1.2em;
+  margin-top: 2em;
+  font-size: 1.4em;
   text-transform: uppercase
 }
 
@@ -137,6 +137,10 @@ h3 .right-info {
 
 .manual-toc {
   font-size:0.85em;  
+}
+
+.github-markdown ul, .github-markdown ol {
+  margin-bottom : 1.5em
 }
 
 /*! Color themes for Google Code Prettify | MIT License | github.com/jmblog/color-themes-for-google-code-prettify */

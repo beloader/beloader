@@ -9,7 +9,7 @@
   <script src="script/prettify/prettify.js"></script>
   <script src="script/manual.js"></script>
 <link rel="stylesheet" href="./inject/css/0-styles.css"><script src="./inject/script/0-docs.js"></script><meta name="description" content="Highly customizable and lightweight assets loader based on dynamic imports"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="BeLoader | Highly customizable and lightweight loader based on dynamic imports with splash screen, animated blocks and more"><meta property="twitter:description" content="Highly customizable and lightweight assets loader based on dynamic imports"></head>
-<body class="layout-container manual-root" data-ice="rootContainer">
+<body class="layout-container manual-root manual-index" data-ice="rootContainer">
 
 <header>
   <a href="./" style="display: flex; align-items: center;"><img src="./image/brand_logo.png" style="width:34px;"></a>
@@ -24,20 +24,514 @@
   </span>
     <ul class="search-result"></ul>
   </div>
-<a style="position:relative; top:3px;" href="https://github.com/liqueurdetoile/beloader.git"><img width="20px" src="./image/github.png"></a></header>
+<a style="position:relative; top:3px;" href="https://github.com/beloader/beloader.git"><img width="20px" src="./image/github.png"></a></header>
 
 <nav class="navigation" data-ice="nav"><div class="manual-toc-root">
   
 <div data-ice="manual">
     <ul class="manual-toc">
       
-    <li data-ice="manualNav" class="indent-h1" data-link="manual/index.html"><a href="manual/index.html" data-ice="link">Beloader</a></li>
+    <li data-ice="manualNav" class="indent-h1" data-link="manual/installation.html"><a href="manual/installation.html" data-ice="link">Installation</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/installation.html"><a href="manual/installation.html#as-a-module" data-ice="link">As a module</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/installation.html"><a href="manual/installation.html#in-browser" data-ice="link">In browser</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/installation.html"><a href="manual/installation.html#bundle" data-ice="link">Bundle</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/installation.html"><a href="manual/installation.html#jsdelivr" data-ice="link">JsDelivr</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/installation.html"><a href="manual/installation.html#unpkg" data-ice="link">Unpkg</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/installation.html"><a href="manual/installation.html#local-install" data-ice="link">Local install</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/installation.html"><a href="manual/installation.html#using-beloader-in-browser" data-ice="link">Using Beloader in browser</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/installation.html"><a href="manual/installation.html#browser-compatibility" data-ice="link">Browser compatibility</a></li>
+</ul>
+  </div>
+<div data-ice="manual">
+    <ul class="manual-toc">
+      
+    <li data-ice="manualNav" class="indent-h1" data-link="manual/basic.html"><a href="manual/basic.html" data-ice="link">Basic usage</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/basic.html"><a href="manual/basic.html#assets-loading" data-ice="link">Assets loading</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/basic.html"><a href="manual/basic.html#using-promises-to-perform-actions-when-assets-are-loaded" data-ice="link">Using promises to perform actions when assets are loaded</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/basic.html"><a href="manual/basic.html#defering-assets-loading" data-ice="link">Defering assets loading</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/basic.html"><a href="manual/basic.html#awaiting-dependencies" data-ice="link">Awaiting dependencies</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/basic.html"><a href="manual/basic.html#bulk-assets-loading" data-ice="link">Bulk assets loading</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/basic.html"><a href="manual/basic.html#delaying-queue-process" data-ice="link">Delaying queue process</a></li>
+</ul>
+  </div>
+<div data-ice="manual">
+    <ul class="manual-toc">
+      
+    <li data-ice="manualNav" class="indent-h1" data-link="manual/loaders.html"><a href="manual/loaders.html" data-ice="link">Loaders</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/loaders.html"><a href="manual/loaders.html#built-in-loaders" data-ice="link">Built-in loaders</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/loaders.html"><a href="manual/loaders.html#using-built-in-loaders" data-ice="link">Using built-in loaders</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/loaders.html"><a href="manual/loaders.html#script-loader" data-ice="link">Script loader</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/loaders.html"><a href="manual/loaders.html#stylesheet-loader" data-ice="link">Stylesheet loader</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/loaders.html"><a href="manual/loaders.html#font-loader" data-ice="link">Font loader</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/loaders.html"><a href="manual/loaders.html#image-loader" data-ice="link">Image loader</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/loaders.html"><a href="manual/loaders.html#json-loader" data-ice="link">JSON loader</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/loaders.html"><a href="manual/loaders.html#none-loader" data-ice="link">None loader</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/loaders.html"><a href="manual/loaders.html#plugin-loader" data-ice="link">Plugin loader</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/loaders.html"><a href="manual/loaders.html#custom-loaders" data-ice="link">Custom loaders</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/loaders.html"><a href="manual/loaders.html#tweaking-xmlhttprequest-instance" data-ice="link">Tweaking XMLHttpRequest instance</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/loaders.html"><a href="manual/loaders.html#replacing-sync-and-async-loading-engines-for-built-in-loaders" data-ice="link">Replacing sync and async loading engines for built-in loaders</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/loaders.html"><a href="manual/loaders.html#creating-custom-type-and-loader" data-ice="link">Creating custom type and loader</a></li>
+</ul>
+  </div>
+<div data-ice="manual">
+    <ul class="manual-toc">
+      
+    <li data-ice="manualNav" class="indent-h1" data-link="manual/events.html"><a href="manual/events.html" data-ice="link">Events</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/events.html"><a href="manual/events.html#registering-callbacks-to-be-run-after-of-before-built-in-callback" data-ice="link">Registering callbacks to be run after of before built-in callback</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/events.html"><a href="manual/events.html#registering-callbacks-in-options" data-ice="link">Registering callbacks in options</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/events.html"><a href="manual/events.html#registering-callbacks-externally" data-ice="link">Registering callbacks externally</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/events.html"><a href="manual/events.html#custom-events" data-ice="link">Custom events</a></li>
+</ul>
+  </div>
+<div data-ice="manual">
+    <ul class="manual-toc">
+      
+    <li data-ice="manualNav" class="indent-h1" data-link="manual/plugins.html"><a href="manual/plugins.html" data-ice="link">Plugins</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/plugins.html"><a href="manual/plugins.html#load-plugins" data-ice="link">Load plugins</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/plugins.html"><a href="manual/plugins.html#fetch-plugins" data-ice="link">Fetch plugins</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/plugins.html"><a href="manual/plugins.html#fetch-plugins-at-beloader-instance-creation" data-ice="link">Fetch plugins at Beloader instance creation</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/plugins.html"><a href="manual/plugins.html#custom-instant-plugins" data-ice="link">Custom instant plugins</a></li>
 </ul>
   </div>
 </div>
 </nav>
 
-<div class="content" data-ice="content"><div class="github-markdown" data-ice="content"><h1 id="beloader">Beloader</h1><p>Beloader is an asset loading manager.</p>
+<div class="content" data-ice="content"><div class="github-markdown">
+  <div class="manual-user-index" data-ice="manualUserIndex"><h1 id="beloader-manual">Beloader manual</h1></div>
+
+  
+
+  <div class="manual-cards">
+    
+  <div class="manual-card-wrap" data-ice="cards">
+      <div class="manual-card">
+        <div data-ice="card"><h1>Installation</h1><p>Beloader is built on UMD architecture and can be embedded as a module or standalone as browser script.</p><h2>As a module</h2><pre><code><code class="source-code prettyprint">npm install beloader</code>
+</code></pre><p>or</p><pre><code><code class="source-code prettyprint">yarn add beloader</code>
+</code></pre><p>Then simply require/import it :</p><pre><code class="lang-javascript"><code class="source-code prettyprint">import Beloader from &apos;beloader&apos;;
+const {Beloader} = require(&apos;beloader&apos;);
+const Beloader = require(&apos;beloader&apos;).default;
+const Beloader = require(&apos;beloader&apos;).Beloader;</code>
+</code></pre><p>Beloader have been built on a ECMA6 class pattern and transpiled.</p><h2>In browser</h2><p>Beloader is available as CDN external library or can easily be installed locally. The Beloader object is then accessible in the global scope.</p><h3>Bundle</h3><pre><code class="lang-html"><code class="source-code prettyprint">&lt;script type=&quot;text/javascript&quot; src=&quot;https://bundle.run/beloader@latest&quot;&gt;&lt;/script&gt;</code>
+</code></pre><h3>JsDelivr</h3><pre><code class="lang-html"><code class="source-code prettyprint">&lt;script type=&quot;text/javascript&quot; src=&quot;https://cdn.jsdelivr.net/npm/beloader@latest&quot;&gt;&lt;/script&gt;</code>
+</code></pre><h3>Unpkg</h3><pre><code class="lang-html"><code class="source-code prettyprint">&lt;script type=&quot;text/javascript&quot; src=&quot;https://unpkg.com/beloader@latest&quot;&gt;&lt;/script&gt;</code>
+</code></pre><h3>Local install</h3><p>For browser install, you can simply fetch folder <code>dist</code> in <a href="https://github.com/liqueurdetoile/beloader">this repo</a> (or clone it) and load the script :</p><pre><code class="lang-html"><code class="source-code prettyprint">&lt;script type=&quot;text/javascript&quot; src=&quot;myJsFolder/beloader/dist/beloader.min.js&quot;&gt;&lt;/script&gt;</code>
+</code></pre><h2>Using Beloader in browser</h2><p>There is two ways to embed Beloader in browser to be sure it will be available at runtime :</p><p><strong>Calling it synchronously (in &lt;HEAD&gt; or &lt;BODY&gt; but before subsequent calls)</strong></p><pre><code class="lang-html"><code class="source-code prettyprint">&lt;script type=&quot;text/javascript&quot; src=&quot;beloader.min.js&quot;&gt;&lt;/script&gt;</code>
+</code></pre><p><strong>Add a callback when loading asynchronously</strong></p><pre><code class="lang-html"><code class="source-code prettyprint">&lt;script type=&quot;text/javascript&quot; src=&quot;beloader.min.js&quot; onload=&quot;start()&quot; async&gt;&lt;/script&gt;
+&lt;!-- or --&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;beloader.min.js&quot; onload=&quot;start()&quot; defer&gt;&lt;/script&gt;
+
+&lt;script&gt;
+  function start() { //stuff here }
+&lt;/script&gt;</code>
+</code></pre><h2>Browser compatibility</h2><p>Beloader should work with no tweaks in all modern browsers and IE &gt;= 10.</p></div>
+        <a data-ice="link" href="manual/installation.html"></a>
+      </div>
+    </div>
+<div class="manual-card-wrap" data-ice="cards">
+      <div class="manual-card">
+        <div data-ice="card"><h1>Basic usage</h1><h2>Assets loading</h2><p>In most case a simple instance with no options will be enough and you can then fetch assets :</p><pre><code class="lang-javascript"><code class="source-code prettyprint">var loader = new Beloader();
+
+loader.fetch(&apos;script&apos;, &apos;https://code.jquery.com/jquery-3.3.1.js&apos;);
+loader.fetch(&apos;font&apos;, {
+  webfont: {
+    google: {
+      families: [&apos;Droid Sans&apos;, &apos;Droid Serif&apos;]
+    }
+  }
+});</code>
+</code></pre><p>With this, we&apos;re not doing far better than directly embedding a script and a link in
+HTML code, except loading is asynchronous.</p><h2>Using promises to perform actions when assets are loaded</h2><p>If you want to perform things when assets are loaded, you can use the exposed <code>promise</code> property of an item :</p><pre><code class="lang-javascript"><code class="source-code prettyprint">var loader = new Beloader();
+
+loader.fetch(&apos;script&apos;, &apos;https://cdn.jsdelivr.net/npm/elementify@latest&apos;)
+  .promise.then(function() {
+    console.log(&apos;Elementify loaded !&apos;);
+  });
+
+loader.fetch(&apos;font&apos;, {
+  webfont: {
+    google: {
+      families: [&apos;Droid Sans&apos;, &apos;Droid Serif&apos;]
+    }
+  }
+}).then(function() {
+  var div = document.createElement(&apos;div&apos;);
+
+  div.innerHTML = &apos;&lt;span style=&quot;font-family:\&apos;Droid Sans\&apos;&quot;&gt;Hello, world&lt;/span&gt;&apos;;
+  document.body.appendChild(div);
+});</code>
+</code></pre><p>You may notice that it will be way better to use <a href="https://liqueurdetoile.github.io/Elementify/">Elementify</a>
+to perform the body insertion when
+font has loaded. But, we have to make sure that Elementify has loaded <strong><em>before</em></strong> font.</p><p>The first idea may be to nest fetching and it will work but at the cost of losing
+parallels ajax loadings. Anyway, there is better solutions.</p><h3>Defering assets loading</h3><p>Beloader can resolve loadings in the same order that they have been added to the queue.</p><pre><code class="lang-javascript"><code class="source-code prettyprint">var loader = new Beloader({
+  defer: true // Change is here
+});
+
+loader.fetch(&apos;script&apos;, &apos;https://cdn.jsdelivr.net/npm/elementify@latest&apos;)
+  .promise.then(function() {
+    Elementify.load();
+  });
+
+loader.fetch(&apos;font&apos;, webfont: {
+  google: {
+    families: [&apos;Droid Sans&apos;, &apos;Droid Serif&apos;]
+  }
+}).then(function() {
+  Q(&apos;body&apos;).append(&apos;&lt;div style=&quot;font-family:\&apos;Droid Sans\&apos;&quot;&gt;Hello, world&lt;/div&gt;&apos;);
+});</code>
+</code></pre><p>In that case, Beloader will take care of waiting for Elementify request to resolve before resolving font.
+It is possible to use the defer behaviour only on a subset of fetched items
+by providing defer as an option to the <code>fetch</code> instead of as a global trigger.</p><h3>Awaiting dependencies</h3><p>In some cases, multiple dependencies can&apos;t be simply resolved with defer. Beloader
+offers an awaiting option to deal with complex patterns.</p><pre><code class="lang-javascript"><code class="source-code prettyprint">var loader = new Beloader();
+
+loader.fetch(&apos;script&apos;, {
+  id: &apos;elementify&apos;, // Change is here
+  url: &apos;https://cdn.jsdelivr.net/npm/elementify@latest&apos;
+})
+  .promise.then(function() {
+    Elementify.load();
+  });
+
+loader.fetch(&apos;script&apos;, {
+   id: &apos;lodash&apos;,
+  url: &apos;https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.5/lodash.min.js&apos;
+})
+  .promise.then(function() {
+    Elementify.load();
+  });
+
+loader.fetch(&apos;font&apos;, {
+  awaiting: [&apos;elementify&apos;,&apos;lodash&apos;] // Change is here
+  webfont: {
+    google: {
+      families: [&apos;Droid Sans&apos;, &apos;Droid Serif&apos;]
+    }
+  }
+}).then(function() {
+  Q(&apos;body&apos;).append(&apos;&lt;div style=&quot;font-family:\&apos;Droid Sans\&apos;&quot;&gt;Hello, world&lt;/div&gt;&apos;);
+});</code>
+</code></pre><h2>Bulk assets loading</h2><p>You can provide multiple assets request in a single call. Just set
+an id to each asset and swap type as an option value.</p><pre><code class="lang-javascript"><code class="source-code prettyprint">var loader = new Beloader();
+var items = {
+  elementify: {
+    type: &apos;script&apos;,
+    url: &apos;https://cdn.jsdelivr.net/npm/elementify@latest&apos;
+  },
+  lodash: {
+    type: &apos;script&apos;,
+    url: &apos;https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.5/lodash.min.js&apos;
+  },
+  font: {
+    type: &apos;font&apos;,
+    webfont: {
+      google: {
+        families: [&apos;Droid Sans&apos;, &apos;Droid Serif&apos;]
+      }
+    }
+  }
+};
+
+loader.fetchAll(items).promise.then(items =&gt; {
+  Elementify.load();
+  Q(&apos;body&apos;).append(&apos;&lt;div style=&quot;font-family:\&apos;Droid Sans\&apos;&quot;&gt;Hello, world&lt;/div&gt;&apos;);
+});</code>
+</code></pre><p>Each item is available in an array indexed in the same order that they have been declared.
+The <code>fetchAll</code> promise only resolves when all assets are loaded. If one asset is in error,
+the promise will be rejected.</p><h2>Delaying queue process</h2><p>As a default, Beloader will automatically process all fetch requests. In some cases,
+you may want to delay the process.</p><pre><code class="lang-javascript"><code class="source-code prettyprint">var loader = new Beloader({
+  autoprocess: false // Add this options
+});
+
+loader.fetch(&apos;script&apos;, {
+  id: &apos;elementify&apos;,
+  url: &apos;https://cdn.jsdelivr.net/npm/elementify@latest&apos;
+})
+  .promise.then(function() {
+    Elementify.load();
+  });
+
+loader.fetch(&apos;script&apos;, {
+  id: &apos;lodash&apos;,
+  url: &apos;https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.5/lodash.min.js&apos;
+})
+  .promise.then(function() {
+    Elementify.load();
+  });
+
+loader.fetch(&apos;font&apos;, {
+  awaiting: [&apos;elementify&apos;,&apos;lodash&apos;]
+  webfont: {
+    google: {
+      families: [&apos;Droid Sans&apos;, &apos;Droid Serif&apos;]
+    }
+  }
+}).then(function() {
+  Q(&apos;body&apos;).append(&apos;&lt;div style=&quot;font-family:\&apos;Droid Sans\&apos;&quot;&gt;Hello, world&lt;/div&gt;&apos;);
+});
+
+// Do things that take time and must be done before processing
+
+loader.process(); // Order Beloader to process the loading queue</code>
+</code></pre></div>
+        <a data-ice="link" href="manual/basic.html"></a>
+      </div>
+    </div>
+<div class="manual-card-wrap" data-ice="cards">
+      <div class="manual-card">
+        <div data-ice="card"><h1>Loaders</h1><h2>Built-in loaders</h2><h3>Using built-in loaders</h3><p>Loaders are automatically selected given the <code>type</code> parameter value
+provided to <code>fetch</code> or option provided to <code>fetchAll</code>.</p><p>See <a href="./manual/../class/src/beloader.js~Beloader.html#instance-method-fetch">API</a> for the list of loaders.</p><p>Each QueueItem instance exposes a <code>loader</code> property where the given loader instance is accessible.</p><h3>Script loader</h3><p>This loader is designed to load scripts sync or async (default).
+It is triggered when requested <code>type</code> value is set to <code>js</code>, <code>script</code>, <code>javascript</code> or <code>ecmascript</code>.</p><p>When loaded async, the script is not evaluated programmatically but inserted in a &lt;SCRIPT&gt; tag.</p><h3>Stylesheet loader</h3><p>This loader is designed to load stylesheets sync or async (default).
+It is triggered when requested <code>type</code> value is set to <code>css</code>, <code>style</code>, <code>styles</code> or <code>stylesheet</code>.</p><h3>Font loader</h3><p>This loader is designed to load fonts sync (default).
+It is triggered when requested <code>type</code> value is set to <code>font</code> or <code>webfont</code>.</p><p>The font loader relies on webfontloader api to manager font loading. It takes two steps :</p><ul>
+<li>Loading the stylesheet which describes the font</li>
+<li>Loading the font file itself</li>
+</ul><p>A font loader instance will only resolve at the very end of the process to guarantee that
+font is ready to be used without FOUT.</p><p>For more informations about webfontloader configuration, please visit <a href="https://github.com/typekit/webfontloader">their website</a>.</p><h3>Image loader</h3><p>This loader is designed to load images sync or async (default).
+It is triggered when requested <code>type</code> value is set to <code>img</code> or <code>image</code>.</p><p>The image node will be exposed as <code>image</code> property of the requested item. It has to
+be managed programmatically or with a plugin.</p><pre><code class="lang-javascript"><code class="source-code prettyprint">var loader = new Beloader({
+  cache: false
+});
+
+loader.fetch(&apos;img&apos;, {
+  url: &apos;https://upload.wikimedia.org/wikipedia/commons/d/d9/Test.png&apos;
+}).promise.then(item =&gt; {
+  document.body.appendChild(item.image);
+}).catch(item =&gt; {
+  console.log(item.error);
+});</code>
+</code></pre><h3>JSON loader</h3><p>This loader is designed to load JSON data async (only).
+It is triggered when requested <code>type</code> value is set to <code>json</code>.</p><p>JSON data is exposed as <code>response</code> property of the requested item.</p><h3>None loader</h3><p>This is a special loader only designed to produce side-effect.
+It&apos;s especially useful when you want to perform action at a given
+step of the loading queue while using the <code>awaiting</code> mode.</p><pre><code class="lang-javascript"><code class="source-code prettyprint">var loader = new Beloader();
+
+loader.fetch(&apos;none&apos;, {
+  awaiting: [&apos;asset1&apos;, &apos;asset2&apos;, &apos;asset5&apos;, &apos;asset6&apos;]
+}).then(item =&gt; {
+  // Do things when asset1, asset2, asset5 and asset6 are loaded
+  // Plugins will be available
+});
+
+loader.fetchAll({
+  &apos;asset1&apos; =&gt; {
+    type: &apos;script&apos;,
+    url: &apos;http://server.com/asset1&apos;
+  },
+  &apos;asset2&apos; =&gt; {
+    type: &apos;script&apos;,
+    url: &apos;http://server.com/asset2&apos;
+  },
+  &apos;asset3&apos; =&gt; {
+    type: &apos;css&apos;,
+    url: &apos;http://server.com/asset3&apos;
+  },
+  &apos;asset4&apos; =&gt; {
+    type: &apos;css&apos;,
+    url: &apos;http://server.com/asset4&apos;
+  },
+  &apos;asset5&apos; =&gt; {
+    type: &apos;script&apos;,
+    url: &apos;http://server.com/asset5&apos;
+  },
+  &apos;asset6&apos; =&gt; {
+    type: &apos;json&apos;,
+    url: &apos;http://server.com/asset6&apos;
+  },
+}).then(items =&gt; {
+  // Only resolved when all assets are resolved  
+});</code>
+</code></pre><h3>Plugin loader</h3><p>Another special loader designed to load Beloader plugins asynchronously from url or official repo.</p><p>See <a href="./manual/plugins.html">plugins</a> section of the manual for more informations.</p><h2>Custom loaders</h2><h3>Tweaking XMLHttpRequest instance</h3><p>In async mode, Beloader relies on a very simple XHR instance with nearly zero-configuration.</p><p>You can provide <code>xhr.method</code> to options for changing the request method option and <code>xhr.data</code> to
+provide some data to send in the request body. In the latter case, data pre-processing is up to you as
+Beloader will output raw <code>xhr.data</code> content to the request body.</p><p>If you need more fine-grained control over the XHR instance, you can do it with <code>loadstart</code> event
+callback (see <a href="./manual/events.html">Events</a> section).</p><pre><code class="lang-javascript"><code class="source-code prettyprint">var loader = new Beloader();
+
+loader.fetch({
+  &apos;type&apos;: &apos;image&apos;,
+  &apos;url&apos;: &apos;http://server.com/script.js&apos;,
+  &apos;on&apos;: {
+    &apos;loadstart&apos;: function(event) {
+      var xhr = event.target.xhr; // Target is Loader
+      // or
+      var xhr = this.loader.xhr: // Context is QueueItem
+
+      xhr.setRequestHeader(&apos;Accept&apos;, &apos;weird/mimetype&apos;);
+    }
+  }
+});</code>
+</code></pre><h3>Replacing sync and async loading engines for built-in loaders</h3><p>If needed, Beloader let you replace loading engines for built-in loader.</p><p>It can be useful if you wish to use a third party ajax query engine for instance like
+jQuery or Request. In that case, you must take care of firing intermediate events as needed.</p><p>Simply provide a new callback that returns a promise and resolve or reject it at will.</p><p>The engines can be overriden for a whole Beloader instance and/or per item added.</p><pre><code class="lang-javascript"><code class="source-code prettyprint">var sync = function() {
+  return new Promise((resolve, reject) =&gt; {
+    reject();
+  });
+}
+
+var async = function() {
+  return new Promise((resolve, reject) =&gt; {
+    resolve();
+  });
+}
+
+var loader = new Beloader({
+  loader: {
+    sync: sync // Will override all sync loader
+  }
+});
+
+loader.fetch(&apos;script&apos;, {
+  url: &apos;https://cdn.jsdelivr.net/npm/elementify@latest&apos;,
+  loader: {
+    async: async // Will override only async loader of this item
+  }
+});</code>
+</code></pre><p>The custom loader will not override data post-process for given type.</p><h3>Creating custom type and loader</h3><p>At last, Beloader let&apos;s you create your own loader for unsupported types. The callback
+must return and resolve or reject a promise. The callback is called within the Loader context.</p><pre><code class="lang-javascript"><code class="source-code prettyprint">var myLoader = function() {
+  return new Promise((resolve, reject) =&gt; {
+    // You can access QueueItem instance with this.parent
+    // You can access Beloader instance with this.parent.parent
+    // You can access plugins with this.pluginName
+    // Do things
+    if(good) resolve();
+    else reject();
+  });
+}
+
+var loader = new Beloader();
+
+loader.fetch(&apos;custom&apos;, {
+  url: &apos;https://server.com&apos;,
+  loader: myLoader
+}).then(item =&gt; console.log(&apos;Hurrah!&apos;));</code>
+</code></pre></div>
+        <a data-ice="link" href="manual/loaders.html"></a>
+      </div>
+    </div>
+<div class="manual-card-wrap" data-ice="cards">
+      <div class="manual-card">
+        <div data-ice="card"><h1>Events</h1><p>Beloader provides a full internal event system.</p><p>For list of the available built-in events, please check
+<a href="./manual/../identifiers.html#events">API</a>.</p><h2>Registering callbacks to be run after of before built-in callback</h2><p>Beloader let you define if your callback must be run <em>before</em> or <em>after</em> the
+matching built-in event.</p><p>If you provide a function named <code>pre</code>, the callback will be run <em>before</em>. If you
+provide any other named function or a closure, it will be run <em>after</em>.</p><pre><code class="lang-javascript"><code class="source-code prettyprint">var cbBefore = function pre(event) {
+  // will be run before the built-in hook
+}
+
+var cbAfter = function (event) {
+  // will be run after the built-in hook
+}</code>
+</code></pre><h2>Registering callbacks in options</h2><p>You can register callbacks when providing options to a Beloader instance or
+creating a QueueItem instance with <code>fetch</code>.</p><pre><code class="lang-javascript"><code class="source-code prettyprint">var cbBefore = function pre(event) {
+  // will be run before the built-in hook
+}
+
+var cbAfter = function (event) {
+  // will be run after the built-in hook
+}
+
+var loader = new Beloader({
+  on: {
+    // Will be fired at each item loadstart event
+    loadstarted: event =&gt; { console.log(&apos;Loading started for &apos; + event.target.parent.id) },
+    afterprocess: cbBefore // Will run before the built-in hook
+  }
+});
+
+fetch(&apos;script&apos;, {
+  id: &apos;elementify&apos;,
+  url: &apos;https://cdn.jsdelivr.net/npm/elementify@latest&apos;,
+  on: {
+    loadstarted: cbAfter // Will run after the built-in hook only for this item
+  }
+});
+
+fetch(&apos;script&apos;, {
+  id: &apos;lodash&apos;,
+  url: &apos;https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.5/lodash.min.js&apos;
+});</code>
+</code></pre><h2>Registering callbacks externally</h2><p>You can also register callbacks with the <code>on</code> method exposed by Beloader, QueueItem and each
+Loader and Plugin.</p><pre><code class="lang-javascript"><code class="source-code prettyprint">var loader = new Loader();
+
+loader.on(&apos;afterprocess&apos;, event =&gt; console.log(&apos;Over&apos;));</code>
+</code></pre><p>You can use this way with <code>autoprocess</code> option set to false to add event
+to QueueItem instances.</p><h2>Custom events</h2><p>Beloader, QueueItem and each Loader and Plugin instance exposes a <code>fire</code> method
+to trigger events firing.
+You can use it to override internal events firing or add your custom ones.</p><p>Events are only bubbling up like this :</p><ul>
+<li>Loader -&gt; QueueItem -&gt; Beloader</li>
+<li>Plugin -&gt; Beloader</li>
+</ul><p>An event fired at the Beloader level will only affect the Beloader instance.</p></div>
+        <a data-ice="link" href="manual/events.html"></a>
+      </div>
+    </div>
+<div class="manual-card-wrap" data-ice="cards">
+      <div class="manual-card">
+        <div data-ice="card"><h1>Plugins</h1><p>Plugins are very easy to implements in order to extends Beloader functionnalities and/or behaviours.</p><h2>Load plugins</h2><h3>Fetch plugins</h3><p>You can directly use the plugin loader to fetch plugins. As soon as they will be loaded, they will be available
+in Beloader, QueueItem, Loader and other Plugin instances.</p><p>If you provide only the name of the plugin, Beloader will assume that it must fetch
+it in official repo and will try to fetch the <code>beloader-pluginName</code> script.</p><pre><code class="lang-javascript"><code class="source-code prettyprint">var loader = new Beloader({
+  defer: true // will load plugins in the same order
+});
+
+loader.fetch(&apos;plugin&apos;, {
+  name: &apos;plugin&apos; // will look for beloader-plugin in official repo
+});
+
+loader.fetch(&apos;plugin&apos;, {
+  name: &apos;myplugin&apos;,
+  url: &apos;myURLforThisplugin&apos;
+});
+
+// OK, we can go thanks to defer
+loader.fetch(&apos;none&apos;).promise.then(item =&gt; {
+  plugin.doSomething();
+  myplugin.doSomething();
+});</code>
+</code></pre><p>You can use <code>awaiting</code> mode for more exotic loading patterns or fetchAll to concatenate calls to plugins.</p><h3>Fetch plugins at Beloader instance creation</h3><p>Beloader lets you define your plugins when creation an instance. In that case, you must use
+the <code>ready</code> promise property to ensure plugins have loaded before or set global <code>defer</code> option to <code>true</code></p><pre><code class="lang-javascript"><code class="source-code prettyprint">var loader = new Beloader({
+  plugins: [
+    &apos;plugin&apos;,
+    {myplugin: &apos;myURLforThisplugin&apos;}
+  ]
+});
+
+loader.ready.then(() =&gt; {
+  fetch(&apos;none&apos;).promise.then(item =&gt; {
+    plugin.doSomething();
+    myplugin.doSomething();
+  });
+});</code>
+</code></pre><h2>Custom instant plugins</h2><p>You can easily add your own plugins to a Beloader instance with the <code>pluginize</code> method. Beloader
+will wrap your code inside an <code>AbstractPlugin</code> instance so all other plugins and events methods will be available.</p><p>Beloader will also always calls the <code>init</code> function of a plugin when loaded/pluginized.
+If the custom plugin is a function, Beloader will create an instance rather than adding raw prototype. It lets
+you use the init function as a constructor. The third argument of <code>pluginize</code> will be passed
+as argument to init function <em>(and also available under <code>this.options</code> anyway)</em>.</p><p><code>init</code> is also a good place to register callbacks for events if needed.</p><pre><code class="lang-javascript"><code class="source-code prettyprint">var myPlugin1 = {
+  mystuff: function() {
+    console.log(&apos;Yuups&apos;);
+  }
+};
+
+var myPluginClass = function() {
+  this.init = function(options) {
+    this.index = options.index;
+  };
+
+  this.mystuff = function() {
+    console.log(&apos;Yuups&apos; + this.index);
+  };
+};
+
+var loader = new Beloader();
+
+loader.pluginize(&apos;p1&apos;, myPlugin1);
+loader.pluginize(&apos;p2&apos;, myPluginClass, {index: 2});
+loader.pluginize(&apos;p3&apos;, myPluginClass, {index: 3});
+
+loader.ready.then(() =&gt; {
+  fetch(&apos;none&apos;).promise.then(item =&gt; {
+    p1.mystuff(); // echo &apos;Yuups&apos;
+    p2.mystuff(); // echo &apos;Yuups2&apos;
+    p3.mystuff(); // echo &apos;Yuups3&apos;
+  });
+});</code>
+</code></pre></div>
+        <a data-ice="link" href="manual/plugins.html"></a>
+      </div>
+    </div>
+</div>
 </div>
 </div>
 

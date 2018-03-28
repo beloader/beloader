@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../">
+  <title data-ice="title">Manual | BeLoader | Highly customizable and lightweight loader based on dynamic imports with splash screen, animated blocks and more</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<link rel="stylesheet" href="./inject/css/0-styles.css"><script src="./inject/script/0-docs.js"></script><meta name="description" content="Highly customizable and lightweight assets loader based on dynamic imports"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="BeLoader | Highly customizable and lightweight loader based on dynamic imports with splash screen, animated blocks and more"><meta property="twitter:description" content="Highly customizable and lightweight assets loader based on dynamic imports"></head>
+<body class="layout-container manual-root" data-ice="rootContainer">
+
+<header>
+  <a href="./" style="display: flex; align-items: center;"><img src="./image/brand_logo.png" style="width:34px;"></a>
+  <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  <a href="test.html" data-ice="testLink">Test</a>
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+<a style="position:relative; top:3px;" href="https://github.com/beloader/beloader.git"><img width="20px" src="./image/github.png"></a></header>
+
+<nav class="navigation" data-ice="nav"><div class="manual-toc-root">
+  
+<div data-ice="manual">
+    <ul class="manual-toc">
+      
+    <li data-ice="manualNav" class="indent-h1" data-link="manual/installation.html"><a href="manual/installation.html" data-ice="link">Installation</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/installation.html"><a href="manual/installation.html#as-a-module" data-ice="link">As a module</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/installation.html"><a href="manual/installation.html#in-browser" data-ice="link">In browser</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/installation.html"><a href="manual/installation.html#bundle" data-ice="link">Bundle</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/installation.html"><a href="manual/installation.html#jsdelivr" data-ice="link">JsDelivr</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/installation.html"><a href="manual/installation.html#unpkg" data-ice="link">Unpkg</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/installation.html"><a href="manual/installation.html#local-install" data-ice="link">Local install</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/installation.html"><a href="manual/installation.html#using-beloader-in-browser" data-ice="link">Using Beloader in browser</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/installation.html"><a href="manual/installation.html#browser-compatibility" data-ice="link">Browser compatibility</a></li>
+</ul>
+  </div>
+<div data-ice="manual">
+    <ul class="manual-toc">
+      
+    <li data-ice="manualNav" class="indent-h1" data-link="manual/basic.html"><a href="manual/basic.html" data-ice="link">Basic usage</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/basic.html"><a href="manual/basic.html#assets-loading" data-ice="link">Assets loading</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/basic.html"><a href="manual/basic.html#using-promises-to-perform-actions-when-assets-are-loaded" data-ice="link">Using promises to perform actions when assets are loaded</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/basic.html"><a href="manual/basic.html#defering-assets-loading" data-ice="link">Defering assets loading</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/basic.html"><a href="manual/basic.html#awaiting-dependencies" data-ice="link">Awaiting dependencies</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/basic.html"><a href="manual/basic.html#bulk-assets-loading" data-ice="link">Bulk assets loading</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/basic.html"><a href="manual/basic.html#delaying-queue-process" data-ice="link">Delaying queue process</a></li>
+</ul>
+  </div>
+<div data-ice="manual">
+    <ul class="manual-toc">
+      
+    <li data-ice="manualNav" class="indent-h1" data-link="manual/loaders.html"><a href="manual/loaders.html" data-ice="link">Loaders</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/loaders.html"><a href="manual/loaders.html#built-in-loaders" data-ice="link">Built-in loaders</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/loaders.html"><a href="manual/loaders.html#using-built-in-loaders" data-ice="link">Using built-in loaders</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/loaders.html"><a href="manual/loaders.html#script-loader" data-ice="link">Script loader</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/loaders.html"><a href="manual/loaders.html#stylesheet-loader" data-ice="link">Stylesheet loader</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/loaders.html"><a href="manual/loaders.html#font-loader" data-ice="link">Font loader</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/loaders.html"><a href="manual/loaders.html#image-loader" data-ice="link">Image loader</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/loaders.html"><a href="manual/loaders.html#json-loader" data-ice="link">JSON loader</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/loaders.html"><a href="manual/loaders.html#none-loader" data-ice="link">None loader</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/loaders.html"><a href="manual/loaders.html#plugin-loader" data-ice="link">Plugin loader</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/loaders.html"><a href="manual/loaders.html#custom-loaders" data-ice="link">Custom loaders</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/loaders.html"><a href="manual/loaders.html#tweaking-xmlhttprequest-instance" data-ice="link">Tweaking XMLHttpRequest instance</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/loaders.html"><a href="manual/loaders.html#replacing-sync-and-async-loading-engines-for-built-in-loaders" data-ice="link">Replacing sync and async loading engines for built-in loaders</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/loaders.html"><a href="manual/loaders.html#creating-custom-type-and-loader" data-ice="link">Creating custom type and loader</a></li>
+</ul>
+  </div>
+<div data-ice="manual">
+    <ul class="manual-toc">
+      
+    <li data-ice="manualNav" class="indent-h1" data-link="manual/events.html"><a href="manual/events.html" data-ice="link">Events</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/events.html"><a href="manual/events.html#registering-callbacks-to-be-run-after-of-before-built-in-callback" data-ice="link">Registering callbacks to be run after of before built-in callback</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/events.html"><a href="manual/events.html#registering-callbacks-in-options" data-ice="link">Registering callbacks in options</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/events.html"><a href="manual/events.html#registering-callbacks-externally" data-ice="link">Registering callbacks externally</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/events.html"><a href="manual/events.html#custom-events" data-ice="link">Custom events</a></li>
+</ul>
+  </div>
+<div data-ice="manual">
+    <ul class="manual-toc">
+      
+    <li data-ice="manualNav" class="indent-h1" data-link="manual/plugins.html"><a href="manual/plugins.html" data-ice="link">Plugins</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/plugins.html"><a href="manual/plugins.html#load-plugins" data-ice="link">Load plugins</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/plugins.html"><a href="manual/plugins.html#fetch-plugins" data-ice="link">Fetch plugins</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/plugins.html"><a href="manual/plugins.html#fetch-plugins-at-beloader-instance-creation" data-ice="link">Fetch plugins at Beloader instance creation</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/plugins.html"><a href="manual/plugins.html#custom-instant-plugins" data-ice="link">Custom instant plugins</a></li>
+</ul>
+  </div>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><div class="github-markdown" data-ice="content"><h1 id="loaders">Loaders</h1><h2 id="built-in-loaders">Built-in loaders</h2><h3 id="using-built-in-loaders">Using built-in loaders</h3><p>Loaders are automatically selected given the <code>type</code> parameter value
+provided to <code>fetch</code> or option provided to <code>fetchAll</code>.</p>
+<p>See <a href="./manual/../class/src/beloader.js~Beloader.html#instance-method-fetch">API</a> for the list of loaders.</p>
+<p>Each QueueItem instance exposes a <code>loader</code> property where the given loader instance is accessible.</p>
+<h3 id="script-loader">Script loader</h3><p>This loader is designed to load scripts sync or async (default).
+It is triggered when requested <code>type</code> value is set to <code>js</code>, <code>script</code>, <code>javascript</code> or <code>ecmascript</code>.</p>
+<p>When loaded async, the script is not evaluated programmatically but inserted in a &lt;SCRIPT&gt; tag.</p>
+<h3 id="stylesheet-loader">Stylesheet loader</h3><p>This loader is designed to load stylesheets sync or async (default).
+It is triggered when requested <code>type</code> value is set to <code>css</code>, <code>style</code>, <code>styles</code> or <code>stylesheet</code>.</p>
+<h3 id="font-loader">Font loader</h3><p>This loader is designed to load fonts sync (default).
+It is triggered when requested <code>type</code> value is set to <code>font</code> or <code>webfont</code>.</p>
+<p>The font loader relies on webfontloader api to manager font loading. It takes two steps :</p>
+<ul>
+<li>Loading the stylesheet which describes the font</li>
+<li>Loading the font file itself</li>
+</ul>
+<p>A font loader instance will only resolve at the very end of the process to guarantee that
+font is ready to be used without FOUT.</p>
+<p>For more informations about webfontloader configuration, please visit <a href="https://github.com/typekit/webfontloader">their website</a>.</p>
+<h3 id="image-loader">Image loader</h3><p>This loader is designed to load images sync or async (default).
+It is triggered when requested <code>type</code> value is set to <code>img</code> or <code>image</code>.</p>
+<p>The image node will be exposed as <code>image</code> property of the requested item. It has to
+be managed programmatically or with a plugin.</p>
+<pre><code class="lang-javascript"><code class="source-code prettyprint">var loader = new Beloader({
+  cache: false
+});
+
+loader.fetch(&apos;img&apos;, {
+  url: &apos;https://upload.wikimedia.org/wikipedia/commons/d/d9/Test.png&apos;
+}).promise.then(item =&gt; {
+  document.body.appendChild(item.image);
+}).catch(item =&gt; {
+  console.log(item.error);
+});</code>
+</code></pre>
+<h3 id="json-loader">JSON loader</h3><p>This loader is designed to load JSON data async (only).
+It is triggered when requested <code>type</code> value is set to <code>json</code>.</p>
+<p>JSON data is exposed as <code>response</code> property of the requested item.</p>
+<h3 id="none-loader">None loader</h3><p>This is a special loader only designed to produce side-effect.
+It&apos;s especially useful when you want to perform action at a given
+step of the loading queue while using the <code>awaiting</code> mode.</p>
+<pre><code class="lang-javascript"><code class="source-code prettyprint">var loader = new Beloader();
+
+loader.fetch(&apos;none&apos;, {
+  awaiting: [&apos;asset1&apos;, &apos;asset2&apos;, &apos;asset5&apos;, &apos;asset6&apos;]
+}).then(item =&gt; {
+  // Do things when asset1, asset2, asset5 and asset6 are loaded
+  // Plugins will be available
+});
+
+loader.fetchAll({
+  &apos;asset1&apos; =&gt; {
+    type: &apos;script&apos;,
+    url: &apos;http://server.com/asset1&apos;
+  },
+  &apos;asset2&apos; =&gt; {
+    type: &apos;script&apos;,
+    url: &apos;http://server.com/asset2&apos;
+  },
+  &apos;asset3&apos; =&gt; {
+    type: &apos;css&apos;,
+    url: &apos;http://server.com/asset3&apos;
+  },
+  &apos;asset4&apos; =&gt; {
+    type: &apos;css&apos;,
+    url: &apos;http://server.com/asset4&apos;
+  },
+  &apos;asset5&apos; =&gt; {
+    type: &apos;script&apos;,
+    url: &apos;http://server.com/asset5&apos;
+  },
+  &apos;asset6&apos; =&gt; {
+    type: &apos;json&apos;,
+    url: &apos;http://server.com/asset6&apos;
+  },
+}).then(items =&gt; {
+  // Only resolved when all assets are resolved  
+});</code>
+</code></pre>
+<h3 id="plugin-loader">Plugin loader</h3><p>Another special loader designed to load Beloader plugins asynchronously from url or official repo.</p>
+<p>See <a href="./manual/plugins.html">plugins</a> section of the manual for more informations.</p>
+<h2 id="custom-loaders">Custom loaders</h2><h3 id="tweaking-xmlhttprequest-instance">Tweaking XMLHttpRequest instance</h3><p>In async mode, Beloader relies on a very simple XHR instance with nearly zero-configuration.</p>
+<p>You can provide <code>xhr.method</code> to options for changing the request method option and <code>xhr.data</code> to
+provide some data to send in the request body. In the latter case, data pre-processing is up to you as
+Beloader will output raw <code>xhr.data</code> content to the request body.</p>
+<p>If you need more fine-grained control over the XHR instance, you can do it with <code>loadstart</code> event
+callback (see <a href="./manual/events.html">Events</a> section).</p>
+<pre><code class="lang-javascript"><code class="source-code prettyprint">var loader = new Beloader();
+
+loader.fetch({
+  &apos;type&apos;: &apos;image&apos;,
+  &apos;url&apos;: &apos;http://server.com/script.js&apos;,
+  &apos;on&apos;: {
+    &apos;loadstart&apos;: function(event) {
+      var xhr = event.target.xhr; // Target is Loader
+      // or
+      var xhr = this.loader.xhr: // Context is QueueItem
+
+      xhr.setRequestHeader(&apos;Accept&apos;, &apos;weird/mimetype&apos;);
+    }
+  }
+});</code>
+</code></pre>
+<h3 id="replacing-sync-and-async-loading-engines-for-built-in-loaders">Replacing sync and async loading engines for built-in loaders</h3><p>If needed, Beloader let you replace loading engines for built-in loader.</p>
+<p>It can be useful if you wish to use a third party ajax query engine for instance like
+jQuery or Request. In that case, you must take care of firing intermediate events as needed.</p>
+<p>Simply provide a new callback that returns a promise and resolve or reject it at will.</p>
+<p>The engines can be overriden for a whole Beloader instance and/or per item added.</p>
+<pre><code class="lang-javascript"><code class="source-code prettyprint">var sync = function() {
+  return new Promise((resolve, reject) =&gt; {
+    reject();
+  });
+}
+
+var async = function() {
+  return new Promise((resolve, reject) =&gt; {
+    resolve();
+  });
+}
+
+var loader = new Beloader({
+  loader: {
+    sync: sync // Will override all sync loader
+  }
+});
+
+loader.fetch(&apos;script&apos;, {
+  url: &apos;https://cdn.jsdelivr.net/npm/elementify@latest&apos;,
+  loader: {
+    async: async // Will override only async loader of this item
+  }
+});</code>
+</code></pre>
+<p>The custom loader will not override data post-process for given type.</p>
+<h3 id="creating-custom-type-and-loader">Creating custom type and loader</h3><p>At last, Beloader let&apos;s you create your own loader for unsupported types. The callback
+must return and resolve or reject a promise. The callback is called within the Loader context.</p>
+<pre><code class="lang-javascript"><code class="source-code prettyprint">var myLoader = function() {
+  return new Promise((resolve, reject) =&gt; {
+    // You can access QueueItem instance with this.parent
+    // You can access Beloader instance with this.parent.parent
+    // You can access plugins with this.pluginName
+    // Do things
+    if(good) resolve();
+    else reject();
+  });
+}
+
+var loader = new Beloader();
+
+loader.fetch(&apos;custom&apos;, {
+  url: &apos;https://server.com&apos;,
+  loader: myLoader
+}).then(item =&gt; console.log(&apos;Hurrah!&apos;));</code>
+</code></pre>
+</div>
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.0.4)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

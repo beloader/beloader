@@ -1,35 +1,28 @@
 /**
 *  @file beloader.js
 *  @author Liqueur de Toile <contact@liqueurdetoile.com>
-*  @licence AGPL-3.0-only {@link https://spdx.org/licenses/AGPL-3.0-only.html}
+*  @licence AGPL-3.0 {@link https://github.com/liqueurdetoile/beloader/blob/master/LICENSE}
 */
 
-/**
-*  @external {DotObjectArray} https://liqueurdetoile.github.io/DotObjectArray/
-*/
-
-/**
-*  Stores a BeLoader instance real time progress
-*
-*  @typedef {DotObjectArray}  BeloaderProgress
-*/
-
+import 'core/publicpath';
 import 'es6-promise/auto';
 import ObjectArray from 'dot-object-array';
+import uniqid from 'uniqid';
+import AbstractEventManager from 'core/AbstractEventManager';
+import AbstractPlugin from 'core/AbstractPlugin';
 import QueueItem from 'queueitem';
 
 /**
-*  Highly customizable and lightweight assets loader based on
-*  dynamic imports with splash screen, animated blocks and more
+*  Highly customizable and lightweight assets loader
 *
-*  You can create as many loaders instance as needed. Between one instance, you can access
+*  You can create as many loaders instance as needed. Inside one instance, you can access
 *  specific loaders or functionnalities and order loading sequence with the use
-*  of defer or awaiting options, see {@link Beloader#add}.
+*  of defer or awaiting options, see {@link Beloader#fetch}.
 *
 *  @version 1.0.0
 *  @since 1.0.0
 *  @author Liqueur de Toile <contact@liqueurdetoile.com>
-*  @license AGPL-3.0-only
+*  @extends {AbstractEventManager}
 *
 *  @example
 *  var loader = new Beloader();
@@ -68,7 +61,7 @@ import QueueItem from 'queueitem';
 *   defer: true
 *  });
 *
-*  // Example with await
+*  // Example with awaiting
 *  // More suitable to optimize loading
 *  loader.fetch('script', {
 *   url: 'myscript',
@@ -86,7 +79,7 @@ import QueueItem from 'queueitem';
 *  });
 *
 */
-export class Beloader {
+export default class Beloader extends AbstractEventManager {
   /**
   *  Beloader constructor
   *
@@ -94,9 +87,14 @@ export class Beloader {
   *  @since 1.0.0
   *  @author Liqueur de Toile <contact@liqueurdetoile.com>
   *
+  *  @param {BeloaderOptions}  options Global options for Beloader instance
   *  @returns {Beloader} Beloader instance
   */
   constructor(options = {}) {
+
+    super(options.on);
+    delete options.on;
+
     /**
     *  List of queued items in Beloader instance
     *
@@ -115,12 +113,59 @@ export class Beloader {
     this._awaitables = {};
 
     /**
+    *  Active Plugins list
+    *
+    *  @since 1.0.0
+    *  @type {DotObjectArray}
+    */
+    this._plugins = new ObjectArray();
+
+    // Import plugins set in options
+    if (options.plugins) {
+      let plugins = {};
+
+      if (typeof options.plugins === 'string') options.plugins = [options.plugins];
+
+      if (options.plugins instanceof Array) {
+        options.plugins.forEach(plugin => {
+          if (typeof plugin === 'string') {
+            plugins[plugin] = {
+              type: 'plugin',
+              name: plugin
+            };
+          } else {
+            if (plugin.name) {
+              plugins[plugin.name] = {
+                type: 'plugin',
+                name: plugin.name,
+                url: plugin.url
+              };
+            } else {
+              plugins[Object.keys(plugin)[0]] = {
+                type: 'plugin',
+                name: Object.keys(plugin)[0],
+                url: Object.values(plugin)[0]
+              };
+            }
+          }
+        });
+
+        this.ready = this.fetchAll(plugins);
+      } else throw new TypeError('Beloader: Plugins list must be an array');
+    }
+
+    /**
     *  Options for the Beloader instance. See {@link Beloader#constructor}
     *
     *  @since 1.0.0
     *  @type {DotObjectArray}
     */
     this.options = new ObjectArray(options);
+    this.options.define('autoprocess', true);
+    this.options.define('async', true);
+    this.options.define('defer', false);
+    this.options.define('cache', true);
+    this.options.define('fallbackSync', true);
 
     /**
     *  Progress statistics for the Beloader instance.
@@ -159,89 +204,50 @@ export class Beloader {
   *  - If awaiting items, all required items are resolved
   *
   *  Supported types relies on loaders that may accept/require specific options :
-  *  - `font`, `webfont` : {@link FontLoader}
+  *  - `font`, `webfont` : {@link FontLoader} - Async only
   *  - `css`, `style`, `styles`, `stylesheet` : {@link StylesheetLoader}
-  *  - `js`, `javascript` : {@link ScriptLoader}
+  *  - `js`, `script`, `javascript`, `ecmascript` : {@link ScriptLoader}
+  *  - `json` : {@link JsonLoader} - Async only
+  *  - `img`, `image` : {@link ImageLoader}
+  *  - `plugin` : {@link PluginLoader}
+  *  - `none` : Beloader will simulate
+  *  a loading sequence that is ever successfull. It can be used
+  *  with awaiting to create side-effect and trigger callback
+  *
+  *  Any other value will throw an error, except if a custom loader callback
+  *  is provided in `options.loader`.
   *
   *  @version 1.0.0
   *  @since 1.0.0
   *  @author Liqueur de Toile <contact@liqueurdetoile.com>
   *
   *  @param {!String} type  Type of item to load (see above)
-  *
-  *  @param {Object|DotObjectArray} [options] Options (see below)
-  *
-  *  @param {Boolean} [options.async=true]
-  *  __Async / Sync mode__
-  *
-  *  If set to `true`, Beloader will try to load asset asynchronously.
-  *
-  *  @param {Boolean}  [options.fallbackSync=true]
-  *  __Fallback when async loading fails__
-  *
-  *  If async loading failed, Beloader will try
-  *  to load asset synchronously if this mode is available in the used loader.
-  *
-  *  It can be useful when dealing with CORS issues.
-  *
-  *
-  *  @param {String} [options.id]
-  *  __ID for naming the item__
-  *
-  *  It can then be used with the awaiting option (see below).
-  *
-  *  @param {String|Array} [options.awaiting]
-  *  __Dependency ID or array of dependencies IDs__
-  *
-  *  This loading mode forces Beloader to resolve items only
-  *
-  *  The item will not be resolved until each declared dependency is previously resolved.
-  *
-  *  _You must take care of avoiding any circular dependency that may lead to
-  *  a never resolved item. Beloader doesn't check ID's validity. A typo error may also
-  *  lead to a never resolved item._
-  *
-  *  @param {Boolean} [options.defer=false]
-  *  __Defer loading mode__
-  *
-  *  This mode forces Beloader to resolve deferred items in the same order that they have
-  *  been added to the queue. It is possible to mix loading modes in a same queue.
-  *
-  *  If `true`, Beloader will resolve the item only when previous
-  *  declared items with `defer` option set to true are resolved
-  *
-  *  @param {Object}  [options.xhr]
-  *  __XHR options__
-  *
-  *  See {@link AbstractLoader#async}
-  *
-  *  @param {Function|Object} [options.loader]
-  *  __Custom loader or loader(s) override__
-  *
-  *  When using this option with a custom type, Beloader will run the provided
-  *  callback and pass the QueueItem and options as parameters (see {@link QueueItem#constructor}).
-  *
-  *  When using this option with a registered type, Beloader will look for a callback in
-  *  `options.loader.async` to override async loader
-  *  (see {@link AbstractLoader#async}) and/or `options.loader.sync` to override
-  *  sync loader (see {@link AbstractLoader#sync}).
-  *
-  *  Provided callbacks must return a Promise and, optionnaly, trigger events at item level
-  *
-  *  @return {QueueItem} Item queued
+  *  @param {String|QueueItemOptions} [options]
+  *  If a string is provided, Beloader will use it as a value
+  *  for the `url` option.
   */
   fetch(type, options = {}) {
     let item;
 
+    if (typeof options === 'string') options = {url: options};
     options = new ObjectArray(options);
-    options.define('async', true);
-    options.define('defer', false);
-    options.define('fallbackSync', true);
+    options.define('autoprocess', this.options.pull('autoprocess'));
+    options.define('async', this.options.pull('async'));
+    options.define('defer', this.options.pull('defer'));
+    options.define('cache', this.options.pull('cache'));
+    options.define('fallbackSync', this.options.pull('fallbackSync'));
+    options.define('xhr', this.options.pull('xhr'));
+    options.define('loader', this.options.pull('loader'));
+    // Append a unique hash to url if cache set to false
+    if (options.data.url && !options.data.cache) {
+      if (options.data.url.indexOf('?') > 0) options.data.url += '&' + uniqid();
+      else options.data.url += '?' + uniqid();
+    }
 
     item = new QueueItem(type, this, options);
     this._items.push(item);
     if (options.data.id) this._awaitables[options.data.id] = false;
-    this.fire('itemAdded', item);
+    this.fire('itemadded', this, item);
 
     this.progress.push('items.total', this._items.length);
     this.progress.push('items.waiting', this.progress.pull('items.waiting') + 1);
@@ -249,14 +255,52 @@ export class Beloader {
     return item;
   }
 
+  /**
+  *  Convenient method for bulk loading
+  *
+  *  provided object must have id as keys and provide the type
+  *  parameter as an option value.
+  *
+  *  @version 1.0.0
+  *  @since 1.0.0
+  *  @author Liqueur de Toile <contact@liqueurdetoile.com>
+  *
+  *  @param {Object} items Items to load
+  *  @returns {QueueItem[]} Items loaded
+  *  The array expose a promise property that is resolved
+  *  with Promise.all
+  *  @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all
+  *  @example
+  *  var loader = new Beloader({
+  *   defer: true // load in same order than declared
+  *  });
+  *
+  *  loader.fetchAll({
+  *   elementify: {
+  *     type: 'js',
+  *     url: 'https://cdn.jsdelivr.net/npm/elementify@latest'
+  *   },
+  *   Droid: {
+  *     type: 'font',
+  *     webfont: {
+  *       google: {
+  *         families: ['Droid Sans', 'Droid Serif']
+  *       }
+  *     }
+  *   }).promise.then((...items) => start());
+  *
+  */
   fetchAll(items) {
     let queuedItems = [];
     let promises = [];
 
     items = new ObjectArray(items);
-    items.forEach(function (options, type) {
-      let item = this.fetch(type, options);
+    items.forEach(function (options, id) {
+      let item, type = options.type;
 
+      delete options.type;
+      options.id = id;
+      item = this.fetch(type, options);
       queuedItems.push(item);
       promises.push(item.promise);
     }.bind(this));
@@ -265,23 +309,83 @@ export class Beloader {
     return queuedItems;
   }
 
-  fire(eventName, item, event = null) {
-    let cb, eventCallbackName = 'on' + eventName;
+  /**
+  *  Process all items in the queue that are waiting.
+  *  Obviously, it must be used with `autoprocess` set to `false`
+  *
+  *  @version 1.0.0
+  *  @since 1.0.0
+  *  @author Liqueur de Toile <contact@liqueurdetoile.com>
+  */
+  process() {
+    this._items.forEach(item => {
+      /* istanbul ignore else */
+      if (item.state.waiting) item.process();
+    });
+  }
 
-    item = item || this;
-    // Private callbacks
-    if (this[eventCallbackName] instanceof Function) this[eventCallbackName].call(this, item, event);
-    // User-defined callbacks
-    if ((cb = this.options.pull('on.' + eventName)) instanceof Function) cb.call(this, item, event);
-    // Plugins bubbling (plugin context)
-    if (this.options.has('plugins')) {
-      this.options.forEach(function (plugin) {
-        plugin.fire.call(plugin, eventName, item, event);
-      });
+  /**
+  *  Import plugin into Beloader instance and extends
+  *  native method of Beloader, QueueItem and Loader
+  *  instances with plugin instance.
+  *
+  *  The plugin will extends an {@link AbtractPlugin} instance and
+  *  therefor will be able to throw events.
+  *
+  *  A plugin will only be available in QueueItem and Loader
+  *  instances created __after__ plugin import.
+  *
+  *  The `init` method of a plugin is automatically
+  *  called after plugin import.
+  *
+  *  @version 1.0.0
+  *  @since 1.0.0
+  *  @author Liqueur de Toile <contact@liqueurdetoile.com>
+  *
+  *  @param {string} name Name for the plugin
+  *  @param {Object|Function} Plugin Plugin constructor or singleton
+  *  @param {Object} [options={}] Plugin's options passed to constructor
+  *  @throws {Error}  If unable to load plugin
+  */
+  pluginize(name, Plugin, options = {}) {
+    let plugin = AbstractPlugin;
+
+    options = new ObjectArray(options);
+    options.push('name', name);
+
+    try {
+      if (Plugin instanceof AbstractPlugin) {
+        plugin = new Plugin(this, options);
+        this._plugins.push(name, plugin);
+      } else {
+        plugin = new AbstractPlugin(this, options);
+        if (Plugin instanceof Function) Plugin = new Plugin();
+        for (let p in Plugin) {
+          /* istanbul ignore else */
+          if (Plugin.hasOwnProperty(p)) plugin[p] = Plugin[p];
+        }
+        this._plugins.push(name, plugin);
+      }
+      /* istanbul ignore else */
+      if (plugin.init instanceof Function) plugin.init(options);
+      /** @ignore */
+      /* istanbul ignore else */
+      this[name] = plugin;
+    } catch (e) {
+      throw new Error('Unable to pluginize : ' + name + ' [' + e + ']');
     }
   }
 
-  onloadstart(item) {
+  /**
+  *  loadstart built-in callback
+  *
+  *  @version 1.0.0
+  *  @since 1.0.0
+  *  @author Liqueur de Toile <contact@liqueurdetoile.com>
+  *  @listens {loadstart}
+  *  @emits {beforeprocess}
+  */
+  _loadstart() {
     if (!this.progress.has('loading.start')) {
       this.fire('beforeprocess', this);
       this.progress.push('loading.start', +new Date());
@@ -290,27 +394,77 @@ export class Beloader {
     this.progress.data.items.pending += 1;
   }
 
-  onprogress(item) {
+  /**
+  *  progress built-in callback
+  *
+  *  @version 1.0.0
+  *  @since 1.0.0
+  *  @author Liqueur de Toile <contact@liqueurdetoile.com>
+  *  @listens {progress}
+  */
+  _progress() {
     this._updateProgress();
   }
 
-  onload() {
+  /**
+  *  load built-in callback
+  *
+  *  @version 1.0.0
+  *  @since 1.0.0
+  *  @author Liqueur de Toile <contact@liqueurdetoile.com>
+  *  @listens {load}
+  */
+  _load() {
     this.progress.data.items.loaded += 1;
   }
 
-  onerror(item) {
+  /**
+  *  error built-in callback
+  *
+  *  @version 1.0.0
+  *  @since 1.0.0
+  *  @author Liqueur de Toile <contact@liqueurdetoile.com>
+  *  @listens {error}
+  */
+  _error() {
     this.progress.data.items.error += 1;
   }
 
-  onabort(item) {
+  /**
+  *  abort built-in callback
+  *
+  *  @version 1.0.0
+  *  @since 1.0.0
+  *  @author Liqueur de Toile <contact@liqueurdetoile.com>
+  *  @listens {abort}
+  */
+  _abort() {
     this.progress.data.items.abort += 1;
   }
 
-  ontimeout(item) {
+  /**
+  *  timeout built-in callback
+  *
+  *  @version 1.0.0
+  *  @since 1.0.0
+  *  @author Liqueur de Toile <contact@liqueurdetoile.com>
+  *  @listens {timeout}
+  */
+  _timeout() {
     this.progress.data.items.timeout += 1;
   }
 
-  onloadend() {
+  /**
+  *  loadend built-in callback
+  *
+  *  @version 1.0.0
+  *  @since 1.0.0
+  *  @author Liqueur de Toile <contact@liqueurdetoile.com>
+  *  @listens {loadend}
+  *  @emits {ready}
+  *  @emits {afterprocess}
+  */
+  _loadend() {
     let previousDeferResolved = true;
 
     // Resolve item or defer resolving
@@ -334,8 +488,8 @@ export class Beloader {
         item.state.resolved = true;
         if (item.state.loaded) {
           item._resolve(item);
-          item.fire.call(item, 'ready');
           item.state.ready = true;
+          item.fire('ready', item);
           this.progress.data.items.ready += 1;
         } else {
           item._reject(item);
@@ -349,15 +503,23 @@ export class Beloader {
     // After event
     if (this.progress.data.items.processed === this.progress.data.items.total) {
       this.fire('afterprocess', this);
+      this.progress.push('loading.complete', 100);
       this.progress.push('loading.end', +new Date());
+      this.progress.push('loading.elapsed', this.progress.data.loading.end - this.progress.data.loading.start);
     }
   }
 
+  /**
+  *  Update loading progress statistics
+  *
+  *  @version 1.0.0
+  *  @since 1.0.0
+  *  @author Liqueur de Toile <contact@liqueurdetoile.com>
+  */
   _updateProgress() {
     let loaded = 0, total = 0, elapsed;
 
-    this.progress.push('loading.end', +new Date());
-    elapsed = this.progress.data.loading.end - this.progress.data.loading.start;
+    elapsed = +new Date() - this.progress.data.loading.start;
     this._items.forEach(function (item) {
       loaded += item.progress.data.loaded;
       total += item.progress.data.total;
@@ -366,6 +528,7 @@ export class Beloader {
     this.progress.push('loading.elapsed', elapsed); // milliseconds
     this.progress.push('loading.loaded', loaded); // Bytes
     this.progress.push('loading.rate', loaded / elapsed * 1000); // Bytes/s
+    /* istanbul ignore else */
     if (total) {
       this.progress.push('loading.total', total); // Bytes
       this.progress.push('loading.complete', loaded / total * 100); // Bytes
@@ -373,4 +536,4 @@ export class Beloader {
   }
 }
 
-export default Beloader;
+export {Beloader};

@@ -14,8 +14,13 @@
           "title": "BeLoader | Highly customizable and lightweight loader based on dynamic imports with splash screen, animated blocks and more"
         },
         "manual": {
+          "index": "./docs/manual/md/index.md",
           "files": [
-            "./docs/manual/md/index.md"
+            "./docs/manual/md/installation.md",
+            "./docs/manual/md/basic.md",
+            "./docs/manual/md/loaders.md",
+            "./docs/manual/md/events.md",
+            "./docs/manual/md/plugins.md"
           ]
         }
       }

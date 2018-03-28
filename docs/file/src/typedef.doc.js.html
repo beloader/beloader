@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../">
+  <title data-ice="title">src/typedef.doc.js | BeLoader | Highly customizable and lightweight loader based on dynamic imports with splash screen, animated blocks and more</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<link rel="stylesheet" href="./inject/css/0-styles.css"><script src="./inject/script/0-docs.js"></script><meta name="description" content="Highly customizable and lightweight assets loader based on dynamic imports"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="BeLoader | Highly customizable and lightweight loader based on dynamic imports with splash screen, animated blocks and more"><meta property="twitter:description" content="Highly customizable and lightweight assets loader based on dynamic imports"></head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./" style="display: flex; align-items: center;"><img src="./image/brand_logo.png" style="width:34px;"></a>
+  <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  <a href="test.html" data-ice="testLink">Test</a>
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+<a style="position:relative; top:3px;" href="https://github.com/liqueurdetoile/beloader.git"><img width="20px" src="./image/github.png"></a></header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/beloader.js~Beloader.html">Beloader</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/queueitem.js~QueueItem.html">QueueItem</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-BeloaderOptions">BeloaderOptions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-BeloaderProgress">BeloaderProgress</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-QueueItemOptions">QueueItemOptions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-external">E</span><span data-ice="name"><span><a href="https://liqueurdetoile.github.io/DotObjectArray/">DotObjectArray</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-external">E</span><span data-ice="name"><span><a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement">HTMLElement</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-external">E</span><span data-ice="name"><span><a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest">XMLHttpRequest</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-external">E</span><span data-ice="name"><span><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Date/now">timestamp</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#core">core</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/core/AbstractEventManager.js~AbstractEventManager.html">AbstractEventManager</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/core/AbstractLoader.js~AbstractLoader.html">AbstractLoader</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/core/AbstractPlugin.js~AbstractPlugin.html">AbstractPlugin</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#events">events</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/events/BeloaderEvent.js~BeloaderEvent.html">BeloaderEvent</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-abort">abort</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-afterprocess">afterprocess</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-beforeprocess">beforeprocess</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-error">error</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-load">load</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-loadend">loadend</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-loadstart">loadstart</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-loadstarted">loadstarted</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-progress">progress</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-ready">ready</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-readystatechange">readystatechange</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-timeout">timeout</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-external">E</span><span data-ice="name"><span><a href="https://developer.mozilla.org/en-US/docs/Web/API/ProgressEvent">ProgressEvent</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#loaders">loaders</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/loaders/CustomLoader.js~CustomLoader.html">CustomLoader</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/loaders/FontLoader.js~FontLoader.html">FontLoader</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/loaders/JsonLoader.js~JsonLoader.html">JsonLoader</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/loaders/ScriptLoader.js~ScriptLoader.html">ScriptLoader</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/loaders/StylesheetLoader.js~StylesheetLoader.html">StylesheetLoader</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-Loader">Loader</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#plugins">plugins</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/plugins/AbstractAnimation.js~AbstractAnimation.html">AbstractAnimation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/plugins/BackgroundColor.js~BackgroundColor.html">BackgroundColor</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/plugins/ThreeDotsBouncing.js~ThreeDotsBouncing.html">ThreeDotsBouncing</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/plugins/modal.js~Splash.html">Splash</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-Loader">Loader</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/typedef.doc.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+*  @external {DotObjectArray} https://liqueurdetoile.github.io/DotObjectArray/
+*/
+/**
+*  @external {timestamp} https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Date/now
+*/
+/**
+*  @external {HTMLElement} https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement
+*/
+/**
+*  @external {XMLHttpRequest} https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest
+*/
+
+/**
+*  Exception for event callbacks, most of the global options are
+*  designed to set defaults values for {@link QueueItem) instance
+*  and associated {@link Loader} instances
+*
+*  @typedef {Object}  BeloaderOptions
+*  @property {Object} [on]
+*  Events callbacks
+*  
+*  When defined at Beloader level, the callback will execute as
+*  many times as the event is received. For instance, a `load` callback
+*  wille triggered each time an item is loaded.
+*  @property {boolean}  [autoprocess=true]  {@link QueueItemOptions}
+*  @property {boolean}  [async=true]  {@link QueueItemOptions}
+*  @property {boolean}  [cache=true]  {@link QueueItemOptions}
+*  @property {boolean}  [defer=false]  {@link QueueItemOptions}
+*  @property {boolean}  [fallbackSync=true]  {@link QueueItemOptions}
+*  
+*  @example
+*  var loader = new Beloader({
+*    defer: true // load in same order than declared
+*    on: {
+*      afterprocess: () =&gt; { app.start() }
+*    }
+*  });
+*/
+
+/**
+*  Options for QueueItem are mostly for the underlying loader.
+*  Some loaders are requiring specific informations and will
+*  usually throw an error if not provided
+*  
+*
+*  @typedef {Object}  QueueItemOptions
+*  @property {Object} [on]
+*  Events callbacks
+*  
+*  When defined at QueueItem level, the callback will execute if
+*  triggered by itself or its loader. For instance, a `load` callback
+*  wille be triggered once when the item will be loaded.
+*  @property {boolean}  [autoprocess=true]
+*  if set to `false`, each item must be processed by calling its `process` method
+*  or Beloader instance `process` method for a bulk run
+*  @property {boolean}  [async=true]
+*  If `true`, QueueItem will first try to process request asynchronously
+*  @property {boolean}  [cache=true]
+*  If `false`, QueueItem will append a unique hash as query string to the request url
+*  to disable browser&apos;s built-in cache
+*  @property {boolean}  [defer=false]
+*  If `true`, QueueItem will not resolve until all previous requested items
+*  which have also `defer` option set to true is resolved
+*  @property {boolean}  [fallbackSync=true]
+*  If `true`, QueueItem will try to perform a sync request as fallback. It can
+*  be a workaround for CORS issues.
+*  @property {string}  [id]
+*  Set the ID for the QueueItem. its main use is in conjunction with `awaiting` option
+*  @property {string|string[]} [awaiting]
+*  Define the dependency(ies) ID that must be resolved before resolving current QueueItem.
+*  @property {object} [xhr] __XHR specific properties for async loading__
+*  @property {string} [xhr.method=&apos;GET&apos;]
+*  XHR method to perform request
+*  @property {mixed}  [xhr.data]
+*  Data to send in the request body. _Note: No data processing is done
+*  within the core basic XHR instance_
+*  @property {XMLHttpRequest} [xhr.instance]
+*  Custom XMLHttpRequest instance to be used in replacement of the core one
+*  @property {Promise|Object} [loader]
+*  __Custom loaders__
+*  
+*  If provided as a promise callback, the loader will be used for `custom` type
+*  requests.
+*  Alternatively, you can provide loader replacements for known types (see below)
+*  @property {Promise}  [loader.sync]
+*  Custom loader for sync requests
+*  
+*  See {@link AbstractLoader#sync}
+*  @property {Promise}  [loader.async]
+*  Custom loader for async requests
+*  
+*  See {@link AbstractLoader#async}
+*  
+*  
+*  @example
+*  var loader = new Beloader();
+*  
+*  loader.fetch(&apos;script&apos;, {
+*    url: &apos;https://cdn.jsdelivr.net/npm/elementify@latest&apos;,
+*    async: false
+*  }); 
+*/
+
+/**
+*  Stores a BeLoader instance real time progress
+*  
+*  Statistics can be accessed using DotObjectArray methods.
+*  
+*  @example
+*  var loader = new Beloader({
+*    defer: true // load in same order than declared
+*    on: {
+*      afterprocess: () =&gt; { app.start() }
+*    }
+*  });
+*  
+*  loader.fetchAll({
+*    &apos;js&apos;: &apos;https://cdn.jsdelivr.net/npm/elementify@latest&apos;,
+*    &apos;font&apos;: {
+*      webfont: {
+*        google: {
+*          families: [&apos;Droid Sans&apos;, &apos;Droid Serif&apos;]
+*        }
+*      }
+*    },
+*    &apos;js&apos;: &apos;https://myserver.com/myapp.js&apos;
+*  });
+*  
+*  loader.progress.data.items.total; // returns 2
+*  loader.progress.pull(&apos;items.total&apos;); // returns 2
+*
+*  @typedef {DotObjectArray}  BeloaderProgress
+*  
+*  @property {Object} items
+*  __Items count container__
+*  @property {number} items.total
+*  Total items in Beloader instance
+*  @property {number} items.waiting
+*  Total items that are waiting to be processed
+*  @property {number} items.pending
+*  Total items that are currently processed
+*  @property {number} items.processed
+*  Total items that have been processed
+*  @property {number} items.loaded
+*  Total items that have been sucessfully loaded
+*  @property {number} items.error
+*  Total items which load have failed on error
+*  @property {number} items.abort
+*  Total items which load have been aborted
+*  @property {number} items.timeout
+*  Total items wich load have failed on timeout
+*  @property {number} items.ready
+*  Total items that have been loaded and post-process finished
+*  
+*  @property {Object} loading
+*  __Loading statistics__
+*  @property {timestamp} loading.start
+*  Process start timestamp
+*  @property {timestamp} loading.end
+*  Process end timestamp
+*  @property {number} loading.elapsed
+*  Duration of the process (ms)
+*  @property {number} loading.loaded
+*  Weight of loaded data. It might not be accurate
+*  because relying on {@link src/events/typedef.doc.js~progress} event
+*  @property {number} loading.rate
+*  Transfer bandwidth. It might not be accurate
+*  because relying on {@link progress} event
+*  @property {number} loading.complete
+*  Loading percentage completed. It might not be accurate
+*  because relying on {@link progress} QueueItem event
+*  @property {number} loading.total
+*  Weight of data to load. It might not be accurate
+*  because relying on {@link progress} QueueItem event and
+*  server&apos;s providing a `content-length` header.
+*/
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.0.4)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

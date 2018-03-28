@@ -24,24 +24,47 @@
   </span>
     <ul class="search-result"></ul>
   </div>
-<a style="position:relative; top:3px;" href="https://github.com/liqueurdetoile/beloader.git"><img width="20px" src="./image/github.png"></a></header>
+<a style="position:relative; top:3px;" href="https://github.com/beloader/beloader.git"><img width="20px" src="./image/github.png"></a></header>
 
 <nav class="navigation" data-ice="nav"><div>
   <ul>
     
   <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/beloader.js~Beloader.html">Beloader</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/queueitem.js~QueueItem.html">QueueItem</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-BeloaderProgress">BeloaderProgress</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-external">E</span><span data-ice="name"><span><a href="https://liqueurdetoile.github.io/DotObjectArray/">DotObjectArray</a></span></span></li>
-<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#animations">animations</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animations/AbstractAnimation.js~AbstractAnimation.html">AbstractAnimation</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animations/BackgroundColor.js~BackgroundColor.html">BackgroundColor</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animations/ThreeDotsBouncing.js~ThreeDotsBouncing.html">ThreeDotsBouncing</a></span></span></li>
-<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#core">core</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/core/AbstractLoader.js~AbstractLoader.html">AbstractLoader</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#core">core</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/core/AbstractEventManager.js~AbstractEventManager.html">AbstractEventManager</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/core/AbstractLoader.js~AbstractLoader.html">AbstractLoader</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/core/AbstractPlugin.js~AbstractPlugin.html">AbstractPlugin</a></span></span></li>
-<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#layouts">layouts</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/layouts/modal.js~Splash.html">Splash</a></span></span></li>
-<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#loaders">loaders</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/loaders/FontLoader.js~FontLoader.html">FontLoader</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#events">events</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/events/BeloaderEvent.js~BeloaderEvent.html">BeloaderEvent</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-abort">abort</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-afterprocess">afterprocess</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-beforeprocess">beforeprocess</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-error">error</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-load">load</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-loadend">loadend</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-loadstart">loadstart</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-loadstarted">loadstarted</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-progress">progress</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-ready">ready</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-readystatechange">readystatechange</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-timeout">timeout</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-external">E</span><span data-ice="name"><span><a href="https://developer.mozilla.org/en-US/docs/Web/API/ProgressEvent">ProgressEvent</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#loaders">loaders</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/loaders/CustomLoader.js~CustomLoader.html">CustomLoader</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/loaders/FontLoader.js~FontLoader.html">FontLoader</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/loaders/ImageLoader.js~ImageLoader.html">ImageLoader</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/loaders/JsonLoader.js~JsonLoader.html">JsonLoader</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/loaders/NoneLoader.js~AbstractLoader.html">AbstractLoader</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/loaders/PluginLoader.js~PluginLoader.html">PluginLoader</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/loaders/ScriptLoader.js~ScriptLoader.html">ScriptLoader</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/loaders/StylesheetLoader.js~StylesheetLoader.html">StylesheetLoader</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#types">types</a><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-BeloaderOptions">BeloaderOptions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-BeloaderProgress">BeloaderProgress</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-Loader">Loader</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-Plugin">Plugin</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-QueueItemOptions">QueueItemOptions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-external">E</span><span data-ice="name"><span><a href="https://liqueurdetoile.github.io/DotObjectArray/">DotObjectArray</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-external">E</span><span data-ice="name"><span><a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement">HTMLElement</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-external">E</span><span data-ice="name"><span><a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest">XMLHttpRequest</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-external">E</span><span data-ice="name"><span><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Date/now">timestamp</a></span></span></li>
 </ul>
 </div>
 </nav>
@@ -53,107 +76,210 @@
 *  @licence AGPL-3.0-only {@link https://spdx.org/licenses/AGPL-3.0-only.html}
 */
 
-export default class AbstractLoader {
-  constructor(item, options) {
-    this.item = item;
+import AbstractEventManager from &apos;core/AbstractEventManager&apos;;
+
+/**
+*  AbstractLoader provides the core functionnalities of a loader
+*
+*  @version 1.0.0
+*  @since 1.0.0
+*  @author Liqueur de Toile &lt;contact@liqueurdetoile.com&gt;
+*  @extends {AbstractEventManager}
+*/
+export default class AbstractLoader extends AbstractEventManager {
+  /**
+  *  @version 1.0.0
+  *  @since 1.0.0
+  *  @author Liqueur de Toile &lt;contact@liqueurdetoile.com&gt;
+  *
+  *  @param {QueueItem} item Requesting item
+  *  @param {DotObjectArray} options Options for the loader
+  */
+  constructor(parent, options) {
+
+    super();
+
+    /**
+    *  Requesting parent item
+    *  @since 1.0.0
+    *  @type {QueueItem}
+    */
+    this.parent = parent;
+
+    /**
+    *  Map plugins
+    *  @since 1.0.0
+    *  @type {DotObjectArray}
+    */
+    this._plugins = parent._plugins;
+    this._plugins.forEach(function (plugin, name) {
+      /** @ignore */
+      this[name] = plugin;
+    }.bind(this));
+
+    /**
+    *  Loader options
+    *
+    *  @since 1.0.0
+    *  @type {DotObjectArray}
+    */
     this.options = options;
   }
 
+  /**
+  *  Loader promise
+  *
+  *  @version 1.0.0
+  *  @since 1.0.0
+  *  @type {Promise}
+  */
   get promise() {
     if (this.options.data.async) return this.async();
     return this.sync();
   }
 
+  /**
+  *  The sync method mostly relies on adding an HTMLElement to the DOM to load asset.
+  *  When using this way of loading, the loader must expose a node property that provide
+  *  the right HTMLElement to create.
+  *
+  *  It then tries to hook events callbacks but they won&apos;t be all supported by browser given
+  *  the required HTMLElement (script, link, audio...). Usually only `load` and
+  *  `error` callbacks will be functionals.
+  *
+  *  This basic behaviour can be override by providing a custom loader callback
+  *  in `options.loader.sync` or by creating a specific loader that
+  *  doesn&apos;t call `super.sync()`.
+  *
+  *  In that case, the custom loader must take care to return a promise and optionally fire _loadstart_ event
+  *
+  *  @version 1.0.0
+  *  @since 1.0.0
+  *  @author Liqueur de Toile &lt;contact@liqueurdetoile.com&gt;
+  *
+  *  @abstract
+  *  @returns {Promise} Loading promise
+  *  @emits {loadstart} CSS Font requesting begins
+  *  @emits {progress} If progress callback available
+  *  @emits {abort} If abort callback available
+  *  @emits {timeout} If timeout callback available
+  */
   sync() {
     const _this = this;
 
     // Sync loader override
-    if (this.options.pull(&apos;loader.sync&apos;) instanceof Function) return this.options.pull(&apos;loader.sync&apos;)(this);
+    if (this.options.pull(&apos;loader.sync&apos;) instanceof Function) return this.options.pull(&apos;loader.sync&apos;).call(this);
 
     return new Promise((resolve, reject) =&gt; {
-      _this.item.fire.call(_this.item, &apos;loadstart&apos;);
-      _this.node.onprogress = (ev) =&gt; _this.item.fire.call(_this.item, &apos;progress&apos;, ev);
-      _this.node.onload = (ev) =&gt; {
-        _this.item.fire.call(_this.item, &apos;load&apos;, ev);
-        resolve(200);
-      };
-      _this.node.onerror = (ev) =&gt; {
-        _this.item.fire.call(_this.item, &apos;error&apos;, ev);
-        reject(&apos;Loading error&apos;);
-      };
+      _this.fire(&apos;loadstart&apos;, _this);
+      _this.node.onprogress = (ev) =&gt; _this.fire(&apos;progress&apos;, _this, ev);
+      _this.node.onload = (ev) =&gt; resolve();
+      _this.node.onerror = (ev) =&gt; reject(ev);
       _this.node.onabort = (ev) =&gt; {
-        _this.item.fire.call(_this.item, &apos;abort&apos;, ev);
-        reject(&apos;Loading aborted&apos;);
+        _this.fire(&apos;abort&apos;, _this, ev);
+        reject(ev);
       };
       _this.node.ontimeout = (ev) =&gt; {
-        _this.item.fire.call(_this.item, &apos;timeout&apos;, ev);
-        reject(&apos;Loading timeout&apos;);
+        _this.fire(&apos;timeout&apos;, _this, ev);
+        reject(ev);
       };
     });
   }
 
+  /**
+  *  The async method relies on fetching content with an XHR request
+  *  and inserting it inline in the document, wrapped in right
+  *  HTML container if needed
+  *
+  *  It is possible to use the {@link loadstart} event to hook some
+  *  additional initializations
+  *
+  *  At last, the xhr loader can be replaced by a custom loader
+  *  ([npm request](https://www.npmjs.com/package/request) for instance) for
+  *  advanced usage.
+  *  In that case, the custom loader must return a promise and take care of firing
+  *  events as needed (except {@link load}, {@link error} and {@link loadend}
+  *  that will be triggered from the QueueItem parent instance).
+  *
+  *  @version 1.0.0
+  *  @since 1.0.0
+  *  @author Liqueur de Toile &lt;contact@liqueurdetoile.com&gt;
+  *
+  *  @abstract
+  *  @returns {Promise} Loading promise
+  *  @emits {loadstart}
+  *  @emits {loadstarted}
+  *  @emits {readystatechange}
+  *  @emits {progress}
+  *  @emits {abort}
+  *  @emits {timeout}
+  */
   async() {
     const _this = this;
+    let p1, p2 = new Promise((resolve, reject) =&gt; {
+      _this._resolve = resolve;
+      _this._reject = reject;
+    });
 
     // Async loader override
     if (this.options.pull(&apos;loader.async&apos;) instanceof Function) return this.options.pull(&apos;loader.async&apos;)(this);
 
-    return new Promise((resolve, reject) =&gt; {
-      // XHR object override
-      _this.xhr = _this.options.pull(&apos;xhr.instance&apos;) || new XMLHttpRequest();
+    // Async promise
+    p1 = new Promise((resolve, reject) =&gt; {
+      _this.xhr = new XMLHttpRequest();
 
       // Configure basic XHR instance for request
       if (!_this.options.has(&apos;xhr.instance&apos;)) {
         _this.options.define(&apos;xhr.method&apos;, &apos;GET&apos;);
 
         // Events
-        _this.xhr.onprogress = (ev) =&gt; _this.item.fire.call(_this.item, &apos;progress&apos;, ev);
-        _this.xhr.onerror = (ev) =&gt; {
-          _this.item.fire.call(_this.item, &apos;error&apos;, ev);
-          reject(&apos;Loading error&apos;);
-        };
-        _this.xhr.onabort = (ev) =&gt; {
-          _this.item.fire.call(_this.item, &apos;abort&apos;, ev);
-          reject(&apos;Loading aborted&apos;);
-        };
-        _this.xhr.ontimeout = (ev) =&gt; {
-          _this.item.fire.call(_this.item, &apos;timeout&apos;, ev);
-          reject(&apos;Loading timeout&apos;);
-        };
+        _this.xhr.onprogress = (ev) =&gt; _this.fire(&apos;progress&apos;, _this, ev);
+        _this.xhr.onerror = (ev) =&gt; reject(&apos;error&apos;);
+        _this.xhr.onabort = (ev) =&gt; reject(&apos;abort&apos;);
+        _this.xhr.ontimeout = (ev) =&gt; reject(&apos;timeout&apos;);
 
         _this.xhr.open(_this.options.pull(&apos;xhr.method&apos;), _this.options.data.url, true);
 
         _this.xhr.onreadystatechange = () =&gt; {
-          _this.item.fire.call(_this.item, &apos;readystatechange&apos;, _this.xhr.readyState);
+          _this.fire(&apos;readystatechange&apos;, _this, _this.xhr);
 
           if (_this.xhr.readyState === 4) {
-            if (_this.xhr.status === 200) {
-              _this.item.fire.call(_this.item, &apos;load&apos;);
+            if (_this.xhr.status &gt;= 200 &amp;&amp; _this.xhr.status &lt; 400) {
               resolve(_this.xhr.response);
-            } else {
-              if (_this.options.data.fallbackSync) {
-                _this.options.data.async = false;
-                delete _this._node; // reset node
-                _this.sync().then(
-                  success =&gt; {
-                    resolve(false);
-                  },
-                  error =&gt; {
-                    reject(error);
-                  }
-                );
-              } else {
-                _this.item.fire.call(_this.item, &apos;error&apos;);
-                reject(_this.xhr.status);
-              }
-            }
+            } else reject(&apos;error&apos;);
           }
         };
       }
 
-      _this.item.fire.call(_this.item, &apos;loadstart&apos;);
-      _this.xhr.send(_this.options.data.xhrData);
+      _this.fire(&apos;loadstart&apos;, _this);
+      _this.xhr.send(_this.options.pull(&apos;xhr.data&apos;));
+      _this.fire(&apos;loadstarted&apos;, _this);
     });
+
+    p1.then(
+      response =&gt; {
+        _this._resolve(response);
+      },
+      error =&gt; {
+        if (_this.options.data.fallbackSync) {
+          _this.options.data.async = false;
+          delete _this._node; // reset node
+          _this.sync().then(
+            success =&gt; {
+              _this._resolve(false);
+            },
+            error =&gt; {
+              _this._reject(error);
+            }
+          );
+        } else {
+          if (error !== &apos;error&apos;) _this.fire(error, _this, _this.xhr);
+          _this._reject(_this.xhr.status);
+        }
+      }
+    );
+
+    return p2;
   }
 }
 </code></pre>

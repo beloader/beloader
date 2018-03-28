@@ -66,7 +66,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/liqueurdetoile/beloader.git"
+    "url": "https://github.com/beloader/beloader.git"
   },
   "keywords": [
     "loader",
@@ -80,9 +80,9 @@
   "author": "Liqueur de Toile",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/liqueurdetoile/beloader/issues"
+    "url": "https://github.com/beloader/beloader/issues"
   },
-  "homepage": "https://github.com/liqueurdetoile/beloader",
+  "homepage": "https://github.com/beloader/beloader",
   "dependencies": {
     "animejs": "^2.2.0",
     "dot-object-array": "^3.1.0",

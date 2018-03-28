@@ -1,4 +1,2 @@
-# Beloader
-
-Beloader is an asset loading manager.
+# Beloader manual
 

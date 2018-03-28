@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../">
+  <title data-ice="title">Manual | BeLoader | Highly customizable and lightweight loader based on dynamic imports with splash screen, animated blocks and more</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<link rel="stylesheet" href="./inject/css/0-styles.css"><script src="./inject/script/0-docs.js"></script><meta name="description" content="Highly customizable and lightweight assets loader based on dynamic imports"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="BeLoader | Highly customizable and lightweight loader based on dynamic imports with splash screen, animated blocks and more"><meta property="twitter:description" content="Highly customizable and lightweight assets loader based on dynamic imports"></head>
+<body class="layout-container manual-root" data-ice="rootContainer">
+
+<header>
+  <a href="./" style="display: flex; align-items: center;"><img src="./image/brand_logo.png" style="width:34px;"></a>
+  <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  <a href="test.html" data-ice="testLink">Test</a>
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+<a style="position:relative; top:3px;" href="https://github.com/beloader/beloader.git"><img width="20px" src="./image/github.png"></a></header>
+
+<nav class="navigation" data-ice="nav"><div class="manual-toc-root">
+  
+<div data-ice="manual">
+    <ul class="manual-toc">
+      
+    <li data-ice="manualNav" class="indent-h1" data-link="manual/installation.html"><a href="manual/installation.html" data-ice="link">Installation</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/installation.html"><a href="manual/installation.html#as-a-module" data-ice="link">As a module</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/installation.html"><a href="manual/installation.html#in-browser" data-ice="link">In browser</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/installation.html"><a href="manual/installation.html#bundle" data-ice="link">Bundle</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/installation.html"><a href="manual/installation.html#jsdelivr" data-ice="link">JsDelivr</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/installation.html"><a href="manual/installation.html#unpkg" data-ice="link">Unpkg</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/installation.html"><a href="manual/installation.html#local-install" data-ice="link">Local install</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/installation.html"><a href="manual/installation.html#using-beloader-in-browser" data-ice="link">Using Beloader in browser</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/installation.html"><a href="manual/installation.html#browser-compatibility" data-ice="link">Browser compatibility</a></li>
+</ul>
+  </div>
+<div data-ice="manual">
+    <ul class="manual-toc">
+      
+    <li data-ice="manualNav" class="indent-h1" data-link="manual/basic.html"><a href="manual/basic.html" data-ice="link">Basic usage</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/basic.html"><a href="manual/basic.html#assets-loading" data-ice="link">Assets loading</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/basic.html"><a href="manual/basic.html#using-promises-to-perform-actions-when-assets-are-loaded" data-ice="link">Using promises to perform actions when assets are loaded</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/basic.html"><a href="manual/basic.html#defering-assets-loading" data-ice="link">Defering assets loading</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/basic.html"><a href="manual/basic.html#awaiting-dependencies" data-ice="link">Awaiting dependencies</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/basic.html"><a href="manual/basic.html#bulk-assets-loading" data-ice="link">Bulk assets loading</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/basic.html"><a href="manual/basic.html#delaying-queue-process" data-ice="link">Delaying queue process</a></li>
+</ul>
+  </div>
+<div data-ice="manual">
+    <ul class="manual-toc">
+      
+    <li data-ice="manualNav" class="indent-h1" data-link="manual/loaders.html"><a href="manual/loaders.html" data-ice="link">Loaders</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/loaders.html"><a href="manual/loaders.html#built-in-loaders" data-ice="link">Built-in loaders</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/loaders.html"><a href="manual/loaders.html#using-built-in-loaders" data-ice="link">Using built-in loaders</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/loaders.html"><a href="manual/loaders.html#script-loader" data-ice="link">Script loader</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/loaders.html"><a href="manual/loaders.html#stylesheet-loader" data-ice="link">Stylesheet loader</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/loaders.html"><a href="manual/loaders.html#font-loader" data-ice="link">Font loader</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/loaders.html"><a href="manual/loaders.html#image-loader" data-ice="link">Image loader</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/loaders.html"><a href="manual/loaders.html#json-loader" data-ice="link">JSON loader</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/loaders.html"><a href="manual/loaders.html#none-loader" data-ice="link">None loader</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/loaders.html"><a href="manual/loaders.html#plugin-loader" data-ice="link">Plugin loader</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/loaders.html"><a href="manual/loaders.html#custom-loaders" data-ice="link">Custom loaders</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/loaders.html"><a href="manual/loaders.html#tweaking-xmlhttprequest-instance" data-ice="link">Tweaking XMLHttpRequest instance</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/loaders.html"><a href="manual/loaders.html#replacing-sync-and-async-loading-engines-for-built-in-loaders" data-ice="link">Replacing sync and async loading engines for built-in loaders</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/loaders.html"><a href="manual/loaders.html#creating-custom-type-and-loader" data-ice="link">Creating custom type and loader</a></li>
+</ul>
+  </div>
+<div data-ice="manual">
+    <ul class="manual-toc">
+      
+    <li data-ice="manualNav" class="indent-h1" data-link="manual/events.html"><a href="manual/events.html" data-ice="link">Events</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/events.html"><a href="manual/events.html#registering-callbacks-to-be-run-after-of-before-built-in-callback" data-ice="link">Registering callbacks to be run after of before built-in callback</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/events.html"><a href="manual/events.html#registering-callbacks-in-options" data-ice="link">Registering callbacks in options</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/events.html"><a href="manual/events.html#registering-callbacks-externally" data-ice="link">Registering callbacks externally</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/events.html"><a href="manual/events.html#custom-events" data-ice="link">Custom events</a></li>
+</ul>
+  </div>
+<div data-ice="manual">
+    <ul class="manual-toc">
+      
+    <li data-ice="manualNav" class="indent-h1" data-link="manual/plugins.html"><a href="manual/plugins.html" data-ice="link">Plugins</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/plugins.html"><a href="manual/plugins.html#load-plugins" data-ice="link">Load plugins</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/plugins.html"><a href="manual/plugins.html#fetch-plugins" data-ice="link">Fetch plugins</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/plugins.html"><a href="manual/plugins.html#fetch-plugins-at-beloader-instance-creation" data-ice="link">Fetch plugins at Beloader instance creation</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/plugins.html"><a href="manual/plugins.html#custom-instant-plugins" data-ice="link">Custom instant plugins</a></li>
+</ul>
+  </div>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><div class="github-markdown" data-ice="content"><h1 id="basic-usage">Basic usage</h1><h2 id="assets-loading">Assets loading</h2><p>In most case a simple instance with no options will be enough and you can then fetch assets :</p>
+<pre><code class="lang-javascript"><code class="source-code prettyprint">var loader = new Beloader();
+
+loader.fetch(&apos;script&apos;, &apos;https://code.jquery.com/jquery-3.3.1.js&apos;);
+loader.fetch(&apos;font&apos;, {
+  webfont: {
+    google: {
+      families: [&apos;Droid Sans&apos;, &apos;Droid Serif&apos;]
+    }
+  }
+});</code>
+</code></pre>
+<p>With this, we&apos;re not doing far better than directly embedding a script and a link in
+HTML code, except loading is asynchronous.</p>
+<h2 id="using-promises-to-perform-actions-when-assets-are-loaded">Using promises to perform actions when assets are loaded</h2><p>If you want to perform things when assets are loaded, you can use the exposed <code>promise</code> property of an item :</p>
+<pre><code class="lang-javascript"><code class="source-code prettyprint">var loader = new Beloader();
+
+loader.fetch(&apos;script&apos;, &apos;https://cdn.jsdelivr.net/npm/elementify@latest&apos;)
+  .promise.then(function() {
+    console.log(&apos;Elementify loaded !&apos;);
+  });
+
+loader.fetch(&apos;font&apos;, {
+  webfont: {
+    google: {
+      families: [&apos;Droid Sans&apos;, &apos;Droid Serif&apos;]
+    }
+  }
+}).then(function() {
+  var div = document.createElement(&apos;div&apos;);
+
+  div.innerHTML = &apos;&lt;span style=&quot;font-family:\&apos;Droid Sans\&apos;&quot;&gt;Hello, world&lt;/span&gt;&apos;;
+  document.body.appendChild(div);
+});</code>
+</code></pre>
+<p>You may notice that it will be way better to use <a href="https://liqueurdetoile.github.io/Elementify/">Elementify</a>
+to perform the body insertion when
+font has loaded. But, we have to make sure that Elementify has loaded <strong><em>before</em></strong> font.</p>
+<p>The first idea may be to nest fetching and it will work but at the cost of losing
+parallels ajax loadings. Anyway, there is better solutions.</p>
+<h3 id="defering-assets-loading">Defering assets loading</h3><p>Beloader can resolve loadings in the same order that they have been added to the queue.</p>
+<pre><code class="lang-javascript"><code class="source-code prettyprint">var loader = new Beloader({
+  defer: true // Change is here
+});
+
+loader.fetch(&apos;script&apos;, &apos;https://cdn.jsdelivr.net/npm/elementify@latest&apos;)
+  .promise.then(function() {
+    Elementify.load();
+  });
+
+loader.fetch(&apos;font&apos;, webfont: {
+  google: {
+    families: [&apos;Droid Sans&apos;, &apos;Droid Serif&apos;]
+  }
+}).then(function() {
+  Q(&apos;body&apos;).append(&apos;&lt;div style=&quot;font-family:\&apos;Droid Sans\&apos;&quot;&gt;Hello, world&lt;/div&gt;&apos;);
+});</code>
+</code></pre>
+<p>In that case, Beloader will take care of waiting for Elementify request to resolve before resolving font.
+It is possible to use the defer behaviour only on a subset of fetched items
+by providing defer as an option to the <code>fetch</code> instead of as a global trigger.</p>
+<h3 id="awaiting-dependencies">Awaiting dependencies</h3><p>In some cases, multiple dependencies can&apos;t be simply resolved with defer. Beloader
+offers an awaiting option to deal with complex patterns.</p>
+<pre><code class="lang-javascript"><code class="source-code prettyprint">var loader = new Beloader();
+
+loader.fetch(&apos;script&apos;, {
+  id: &apos;elementify&apos;, // Change is here
+  url: &apos;https://cdn.jsdelivr.net/npm/elementify@latest&apos;
+})
+  .promise.then(function() {
+    Elementify.load();
+  });
+
+loader.fetch(&apos;script&apos;, {
+   id: &apos;lodash&apos;,
+  url: &apos;https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.5/lodash.min.js&apos;
+})
+  .promise.then(function() {
+    Elementify.load();
+  });
+
+loader.fetch(&apos;font&apos;, {
+  awaiting: [&apos;elementify&apos;,&apos;lodash&apos;] // Change is here
+  webfont: {
+    google: {
+      families: [&apos;Droid Sans&apos;, &apos;Droid Serif&apos;]
+    }
+  }
+}).then(function() {
+  Q(&apos;body&apos;).append(&apos;&lt;div style=&quot;font-family:\&apos;Droid Sans\&apos;&quot;&gt;Hello, world&lt;/div&gt;&apos;);
+});</code>
+</code></pre>
+<h2 id="bulk-assets-loading">Bulk assets loading</h2><p>You can provide multiple assets request in a single call. Just set
+an id to each asset and swap type as an option value.</p>
+<pre><code class="lang-javascript"><code class="source-code prettyprint">var loader = new Beloader();
+var items = {
+  elementify: {
+    type: &apos;script&apos;,
+    url: &apos;https://cdn.jsdelivr.net/npm/elementify@latest&apos;
+  },
+  lodash: {
+    type: &apos;script&apos;,
+    url: &apos;https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.5/lodash.min.js&apos;
+  },
+  font: {
+    type: &apos;font&apos;,
+    webfont: {
+      google: {
+        families: [&apos;Droid Sans&apos;, &apos;Droid Serif&apos;]
+      }
+    }
+  }
+};
+
+loader.fetchAll(items).promise.then(items =&gt; {
+  Elementify.load();
+  Q(&apos;body&apos;).append(&apos;&lt;div style=&quot;font-family:\&apos;Droid Sans\&apos;&quot;&gt;Hello, world&lt;/div&gt;&apos;);
+});</code>
+</code></pre>
+<p>Each item is available in an array indexed in the same order that they have been declared.
+The <code>fetchAll</code> promise only resolves when all assets are loaded. If one asset is in error,
+the promise will be rejected.</p>
+<h2 id="delaying-queue-process">Delaying queue process</h2><p>As a default, Beloader will automatically process all fetch requests. In some cases,
+you may want to delay the process.</p>
+<pre><code class="lang-javascript"><code class="source-code prettyprint">var loader = new Beloader({
+  autoprocess: false // Add this options
+});
+
+loader.fetch(&apos;script&apos;, {
+  id: &apos;elementify&apos;,
+  url: &apos;https://cdn.jsdelivr.net/npm/elementify@latest&apos;
+})
+  .promise.then(function() {
+    Elementify.load();
+  });
+
+loader.fetch(&apos;script&apos;, {
+  id: &apos;lodash&apos;,
+  url: &apos;https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.5/lodash.min.js&apos;
+})
+  .promise.then(function() {
+    Elementify.load();
+  });
+
+loader.fetch(&apos;font&apos;, {
+  awaiting: [&apos;elementify&apos;,&apos;lodash&apos;]
+  webfont: {
+    google: {
+      families: [&apos;Droid Sans&apos;, &apos;Droid Serif&apos;]
+    }
+  }
+}).then(function() {
+  Q(&apos;body&apos;).append(&apos;&lt;div style=&quot;font-family:\&apos;Droid Sans\&apos;&quot;&gt;Hello, world&lt;/div&gt;&apos;);
+});
+
+// Do things that take time and must be done before processing
+
+loader.process(); // Order Beloader to process the loading queue</code>
+</code></pre>
+</div>
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.0.4)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

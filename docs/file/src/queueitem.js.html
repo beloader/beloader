@@ -24,24 +24,47 @@
   </span>
     <ul class="search-result"></ul>
   </div>
-<a style="position:relative; top:3px;" href="https://github.com/liqueurdetoile/beloader.git"><img width="20px" src="./image/github.png"></a></header>
+<a style="position:relative; top:3px;" href="https://github.com/beloader/beloader.git"><img width="20px" src="./image/github.png"></a></header>
 
 <nav class="navigation" data-ice="nav"><div>
   <ul>
     
   <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/beloader.js~Beloader.html">Beloader</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/queueitem.js~QueueItem.html">QueueItem</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-BeloaderProgress">BeloaderProgress</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-external">E</span><span data-ice="name"><span><a href="https://liqueurdetoile.github.io/DotObjectArray/">DotObjectArray</a></span></span></li>
-<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#animations">animations</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animations/AbstractAnimation.js~AbstractAnimation.html">AbstractAnimation</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animations/BackgroundColor.js~BackgroundColor.html">BackgroundColor</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/animations/ThreeDotsBouncing.js~ThreeDotsBouncing.html">ThreeDotsBouncing</a></span></span></li>
-<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#core">core</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/core/AbstractLoader.js~AbstractLoader.html">AbstractLoader</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#core">core</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/core/AbstractEventManager.js~AbstractEventManager.html">AbstractEventManager</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/core/AbstractLoader.js~AbstractLoader.html">AbstractLoader</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/core/AbstractPlugin.js~AbstractPlugin.html">AbstractPlugin</a></span></span></li>
-<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#layouts">layouts</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/layouts/modal.js~Splash.html">Splash</a></span></span></li>
-<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#loaders">loaders</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/loaders/FontLoader.js~FontLoader.html">FontLoader</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#events">events</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/events/BeloaderEvent.js~BeloaderEvent.html">BeloaderEvent</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-abort">abort</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-afterprocess">afterprocess</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-beforeprocess">beforeprocess</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-error">error</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-load">load</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-loadend">loadend</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-loadstart">loadstart</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-loadstarted">loadstarted</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-progress">progress</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-ready">ready</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-readystatechange">readystatechange</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-timeout">timeout</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-external">E</span><span data-ice="name"><span><a href="https://developer.mozilla.org/en-US/docs/Web/API/ProgressEvent">ProgressEvent</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#loaders">loaders</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/loaders/CustomLoader.js~CustomLoader.html">CustomLoader</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/loaders/FontLoader.js~FontLoader.html">FontLoader</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/loaders/ImageLoader.js~ImageLoader.html">ImageLoader</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/loaders/JsonLoader.js~JsonLoader.html">JsonLoader</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/loaders/NoneLoader.js~AbstractLoader.html">AbstractLoader</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/loaders/PluginLoader.js~PluginLoader.html">PluginLoader</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/loaders/ScriptLoader.js~ScriptLoader.html">ScriptLoader</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/loaders/StylesheetLoader.js~StylesheetLoader.html">StylesheetLoader</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#types">types</a><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-BeloaderOptions">BeloaderOptions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-BeloaderProgress">BeloaderProgress</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-Loader">Loader</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-Plugin">Plugin</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-QueueItemOptions">QueueItemOptions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-external">E</span><span data-ice="name"><span><a href="https://liqueurdetoile.github.io/DotObjectArray/">DotObjectArray</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-external">E</span><span data-ice="name"><span><a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement">HTMLElement</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-external">E</span><span data-ice="name"><span><a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest">XMLHttpRequest</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-external">E</span><span data-ice="name"><span><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Date/now">timestamp</a></span></span></li>
 </ul>
 </div>
 </nav>
@@ -50,19 +73,78 @@
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
 *  @file queueitem.js
 *  @author Liqueur de Toile &lt;contact@liqueurdetoile.com&gt;
-*  @licence AGPL-3.0-only {@link https://spdx.org/licenses/AGPL-3.0-only.html}
+*  @licence AGPL-3.0 {@link https://github.com/liqueurdetoile/beloader/blob/master/LICENSE}
 */
 
 import ObjectArray from &apos;dot-object-array&apos;;
+import AbstractEventManager from &apos;core/AbstractEventManager&apos;;
+import NoneLoader from &apos;loaders/NoneLoader&apos;;
 
-export default class QueueItem {
-  constructor(type, beloader, options) {
+/**
+*  QueueItem handles all item behaviours in the loading queue.
+*  Given its type and options, it will load the appropriate loader
+*  and process request.
+*
+*  @version 1.0.0
+*  @since 1.0.0
+*  @author Liqueur de Toile &lt;contact@liqueurdetoile.com&gt;
+*  @extends {AbstractEventManager}
+*/
+export default class QueueItem extends AbstractEventManager {
+  /**
+  *  @version 1.0.0
+  *  @since 1.0.0
+  *  @author Liqueur de Toile &lt;contact@liqueurdetoile.com&gt;
+  *
+  *  @param {string} type Type of item. See {@link Beloader#fetch}
+  *  @param {Beloader} parent Beloader calling instance
+  *  @param {DotObjectArray} options Options for QueueItem and underlying loader
+  */
+  constructor(type, parent, options) {
+    super(options.data.on);
+
     const _this = this;
     let loader;
 
-    this.beloader = beloader;
-    options = new ObjectArray(options);
+    /**
+    *  Requesting parent item
+    *  @since 1.0.0
+    *  @type {Beloader}
+    */
+    this.parent = parent;
+
+    /**
+    *  Map plugins
+    *  @since 1.0.0
+    *  @type {DotObjectArray}
+    */
+    this._plugins = parent._plugins;
+    this._plugins.forEach((plugin, name) =&gt; {
+      /** @ignore */
+      _this[name] = plugin;
+    });
+
+    /**
+    *  Stores item progress
+    *  @since 1.0.0
+    *  @type {DotObjectArray}
+    */
     this.progress = new ObjectArray();
+
+    /**
+    *  Stores the state of the item
+    *  @since 1.0.0
+    *  @type {Object} state
+    *  @property {boolean}  state.waiting `true` if item is waiting to be processed
+    *  @property {boolean}  state.pending `true` if item&apos;s loading is in progress
+    *  @property {boolean}  state.loaded `true` if item&apos;s loading is completed and successfull
+    *  @property {boolean}  state.error `true` if item&apos;s loading is in error, aborted or timed out
+    *  @property {boolean}  state.abort `true` if item&apos;s loading is aborted
+    *  @property {boolean}  state.timeout `true` if item&apos;s loading is in timeout
+    *  @property {boolean}  state.processed `true` if item&apos;s process is over (loading + initialization)
+    *  @property {boolean}  state.resolved `true` if item&apos;s promise have been resolved
+    *  @property {boolean}  state.ready `true` if item is ready to be used
+    */
     this.state = {
       waiting: true,
       pending: false,
@@ -75,15 +157,60 @@ export default class QueueItem {
       ready: false
     };
 
+    /**
+    *  Id of the item
+    *  @type {string}
+    *  @see {Beloader#fetch}
+    */
     this.id = options.data.id;
+
+    /**
+    *  Autoprocess trigger
+    *  @type {boolean}
+    *  @see {Beloader#fetch}
+    */
+    this.autoprocess = options.data.autoprocess;
+
+    /**
+    *  Async mode trigger
+    *  @type {boolean}
+    *  @see {Beloader#fetch}
+    */
     this.async = options.data.async;
+
+    /**
+    *  Defer mode trigger
+    *  @type {boolean}
+    *  @see {Beloader#fetch}
+    */
     this.defer = options.data.defer;
+
+    /**
+    *  Awaiting mode, dependencies listing
+    *  @type {Array} awaiting
+    *  @see {Beloader#fetch}
+    */
+    this.awaiting = [];
     if (typeof options.data.awaiting !== &apos;undefined&apos;) {
       if (options.data.awaiting instanceof Array) this.awaiting = options.data.awaiting;
       else this.awaiting = [options.data.awaiting];
     }
 
-    // Set promise property
+    /**
+    *  Loader ready promise
+    *  @since 1.0.0
+    *  @type {Promise}
+    */
+    this.loaderReady = new Promise((resolve, reject) =&gt; {
+      _this._loaderOK = resolve;
+      _this._loaderKO = reject;
+    });
+
+    /**
+    *  Item process promise
+    *  @since 1.0.0
+    *  @type {Promise}
+    */
     this.promise = new Promise((resolve, reject) =&gt; {
       _this._resolve = resolve;
       _this._reject = reject;
@@ -98,6 +225,7 @@ export default class QueueItem {
       case &apos;js&apos;:
       case &apos;script&apos;:
       case &apos;javascript&apos;:
+      case &apos;ecmascript&apos;:
         loader = &apos;ScriptLoader&apos;;
         break;
       case &apos;style&apos;:
@@ -106,63 +234,93 @@ export default class QueueItem {
       case &apos;css&apos;:
         loader = &apos;StylesheetLoader&apos;;
         break;
+      case &apos;json&apos;:
+        loader = &apos;JsonLoader&apos;;
+        break;
+      case &apos;image&apos;:
+      case &apos;img&apos;:
+        loader = &apos;ImageLoader&apos;;
+        break;
+      case &apos;none&apos;:
+        /**
+        *  Loader instance
+        *  @since 1.0.0
+        *  @type {Loader}
+        */
+        this.loader = new NoneLoader(this, options);
+        if (this.autoprocess) this.process();
+        this._loaderOK(this);
+        break;
       default:
         // Custom type loader
-        // Must expose a promise property
-        if (options.data.loader instanceof Function) {
-          options.data.loader(this, options).then(
-            function () {},
-            function (error) {
-              _this.error = error;
-            }
-          ).then(() =&gt; _this.fire.call(_this, &apos;loadend&apos;));;
-        } else if (options.data.loader) throw new TypeError(&apos;BeLoader : Custom type loader is not a callback&apos;);
+        if (options.data.loader) loader = &apos;CustomLoader&apos;;
         else throw new TypeError(&apos;BeLoader : No loader for assets with type &apos; + type);
     }
 
+    /* istanbul ignore else */
     if (loader) {
       import(
         /* webpackChunkName: &quot;[request]&quot; */
         &apos;loaders/&apos; + loader
       ).then(function (Loader) {
-        _this.loader = new Loader.default(_this, options); // eslint-disable-line
-
-        _this.loader.promise.then(
-          function () {},
-          function (error) {
-            _this.error = error;
-          }
-        ).then(() =&gt; _this.fire.call(_this, &apos;loadend&apos;));
+        try {
+          _this.loader = new Loader.default(_this, options); // eslint-disable-line
+          if (_this.autoprocess) _this.process.call(_this);
+          _this._loaderOK(_this);
+        } catch (e) {
+          _this._loaderKO(_this);
+          _this._reject(e);
+        }
       });
     }
   }
 
-  fire(eventName, event = null) {
-    let cb, eventCallbackName = &apos;on&apos; + eventName;
+  /**
+  *  Process the request for the QueueItem
+  *
+  *  @version 1.0.0
+  *  @since 1.0.0
+  *  @author Liqueur de Toile &lt;contact@liqueurdetoile.com&gt;
+  *
+  *  @emits {load}
+  *  @emits {error}
+  *  @emits {loadend}
+  */
+  process() {
+    const _this = this;
 
-    // Fire at item level
-    if (this[eventCallbackName] instanceof Function) this[eventCallbackName](this, event);
-    if ((cb = this.loader.options.pull(&apos;on.&apos; + eventName)) instanceof Function) cb(this, event);
+    this.loaderReady.then(function () {
+      _this.loader.promise.then(
+        function () {
+          _this.loader.fire(&apos;load&apos;, _this.loader);
+        },
+        function (error) {
+          _this.error = error; // Store error string/object
+          _this.loader.fire(&apos;error&apos;, _this.loader);
+        }
+      ).then(() =&gt; _this.fire(&apos;loadend&apos;, _this));
+    });
 
-    // Bubbles down to loader level in loader context
-    if (this.loader[eventCallbackName] instanceof Function) {
-      this.loader[eventCallbackName].call(this.loader, this, event);
-    }
-
-    // Bubbles up to beloader level in beloader context
-    this.beloader.fire.call(this.beloader, eventName, this, event);
+    return this;
   }
 
-  onloadstart(item) {
+  /**
+  *  loadstart built-in callback
+  *
+  *  @version 1.0.0
+  *  @since 1.0.0
+  *  @author Liqueur de Toile &lt;contact@liqueurdetoile.com&gt;
+  */
+  _loadstart() {
     let start = +new Date();
 
     // Update state
-    item.state.waiting = false;
-    item.state.pending = true;
+    this.state.waiting = false;
+    this.state.pending = true;
 
     // Initialize loading statistics
-    item.progress.push(&apos;start&apos;, start);
-    item.progress.push(&apos;details&apos;, [{
+    this.progress.push(&apos;start&apos;, start);
+    this.progress.push(&apos;details&apos;, [{
       timestamp: start,
       duration: 0,
       chunked: 0,
@@ -172,53 +330,103 @@ export default class QueueItem {
       rate: 0,
       complete: 0
     }]);
-    item.progress.push(&apos;loaded&apos;, 0);
+    this.progress.push(&apos;loaded&apos;, 0);
   }
 
-  onload(item) {
+  /**
+  *  load built-in callback
+  *
+  *  @version 1.0.0
+  *  @since 1.0.0
+  *  @author Liqueur de Toile &lt;contact@liqueurdetoile.com&gt;
+  */
+  _load() {
     // Update state
-    item.state.loaded = true;
+    this.state.loaded = true;
     // Update data loading progress
-    item.progress.data.complete = 100;
+    this.progress.data.complete = 100;
   }
 
-  onerror(item) {
-    item.state.error = true;
+  /**
+  *  error built-in callback
+  *
+  *  @version 1.0.0
+  *  @since 1.0.0
+  *  @author Liqueur de Toile &lt;contact@liqueurdetoile.com&gt;
+  */
+  _error() {
+    this.state.error = true;
   }
 
-  onabort(item) {
-    item.state.abort = true;
+  /**
+  *  abort built-in callback
+  *
+  *  @version 1.0.0
+  *  @since 1.0.0
+  *  @author Liqueur de Toile &lt;contact@liqueurdetoile.com&gt;
+  */
+  _abort() {
+    this.state.abort = true;
   }
 
-  ontimeout(item) {
-    item.state.timeout = true;
+  /**
+  *  timeout built-in callback
+  *
+  *  @version 1.0.0
+  *  @since 1.0.0
+  *  @author Liqueur de Toile &lt;contact@liqueurdetoile.com&gt;
+  */
+  _timeout() {
+    this.state.timeout = true;
   }
 
-  onloadend(item) {
+  /**
+  *  loadend built-in callback
+  *
+  *  @version 1.0.0
+  *  @since 1.0.0
+  *  @author Liqueur de Toile &lt;contact@liqueurdetoile.com&gt;
+  */
+  _loadend() {
     // Update state
-    item.state.pending = false;
-    item.state.processed = true;
+    this.state.pending = false;
+    this.state.processed = true;
 
-    item.progress.push(&apos;end&apos;, +new Date());
-    item.progress.push(&apos;elapsed&apos;, item.progress.data.end - item.progress.data.start);
+    this.progress.push(&apos;end&apos;, +new Date());
+    this.progress.push(&apos;elapsed&apos;, this.progress.data.end - this.progress.data.start);
   }
 
-  onready(item) {
-    if (item.id) {
+  /**
+  *  ready built-in callback
+  *
+  *  @version 1.0.0
+  *  @since 1.0.0
+  *  @author Liqueur de Toile &lt;contact@liqueurdetoile.com&gt;
+  */
+  _ready() {
+    if (this.id) {
       // Update awaitables
-      item.beloader._awaitables[item.id] = true;
-      // Relaunch onloadend on beloader to trigger waiting dependents
-      item.beloader.onloadend();
+      this.parent._awaitables[this.id] = true;
+      // Relaunch onloadend on beloader instance to trigger awaiting dependents
+      this.parent._loadend();
     }
   }
 
-  onprogress(item, ev) {
+  /**
+  *  progress built-in callback
+  *
+  *  @version 1.0.0
+  *  @since 1.0.0
+  *  @author Liqueur de Toile &lt;contact@liqueurdetoile.com&gt;
+  */
+  _progress(event) {
+    const ev = event.data;
     let t = +new Date();
-    let pt = item.progress.data.details[item.progress.data.details.length - 1];
+    let pt = this.progress.data.details[this.progress.data.details.length - 1];
     let details;
 
     // Update total
-    if (ev.lengthComputable) item.progress.push(&apos;total&apos;, ev.total);
+    if (ev.lengthComputable) this.progress.push(&apos;total&apos;, ev.total);
 
     // Store step detail
     details = {
@@ -226,19 +434,19 @@ export default class QueueItem {
       duration: t - pt.timestamp, // milliseconds
       chunked: ev.loaded - pt.loaded, // Bytes
       chunkrate: (ev.loaded - pt.loaded) / ((t - pt.timestamp) / 1000), // Bytes/s
-      elapsed: t - item.progress.data.start, // milliseconds
+      elapsed: t - this.progress.data.start, // milliseconds
       loaded: ev.loaded, // Bytes
-      rate: ev.loaded / ((t - item.progress.data.start) / 1000), // Bytes/s
-      complete: (item.progress.data.total ? (ev.loaded / item.progress.data.total) * 100 : 0) // Percent
+      rate: ev.loaded / ((t - this.progress.data.start) / 1000), // Bytes/s
+      complete: (this.progress.data.total ? (ev.loaded / this.progress.data.total) * 100 : 0) // Percent
     };
 
-    item.progress.data.details.push(details);
+    this.progress.data.details.push(details);
 
     // Update globals instant state
-    item.progress.push(&apos;elapsed&apos;, details.elapsed);
-    item.progress.push(&apos;loaded&apos;, details.loaded);
-    item.progress.push(&apos;rate&apos;, details.rate);
-    item.progress.push(&apos;complete&apos;, details.complete);
+    this.progress.push(&apos;elapsed&apos;, details.elapsed);
+    this.progress.push(&apos;loaded&apos;, details.loaded);
+    this.progress.push(&apos;rate&apos;, details.rate);
+    this.progress.push(&apos;complete&apos;, details.complete);
   }
 }
 </code></pre>

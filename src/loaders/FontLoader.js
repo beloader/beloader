@@ -1,3 +1,9 @@
+/**
+*  @file FontLoader.js
+*  @author Liqueur de Toile <contact@liqueurdetoile.com>
+*  @licence AGPL-3.0 {@link https://github.com/liqueurdetoile/beloader/blob/master/LICENSE}
+*/
+
 import AbstractLoader from 'core/AbstractLoader';
 import webfont from 'webfontloader';
 
@@ -11,10 +17,26 @@ import webfont from 'webfontloader';
 *  @version 1.0.0
 *  @since 1.0.0
 *  @author Liqueur de Toile <contact@liqueurdetoile.com>
+*  @extends {AbstractLoader}
 *
 *  @see https://github.com/typekit/webfontloader
 */
 export default class FontLoader extends AbstractLoader {
+  /**
+  *  @version 1.0.0
+  *  @since 1.0.0
+  *  @author Liqueur de Toile <contact@liqueurdetoile.com>
+  *
+  *  @param {QueueItem} parent Calling QueueItem
+  *  @param {DotObjectArray} options Options for the loader
+  *  @throws {TypeError}  if `options.webfont` not provided
+  */
+  constructor(parent, options) {
+    if (!options.has('webfont')) throw new TypeError('BeLoader : webfont configuration required for loader');
+    options.push('fallbackSync', false); // No sync fallback allowed
+    super(parent, options);
+  }
+
   /**
   *  Always throw an error because method is not allowed
   *
@@ -22,8 +44,6 @@ export default class FontLoader extends AbstractLoader {
   *  @since 1.0.0
   *  @author Liqueur de Toile <contact@liqueurdetoile.com>
   *
-  *  @returns {void}
-  *  @override
   *  @throws {TypeError} Always thrown if method requested
   */
   sync() {
@@ -42,34 +62,39 @@ export default class FontLoader extends AbstractLoader {
   *  @author Liqueur de Toile <contact@liqueurdetoile.com>
   *
   *  @returns {Promise} Promise resolved or rejected at load end
-  *  @override
   *  @emits {loadstart} CSS Font requesting begins
-  *  @emits {load} Font is active and available
-  *  @emits {error} Loading or font parsing fails
+  *  @emits {loadstarted} CSS Font requesting begins
   *  @throws {TypeError} If webfont configuration object is not provided in options
   *  @see https://github.com/typekit/webfontloader
   */
   async() {
-    const _this = this;
-    let p = new Promise((resolve, reject) => {
-      _this._resolve = resolve;
-      _this._reject = reject;
+    let p, cb, _resolve, _reject;
+
+    p = new Promise(function (resolve, reject) {
+      _resolve = resolve;
+      _reject = reject;
     });
 
-    this.options.push('fallbackSync', false); // No sync fallback allowed
-    if (!this.options.has('webfont')) throw new TypeError('BeLoader : webfont configuration required for loader');
+    cb = this.options.pull('webfont.loading');
+    this.options.push('webfont.loading', function () {
+      if (cb instanceof Function) cb();
+    });
 
+    cb = this.options.pull('webfont.active');
     this.options.push('webfont.active', function () {
-      this.item.fire.call(this.item, 'load');
-      this._resolve();
-    }.bind(this));
-    this.options.push('webfont.inactive', function () {
-      this.item.fire.call(this.item, 'error');
-      this._error();
-    }.bind(this));
+      if (cb instanceof Function) cb();
+      _resolve();
+    });
 
-    this.item.fire.call(this.item, 'loadstart');
+    cb = this.options.pull('webfont.inactive');
+    this.options.push('webfont.inactive', function () {
+      if (cb instanceof Function) cb();
+      _reject();
+    });
+
+    this.fire('loadstart', this);
     webfont.load(this.options.data.webfont);
+    this.fire('loadstarted', this);
 
     return p;
   }

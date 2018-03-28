@@ -1,8 +1,8 @@
 window.esdocSearchIndex = [
   [
-    "beloader/src/animations/abstractanimation.js~abstractanimation",
-    "class/src/animations/AbstractAnimation.js~AbstractAnimation.html",
-    "<span>AbstractAnimation</span> <span class=\"search-result-import-path\">beloader/src/animations/AbstractAnimation.js</span>",
+    "beloader/src/core/abstracteventmanager.js~abstracteventmanager",
+    "class/src/core/AbstractEventManager.js~AbstractEventManager.html",
+    "<span>AbstractEventManager</span> <span class=\"search-result-import-path\">beloader/src/core/AbstractEventManager.js</span>",
     "class"
   ],
   [
@@ -12,15 +12,15 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
-    "beloader/src/core/abstractplugin.js~abstractplugin",
-    "class/src/core/AbstractPlugin.js~AbstractPlugin.html",
-    "<span>AbstractPlugin</span> <span class=\"search-result-import-path\">beloader/src/core/AbstractPlugin.js</span>",
+    "beloader/src/loaders/noneloader.js~abstractloader",
+    "class/src/loaders/NoneLoader.js~AbstractLoader.html",
+    "<span>AbstractLoader</span> <span class=\"search-result-import-path\">beloader/src/loaders/NoneLoader.js</span>",
     "class"
   ],
   [
-    "beloader/src/animations/backgroundcolor.js~backgroundcolor",
-    "class/src/animations/BackgroundColor.js~BackgroundColor.html",
-    "<span>BackgroundColor</span> <span class=\"search-result-import-path\">beloader/src/animations/BackgroundColor.js</span>",
+    "beloader/src/core/abstractplugin.js~abstractplugin",
+    "class/src/core/AbstractPlugin.js~AbstractPlugin.html",
+    "<span>AbstractPlugin</span> <span class=\"search-result-import-path\">beloader/src/core/AbstractPlugin.js</span>",
     "class"
   ],
   [
@@ -30,9 +30,39 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "beloader/src/events/beloaderevent.js~beloaderevent",
+    "class/src/events/BeloaderEvent.js~BeloaderEvent.html",
+    "<span>BeloaderEvent</span> <span class=\"search-result-import-path\">beloader/src/events/BeloaderEvent.js</span>",
+    "class"
+  ],
+  [
+    "beloader/src/loaders/customloader.js~customloader",
+    "class/src/loaders/CustomLoader.js~CustomLoader.html",
+    "<span>CustomLoader</span> <span class=\"search-result-import-path\">beloader/src/loaders/CustomLoader.js</span>",
+    "class"
+  ],
+  [
     "beloader/src/loaders/fontloader.js~fontloader",
     "class/src/loaders/FontLoader.js~FontLoader.html",
     "<span>FontLoader</span> <span class=\"search-result-import-path\">beloader/src/loaders/FontLoader.js</span>",
+    "class"
+  ],
+  [
+    "beloader/src/loaders/imageloader.js~imageloader",
+    "class/src/loaders/ImageLoader.js~ImageLoader.html",
+    "<span>ImageLoader</span> <span class=\"search-result-import-path\">beloader/src/loaders/ImageLoader.js</span>",
+    "class"
+  ],
+  [
+    "beloader/src/loaders/jsonloader.js~jsonloader",
+    "class/src/loaders/JsonLoader.js~JsonLoader.html",
+    "<span>JsonLoader</span> <span class=\"search-result-import-path\">beloader/src/loaders/JsonLoader.js</span>",
+    "class"
+  ],
+  [
+    "beloader/src/loaders/pluginloader.js~pluginloader",
+    "class/src/loaders/PluginLoader.js~PluginLoader.html",
+    "<span>PluginLoader</span> <span class=\"search-result-import-path\">beloader/src/loaders/PluginLoader.js</span>",
     "class"
   ],
   [
@@ -48,22 +78,52 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
-    "beloader/src/layouts/modal.js~splash",
-    "class/src/layouts/modal.js~Splash.html",
-    "<span>Splash</span> <span class=\"search-result-import-path\">beloader/src/layouts/modal.js</span>",
-    "class"
-  ],
-  [
     "beloader/src/loaders/stylesheetloader.js~stylesheetloader",
     "class/src/loaders/StylesheetLoader.js~StylesheetLoader.html",
     "<span>StylesheetLoader</span> <span class=\"search-result-import-path\">beloader/src/loaders/StylesheetLoader.js</span>",
     "class"
   ],
   [
-    "beloader/src/animations/threedotsbouncing.js~threedotsbouncing",
-    "class/src/animations/ThreeDotsBouncing.js~ThreeDotsBouncing.html",
-    "<span>ThreeDotsBouncing</span> <span class=\"search-result-import-path\">beloader/src/animations/ThreeDotsBouncing.js</span>",
-    "class"
+    "",
+    "test-file/tests/events.spec.js.html#lineNumber3",
+    "Beloader events",
+    "test"
+  ],
+  [
+    "",
+    "test-file/tests/events.spec.js.html#lineNumber4",
+    "Beloader events should fire regular events",
+    "test"
+  ],
+  [
+    "",
+    "test-file/tests/events.spec.js.html#lineNumber50",
+    "Beloader events should prevent default",
+    "test"
+  ],
+  [
+    "",
+    "test-file/tests/events.spec.js.html#lineNumber85",
+    "Beloader events should stop immediate propagation post",
+    "test"
+  ],
+  [
+    "",
+    "test-file/tests/events.spec.js.html#lineNumber121",
+    "Beloader events should stop immediate propagation pre",
+    "test"
+  ],
+  [
+    "",
+    "test-file/tests/events.spec.js.html#lineNumber103",
+    "Beloader events should stop immediate propagation pre/post",
+    "test"
+  ],
+  [
+    "",
+    "test-file/tests/events.spec.js.html#lineNumber66",
+    "Beloader events should stop propagation",
+    "test"
   ],
   [
     "",
@@ -90,51 +150,267 @@ window.esdocSearchIndex = [
     "test"
   ],
   [
+    "",
+    "test-file/tests/beloader.spec.js.html#lineNumber14",
+    "Constructor should throw an exception with unknown type and no custom loader",
+    "test"
+  ],
+  [
+    "",
+    "test-file/tests/customloader.spec.js.html#lineNumber3",
+    "Custom loader callback",
+    "test"
+  ],
+  [
+    "",
+    "test-file/tests/customloader.spec.js.html#lineNumber65",
+    "Custom loader callback should override async loader",
+    "test"
+  ],
+  [
+    "",
+    "test-file/tests/customloader.spec.js.html#lineNumber43",
+    "Custom loader callback should override sync loader",
+    "test"
+  ],
+  [
+    "",
+    "test-file/tests/customloader.spec.js.html#lineNumber17",
+    "Custom loader callback should run a custom loader callback that reject",
+    "test"
+  ],
+  [
+    "",
+    "test-file/tests/customloader.spec.js.html#lineNumber5",
+    "Custom loader callback should run a custom loader callback that resolve",
+    "test"
+  ],
+  [
+    "",
+    "test-file/tests/customloader.spec.js.html#lineNumber32",
+    "Custom loader callback should throw an exception if loader not a Function",
+    "test"
+  ],
+  [
+    "",
+    "test-file/tests/beloader.spec.js.html#lineNumber277",
+    "Disable cache testing",
+    "test"
+  ],
+  [
+    "",
+    "test-file/tests/beloader.spec.js.html#lineNumber278",
+    "Disable cache testing should fetch a script",
+    "test"
+  ],
+  [
+    "",
+    "test-file/tests/beloader.spec.js.html#lineNumber289",
+    "Disable cache testing should fetch a script with a query string",
+    "test"
+  ],
+  [
     "beloader#fetch src/beloader.js~beloader#fetch,beloader#fetch",
-    "test-file/tests/beloader.spec.js.html#lineNumber18",
-    "Fetching an item",
+    "test-file/tests/beloader.spec.js.html#lineNumber24",
+    "Fetching an item async",
     "test"
   ],
   [
     "",
-    "test-file/tests/beloader.spec.js.html#lineNumber53",
-    "Fetching an item should fetch a script and fail loading with fallback to sync",
+    "test-file/tests/beloader.spec.js.html#lineNumber71",
+    "Fetching an item async should fetch a script and fail loading with fallback to sync",
     "test"
   ],
   [
     "",
-    "test-file/tests/beloader.spec.js.html#lineNumber37",
-    "Fetching an item should fetch a script and fail loading without fallback",
+    "test-file/tests/beloader.spec.js.html#lineNumber56",
+    "Fetching an item async should fetch a script and fail loading without fallback",
     "test"
   ],
   [
     "",
-    "test-file/tests/beloader.spec.js.html#lineNumber21",
-    "Fetching an item should fetch css",
+    "test-file/tests/beloader.spec.js.html#lineNumber40",
+    "Fetching an item async should fetch css",
     "test"
   ],
   [
     "",
-    "test-file/tests/beloader.spec.js.html#lineNumber102",
-    "Fetching and awaiting dependencies",
+    "test-file/tests/beloader.spec.js.html#lineNumber27",
+    "Fetching an item async should fetch with none loader",
     "test"
   ],
   [
     "",
-    "test-file/tests/beloader.spec.js.html#lineNumber105",
-    "Fetching and awaiting dependencies should await dependencies",
+    "test-file/tests/beloader.spec.js.html#lineNumber87",
+    "Fetching an item sync",
     "test"
   ],
   [
     "",
-    "test-file/tests/beloader.spec.js.html#lineNumber69",
+    "test-file/tests/beloader.spec.js.html#lineNumber88",
+    "Fetching an item sync should load sync",
+    "test"
+  ],
+  [
+    "",
+    "test-file/tests/beloader.spec.js.html#lineNumber158",
+    "Fetching and await dependencies",
+    "test"
+  ],
+  [
+    "",
+    "test-file/tests/beloader.spec.js.html#lineNumber161",
+    "Fetching and await dependencies should await dependencies",
+    "test"
+  ],
+  [
+    "",
+    "test-file/tests/beloader.spec.js.html#lineNumber99",
     "Fetching and defer items",
     "test"
   ],
   [
     "",
-    "test-file/tests/beloader.spec.js.html#lineNumber72",
-    "Fetching and defer items should defer loading",
+    "test-file/tests/beloader.spec.js.html#lineNumber131",
+    "Fetching and defer items should defer loading with global setting",
+    "test"
+  ],
+  [
+    "",
+    "test-file/tests/beloader.spec.js.html#lineNumber102",
+    "Fetching and defer items should defer loading with per item setting",
+    "test"
+  ],
+  [
+    "",
+    "test-file/tests/imageloader.spec.js.html#lineNumber3",
+    "Image loader",
+    "test"
+  ],
+  [
+    "",
+    "test-file/tests/imageloader.spec.js.html#lineNumber4",
+    "Image loader should initialize image container",
+    "test"
+  ],
+  [
+    "",
+    "test-file/tests/imageloader.spec.js.html#lineNumber38",
+    "Image loader should load image async as base64",
+    "test"
+  ],
+  [
+    "",
+    "test-file/tests/imageloader.spec.js.html#lineNumber29",
+    "Image loader should load image async as blob",
+    "test"
+  ],
+  [
+    "",
+    "test-file/tests/imageloader.spec.js.html#lineNumber13",
+    "Image loader should load image sync with attributes",
+    "test"
+  ],
+  [
+    "",
+    "test-file/tests/imageloader.spec.js.html#lineNumber50",
+    "Image loader should throw an error",
+    "test"
+  ],
+  [
+    "jsonloader src/loaders/jsonloader.js~jsonloader,jsonloader",
+    "test-file/tests/jsonloader.spec.js.html#lineNumber6",
+    "JsonLoader tests",
+    "test"
+  ],
+  [
+    "",
+    "test-file/tests/jsonloader.spec.js.html#lineNumber28",
+    "JsonLoader tests JsonLoader errors",
+    "test"
+  ],
+  [
+    "",
+    "test-file/tests/jsonloader.spec.js.html#lineNumber46",
+    "JsonLoader tests JsonLoader errors should report a 404 error",
+    "test"
+  ],
+  [
+    "",
+    "test-file/tests/jsonloader.spec.js.html#lineNumber54",
+    "JsonLoader tests JsonLoader errors should report a JSON syntax error",
+    "test"
+  ],
+  [
+    "",
+    "test-file/tests/jsonloader.spec.js.html#lineNumber30",
+    "JsonLoader tests JsonLoader errors should throw a type error if no URL provided",
+    "test"
+  ],
+  [
+    "",
+    "test-file/tests/jsonloader.spec.js.html#lineNumber38",
+    "JsonLoader tests JsonLoader errors should throw a type error if sync method called",
+    "test"
+  ],
+  [
+    "",
+    "test-file/tests/jsonloader.spec.js.html#lineNumber7",
+    "JsonLoader tests should load JSON",
+    "test"
+  ],
+  [
+    "",
+    "test-file/tests/beloader.spec.js.html#lineNumber242",
+    "Manual process",
+    "test"
+  ],
+  [
+    "",
+    "test-file/tests/beloader.spec.js.html#lineNumber243",
+    "Manual process should load and resolve",
+    "test"
+  ],
+  [
+    "",
+    "test-file/tests/plugins.spec.js.html#lineNumber3",
+    "Plugins",
+    "test"
+  ],
+  [
+    "",
+    "test-file/tests/plugins.spec.js.html#lineNumber36",
+    "Plugins should fail on pluginize with error",
+    "test"
+  ],
+  [
+    "",
+    "test-file/tests/plugins.spec.js.html#lineNumber4",
+    "Plugins should pluginize a function and call init",
+    "test"
+  ],
+  [
+    "",
+    "test-file/tests/plugins.spec.js.html#lineNumber20",
+    "Plugins should pluginize a singleton and call init",
+    "test"
+  ],
+  [
+    "",
+    "test-file/tests/plugins.spec.js.html#lineNumber49",
+    "Plugins should propagate a plugin to item and loader",
+    "test"
+  ],
+  [
+    "",
+    "test-file/tests/beloader.spec.js.html#lineNumber214",
+    "fetchAll method",
+    "test"
+  ],
+  [
+    "",
+    "test-file/tests/beloader.spec.js.html#lineNumber215",
+    "fetchAll method should load and resolve",
     "test"
   ],
   [
@@ -420,106 +696,16 @@ window.esdocSearchIndex = [
     "external"
   ],
   [
-    "src/animations/abstractanimation.js",
-    "file/src/animations/AbstractAnimation.js.html",
-    "src/animations/AbstractAnimation.js",
-    "file"
-  ],
-  [
-    "src/animations/abstractanimation.js~abstractanimation#animation",
-    "class/src/animations/AbstractAnimation.js~AbstractAnimation.html#instance-member-animation",
-    "src/animations/AbstractAnimation.js~AbstractAnimation#animation",
-    "member"
-  ],
-  [
-    "src/animations/abstractanimation.js~abstractanimation#checkopts",
-    "class/src/animations/AbstractAnimation.js~AbstractAnimation.html#instance-method-checkOpts",
-    "src/animations/AbstractAnimation.js~AbstractAnimation#checkOpts",
-    "method"
-  ],
-  [
-    "src/animations/abstractanimation.js~abstractanimation#constructor",
-    "class/src/animations/AbstractAnimation.js~AbstractAnimation.html#instance-constructor-constructor",
-    "src/animations/AbstractAnimation.js~AbstractAnimation#constructor",
-    "method"
-  ],
-  [
-    "src/animations/abstractanimation.js~abstractanimation#id",
-    "class/src/animations/AbstractAnimation.js~AbstractAnimation.html#instance-member-id",
-    "src/animations/AbstractAnimation.js~AbstractAnimation#id",
-    "member"
-  ],
-  [
-    "src/animations/abstractanimation.js~abstractanimation#options",
-    "class/src/animations/AbstractAnimation.js~AbstractAnimation.html#instance-member-options",
-    "src/animations/AbstractAnimation.js~AbstractAnimation#options",
-    "member"
-  ],
-  [
-    "src/animations/backgroundcolor.js",
-    "file/src/animations/BackgroundColor.js.html",
-    "src/animations/BackgroundColor.js",
-    "file"
-  ],
-  [
-    "src/animations/backgroundcolor.js~backgroundcolor#animation",
-    "class/src/animations/BackgroundColor.js~BackgroundColor.html#instance-member-animation",
-    "src/animations/BackgroundColor.js~BackgroundColor#animation",
-    "member"
-  ],
-  [
-    "src/animations/backgroundcolor.js~backgroundcolor#constructor",
-    "class/src/animations/BackgroundColor.js~BackgroundColor.html#instance-constructor-constructor",
-    "src/animations/BackgroundColor.js~BackgroundColor#constructor",
-    "method"
-  ],
-  [
-    "src/animations/backgroundcolor.js~backgroundcolor#start",
-    "class/src/animations/BackgroundColor.js~BackgroundColor.html#instance-method-start",
-    "src/animations/BackgroundColor.js~BackgroundColor#start",
-    "method"
-  ],
-  [
-    "src/animations/threedotsbouncing.js",
-    "file/src/animations/ThreeDotsBouncing.js.html",
-    "src/animations/ThreeDotsBouncing.js",
-    "file"
-  ],
-  [
-    "src/animations/threedotsbouncing.js~threedotsbouncing#animation",
-    "class/src/animations/ThreeDotsBouncing.js~ThreeDotsBouncing.html#instance-member-animation",
-    "src/animations/ThreeDotsBouncing.js~ThreeDotsBouncing#animation",
-    "member"
-  ],
-  [
-    "src/animations/threedotsbouncing.js~threedotsbouncing#block",
-    "class/src/animations/ThreeDotsBouncing.js~ThreeDotsBouncing.html#instance-member-block",
-    "src/animations/ThreeDotsBouncing.js~ThreeDotsBouncing#block",
-    "member"
-  ],
-  [
-    "src/animations/threedotsbouncing.js~threedotsbouncing#build",
-    "class/src/animations/ThreeDotsBouncing.js~ThreeDotsBouncing.html#instance-method-build",
-    "src/animations/ThreeDotsBouncing.js~ThreeDotsBouncing#build",
-    "method"
-  ],
-  [
-    "src/animations/threedotsbouncing.js~threedotsbouncing#constructor",
-    "class/src/animations/ThreeDotsBouncing.js~ThreeDotsBouncing.html#instance-constructor-constructor",
-    "src/animations/ThreeDotsBouncing.js~ThreeDotsBouncing#constructor",
-    "method"
-  ],
-  [
-    "src/animations/threedotsbouncing.js~threedotsbouncing#start",
-    "class/src/animations/ThreeDotsBouncing.js~ThreeDotsBouncing.html#instance-method-start",
-    "src/animations/ThreeDotsBouncing.js~ThreeDotsBouncing#start",
-    "method"
-  ],
-  [
     "src/beloader.js",
     "file/src/beloader.js.html",
     "src/beloader.js",
     "file"
+  ],
+  [
+    "src/beloader.js~beloader#_abort",
+    "class/src/beloader.js~Beloader.html#instance-method-_abort",
+    "src/beloader.js~Beloader#_abort",
+    "method"
   ],
   [
     "src/beloader.js~beloader#_awaitables",
@@ -528,10 +714,52 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
+    "src/beloader.js~beloader#_error",
+    "class/src/beloader.js~Beloader.html#instance-method-_error",
+    "src/beloader.js~Beloader#_error",
+    "method"
+  ],
+  [
     "src/beloader.js~beloader#_items",
     "class/src/beloader.js~Beloader.html#instance-member-_items",
     "src/beloader.js~Beloader#_items",
     "member"
+  ],
+  [
+    "src/beloader.js~beloader#_load",
+    "class/src/beloader.js~Beloader.html#instance-method-_load",
+    "src/beloader.js~Beloader#_load",
+    "method"
+  ],
+  [
+    "src/beloader.js~beloader#_loadend",
+    "class/src/beloader.js~Beloader.html#instance-method-_loadend",
+    "src/beloader.js~Beloader#_loadend",
+    "method"
+  ],
+  [
+    "src/beloader.js~beloader#_loadstart",
+    "class/src/beloader.js~Beloader.html#instance-method-_loadstart",
+    "src/beloader.js~Beloader#_loadstart",
+    "method"
+  ],
+  [
+    "src/beloader.js~beloader#_plugins",
+    "class/src/beloader.js~Beloader.html#instance-member-_plugins",
+    "src/beloader.js~Beloader#_plugins",
+    "member"
+  ],
+  [
+    "src/beloader.js~beloader#_progress",
+    "class/src/beloader.js~Beloader.html#instance-method-_progress",
+    "src/beloader.js~Beloader#_progress",
+    "method"
+  ],
+  [
+    "src/beloader.js~beloader#_timeout",
+    "class/src/beloader.js~Beloader.html#instance-method-_timeout",
+    "src/beloader.js~Beloader#_timeout",
+    "method"
   ],
   [
     "src/beloader.js~beloader#_updateprogress",
@@ -558,58 +786,22 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/beloader.js~beloader#fire",
-    "class/src/beloader.js~Beloader.html#instance-method-fire",
-    "src/beloader.js~Beloader#fire",
-    "method"
-  ],
-  [
-    "src/beloader.js~beloader#onabort",
-    "class/src/beloader.js~Beloader.html#instance-method-onabort",
-    "src/beloader.js~Beloader#onabort",
-    "method"
-  ],
-  [
-    "src/beloader.js~beloader#onerror",
-    "class/src/beloader.js~Beloader.html#instance-method-onerror",
-    "src/beloader.js~Beloader#onerror",
-    "method"
-  ],
-  [
-    "src/beloader.js~beloader#onload",
-    "class/src/beloader.js~Beloader.html#instance-method-onload",
-    "src/beloader.js~Beloader#onload",
-    "method"
-  ],
-  [
-    "src/beloader.js~beloader#onloadend",
-    "class/src/beloader.js~Beloader.html#instance-method-onloadend",
-    "src/beloader.js~Beloader#onloadend",
-    "method"
-  ],
-  [
-    "src/beloader.js~beloader#onloadstart",
-    "class/src/beloader.js~Beloader.html#instance-method-onloadstart",
-    "src/beloader.js~Beloader#onloadstart",
-    "method"
-  ],
-  [
-    "src/beloader.js~beloader#onprogress",
-    "class/src/beloader.js~Beloader.html#instance-method-onprogress",
-    "src/beloader.js~Beloader#onprogress",
-    "method"
-  ],
-  [
-    "src/beloader.js~beloader#ontimeout",
-    "class/src/beloader.js~Beloader.html#instance-method-ontimeout",
-    "src/beloader.js~Beloader#ontimeout",
-    "method"
-  ],
-  [
     "src/beloader.js~beloader#options",
     "class/src/beloader.js~Beloader.html#instance-member-options",
     "src/beloader.js~Beloader#options",
     "member"
+  ],
+  [
+    "src/beloader.js~beloader#pluginize",
+    "class/src/beloader.js~Beloader.html#instance-method-pluginize",
+    "src/beloader.js~Beloader#pluginize",
+    "method"
+  ],
+  [
+    "src/beloader.js~beloader#process",
+    "class/src/beloader.js~Beloader.html#instance-method-process",
+    "src/beloader.js~Beloader#process",
+    "method"
   ],
   [
     "src/beloader.js~beloader#progress",
@@ -618,22 +810,58 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
-    "src/beloader.js~beloaderprogress",
-    "typedef/index.html#static-typedef-BeloaderProgress",
-    "src/beloader.js~BeloaderProgress",
-    "typedef"
+    "src/beloader.js~beloader#ready",
+    "class/src/beloader.js~Beloader.html#instance-member-ready",
+    "src/beloader.js~Beloader#ready",
+    "member"
   ],
   [
-    "src/beloader.js~dotobjectarray",
-    "https://liqueurdetoile.github.io/DotObjectArray/",
-    "src/beloader.js~DotObjectArray",
-    "external"
+    "src/core/abstracteventmanager.js",
+    "file/src/core/AbstractEventManager.js.html",
+    "src/core/AbstractEventManager.js",
+    "file"
+  ],
+  [
+    "src/core/abstracteventmanager.js~abstracteventmanager#_dispatch",
+    "class/src/core/AbstractEventManager.js~AbstractEventManager.html#instance-method-_dispatch",
+    "src/core/AbstractEventManager.js~AbstractEventManager#_dispatch",
+    "method"
+  ],
+  [
+    "src/core/abstracteventmanager.js~abstracteventmanager#_events",
+    "class/src/core/AbstractEventManager.js~AbstractEventManager.html#instance-member-_events",
+    "src/core/AbstractEventManager.js~AbstractEventManager#_events",
+    "member"
+  ],
+  [
+    "src/core/abstracteventmanager.js~abstracteventmanager#constructor",
+    "class/src/core/AbstractEventManager.js~AbstractEventManager.html#instance-constructor-constructor",
+    "src/core/AbstractEventManager.js~AbstractEventManager#constructor",
+    "method"
+  ],
+  [
+    "src/core/abstracteventmanager.js~abstracteventmanager#fire",
+    "class/src/core/AbstractEventManager.js~AbstractEventManager.html#instance-method-fire",
+    "src/core/AbstractEventManager.js~AbstractEventManager#fire",
+    "method"
+  ],
+  [
+    "src/core/abstracteventmanager.js~abstracteventmanager#on",
+    "class/src/core/AbstractEventManager.js~AbstractEventManager.html#instance-method-on",
+    "src/core/AbstractEventManager.js~AbstractEventManager#on",
+    "method"
   ],
   [
     "src/core/abstractloader.js",
     "file/src/core/AbstractLoader.js.html",
     "src/core/AbstractLoader.js",
     "file"
+  ],
+  [
+    "src/core/abstractloader.js~abstractloader#_plugins",
+    "class/src/core/AbstractLoader.js~AbstractLoader.html#instance-member-_plugins",
+    "src/core/AbstractLoader.js~AbstractLoader#_plugins",
+    "member"
   ],
   [
     "src/core/abstractloader.js~abstractloader#async",
@@ -648,15 +876,15 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/core/abstractloader.js~abstractloader#item",
-    "class/src/core/AbstractLoader.js~AbstractLoader.html#instance-member-item",
-    "src/core/AbstractLoader.js~AbstractLoader#item",
-    "member"
-  ],
-  [
     "src/core/abstractloader.js~abstractloader#options",
     "class/src/core/AbstractLoader.js~AbstractLoader.html#instance-member-options",
     "src/core/AbstractLoader.js~AbstractLoader#options",
+    "member"
+  ],
+  [
+    "src/core/abstractloader.js~abstractloader#parent",
+    "class/src/core/AbstractLoader.js~AbstractLoader.html#instance-member-parent",
+    "src/core/AbstractLoader.js~AbstractLoader#parent",
     "member"
   ],
   [
@@ -678,15 +906,15 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "src/core/abstractplugin.js~abstractplugin#_plugins",
+    "class/src/core/AbstractPlugin.js~AbstractPlugin.html#instance-member-_plugins",
+    "src/core/AbstractPlugin.js~AbstractPlugin#_plugins",
+    "member"
+  ],
+  [
     "src/core/abstractplugin.js~abstractplugin#constructor",
     "class/src/core/AbstractPlugin.js~AbstractPlugin.html#instance-constructor-constructor",
     "src/core/AbstractPlugin.js~AbstractPlugin#constructor",
-    "method"
-  ],
-  [
-    "src/core/abstractplugin.js~abstractplugin#fire",
-    "class/src/core/AbstractPlugin.js~AbstractPlugin.html#instance-method-fire",
-    "src/core/AbstractPlugin.js~AbstractPlugin#fire",
     "method"
   ],
   [
@@ -696,82 +924,190 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
-    "src/layouts/abstractlayout.js",
-    "file/src/layouts/abstractlayout.js.html",
-    "src/layouts/abstractlayout.js",
-    "file"
-  ],
-  [
-    "src/layouts/box.js",
-    "file/src/layouts/box.js.html",
-    "src/layouts/box.js",
-    "file"
-  ],
-  [
-    "src/layouts/inline.js",
-    "file/src/layouts/inline.js.html",
-    "src/layouts/inline.js",
-    "file"
-  ],
-  [
-    "src/layouts/modal.js",
-    "file/src/layouts/modal.js.html",
-    "src/layouts/modal.js",
-    "file"
-  ],
-  [
-    "src/layouts/modal.js~splash#append",
-    "class/src/layouts/modal.js~Splash.html#instance-method-append",
-    "src/layouts/modal.js~Splash#append",
-    "method"
-  ],
-  [
-    "src/layouts/modal.js~splash#close",
-    "class/src/layouts/modal.js~Splash.html#instance-method-close",
-    "src/layouts/modal.js~Splash#close",
-    "method"
-  ],
-  [
-    "src/layouts/modal.js~splash#constructor",
-    "class/src/layouts/modal.js~Splash.html#instance-constructor-constructor",
-    "src/layouts/modal.js~Splash#constructor",
-    "method"
-  ],
-  [
-    "src/layouts/modal.js~splash#container",
-    "class/src/layouts/modal.js~Splash.html#instance-member-container",
-    "src/layouts/modal.js~Splash#container",
+    "src/core/abstractplugin.js~abstractplugin#parent",
+    "class/src/core/AbstractPlugin.js~AbstractPlugin.html#instance-member-parent",
+    "src/core/AbstractPlugin.js~AbstractPlugin#parent",
     "member"
   ],
   [
-    "src/layouts/modal.js~splash#fadein",
-    "class/src/layouts/modal.js~Splash.html#instance-method-fadeIn",
-    "src/layouts/modal.js~Splash#fadeIn",
+    "src/core/publicpath.js",
+    "file/src/core/publicpath.js.html",
+    "src/core/publicpath.js",
+    "file"
+  ],
+  [
+    "src/events/beloaderevent.js",
+    "file/src/events/BeloaderEvent.js.html",
+    "src/events/BeloaderEvent.js",
+    "file"
+  ],
+  [
+    "src/events/beloaderevent.js~beloaderevent#_defaultprevented",
+    "class/src/events/BeloaderEvent.js~BeloaderEvent.html#instance-member-_defaultPrevented",
+    "src/events/BeloaderEvent.js~BeloaderEvent#_defaultPrevented",
+    "member"
+  ],
+  [
+    "src/events/beloaderevent.js~beloaderevent#_immediatepropagationstopped",
+    "class/src/events/BeloaderEvent.js~BeloaderEvent.html#instance-member-_immediatePropagationStopped",
+    "src/events/BeloaderEvent.js~BeloaderEvent#_immediatePropagationStopped",
+    "member"
+  ],
+  [
+    "src/events/beloaderevent.js~beloaderevent#_propagationstopped",
+    "class/src/events/BeloaderEvent.js~BeloaderEvent.html#instance-member-_propagationStopped",
+    "src/events/BeloaderEvent.js~BeloaderEvent#_propagationStopped",
+    "member"
+  ],
+  [
+    "src/events/beloaderevent.js~beloaderevent#constructor",
+    "class/src/events/BeloaderEvent.js~BeloaderEvent.html#instance-constructor-constructor",
+    "src/events/BeloaderEvent.js~BeloaderEvent#constructor",
     "method"
   ],
   [
-    "src/layouts/modal.js~splash#fadeout",
-    "class/src/layouts/modal.js~Splash.html#instance-method-fadeOut",
-    "src/layouts/modal.js~Splash#fadeOut",
+    "src/events/beloaderevent.js~beloaderevent#data",
+    "class/src/events/BeloaderEvent.js~BeloaderEvent.html#instance-member-data",
+    "src/events/BeloaderEvent.js~BeloaderEvent#data",
+    "member"
+  ],
+  [
+    "src/events/beloaderevent.js~beloaderevent#name",
+    "class/src/events/BeloaderEvent.js~BeloaderEvent.html#instance-member-name",
+    "src/events/BeloaderEvent.js~BeloaderEvent#name",
+    "member"
+  ],
+  [
+    "src/events/beloaderevent.js~beloaderevent#preventdefault",
+    "class/src/events/BeloaderEvent.js~BeloaderEvent.html#instance-method-preventDefault",
+    "src/events/BeloaderEvent.js~BeloaderEvent#preventDefault",
     "method"
   ],
   [
-    "src/layouts/modal.js~splash#insert",
-    "class/src/layouts/modal.js~Splash.html#instance-method-insert",
-    "src/layouts/modal.js~Splash#insert",
+    "src/events/beloaderevent.js~beloaderevent#stopimmediatepropagation",
+    "class/src/events/BeloaderEvent.js~BeloaderEvent.html#instance-method-stopImmediatePropagation",
+    "src/events/BeloaderEvent.js~BeloaderEvent#stopImmediatePropagation",
     "method"
   ],
   [
-    "src/layouts/modal.js~splash#open",
-    "class/src/layouts/modal.js~Splash.html#instance-method-open",
-    "src/layouts/modal.js~Splash#open",
+    "src/events/beloaderevent.js~beloaderevent#stoppropagation",
+    "class/src/events/BeloaderEvent.js~BeloaderEvent.html#instance-method-stopPropagation",
+    "src/events/BeloaderEvent.js~BeloaderEvent#stopPropagation",
     "method"
   ],
   [
-    "src/layouts/modal.js~splash#prepend",
-    "class/src/layouts/modal.js~Splash.html#instance-method-prepend",
-    "src/layouts/modal.js~Splash#prepend",
+    "src/events/beloaderevent.js~beloaderevent#target",
+    "class/src/events/BeloaderEvent.js~BeloaderEvent.html#instance-member-target",
+    "src/events/BeloaderEvent.js~BeloaderEvent#target",
+    "member"
+  ],
+  [
+    "src/events/beloaderevent.js~beloaderevent#timestamp",
+    "class/src/events/BeloaderEvent.js~BeloaderEvent.html#instance-member-timestamp",
+    "src/events/BeloaderEvent.js~BeloaderEvent#timestamp",
+    "member"
+  ],
+  [
+    "src/events/typedef.doc.js",
+    "file/src/events/typedef.doc.js.html",
+    "src/events/typedef.doc.js",
+    "file"
+  ],
+  [
+    "src/events/typedef.doc.js~progressevent",
+    "https://developer.mozilla.org/en-US/docs/Web/API/ProgressEvent",
+    "src/events/typedef.doc.js~ProgressEvent",
+    "external"
+  ],
+  [
+    "src/events/typedef.doc.js~abort",
+    "typedef/index.html#static-typedef-abort",
+    "src/events/typedef.doc.js~abort",
+    "typedef"
+  ],
+  [
+    "src/events/typedef.doc.js~afterprocess",
+    "typedef/index.html#static-typedef-afterprocess",
+    "src/events/typedef.doc.js~afterprocess",
+    "typedef"
+  ],
+  [
+    "src/events/typedef.doc.js~beforeprocess",
+    "typedef/index.html#static-typedef-beforeprocess",
+    "src/events/typedef.doc.js~beforeprocess",
+    "typedef"
+  ],
+  [
+    "src/events/typedef.doc.js~error",
+    "typedef/index.html#static-typedef-error",
+    "src/events/typedef.doc.js~error",
+    "typedef"
+  ],
+  [
+    "src/events/typedef.doc.js~load",
+    "typedef/index.html#static-typedef-load",
+    "src/events/typedef.doc.js~load",
+    "typedef"
+  ],
+  [
+    "src/events/typedef.doc.js~loadend",
+    "typedef/index.html#static-typedef-loadend",
+    "src/events/typedef.doc.js~loadend",
+    "typedef"
+  ],
+  [
+    "src/events/typedef.doc.js~loadstart",
+    "typedef/index.html#static-typedef-loadstart",
+    "src/events/typedef.doc.js~loadstart",
+    "typedef"
+  ],
+  [
+    "src/events/typedef.doc.js~loadstarted",
+    "typedef/index.html#static-typedef-loadstarted",
+    "src/events/typedef.doc.js~loadstarted",
+    "typedef"
+  ],
+  [
+    "src/events/typedef.doc.js~progress",
+    "typedef/index.html#static-typedef-progress",
+    "src/events/typedef.doc.js~progress",
+    "typedef"
+  ],
+  [
+    "src/events/typedef.doc.js~ready",
+    "typedef/index.html#static-typedef-ready",
+    "src/events/typedef.doc.js~ready",
+    "typedef"
+  ],
+  [
+    "src/events/typedef.doc.js~readystatechange",
+    "typedef/index.html#static-typedef-readystatechange",
+    "src/events/typedef.doc.js~readystatechange",
+    "typedef"
+  ],
+  [
+    "src/events/typedef.doc.js~timeout",
+    "typedef/index.html#static-typedef-timeout",
+    "src/events/typedef.doc.js~timeout",
+    "typedef"
+  ],
+  [
+    "src/loaders/customloader.js",
+    "file/src/loaders/CustomLoader.js.html",
+    "src/loaders/CustomLoader.js",
+    "file"
+  ],
+  [
+    "src/loaders/customloader.js~customloader#constructor",
+    "class/src/loaders/CustomLoader.js~CustomLoader.html#instance-constructor-constructor",
+    "src/loaders/CustomLoader.js~CustomLoader#constructor",
     "method"
+  ],
+  [
+    "src/loaders/customloader.js~customloader#promise",
+    "class/src/loaders/CustomLoader.js~CustomLoader.html#instance-get-promise",
+    "src/loaders/CustomLoader.js~CustomLoader#promise",
+    "member"
   ],
   [
     "src/loaders/fontloader.js",
@@ -786,9 +1122,165 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/loaders/fontloader.js~fontloader#constructor",
+    "class/src/loaders/FontLoader.js~FontLoader.html#instance-constructor-constructor",
+    "src/loaders/FontLoader.js~FontLoader#constructor",
+    "method"
+  ],
+  [
     "src/loaders/fontloader.js~fontloader#sync",
     "class/src/loaders/FontLoader.js~FontLoader.html#instance-method-sync",
     "src/loaders/FontLoader.js~FontLoader#sync",
+    "method"
+  ],
+  [
+    "src/loaders/imageloader.js",
+    "file/src/loaders/ImageLoader.js.html",
+    "src/loaders/ImageLoader.js",
+    "file"
+  ],
+  [
+    "src/loaders/imageloader.js~imageloader#_loadstart",
+    "class/src/loaders/ImageLoader.js~ImageLoader.html#instance-method-_loadstart",
+    "src/loaders/ImageLoader.js~ImageLoader#_loadstart",
+    "method"
+  ],
+  [
+    "src/loaders/imageloader.js~imageloader#_node",
+    "class/src/loaders/ImageLoader.js~ImageLoader.html#instance-member-_node",
+    "src/loaders/ImageLoader.js~ImageLoader#_node",
+    "member"
+  ],
+  [
+    "src/loaders/imageloader.js~imageloader#async",
+    "class/src/loaders/ImageLoader.js~ImageLoader.html#instance-method-async",
+    "src/loaders/ImageLoader.js~ImageLoader#async",
+    "method"
+  ],
+  [
+    "src/loaders/imageloader.js~imageloader#constructor",
+    "class/src/loaders/ImageLoader.js~ImageLoader.html#instance-constructor-constructor",
+    "src/loaders/ImageLoader.js~ImageLoader#constructor",
+    "method"
+  ],
+  [
+    "src/loaders/imageloader.js~imageloader#node",
+    "class/src/loaders/ImageLoader.js~ImageLoader.html#instance-get-node",
+    "src/loaders/ImageLoader.js~ImageLoader#node",
+    "member"
+  ],
+  [
+    "src/loaders/imageloader.js~imageloader#sync",
+    "class/src/loaders/ImageLoader.js~ImageLoader.html#instance-method-sync",
+    "src/loaders/ImageLoader.js~ImageLoader#sync",
+    "method"
+  ],
+  [
+    "src/loaders/jsonloader.js",
+    "file/src/loaders/JsonLoader.js.html",
+    "src/loaders/JsonLoader.js",
+    "file"
+  ],
+  [
+    "src/loaders/jsonloader.js~jsonloader#_loadstart",
+    "class/src/loaders/JsonLoader.js~JsonLoader.html#instance-method-_loadstart",
+    "src/loaders/JsonLoader.js~JsonLoader#_loadstart",
+    "method"
+  ],
+  [
+    "src/loaders/jsonloader.js~jsonloader#async",
+    "class/src/loaders/JsonLoader.js~JsonLoader.html#instance-method-async",
+    "src/loaders/JsonLoader.js~JsonLoader#async",
+    "method"
+  ],
+  [
+    "src/loaders/jsonloader.js~jsonloader#constructor",
+    "class/src/loaders/JsonLoader.js~JsonLoader.html#instance-constructor-constructor",
+    "src/loaders/JsonLoader.js~JsonLoader#constructor",
+    "method"
+  ],
+  [
+    "src/loaders/jsonloader.js~jsonloader#sync",
+    "class/src/loaders/JsonLoader.js~JsonLoader.html#instance-method-sync",
+    "src/loaders/JsonLoader.js~JsonLoader#sync",
+    "method"
+  ],
+  [
+    "src/loaders/noneloader.js",
+    "file/src/loaders/NoneLoader.js.html",
+    "src/loaders/NoneLoader.js",
+    "file"
+  ],
+  [
+    "src/loaders/noneloader.js~abstractloader#_plugins",
+    "class/src/loaders/NoneLoader.js~AbstractLoader.html#instance-member-_plugins",
+    "src/loaders/NoneLoader.js~AbstractLoader#_plugins",
+    "member"
+  ],
+  [
+    "src/loaders/noneloader.js~abstractloader#constructor",
+    "class/src/loaders/NoneLoader.js~AbstractLoader.html#instance-constructor-constructor",
+    "src/loaders/NoneLoader.js~AbstractLoader#constructor",
+    "method"
+  ],
+  [
+    "src/loaders/noneloader.js~abstractloader#options",
+    "class/src/loaders/NoneLoader.js~AbstractLoader.html#instance-member-options",
+    "src/loaders/NoneLoader.js~AbstractLoader#options",
+    "member"
+  ],
+  [
+    "src/loaders/noneloader.js~abstractloader#parent",
+    "class/src/loaders/NoneLoader.js~AbstractLoader.html#instance-member-parent",
+    "src/loaders/NoneLoader.js~AbstractLoader#parent",
+    "member"
+  ],
+  [
+    "src/loaders/noneloader.js~abstractloader#promise",
+    "class/src/loaders/NoneLoader.js~AbstractLoader.html#instance-get-promise",
+    "src/loaders/NoneLoader.js~AbstractLoader#promise",
+    "member"
+  ],
+  [
+    "src/loaders/pluginloader.js",
+    "file/src/loaders/PluginLoader.js.html",
+    "src/loaders/PluginLoader.js",
+    "file"
+  ],
+  [
+    "src/loaders/pluginloader.js~pluginloader#_load",
+    "class/src/loaders/PluginLoader.js~PluginLoader.html#instance-method-_load",
+    "src/loaders/PluginLoader.js~PluginLoader#_load",
+    "method"
+  ],
+  [
+    "src/loaders/pluginloader.js~pluginloader#_node",
+    "class/src/loaders/PluginLoader.js~PluginLoader.html#instance-member-_node",
+    "src/loaders/PluginLoader.js~PluginLoader#_node",
+    "member"
+  ],
+  [
+    "src/loaders/pluginloader.js~pluginloader#async",
+    "class/src/loaders/PluginLoader.js~PluginLoader.html#instance-method-async",
+    "src/loaders/PluginLoader.js~PluginLoader#async",
+    "method"
+  ],
+  [
+    "src/loaders/pluginloader.js~pluginloader#constructor",
+    "class/src/loaders/PluginLoader.js~PluginLoader.html#instance-constructor-constructor",
+    "src/loaders/PluginLoader.js~PluginLoader#constructor",
+    "method"
+  ],
+  [
+    "src/loaders/pluginloader.js~pluginloader#node",
+    "class/src/loaders/PluginLoader.js~PluginLoader.html#instance-get-node",
+    "src/loaders/PluginLoader.js~PluginLoader#node",
+    "member"
+  ],
+  [
+    "src/loaders/pluginloader.js~pluginloader#sync",
+    "class/src/loaders/PluginLoader.js~PluginLoader.html#instance-method-sync",
+    "src/loaders/PluginLoader.js~PluginLoader#sync",
     "method"
   ],
   [
@@ -870,21 +1362,75 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "src/queueitem.js~queueitem#_abort",
+    "class/src/queueitem.js~QueueItem.html#instance-method-_abort",
+    "src/queueitem.js~QueueItem#_abort",
+    "method"
+  ],
+  [
+    "src/queueitem.js~queueitem#_error",
+    "class/src/queueitem.js~QueueItem.html#instance-method-_error",
+    "src/queueitem.js~QueueItem#_error",
+    "method"
+  ],
+  [
+    "src/queueitem.js~queueitem#_load",
+    "class/src/queueitem.js~QueueItem.html#instance-method-_load",
+    "src/queueitem.js~QueueItem#_load",
+    "method"
+  ],
+  [
+    "src/queueitem.js~queueitem#_loadend",
+    "class/src/queueitem.js~QueueItem.html#instance-method-_loadend",
+    "src/queueitem.js~QueueItem#_loadend",
+    "method"
+  ],
+  [
+    "src/queueitem.js~queueitem#_loadstart",
+    "class/src/queueitem.js~QueueItem.html#instance-method-_loadstart",
+    "src/queueitem.js~QueueItem#_loadstart",
+    "method"
+  ],
+  [
+    "src/queueitem.js~queueitem#_plugins",
+    "class/src/queueitem.js~QueueItem.html#instance-member-_plugins",
+    "src/queueitem.js~QueueItem#_plugins",
+    "member"
+  ],
+  [
+    "src/queueitem.js~queueitem#_progress",
+    "class/src/queueitem.js~QueueItem.html#instance-method-_progress",
+    "src/queueitem.js~QueueItem#_progress",
+    "method"
+  ],
+  [
+    "src/queueitem.js~queueitem#_ready",
+    "class/src/queueitem.js~QueueItem.html#instance-method-_ready",
+    "src/queueitem.js~QueueItem#_ready",
+    "method"
+  ],
+  [
+    "src/queueitem.js~queueitem#_timeout",
+    "class/src/queueitem.js~QueueItem.html#instance-method-_timeout",
+    "src/queueitem.js~QueueItem#_timeout",
+    "method"
+  ],
+  [
     "src/queueitem.js~queueitem#async",
     "class/src/queueitem.js~QueueItem.html#instance-member-async",
     "src/queueitem.js~QueueItem#async",
     "member"
   ],
   [
-    "src/queueitem.js~queueitem#awaiting",
-    "class/src/queueitem.js~QueueItem.html#instance-member-awaiting",
-    "src/queueitem.js~QueueItem#awaiting",
+    "src/queueitem.js~queueitem#autoprocess",
+    "class/src/queueitem.js~QueueItem.html#instance-member-autoprocess",
+    "src/queueitem.js~QueueItem#autoprocess",
     "member"
   ],
   [
-    "src/queueitem.js~queueitem#beloader",
-    "class/src/queueitem.js~QueueItem.html#instance-member-beloader",
-    "src/queueitem.js~QueueItem#beloader",
+    "src/queueitem.js~queueitem#awaiting",
+    "class/src/queueitem.js~QueueItem.html#instance-member-awaiting",
+    "src/queueitem.js~QueueItem#awaiting",
     "member"
   ],
   [
@@ -900,63 +1446,33 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
-    "src/queueitem.js~queueitem#fire",
-    "class/src/queueitem.js~QueueItem.html#instance-method-fire",
-    "src/queueitem.js~QueueItem#fire",
-    "method"
-  ],
-  [
     "src/queueitem.js~queueitem#id",
     "class/src/queueitem.js~QueueItem.html#instance-member-id",
     "src/queueitem.js~QueueItem#id",
     "member"
   ],
   [
-    "src/queueitem.js~queueitem#onabort",
-    "class/src/queueitem.js~QueueItem.html#instance-method-onabort",
-    "src/queueitem.js~QueueItem#onabort",
-    "method"
+    "src/queueitem.js~queueitem#loader",
+    "class/src/queueitem.js~QueueItem.html#instance-member-loader",
+    "src/queueitem.js~QueueItem#loader",
+    "member"
   ],
   [
-    "src/queueitem.js~queueitem#onerror",
-    "class/src/queueitem.js~QueueItem.html#instance-method-onerror",
-    "src/queueitem.js~QueueItem#onerror",
-    "method"
+    "src/queueitem.js~queueitem#loaderready",
+    "class/src/queueitem.js~QueueItem.html#instance-member-loaderReady",
+    "src/queueitem.js~QueueItem#loaderReady",
+    "member"
   ],
   [
-    "src/queueitem.js~queueitem#onload",
-    "class/src/queueitem.js~QueueItem.html#instance-method-onload",
-    "src/queueitem.js~QueueItem#onload",
-    "method"
+    "src/queueitem.js~queueitem#parent",
+    "class/src/queueitem.js~QueueItem.html#instance-member-parent",
+    "src/queueitem.js~QueueItem#parent",
+    "member"
   ],
   [
-    "src/queueitem.js~queueitem#onloadend",
-    "class/src/queueitem.js~QueueItem.html#instance-method-onloadend",
-    "src/queueitem.js~QueueItem#onloadend",
-    "method"
-  ],
-  [
-    "src/queueitem.js~queueitem#onloadstart",
-    "class/src/queueitem.js~QueueItem.html#instance-method-onloadstart",
-    "src/queueitem.js~QueueItem#onloadstart",
-    "method"
-  ],
-  [
-    "src/queueitem.js~queueitem#onprogress",
-    "class/src/queueitem.js~QueueItem.html#instance-method-onprogress",
-    "src/queueitem.js~QueueItem#onprogress",
-    "method"
-  ],
-  [
-    "src/queueitem.js~queueitem#onready",
-    "class/src/queueitem.js~QueueItem.html#instance-method-onready",
-    "src/queueitem.js~QueueItem#onready",
-    "method"
-  ],
-  [
-    "src/queueitem.js~queueitem#ontimeout",
-    "class/src/queueitem.js~QueueItem.html#instance-method-ontimeout",
-    "src/queueitem.js~QueueItem#ontimeout",
+    "src/queueitem.js~queueitem#process",
+    "class/src/queueitem.js~QueueItem.html#instance-method-process",
+    "src/queueitem.js~QueueItem#process",
     "method"
   ],
   [
@@ -978,6 +1494,66 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
+    "src/types/typedef.doc.js",
+    "file/src/types/typedef.doc.js.html",
+    "src/types/typedef.doc.js",
+    "file"
+  ],
+  [
+    "src/types/typedef.doc.js~beloaderoptions",
+    "typedef/index.html#static-typedef-BeloaderOptions",
+    "src/types/typedef.doc.js~BeloaderOptions",
+    "typedef"
+  ],
+  [
+    "src/types/typedef.doc.js~beloaderprogress",
+    "typedef/index.html#static-typedef-BeloaderProgress",
+    "src/types/typedef.doc.js~BeloaderProgress",
+    "typedef"
+  ],
+  [
+    "src/types/typedef.doc.js~dotobjectarray",
+    "https://liqueurdetoile.github.io/DotObjectArray/",
+    "src/types/typedef.doc.js~DotObjectArray",
+    "external"
+  ],
+  [
+    "src/types/typedef.doc.js~htmlelement",
+    "https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement",
+    "src/types/typedef.doc.js~HTMLElement",
+    "external"
+  ],
+  [
+    "src/types/typedef.doc.js~loader",
+    "typedef/index.html#static-typedef-Loader",
+    "src/types/typedef.doc.js~Loader",
+    "typedef"
+  ],
+  [
+    "src/types/typedef.doc.js~plugin",
+    "typedef/index.html#static-typedef-Plugin",
+    "src/types/typedef.doc.js~Plugin",
+    "typedef"
+  ],
+  [
+    "src/types/typedef.doc.js~queueitemoptions",
+    "typedef/index.html#static-typedef-QueueItemOptions",
+    "src/types/typedef.doc.js~QueueItemOptions",
+    "typedef"
+  ],
+  [
+    "src/types/typedef.doc.js~xmlhttprequest",
+    "https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest",
+    "src/types/typedef.doc.js~XMLHttpRequest",
+    "external"
+  ],
+  [
+    "src/types/typedef.doc.js~timestamp",
+    "https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Date/now",
+    "src/types/typedef.doc.js~timestamp",
+    "external"
+  ],
+  [
     "tests/abstractloader.spec.js",
     "test-file/tests/abstractloader.spec.js.html",
     "tests/abstractloader.spec.js",
@@ -987,6 +1563,36 @@ window.esdocSearchIndex = [
     "tests/beloader.spec.js",
     "test-file/tests/beloader.spec.js.html",
     "tests/beloader.spec.js",
+    "testFile"
+  ],
+  [
+    "tests/customloader.spec.js",
+    "test-file/tests/customloader.spec.js.html",
+    "tests/customloader.spec.js",
+    "testFile"
+  ],
+  [
+    "tests/events.spec.js",
+    "test-file/tests/events.spec.js.html",
+    "tests/events.spec.js",
+    "testFile"
+  ],
+  [
+    "tests/imageloader.spec.js",
+    "test-file/tests/imageloader.spec.js.html",
+    "tests/imageloader.spec.js",
+    "testFile"
+  ],
+  [
+    "tests/jsonloader.spec.js",
+    "test-file/tests/jsonloader.spec.js.html",
+    "tests/jsonloader.spec.js",
+    "testFile"
+  ],
+  [
+    "tests/plugins.spec.js",
+    "test-file/tests/plugins.spec.js.html",
+    "tests/plugins.spec.js",
     "testFile"
   ],
   [

@@ -1,0 +1,498 @@
+{
+  "type": "File",
+  "start": 0,
+  "end": 6579,
+  "loc": {
+    "start": {
+      "line": 1,
+      "column": 0
+    },
+    "end": {
+      "line": 190,
+      "column": 0
+    }
+  },
+  "program": {
+    "type": "Program",
+    "start": 0,
+    "end": 6579,
+    "loc": {
+      "start": {
+        "line": 1,
+        "column": 0
+      },
+      "end": {
+        "line": 190,
+        "column": 0
+      }
+    },
+    "sourceType": "module",
+    "body": [],
+    "directives": [],
+    "leadingComments": null,
+    "innerComments": [
+      {
+        "type": "CommentBlock",
+        "value": "*\n*  @external {DotObjectArray} https://liqueurdetoile.github.io/DotObjectArray/\n",
+        "start": 0,
+        "end": 85,
+        "loc": {
+          "start": {
+            "line": 1,
+            "column": 0
+          },
+          "end": {
+            "line": 3,
+            "column": 2
+          }
+        }
+      },
+      {
+        "type": "CommentBlock",
+        "value": "*\n*  @external {timestamp} https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Date/now\n",
+        "start": 86,
+        "end": 204,
+        "loc": {
+          "start": {
+            "line": 4,
+            "column": 0
+          },
+          "end": {
+            "line": 6,
+            "column": 2
+          }
+        }
+      },
+      {
+        "type": "CommentBlock",
+        "value": "*\n*  @external {HTMLElement} https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement\n",
+        "start": 205,
+        "end": 299,
+        "loc": {
+          "start": {
+            "line": 7,
+            "column": 0
+          },
+          "end": {
+            "line": 9,
+            "column": 2
+          }
+        }
+      },
+      {
+        "type": "CommentBlock",
+        "value": "*\n*  @external {XMLHttpRequest} https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest\n",
+        "start": 300,
+        "end": 400,
+        "loc": {
+          "start": {
+            "line": 10,
+            "column": 0
+          },
+          "end": {
+            "line": 12,
+            "column": 2
+          }
+        }
+      },
+      {
+        "type": "CommentBlock",
+        "value": "*\n*  A loader instance which vary upon the type of asset requested\n*  @typedef {Loader} Loader instance\n*  @property {QueueItem}  parent  Calling QueueItem\n",
+        "start": 402,
+        "end": 562,
+        "loc": {
+          "start": {
+            "line": 14,
+            "column": 0
+          },
+          "end": {
+            "line": 18,
+            "column": 2
+          }
+        }
+      },
+      {
+        "type": "CommentBlock",
+        "value": "*\n*  A Plugin instance\n*  @typedef {Plugin} Plugin instance\n*  @property {Beloader}  parent  Calling QueueItem\n",
+        "start": 564,
+        "end": 679,
+        "loc": {
+          "start": {
+            "line": 20,
+            "column": 0
+          },
+          "end": {
+            "line": 24,
+            "column": 2
+          }
+        }
+      },
+      {
+        "type": "CommentBlock",
+        "value": "*\n*  Exception for event callbacks, most of the global options are\n*  designed to set defaults values for {@link QueueItem) instance\n*  and associated {@link Loader} instances\n*\n*  @typedef {Object}  BeloaderOptions\n*  @property {Object} [on]\n*  Events callbacks\n*  \n*  When defined at Beloader level, the callback will execute as\n*  many times as the event is received. For instance, a `load` callback\n*  wille triggered each time an item is loaded.\n*  @property {boolean}  [autoprocess=true]  {@link QueueItemOptions}\n*  @property {boolean}  [async=true]  {@link QueueItemOptions}\n*  @property {boolean}  [cache=true]  {@link QueueItemOptions}\n*  @property {boolean}  [defer=false]  {@link QueueItemOptions}\n*  @property {boolean}  [fallbackSync=true]  {@link QueueItemOptions}\n*  @property {Object}  [xhr]  {@link QueueItemOptions}\n*  @property {Object|Promise}  [loader]  {@link QueueItemOptions}\n*  \n*  @example\n*  var loader = new Beloader({\n*    defer: true // load in same order than declared\n*    on: {\n*      afterprocess: () => { app.start() }\n*    }\n*  });\n",
+        "start": 681,
+        "end": 1754,
+        "loc": {
+          "start": {
+            "line": 26,
+            "column": 0
+          },
+          "end": {
+            "line": 53,
+            "column": 2
+          }
+        }
+      },
+      {
+        "type": "CommentBlock",
+        "value": "*\n*  Options for QueueItem are mostly for the underlying loader.\n*  Some loaders are requiring specific informations and will\n*  usually throw an error if not provided\n*  \n*\n*  @typedef {Object}  QueueItemOptions\n*  @property {Object} [on]\n*  Events callbacks\n*  \n*  When defined at QueueItem level, the callback will execute if\n*  triggered by itself or its loader. For instance, a `load` callback\n*  wille be triggered once when the item will be loaded.\n*  @property {boolean}  [autoprocess=true]\n*  if set to `false`, each item must be processed by calling its `process` method\n*  or Beloader instance `process` method for a bulk run\n*  @property {boolean}  [async=true]\n*  If `true`, QueueItem will first try to process request asynchronously\n*  @property {boolean}  [cache=true]\n*  If `false`, QueueItem will append a unique hash as query string to the request url\n*  to disable browser's built-in cache\n*  @property {boolean}  [defer=false]\n*  If `true`, QueueItem will not resolve until all previous requested items\n*  which have also `defer` option set to true is resolved\n*  @property {boolean}  [fallbackSync=true]\n*  If `true`, QueueItem will try to perform a sync request as fallback. It can\n*  be a workaround for CORS issues.\n*  @property {string}  [id]\n*  Set the ID for the QueueItem. its main use is in conjunction with `awaiting` option\n*  @property {string|string[]} [awaiting]\n*  Define the dependency(ies) ID that must be resolved before resolving current QueueItem.\n*  @property {object} [xhr] __XHR specific properties for async loading__\n*  @property {string} [xhr.method='GET']\n*  XHR method to perform request\n*  @property {mixed}  [xhr.data]\n*  Data to send in the request body. _Note: No data processing is done\n*  within the core basic XHR instance_\n*  @property {Promise|Object} [loader]\n*  __Custom loaders__\n*  \n*  If provided as a promise callback, the loader will be used for `custom` type\n*  requests.\n*  Alternatively, you can provide loader replacements for known types (see below)\n*  @property {Promise}  [loader.sync]\n*  Custom loader for sync requests\n*  \n*  See {@link AbstractLoader#sync}\n*  @property {Promise}  [loader.async]\n*  Custom loader for async requests\n*  \n*  See {@link AbstractLoader#async}\n*  \n*  \n*  @example\n*  var loader = new Beloader();\n*  \n*  loader.fetch('script', {\n*    url: 'https://cdn.jsdelivr.net/npm/elementify@latest',\n*    async: false\n*  }); \n",
+        "start": 1756,
+        "end": 4176,
+        "loc": {
+          "start": {
+            "line": 55,
+            "column": 0
+          },
+          "end": {
+            "line": 115,
+            "column": 2
+          }
+        }
+      },
+      {
+        "type": "CommentBlock",
+        "value": "*\n*  Stores a BeLoader instance real time progress\n*  \n*  Statistics can be accessed using DotObjectArray methods.\n*  \n*  @example\n*  var loader = new Beloader({\n*    defer: true // load in same order than declared\n*    on: {\n*      afterprocess: () => { app.start() }\n*    }\n*  });\n*  \n*  loader.fetchAll({\n*    'js': 'https://cdn.jsdelivr.net/npm/elementify@latest',\n*    'font': {\n*      webfont: {\n*        google: {\n*          families: ['Droid Sans', 'Droid Serif']\n*        }\n*      }\n*    },\n*    'js': 'https://myserver.com/myapp.js'\n*  });\n*  \n*  loader.progress.data.items.total; // returns 2\n*  loader.progress.pull('items.total'); // returns 2\n*\n*  @typedef {DotObjectArray}  BeloaderProgress\n*  \n*  @property {Object} items\n*  __Items count container__\n*  @property {number} items.total\n*  Total items in Beloader instance\n*  @property {number} items.waiting\n*  Total items that are waiting to be processed\n*  @property {number} items.pending\n*  Total items that are currently processed\n*  @property {number} items.processed\n*  Total items that have been processed\n*  @property {number} items.loaded\n*  Total items that have been sucessfully loaded\n*  @property {number} items.error\n*  Total items which load have failed on error\n*  @property {number} items.abort\n*  Total items which load have been aborted\n*  @property {number} items.timeout\n*  Total items wich load have failed on timeout\n*  @property {number} items.ready\n*  Total items that have been loaded and post-process finished\n*  \n*  @property {Object} loading\n*  __Loading statistics__\n*  @property {timestamp} loading.start\n*  Process start timestamp\n*  @property {timestamp} loading.end\n*  Process end timestamp\n*  @property {number} loading.elapsed\n*  Duration of the process (ms)\n*  @property {number} loading.loaded\n*  Weight of loaded data. It might not be accurate\n*  because relying on {@link src/events/typedef.doc.js~progress} event\n*  @property {number} loading.rate\n*  Transfer bandwidth. It might not be accurate\n*  because relying on {@link progress} event\n*  @property {number} loading.complete\n*  Loading percentage completed. It might not be accurate\n*  because relying on {@link progress} QueueItem event\n*  @property {number} loading.total\n*  Weight of data to load. It might not be accurate\n*  because relying on {@link progress} QueueItem event and\n*  server's providing a `content-length` header.\n",
+        "start": 4178,
+        "end": 6578,
+        "loc": {
+          "start": {
+            "line": 117,
+            "column": 0
+          },
+          "end": {
+            "line": 189,
+            "column": 2
+          }
+        }
+      }
+    ]
+  },
+  "comments": [
+    {
+      "type": "CommentBlock",
+      "value": "*\n*  @external {DotObjectArray} https://liqueurdetoile.github.io/DotObjectArray/\n",
+      "start": 0,
+      "end": 85,
+      "loc": {
+        "start": {
+          "line": 1,
+          "column": 0
+        },
+        "end": {
+          "line": 3,
+          "column": 2
+        }
+      }
+    },
+    {
+      "type": "CommentBlock",
+      "value": "*\n*  @external {timestamp} https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Date/now\n",
+      "start": 86,
+      "end": 204,
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 0
+        },
+        "end": {
+          "line": 6,
+          "column": 2
+        }
+      }
+    },
+    {
+      "type": "CommentBlock",
+      "value": "*\n*  @external {HTMLElement} https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement\n",
+      "start": 205,
+      "end": 299,
+      "loc": {
+        "start": {
+          "line": 7,
+          "column": 0
+        },
+        "end": {
+          "line": 9,
+          "column": 2
+        }
+      }
+    },
+    {
+      "type": "CommentBlock",
+      "value": "*\n*  @external {XMLHttpRequest} https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest\n",
+      "start": 300,
+      "end": 400,
+      "loc": {
+        "start": {
+          "line": 10,
+          "column": 0
+        },
+        "end": {
+          "line": 12,
+          "column": 2
+        }
+      }
+    },
+    {
+      "type": "CommentBlock",
+      "value": "*\n*  A loader instance which vary upon the type of asset requested\n*  @typedef {Loader} Loader instance\n*  @property {QueueItem}  parent  Calling QueueItem\n",
+      "start": 402,
+      "end": 562,
+      "loc": {
+        "start": {
+          "line": 14,
+          "column": 0
+        },
+        "end": {
+          "line": 18,
+          "column": 2
+        }
+      }
+    },
+    {
+      "type": "CommentBlock",
+      "value": "*\n*  A Plugin instance\n*  @typedef {Plugin} Plugin instance\n*  @property {Beloader}  parent  Calling QueueItem\n",
+      "start": 564,
+      "end": 679,
+      "loc": {
+        "start": {
+          "line": 20,
+          "column": 0
+        },
+        "end": {
+          "line": 24,
+          "column": 2
+        }
+      }
+    },
+    {
+      "type": "CommentBlock",
+      "value": "*\n*  Exception for event callbacks, most of the global options are\n*  designed to set defaults values for {@link QueueItem) instance\n*  and associated {@link Loader} instances\n*\n*  @typedef {Object}  BeloaderOptions\n*  @property {Object} [on]\n*  Events callbacks\n*  \n*  When defined at Beloader level, the callback will execute as\n*  many times as the event is received. For instance, a `load` callback\n*  wille triggered each time an item is loaded.\n*  @property {boolean}  [autoprocess=true]  {@link QueueItemOptions}\n*  @property {boolean}  [async=true]  {@link QueueItemOptions}\n*  @property {boolean}  [cache=true]  {@link QueueItemOptions}\n*  @property {boolean}  [defer=false]  {@link QueueItemOptions}\n*  @property {boolean}  [fallbackSync=true]  {@link QueueItemOptions}\n*  @property {Object}  [xhr]  {@link QueueItemOptions}\n*  @property {Object|Promise}  [loader]  {@link QueueItemOptions}\n*  \n*  @example\n*  var loader = new Beloader({\n*    defer: true // load in same order than declared\n*    on: {\n*      afterprocess: () => { app.start() }\n*    }\n*  });\n",
+      "start": 681,
+      "end": 1754,
+      "loc": {
+        "start": {
+          "line": 26,
+          "column": 0
+        },
+        "end": {
+          "line": 53,
+          "column": 2
+        }
+      }
+    },
+    {
+      "type": "CommentBlock",
+      "value": "*\n*  Options for QueueItem are mostly for the underlying loader.\n*  Some loaders are requiring specific informations and will\n*  usually throw an error if not provided\n*  \n*\n*  @typedef {Object}  QueueItemOptions\n*  @property {Object} [on]\n*  Events callbacks\n*  \n*  When defined at QueueItem level, the callback will execute if\n*  triggered by itself or its loader. For instance, a `load` callback\n*  wille be triggered once when the item will be loaded.\n*  @property {boolean}  [autoprocess=true]\n*  if set to `false`, each item must be processed by calling its `process` method\n*  or Beloader instance `process` method for a bulk run\n*  @property {boolean}  [async=true]\n*  If `true`, QueueItem will first try to process request asynchronously\n*  @property {boolean}  [cache=true]\n*  If `false`, QueueItem will append a unique hash as query string to the request url\n*  to disable browser's built-in cache\n*  @property {boolean}  [defer=false]\n*  If `true`, QueueItem will not resolve until all previous requested items\n*  which have also `defer` option set to true is resolved\n*  @property {boolean}  [fallbackSync=true]\n*  If `true`, QueueItem will try to perform a sync request as fallback. It can\n*  be a workaround for CORS issues.\n*  @property {string}  [id]\n*  Set the ID for the QueueItem. its main use is in conjunction with `awaiting` option\n*  @property {string|string[]} [awaiting]\n*  Define the dependency(ies) ID that must be resolved before resolving current QueueItem.\n*  @property {object} [xhr] __XHR specific properties for async loading__\n*  @property {string} [xhr.method='GET']\n*  XHR method to perform request\n*  @property {mixed}  [xhr.data]\n*  Data to send in the request body. _Note: No data processing is done\n*  within the core basic XHR instance_\n*  @property {Promise|Object} [loader]\n*  __Custom loaders__\n*  \n*  If provided as a promise callback, the loader will be used for `custom` type\n*  requests.\n*  Alternatively, you can provide loader replacements for known types (see below)\n*  @property {Promise}  [loader.sync]\n*  Custom loader for sync requests\n*  \n*  See {@link AbstractLoader#sync}\n*  @property {Promise}  [loader.async]\n*  Custom loader for async requests\n*  \n*  See {@link AbstractLoader#async}\n*  \n*  \n*  @example\n*  var loader = new Beloader();\n*  \n*  loader.fetch('script', {\n*    url: 'https://cdn.jsdelivr.net/npm/elementify@latest',\n*    async: false\n*  }); \n",
+      "start": 1756,
+      "end": 4176,
+      "loc": {
+        "start": {
+          "line": 55,
+          "column": 0
+        },
+        "end": {
+          "line": 115,
+          "column": 2
+        }
+      }
+    },
+    {
+      "type": "CommentBlock",
+      "value": "*\n*  Stores a BeLoader instance real time progress\n*  \n*  Statistics can be accessed using DotObjectArray methods.\n*  \n*  @example\n*  var loader = new Beloader({\n*    defer: true // load in same order than declared\n*    on: {\n*      afterprocess: () => { app.start() }\n*    }\n*  });\n*  \n*  loader.fetchAll({\n*    'js': 'https://cdn.jsdelivr.net/npm/elementify@latest',\n*    'font': {\n*      webfont: {\n*        google: {\n*          families: ['Droid Sans', 'Droid Serif']\n*        }\n*      }\n*    },\n*    'js': 'https://myserver.com/myapp.js'\n*  });\n*  \n*  loader.progress.data.items.total; // returns 2\n*  loader.progress.pull('items.total'); // returns 2\n*\n*  @typedef {DotObjectArray}  BeloaderProgress\n*  \n*  @property {Object} items\n*  __Items count container__\n*  @property {number} items.total\n*  Total items in Beloader instance\n*  @property {number} items.waiting\n*  Total items that are waiting to be processed\n*  @property {number} items.pending\n*  Total items that are currently processed\n*  @property {number} items.processed\n*  Total items that have been processed\n*  @property {number} items.loaded\n*  Total items that have been sucessfully loaded\n*  @property {number} items.error\n*  Total items which load have failed on error\n*  @property {number} items.abort\n*  Total items which load have been aborted\n*  @property {number} items.timeout\n*  Total items wich load have failed on timeout\n*  @property {number} items.ready\n*  Total items that have been loaded and post-process finished\n*  \n*  @property {Object} loading\n*  __Loading statistics__\n*  @property {timestamp} loading.start\n*  Process start timestamp\n*  @property {timestamp} loading.end\n*  Process end timestamp\n*  @property {number} loading.elapsed\n*  Duration of the process (ms)\n*  @property {number} loading.loaded\n*  Weight of loaded data. It might not be accurate\n*  because relying on {@link src/events/typedef.doc.js~progress} event\n*  @property {number} loading.rate\n*  Transfer bandwidth. It might not be accurate\n*  because relying on {@link progress} event\n*  @property {number} loading.complete\n*  Loading percentage completed. It might not be accurate\n*  because relying on {@link progress} QueueItem event\n*  @property {number} loading.total\n*  Weight of data to load. It might not be accurate\n*  because relying on {@link progress} QueueItem event and\n*  server's providing a `content-length` header.\n",
+      "start": 4178,
+      "end": 6578,
+      "loc": {
+        "start": {
+          "line": 117,
+          "column": 0
+        },
+        "end": {
+          "line": 189,
+          "column": 2
+        }
+      }
+    }
+  ],
+  "tokens": [
+    {
+      "type": "CommentBlock",
+      "value": "*\n*  @external {DotObjectArray} https://liqueurdetoile.github.io/DotObjectArray/\n",
+      "start": 0,
+      "end": 85,
+      "loc": {
+        "start": {
+          "line": 1,
+          "column": 0
+        },
+        "end": {
+          "line": 3,
+          "column": 2
+        }
+      }
+    },
+    {
+      "type": "CommentBlock",
+      "value": "*\n*  @external {timestamp} https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Date/now\n",
+      "start": 86,
+      "end": 204,
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 0
+        },
+        "end": {
+          "line": 6,
+          "column": 2
+        }
+      }
+    },
+    {
+      "type": "CommentBlock",
+      "value": "*\n*  @external {HTMLElement} https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement\n",
+      "start": 205,
+      "end": 299,
+      "loc": {
+        "start": {
+          "line": 7,
+          "column": 0
+        },
+        "end": {
+          "line": 9,
+          "column": 2
+        }
+      }
+    },
+    {
+      "type": "CommentBlock",
+      "value": "*\n*  @external {XMLHttpRequest} https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest\n",
+      "start": 300,
+      "end": 400,
+      "loc": {
+        "start": {
+          "line": 10,
+          "column": 0
+        },
+        "end": {
+          "line": 12,
+          "column": 2
+        }
+      }
+    },
+    {
+      "type": "CommentBlock",
+      "value": "*\n*  A loader instance which vary upon the type of asset requested\n*  @typedef {Loader} Loader instance\n*  @property {QueueItem}  parent  Calling QueueItem\n",
+      "start": 402,
+      "end": 562,
+      "loc": {
+        "start": {
+          "line": 14,
+          "column": 0
+        },
+        "end": {
+          "line": 18,
+          "column": 2
+        }
+      }
+    },
+    {
+      "type": "CommentBlock",
+      "value": "*\n*  A Plugin instance\n*  @typedef {Plugin} Plugin instance\n*  @property {Beloader}  parent  Calling QueueItem\n",
+      "start": 564,
+      "end": 679,
+      "loc": {
+        "start": {
+          "line": 20,
+          "column": 0
+        },
+        "end": {
+          "line": 24,
+          "column": 2
+        }
+      }
+    },
+    {
+      "type": "CommentBlock",
+      "value": "*\n*  Exception for event callbacks, most of the global options are\n*  designed to set defaults values for {@link QueueItem) instance\n*  and associated {@link Loader} instances\n*\n*  @typedef {Object}  BeloaderOptions\n*  @property {Object} [on]\n*  Events callbacks\n*  \n*  When defined at Beloader level, the callback will execute as\n*  many times as the event is received. For instance, a `load` callback\n*  wille triggered each time an item is loaded.\n*  @property {boolean}  [autoprocess=true]  {@link QueueItemOptions}\n*  @property {boolean}  [async=true]  {@link QueueItemOptions}\n*  @property {boolean}  [cache=true]  {@link QueueItemOptions}\n*  @property {boolean}  [defer=false]  {@link QueueItemOptions}\n*  @property {boolean}  [fallbackSync=true]  {@link QueueItemOptions}\n*  @property {Object}  [xhr]  {@link QueueItemOptions}\n*  @property {Object|Promise}  [loader]  {@link QueueItemOptions}\n*  \n*  @example\n*  var loader = new Beloader({\n*    defer: true // load in same order than declared\n*    on: {\n*      afterprocess: () => { app.start() }\n*    }\n*  });\n",
+      "start": 681,
+      "end": 1754,
+      "loc": {
+        "start": {
+          "line": 26,
+          "column": 0
+        },
+        "end": {
+          "line": 53,
+          "column": 2
+        }
+      }
+    },
+    {
+      "type": "CommentBlock",
+      "value": "*\n*  Options for QueueItem are mostly for the underlying loader.\n*  Some loaders are requiring specific informations and will\n*  usually throw an error if not provided\n*  \n*\n*  @typedef {Object}  QueueItemOptions\n*  @property {Object} [on]\n*  Events callbacks\n*  \n*  When defined at QueueItem level, the callback will execute if\n*  triggered by itself or its loader. For instance, a `load` callback\n*  wille be triggered once when the item will be loaded.\n*  @property {boolean}  [autoprocess=true]\n*  if set to `false`, each item must be processed by calling its `process` method\n*  or Beloader instance `process` method for a bulk run\n*  @property {boolean}  [async=true]\n*  If `true`, QueueItem will first try to process request asynchronously\n*  @property {boolean}  [cache=true]\n*  If `false`, QueueItem will append a unique hash as query string to the request url\n*  to disable browser's built-in cache\n*  @property {boolean}  [defer=false]\n*  If `true`, QueueItem will not resolve until all previous requested items\n*  which have also `defer` option set to true is resolved\n*  @property {boolean}  [fallbackSync=true]\n*  If `true`, QueueItem will try to perform a sync request as fallback. It can\n*  be a workaround for CORS issues.\n*  @property {string}  [id]\n*  Set the ID for the QueueItem. its main use is in conjunction with `awaiting` option\n*  @property {string|string[]} [awaiting]\n*  Define the dependency(ies) ID that must be resolved before resolving current QueueItem.\n*  @property {object} [xhr] __XHR specific properties for async loading__\n*  @property {string} [xhr.method='GET']\n*  XHR method to perform request\n*  @property {mixed}  [xhr.data]\n*  Data to send in the request body. _Note: No data processing is done\n*  within the core basic XHR instance_\n*  @property {Promise|Object} [loader]\n*  __Custom loaders__\n*  \n*  If provided as a promise callback, the loader will be used for `custom` type\n*  requests.\n*  Alternatively, you can provide loader replacements for known types (see below)\n*  @property {Promise}  [loader.sync]\n*  Custom loader for sync requests\n*  \n*  See {@link AbstractLoader#sync}\n*  @property {Promise}  [loader.async]\n*  Custom loader for async requests\n*  \n*  See {@link AbstractLoader#async}\n*  \n*  \n*  @example\n*  var loader = new Beloader();\n*  \n*  loader.fetch('script', {\n*    url: 'https://cdn.jsdelivr.net/npm/elementify@latest',\n*    async: false\n*  }); \n",
+      "start": 1756,
+      "end": 4176,
+      "loc": {
+        "start": {
+          "line": 55,
+          "column": 0
+        },
+        "end": {
+          "line": 115,
+          "column": 2
+        }
+      }
+    },
+    {
+      "type": "CommentBlock",
+      "value": "*\n*  Stores a BeLoader instance real time progress\n*  \n*  Statistics can be accessed using DotObjectArray methods.\n*  \n*  @example\n*  var loader = new Beloader({\n*    defer: true // load in same order than declared\n*    on: {\n*      afterprocess: () => { app.start() }\n*    }\n*  });\n*  \n*  loader.fetchAll({\n*    'js': 'https://cdn.jsdelivr.net/npm/elementify@latest',\n*    'font': {\n*      webfont: {\n*        google: {\n*          families: ['Droid Sans', 'Droid Serif']\n*        }\n*      }\n*    },\n*    'js': 'https://myserver.com/myapp.js'\n*  });\n*  \n*  loader.progress.data.items.total; // returns 2\n*  loader.progress.pull('items.total'); // returns 2\n*\n*  @typedef {DotObjectArray}  BeloaderProgress\n*  \n*  @property {Object} items\n*  __Items count container__\n*  @property {number} items.total\n*  Total items in Beloader instance\n*  @property {number} items.waiting\n*  Total items that are waiting to be processed\n*  @property {number} items.pending\n*  Total items that are currently processed\n*  @property {number} items.processed\n*  Total items that have been processed\n*  @property {number} items.loaded\n*  Total items that have been sucessfully loaded\n*  @property {number} items.error\n*  Total items which load have failed on error\n*  @property {number} items.abort\n*  Total items which load have been aborted\n*  @property {number} items.timeout\n*  Total items wich load have failed on timeout\n*  @property {number} items.ready\n*  Total items that have been loaded and post-process finished\n*  \n*  @property {Object} loading\n*  __Loading statistics__\n*  @property {timestamp} loading.start\n*  Process start timestamp\n*  @property {timestamp} loading.end\n*  Process end timestamp\n*  @property {number} loading.elapsed\n*  Duration of the process (ms)\n*  @property {number} loading.loaded\n*  Weight of loaded data. It might not be accurate\n*  because relying on {@link src/events/typedef.doc.js~progress} event\n*  @property {number} loading.rate\n*  Transfer bandwidth. It might not be accurate\n*  because relying on {@link progress} event\n*  @property {number} loading.complete\n*  Loading percentage completed. It might not be accurate\n*  because relying on {@link progress} QueueItem event\n*  @property {number} loading.total\n*  Weight of data to load. It might not be accurate\n*  because relying on {@link progress} QueueItem event and\n*  server's providing a `content-length` header.\n",
+      "start": 4178,
+      "end": 6578,
+      "loc": {
+        "start": {
+          "line": 117,
+          "column": 0
+        },
+        "end": {
+          "line": 189,
+          "column": 2
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "eof",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 6579,
+      "end": 6579,
+      "loc": {
+        "start": {
+          "line": 190,
+          "column": 0
+        },
+        "end": {
+          "line": 190,
+          "column": 0
+        }
+      }
+    }
+  ]
+}
