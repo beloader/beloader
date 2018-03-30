@@ -78,3 +78,10 @@ Events are only bubbling up like this :
 - Plugin -> Beloader
 
 An event fired at the Beloader level will only affect the Beloader instance.
+
+## Controlling events
+The Beloader event object mimics the native Event object and exposes 3 methods to control events :
+- `BeloaderEvent#preventdefault()` : If called inside a callback that will run _before_ the built-in one, it will
+prevent default behaviour. It will not stop event propagation.
+- `BeloaderEvent#stopPropagation()` : Prevent the event from bubbling up
+- `BeloaderEvent#stopImmediatePropagation()` : Prevent any further callbacks to be called, even buit-in ones

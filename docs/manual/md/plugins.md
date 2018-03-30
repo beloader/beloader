@@ -10,13 +10,16 @@ in Beloader, QueueItem, Loader and other Plugin instances.
 If you provide only the name of the plugin, Beloader will assume that it must fetch
 it in official repo and will try to fetch the `beloader-pluginName` script.
 
+In cas of long name, you can provide an alias that will be used as var name when using plugin
+
 ```javascript
 var loader = new Beloader({
   defer: true // will load plugins in the same order
 });
 
 loader.fetch('plugin', {
-  name: 'plugin' // will look for beloader-plugin in official repo
+  name: 'plugin', // will look for beloader-plugin in official repo
+  alias: 'p'
 });
 
 loader.fetch('plugin', {
@@ -26,7 +29,7 @@ loader.fetch('plugin', {
 
 // OK, we can go thanks to defer
 loader.fetch('none').promise.then(item => {
-  plugin.doSomething();
+  p.doSomething(); // use alias
   myplugin.doSomething();
 });
 ```

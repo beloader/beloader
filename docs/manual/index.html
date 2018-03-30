@@ -81,6 +81,7 @@
 <li data-ice="manualNav" class="indent-h2" data-link="manual/events.html"><a href="manual/events.html#registering-callbacks-in-options" data-ice="link">Registering callbacks in options</a></li>
 <li data-ice="manualNav" class="indent-h2" data-link="manual/events.html"><a href="manual/events.html#registering-callbacks-externally" data-ice="link">Registering callbacks externally</a></li>
 <li data-ice="manualNav" class="indent-h2" data-link="manual/events.html"><a href="manual/events.html#custom-events" data-ice="link">Custom events</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/events.html"><a href="manual/events.html#controlling-events" data-ice="link">Controlling events</a></li>
 </ul>
   </div>
 <div data-ice="manual">
@@ -454,7 +455,12 @@ to trigger events firing.
 You can use it to override internal events firing or add your custom ones.</p><p>Events are only bubbling up like this :</p><ul>
 <li>Loader -&gt; QueueItem -&gt; Beloader</li>
 <li>Plugin -&gt; Beloader</li>
-</ul><p>An event fired at the Beloader level will only affect the Beloader instance.</p></div>
+</ul><p>An event fired at the Beloader level will only affect the Beloader instance.</p><h2>Controlling events</h2><p>The Beloader event object mimics the native Event object and exposes 3 methods to control events :</p><ul>
+<li><code>BeloaderEvent#preventdefault()</code> : If called inside a callback that will run <em>before</em> the built-in one, it will
+prevent default behaviour. It will not stop event propagation.</li>
+<li><code>BeloaderEvent#stopPropagation()</code> : Prevent the event from bubbling up</li>
+<li><code>BeloaderEvent#stopImmediatePropagation()</code> : Prevent any further callbacks to be called, even buit-in ones</li>
+</ul></div>
         <a data-ice="link" href="manual/events.html"></a>
       </div>
     </div>
@@ -462,12 +468,13 @@ You can use it to override internal events firing or add your custom ones.</p><p
       <div class="manual-card">
         <div data-ice="card"><h1>Plugins</h1><p>Plugins are very easy to implements in order to extends Beloader functionnalities and/or behaviours.</p><h2>Load plugins</h2><h3>Fetch plugins</h3><p>You can directly use the plugin loader to fetch plugins. As soon as they will be loaded, they will be available
 in Beloader, QueueItem, Loader and other Plugin instances.</p><p>If you provide only the name of the plugin, Beloader will assume that it must fetch
-it in official repo and will try to fetch the <code>beloader-pluginName</code> script.</p><pre><code class="lang-javascript"><code class="source-code prettyprint">var loader = new Beloader({
+it in official repo and will try to fetch the <code>beloader-pluginName</code> script.</p><p>In cas of long name, you can provide an alias that will be used as var name when using plugin</p><pre><code class="lang-javascript"><code class="source-code prettyprint">var loader = new Beloader({
   defer: true // will load plugins in the same order
 });
 
 loader.fetch(&apos;plugin&apos;, {
-  name: &apos;plugin&apos; // will look for beloader-plugin in official repo
+  name: &apos;plugin&apos;, // will look for beloader-plugin in official repo
+  alias: &apos;p&apos;
 });
 
 loader.fetch(&apos;plugin&apos;, {
@@ -477,7 +484,7 @@ loader.fetch(&apos;plugin&apos;, {
 
 // OK, we can go thanks to defer
 loader.fetch(&apos;none&apos;).promise.then(item =&gt; {
-  plugin.doSomething();
+  p.doSomething(); // use alias
   myplugin.doSomething();
 });</code>
 </code></pre><p>You can use <code>awaiting</code> mode for more exotic loading patterns or fetchAll to concatenate calls to plugins.</p><h3>Fetch plugins at Beloader instance creation</h3><p>Beloader lets you define your plugins when creation an instance. In that case, you must use

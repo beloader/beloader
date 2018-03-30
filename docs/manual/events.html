@@ -81,6 +81,7 @@
 <li data-ice="manualNav" class="indent-h2" data-link="manual/events.html"><a href="manual/events.html#registering-callbacks-in-options" data-ice="link">Registering callbacks in options</a></li>
 <li data-ice="manualNav" class="indent-h2" data-link="manual/events.html"><a href="manual/events.html#registering-callbacks-externally" data-ice="link">Registering callbacks externally</a></li>
 <li data-ice="manualNav" class="indent-h2" data-link="manual/events.html"><a href="manual/events.html#custom-events" data-ice="link">Custom events</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/events.html"><a href="manual/events.html#controlling-events" data-ice="link">Controlling events</a></li>
 </ul>
   </div>
 <div data-ice="manual">
@@ -159,6 +160,13 @@ You can use it to override internal events firing or add your custom ones.</p>
 <li>Plugin -&gt; Beloader</li>
 </ul>
 <p>An event fired at the Beloader level will only affect the Beloader instance.</p>
+<h2 id="controlling-events">Controlling events</h2><p>The Beloader event object mimics the native Event object and exposes 3 methods to control events :</p>
+<ul>
+<li><code>BeloaderEvent#preventdefault()</code> : If called inside a callback that will run <em>before</em> the built-in one, it will
+prevent default behaviour. It will not stop event propagation.</li>
+<li><code>BeloaderEvent#stopPropagation()</code> : Prevent the event from bubbling up</li>
+<li><code>BeloaderEvent#stopImmediatePropagation()</code> : Prevent any further callbacks to be called, even buit-in ones</li>
+</ul>
 </div>
 </div>
 

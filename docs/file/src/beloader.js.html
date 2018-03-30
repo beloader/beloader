@@ -424,6 +424,7 @@ export default class Beloader extends AbstractEventManager {
 
     options = new ObjectArray(options);
     options.push(&apos;name&apos;, name);
+    options.define(&apos;alias&apos;, options.data.name);
 
     try {
       if (Plugin instanceof AbstractPlugin) {
@@ -442,7 +443,7 @@ export default class Beloader extends AbstractEventManager {
       if (plugin.init instanceof Function) plugin.init(options);
       /** @ignore */
       /* istanbul ignore else */
-      this[name] = plugin;
+      this[options.data.alias] = plugin;
     } catch (e) {
       throw new Error(&apos;Unable to pluginize : &apos; + name + &apos; [&apos; + e + &apos;]&apos;);
     }

@@ -81,6 +81,7 @@
 <li data-ice="manualNav" class="indent-h2" data-link="manual/events.html"><a href="manual/events.html#registering-callbacks-in-options" data-ice="link">Registering callbacks in options</a></li>
 <li data-ice="manualNav" class="indent-h2" data-link="manual/events.html"><a href="manual/events.html#registering-callbacks-externally" data-ice="link">Registering callbacks externally</a></li>
 <li data-ice="manualNav" class="indent-h2" data-link="manual/events.html"><a href="manual/events.html#custom-events" data-ice="link">Custom events</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/events.html"><a href="manual/events.html#controlling-events" data-ice="link">Controlling events</a></li>
 </ul>
   </div>
 <div data-ice="manual">
@@ -101,12 +102,14 @@
 in Beloader, QueueItem, Loader and other Plugin instances.</p>
 <p>If you provide only the name of the plugin, Beloader will assume that it must fetch
 it in official repo and will try to fetch the <code>beloader-pluginName</code> script.</p>
+<p>In cas of long name, you can provide an alias that will be used as var name when using plugin</p>
 <pre><code class="lang-javascript"><code class="source-code prettyprint">var loader = new Beloader({
   defer: true // will load plugins in the same order
 });
 
 loader.fetch(&apos;plugin&apos;, {
-  name: &apos;plugin&apos; // will look for beloader-plugin in official repo
+  name: &apos;plugin&apos;, // will look for beloader-plugin in official repo
+  alias: &apos;p&apos;
 });
 
 loader.fetch(&apos;plugin&apos;, {
@@ -116,7 +119,7 @@ loader.fetch(&apos;plugin&apos;, {
 
 // OK, we can go thanks to defer
 loader.fetch(&apos;none&apos;).promise.then(item =&gt; {
-  plugin.doSomething();
+  p.doSomething(); // use alias
   myplugin.doSomething();
 });</code>
 </code></pre>
