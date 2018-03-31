@@ -23,21 +23,26 @@ const Beloader = require('beloader').Beloader;
 Beloader have been built on a ECMA6 class pattern and transpiled.
 
 ## In browser
-Beloader is available as CDN external library or can easily be installed locally. The Beloader object is then accessible in the global scope.
+Beloader is available as CDN external library or can easily be installed locally. Beloader is using dynamic imports
+with modules. You must require the full path, otherwise Beloader won't be able to resolve modules URL.
 
 ### Bundle
 ```html
-<script type="text/javascript" src="https://bundle.run/beloader@latest"></script>
+<script type="text/javascript" src="https://bundle.run/beloader@latest/dist/beloader.min.js"></script>
+```
+Bundle generate a beloader object that hoist Beloader constructor. So, you must call it like this :
+```javascript
+var loader = new beloader.Beloader();
 ```
 
 ### JsDelivr
 ```html
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/beloader@latest"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/beloader@latest/dist/beloader.min.js"></script>
 ```
 
 ### Unpkg
 ```html
-<script type="text/javascript" src="https://unpkg.com/beloader@latest"></script>
+<script type="text/javascript" src="https://unpkg.com/beloader@latest/dist/beloader.min.js"></script>
 ```
 
 ### Local install
