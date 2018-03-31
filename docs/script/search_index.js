@@ -1248,9 +1248,9 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/loaders/pluginloader.js~pluginloader#_load",
-    "class/src/loaders/PluginLoader.js~PluginLoader.html#instance-method-_load",
-    "src/loaders/PluginLoader.js~PluginLoader#_load",
+    "src/loaders/pluginloader.js~pluginloader#_loadplugin",
+    "class/src/loaders/PluginLoader.js~PluginLoader.html#instance-method-_loadPlugin",
+    "src/loaders/PluginLoader.js~PluginLoader#_loadPlugin",
     "method"
   ],
   [

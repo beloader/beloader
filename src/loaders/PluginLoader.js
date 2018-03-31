@@ -69,7 +69,7 @@ export default class PluginLoader extends AbstractLoader {
   */
   sync() {
     document.querySelector('head').appendChild(this.node);
-    return this._load(super.sync());
+    return this._loadPlugin(super.sync());
 
   }
 
@@ -84,7 +84,7 @@ export default class PluginLoader extends AbstractLoader {
   *  @returns {Promise} Loading promise
   */
   async() {
-    return this._load(super.async());
+    return this._loadPlugin(super.async());
   }
 
   /**
@@ -97,7 +97,7 @@ export default class PluginLoader extends AbstractLoader {
   *  @param {$type} p Description for p
   *  @returns {type} Return description
   */
-  _load(p) {
+  _loadPlugin(p) {
     const _this = this;
 
     return new Promise((resolve, reject) => {
@@ -110,7 +110,7 @@ export default class PluginLoader extends AbstractLoader {
         }
 
         try {
-          beloader.pluginize(_this.options.name, window[_this.options.name], _this.options);
+          beloader.pluginize(_this.options.data.name, window[_this.options.data.name], _this.options);
           resolve();
         } catch (e) {
           reject('Unable to load plugin : ' + _this.options.name + ' [' + e + ']');
