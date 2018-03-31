@@ -169,6 +169,9 @@ export default class QueueItem extends AbstractEventManager {
       case 'img':
         loader = 'ImageLoader';
         break;
+      case 'plugin':
+        loader = 'PluginLoader';
+        break;
       case 'none':
         /**
         *  Loader instance

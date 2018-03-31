@@ -99,7 +99,7 @@ export default class PluginLoader extends AbstractLoader {
   constructor(parent, options) {
     if (!options.has(&apos;name&apos;)) throw new TypeError(&apos;Beloader : Plugin must have a name&apos;);
     if (!options.has(&apos;url&apos;)) {
-      options.data.url = &apos;https://cdn.jsdelivr.net/gh/beloader/beloader-&apos; + name + &apos;@latest&apos;;
+      options.data.url = &apos;https://cdn.jsdelivr.net/gh/beloader/beloader-&apos; + options.data.name + &apos;@latest&apos;;
     }
     super(parent, options);
 
@@ -176,8 +176,10 @@ export default class PluginLoader extends AbstractLoader {
       p.then((response) =&gt; {
         let beloader = _this.parent.parent;
 
-        _this.node.innerHTML = response;
-        document.querySelector(&apos;head&apos;).appendChild(_this.node);
+        if (response) {
+          _this.node.innerHTML = response;
+          document.querySelector(&apos;head&apos;).appendChild(_this.node);
+        }
 
         try {
           beloader.pluginize(_this.options.name, window[_this.options.name], _this.options);

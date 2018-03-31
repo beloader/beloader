@@ -113,6 +113,45 @@ export default class Beloader extends AbstractEventManager {
     this._awaitables = {};
 
     /**
+    *  Options for the Beloader instance. See {@link Beloader#constructor}
+    *
+    *  @since 1.0.0
+    *  @type {DotObjectArray}
+    */
+    this.options = new ObjectArray(options);
+    this.options.define('autoprocess', true);
+    this.options.define('async', true);
+    this.options.define('defer', false);
+    this.options.define('cache', true);
+    this.options.define('fallbackSync', true);
+
+    /**
+    *  Progress statistics for the Beloader instance.
+    *
+    *  @since 1.0.0
+    *  @type {BeloaderProgress}
+    */
+    this.progress = new ObjectArray({
+      items: {
+        total: 0,
+        waiting: 0,
+        pending: 0,
+        processed: 0,
+        loaded: 0,
+        error: 0,
+        abort: 0,
+        timeout: 0,
+        ready: 0
+      },
+      loading: {
+        complete: 0,
+        elapsed: 0,
+        loaded: 0,
+        rate: 0
+      }
+    });
+
+    /**
     *  Active Plugins list
     *
     *  @since 1.0.0
@@ -153,45 +192,6 @@ export default class Beloader extends AbstractEventManager {
         this.ready = this.fetchAll(plugins);
       } else throw new TypeError('Beloader: Plugins list must be an array');
     }
-
-    /**
-    *  Options for the Beloader instance. See {@link Beloader#constructor}
-    *
-    *  @since 1.0.0
-    *  @type {DotObjectArray}
-    */
-    this.options = new ObjectArray(options);
-    this.options.define('autoprocess', true);
-    this.options.define('async', true);
-    this.options.define('defer', false);
-    this.options.define('cache', true);
-    this.options.define('fallbackSync', true);
-
-    /**
-    *  Progress statistics for the Beloader instance.
-    *
-    *  @since 1.0.0
-    *  @type {BeloaderProgress}
-    */
-    this.progress = new ObjectArray({
-      items: {
-        total: 0,
-        waiting: 0,
-        pending: 0,
-        processed: 0,
-        loaded: 0,
-        error: 0,
-        abort: 0,
-        timeout: 0,
-        ready: 0
-      },
-      loading: {
-        complete: 0,
-        elapsed: 0,
-        loaded: 0,
-        rate: 0
-      }
-    });
   }
 
   /**
