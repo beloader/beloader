@@ -163,34 +163,39 @@ export default class Beloader extends AbstractEventManager {
     if (options.plugins) {
       let plugins = {};
 
-      if (typeof options.plugins === 'string') options.plugins = [options.plugins];
-
-      if (options.plugins instanceof Array) {
-        options.plugins.forEach(plugin => {
-          if (typeof plugin === 'string') {
-            plugins[plugin] = {
+      // Force array format
+      if (!(options.plugins instanceof Array)) options.plugins = [options.plugins];
+      options.plugins.forEach(plugin => {
+        if (typeof plugin === 'string') {
+          plugins[plugin] = {
+            type: 'plugin',
+            name: plugin
+          };
+        } else {
+          if (plugin.name) {
+            plugins[plugin.name] = {
               type: 'plugin',
-              name: plugin
+              name: plugin.name,
+              url: plugin.url,
+              alias: plugin.alias
             };
           } else {
-            if (plugin.name) {
-              plugins[plugin.name] = {
-                type: 'plugin',
-                name: plugin.name,
-                url: plugin.url
-              };
-            } else {
-              plugins[Object.keys(plugin)[0]] = {
-                type: 'plugin',
-                name: Object.keys(plugin)[0],
-                url: Object.values(plugin)[0]
-              };
-            }
+            plugins[Object.keys(plugin)[0]] = {
+              type: 'plugin',
+              name: Object.keys(plugin)[0],
+              url: Object.values(plugin)[0]
+            };
           }
-        });
+        }
+      });
 
-        this.ready = this.fetchAll(plugins);
-      } else throw new TypeError('Beloader: Plugins list must be an array');
+      /**
+      *  Promise resolved when all plugins
+      *  have been resolved
+      *  @since 1.0.0
+      *  @type {Promise} plugins Description for plugins
+      */
+      this.ready = this.fetchAll(plugins).promise;
     }
   }
 

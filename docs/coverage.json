@@ -1,14 +1,12 @@
 {
-  "coverage": "99.19%",
+  "coverage": "100%",
   "expectCount": 124,
-  "actualCount": 123,
+  "actualCount": 124,
   "files": {
     "src/beloader.js": {
       "expectCount": 21,
-      "actualCount": 20,
-      "undocumentLines": [
-        192
-      ]
+      "actualCount": 21,
+      "undocumentLines": []
     },
     "src/core/AbstractEventManager.js": {
       "expectCount": 6,

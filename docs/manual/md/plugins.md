@@ -3,14 +3,26 @@ Plugins are very easy to implements in order to extends Beloader functionnalitie
 
 ## Load plugins
 
+### Name, URL and alias
+You can provide up to three options when requiring a plugin :
+- name : name of the plugin that must match the name of the variable
+exposed in global scope for this given plugin
+- url : URL to load plugin from. If not provided, Beloader will assume that it must fetch
+plugin in official repo and will try to fetch the `beloader-pluginName` script ('_beloader-_' is
+automatically prependend to plugin name) from
+jsDelivr CDN : `https://cdn.jsdelivr.net/gh/beloader/beloader-pluginName@latest`
+- alias: Name of the variable that will be exposed in Beloader, QueueItem, Loader and Plugin instances
+to access plugin properties and methods. If not provided, the `name` will be used.
+
+Only the plugin name is mandatory. Plugin architecture is designed to avoid using `eval`.
+Therefore, plugin are always loaded and evaluated in global namespace that may cause
+some conflicts for short plugins name.
+
 ### Fetch plugins
 You can directly use the plugin loader to fetch plugins. As soon as they will be loaded, they will be available
 in Beloader, QueueItem, Loader and other Plugin instances.
 
-If you provide only the name of the plugin, Beloader will assume that it must fetch
-it in official repo and will try to fetch the `beloader-pluginName` script.
-
-In cas of long name, you can provide an alias that will be used as var name when using plugin
+In case of long name, you can provide an alias that will be used as var name when using plugin
 
 ```javascript
 var loader = new Beloader({
@@ -27,7 +39,7 @@ loader.fetch('plugin', {
   url: 'myURLforThisplugin'
 });
 
-// OK, we can go thanks to defer
+// We can use them safely thanks to defer
 loader.fetch('none').promise.then(item => {
   p.doSomething(); // use alias
   myplugin.doSomething();
@@ -37,14 +49,21 @@ loader.fetch('none').promise.then(item => {
 You can use `awaiting` mode for more exotic loading patterns or fetchAll to concatenate calls to plugins.
 
 ### Fetch plugins at Beloader instance creation
-Beloader lets you define your plugins when creation an instance. In that case, you must use
-the `ready` promise property to ensure plugins have loaded before or set global `defer` option to `true`
+Beloader lets you define an array of plugins requires when creating an instance.
+
+In that case, you must use the `ready` promise property to ensure
+plugins are resolved firts or set global `defer` option to `true`.
 
 ```javascript
 var loader = new Beloader({
   plugins: [
-    'plugin',
-    {myplugin: 'myURLforThisplugin'}
+    'plugin', // only the name
+    {myplugin: 'myURLforThisplugin'}, // shortcut for name + url
+    {
+      name: 'myLongPluginName', // Full import format
+      url: 'http://url',
+      alias: 'mlp'
+    }
   ]
 });
 
@@ -52,6 +71,7 @@ loader.ready.then(() => {
   fetch('none').promise.then(item => {
     plugin.doSomething();
     myplugin.doSomething();
+    mlp.doSomething();
   });
 });
 ```

@@ -118,6 +118,14 @@ describe(&apos;Plugins&apos;, function () {
     expect(loader.pluginize.bind(loader, &apos;plugin&apos;, plugin)).to.throw(Error);
   });
 
+  it(&apos;should throw an exception if name is missing&apos;, function () {
+    var loader = new Beloader();
+
+    return loader.fetch(&apos;plugin&apos;).promise[&apos;catch&apos;](error =&gt; {
+      expect(error).to.be.instanceof(TypeError);
+    });
+  });
+
   it(&apos;should propagate a plugin to item and loader&apos;, function () {
     var loader = new Beloader();
 
@@ -132,6 +140,45 @@ describe(&apos;Plugins&apos;, function () {
         item.plugin.fixture.should.equal(&apos;fixture&apos;);
         item.loader.plugin.fixture.should.equal(&apos;fixture&apos;);
       });
+  });
+
+  it(&apos;should load plugin from Beloader options with full description&apos;, function () {
+    var loader = new Beloader({
+      plugins: {
+        name: &apos;animations&apos;,
+        url: &apos;https://rawgit.com/beloader/beloader-animations/master/dist/beloader-animations.min.js&apos;,
+        alias: &apos;ani&apos;
+      }
+    });
+
+    return loader.ready.then(() =&gt; {
+      loader.ani.should.respondTo(&apos;animejs&apos;);
+    });
+  });
+
+  it(&apos;should load plugin from Beloader options with short call&apos;, function () {
+    var loader = new Beloader({
+      plugins: [
+        { animations: &apos;https://rawgit.com/beloader/beloader-animations/master/dist/beloader-animations.min.js&apos; }
+      ]
+    });
+
+    return loader.ready.then(() =&gt; {
+      loader.animations.should.respondTo(&apos;animejs&apos;);
+    });
+  });
+
+  it(&apos;should load plugin sync from Beloader options with short call&apos;, function () {
+    var loader = new Beloader({
+      async: false,
+      plugins: [
+        { animations: &apos;https://rawgit.com/beloader/beloader-animations/master/dist/beloader-animations.min.js&apos; }
+      ]
+    });
+
+    return loader.ready.then(() =&gt; {
+      loader.animations.should.respondTo(&apos;animejs&apos;);
+    });
   });
 });
 </code></pre>

@@ -385,6 +385,24 @@ window.esdocSearchIndex = [
   ],
   [
     "",
+    "test-file/tests/plugins.spec.js.html#lineNumber73",
+    "Plugins should load plugin from Beloader options with full description",
+    "test"
+  ],
+  [
+    "",
+    "test-file/tests/plugins.spec.js.html#lineNumber87",
+    "Plugins should load plugin from Beloader options with short call",
+    "test"
+  ],
+  [
+    "",
+    "test-file/tests/plugins.spec.js.html#lineNumber99",
+    "Plugins should load plugin sync from Beloader options with short call",
+    "test"
+  ],
+  [
+    "",
     "test-file/tests/plugins.spec.js.html#lineNumber4",
     "Plugins should pluginize a function and call init",
     "test"
@@ -397,8 +415,14 @@ window.esdocSearchIndex = [
   ],
   [
     "",
-    "test-file/tests/plugins.spec.js.html#lineNumber49",
+    "test-file/tests/plugins.spec.js.html#lineNumber57",
     "Plugins should propagate a plugin to item and loader",
+    "test"
+  ],
+  [
+    "",
+    "test-file/tests/plugins.spec.js.html#lineNumber49",
+    "Plugins should throw an exception if name is missing",
     "test"
   ],
   [

@@ -89,6 +89,7 @@
       
     <li data-ice="manualNav" class="indent-h1" data-link="manual/plugins.html"><a href="manual/plugins.html" data-ice="link">Plugins</a></li>
 <li data-ice="manualNav" class="indent-h2" data-link="manual/plugins.html"><a href="manual/plugins.html#load-plugins" data-ice="link">Load plugins</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/plugins.html"><a href="manual/plugins.html#name--url-and-alias" data-ice="link">Name, URL and alias</a></li>
 <li data-ice="manualNav" class="indent-h3" data-link="manual/plugins.html"><a href="manual/plugins.html#fetch-plugins" data-ice="link">Fetch plugins</a></li>
 <li data-ice="manualNav" class="indent-h3" data-link="manual/plugins.html"><a href="manual/plugins.html#fetch-plugins-at-beloader-instance-creation" data-ice="link">Fetch plugins at Beloader instance creation</a></li>
 <li data-ice="manualNav" class="indent-h2" data-link="manual/plugins.html"><a href="manual/plugins.html#custom-instant-plugins" data-ice="link">Custom instant plugins</a></li>
@@ -468,9 +469,19 @@ prevent default behaviour. It will not stop event propagation.</li>
     </div>
 <div class="manual-card-wrap" data-ice="cards">
       <div class="manual-card">
-        <div data-ice="card"><h1>Plugins</h1><p>Plugins are very easy to implements in order to extends Beloader functionnalities and/or behaviours.</p><h2>Load plugins</h2><h3>Fetch plugins</h3><p>You can directly use the plugin loader to fetch plugins. As soon as they will be loaded, they will be available
-in Beloader, QueueItem, Loader and other Plugin instances.</p><p>If you provide only the name of the plugin, Beloader will assume that it must fetch
-it in official repo and will try to fetch the <code>beloader-pluginName</code> script.</p><p>In cas of long name, you can provide an alias that will be used as var name when using plugin</p><pre><code class="lang-javascript"><code class="source-code prettyprint">var loader = new Beloader({
+        <div data-ice="card"><h1>Plugins</h1><p>Plugins are very easy to implements in order to extends Beloader functionnalities and/or behaviours.</p><h2>Load plugins</h2><h3>Name, URL and alias</h3><p>You can provide up to three options when requiring a plugin :</p><ul>
+<li>name : name of the plugin that must match the name of the variable
+exposed in global scope for this given plugin</li>
+<li>url : URL to load plugin from. If not provided, Beloader will assume that it must fetch
+plugin in official repo and will try to fetch the <code>beloader-pluginName</code> script (&apos;<em>beloader-</em>&apos; is
+automatically prependend to plugin name) from
+jsDelivr CDN : <code>https://cdn.jsdelivr.net/gh/beloader/beloader-pluginName@latest</code></li>
+<li>alias: Name of the variable that will be exposed in Beloader, QueueItem, Loader and Plugin instances
+to access plugin properties and methods. If not provided, the <code>name</code> will be used.</li>
+</ul><p>Only the plugin name is mandatory. Plugin architecture is designed to avoid using <code>eval</code>.
+Therefore, plugin are always loaded and evaluated in global namespace that may cause
+some conflicts.</p><h3>Fetch plugins</h3><p>You can directly use the plugin loader to fetch plugins. As soon as they will be loaded, they will be available
+in Beloader, QueueItem, Loader and other Plugin instances.</p><p>In case of long name, you can provide an alias that will be used as var name when using plugin</p><pre><code class="lang-javascript"><code class="source-code prettyprint">var loader = new Beloader({
   defer: true // will load plugins in the same order
 });
 
@@ -484,16 +495,21 @@ loader.fetch(&apos;plugin&apos;, {
   url: &apos;myURLforThisplugin&apos;
 });
 
-// OK, we can go thanks to defer
+// We can use them safely thanks to defer
 loader.fetch(&apos;none&apos;).promise.then(item =&gt; {
   p.doSomething(); // use alias
   myplugin.doSomething();
 });</code>
-</code></pre><p>You can use <code>awaiting</code> mode for more exotic loading patterns or fetchAll to concatenate calls to plugins.</p><h3>Fetch plugins at Beloader instance creation</h3><p>Beloader lets you define your plugins when creation an instance. In that case, you must use
-the <code>ready</code> promise property to ensure plugins have loaded before or set global <code>defer</code> option to <code>true</code></p><pre><code class="lang-javascript"><code class="source-code prettyprint">var loader = new Beloader({
+</code></pre><p>You can use <code>awaiting</code> mode for more exotic loading patterns or fetchAll to concatenate calls to plugins.</p><h3>Fetch plugins at Beloader instance creation</h3><p>Beloader lets you define an array of plugins requires when creating an instance.</p><p>In that case, you must use the <code>ready</code> promise property to ensure
+plugins are resolved firts or set global <code>defer</code> option to <code>true</code>.</p><pre><code class="lang-javascript"><code class="source-code prettyprint">var loader = new Beloader({
   plugins: [
-    &apos;plugin&apos;,
-    {myplugin: &apos;myURLforThisplugin&apos;}
+    &apos;plugin&apos;, // only the name
+    {myplugin: &apos;myURLforThisplugin&apos;}, // shortcut for name + url
+    {
+      name: &apos;myLongPluginName&apos;, // Full import format
+      url: &apos;http://url&apos;,
+      alias: &apos;mlp&apos;
+    }
   ]
 });
 
@@ -501,6 +517,7 @@ loader.ready.then(() =&gt; {
   fetch(&apos;none&apos;).promise.then(item =&gt; {
     plugin.doSomething();
     myplugin.doSomething();
+    mlp.doSomething();
   });
 });</code>
 </code></pre><h2>Custom instant plugins</h2><p>You can easily add your own plugins to a Beloader instance with the <code>pluginize</code> method. Beloader

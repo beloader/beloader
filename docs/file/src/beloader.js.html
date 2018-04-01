@@ -235,34 +235,39 @@ export default class Beloader extends AbstractEventManager {
     if (options.plugins) {
       let plugins = {};
 
-      if (typeof options.plugins === &apos;string&apos;) options.plugins = [options.plugins];
-
-      if (options.plugins instanceof Array) {
-        options.plugins.forEach(plugin =&gt; {
-          if (typeof plugin === &apos;string&apos;) {
-            plugins[plugin] = {
+      // Force array format
+      if (!(options.plugins instanceof Array)) options.plugins = [options.plugins];
+      options.plugins.forEach(plugin =&gt; {
+        if (typeof plugin === &apos;string&apos;) {
+          plugins[plugin] = {
+            type: &apos;plugin&apos;,
+            name: plugin
+          };
+        } else {
+          if (plugin.name) {
+            plugins[plugin.name] = {
               type: &apos;plugin&apos;,
-              name: plugin
+              name: plugin.name,
+              url: plugin.url,
+              alias: plugin.alias
             };
           } else {
-            if (plugin.name) {
-              plugins[plugin.name] = {
-                type: &apos;plugin&apos;,
-                name: plugin.name,
-                url: plugin.url
-              };
-            } else {
-              plugins[Object.keys(plugin)[0]] = {
-                type: &apos;plugin&apos;,
-                name: Object.keys(plugin)[0],
-                url: Object.values(plugin)[0]
-              };
-            }
+            plugins[Object.keys(plugin)[0]] = {
+              type: &apos;plugin&apos;,
+              name: Object.keys(plugin)[0],
+              url: Object.values(plugin)[0]
+            };
           }
-        });
+        }
+      });
 
-        this.ready = this.fetchAll(plugins);
-      } else throw new TypeError(&apos;Beloader: Plugins list must be an array&apos;);
+      /**
+      *  Promise resolved when all plugins
+      *  have been resolved
+      *  @since 1.0.0
+      *  @type {Promise} plugins Description for plugins
+      */
+      this.ready = this.fetchAll(plugins).promise;
     }
   }
 

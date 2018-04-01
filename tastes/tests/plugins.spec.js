@@ -46,6 +46,14 @@ describe('Plugins', function () {
     expect(loader.pluginize.bind(loader, 'plugin', plugin)).to.throw(Error);
   });
 
+  it('should throw an exception if name is missing', function () {
+    var loader = new Beloader();
+
+    return loader.fetch('plugin').promise['catch'](error => {
+      expect(error).to.be.instanceof(TypeError);
+    });
+  });
+
   it('should propagate a plugin to item and loader', function () {
     var loader = new Beloader();
 
@@ -60,5 +68,44 @@ describe('Plugins', function () {
         item.plugin.fixture.should.equal('fixture');
         item.loader.plugin.fixture.should.equal('fixture');
       });
+  });
+
+  it('should load plugin from Beloader options with full description', function () {
+    var loader = new Beloader({
+      plugins: {
+        name: 'animations',
+        url: 'https://rawgit.com/beloader/beloader-animations/master/dist/beloader-animations.min.js',
+        alias: 'ani'
+      }
+    });
+
+    return loader.ready.then(() => {
+      loader.ani.should.respondTo('animejs');
+    });
+  });
+
+  it('should load plugin from Beloader options with short call', function () {
+    var loader = new Beloader({
+      plugins: [
+        { animations: 'https://rawgit.com/beloader/beloader-animations/master/dist/beloader-animations.min.js' }
+      ]
+    });
+
+    return loader.ready.then(() => {
+      loader.animations.should.respondTo('animejs');
+    });
+  });
+
+  it('should load plugin sync from Beloader options with short call', function () {
+    var loader = new Beloader({
+      async: false,
+      plugins: [
+        { animations: 'https://rawgit.com/beloader/beloader-animations/master/dist/beloader-animations.min.js' }
+      ]
+    });
+
+    return loader.ready.then(() => {
+      loader.animations.should.respondTo('animejs');
+    });
   });
 });
