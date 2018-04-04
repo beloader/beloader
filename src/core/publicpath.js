@@ -21,5 +21,5 @@ for (let i = 0; i < scripts.length; i++) {
   let tmp = script.src.match(/(.+)beloader/);
 
   // Only set public path if beloader path is absolute
-  if (tmp && tmp[1] && r.test(tmp[1])) __webpack_public_path__ = tmp[1]; // eslint-disable-line  
+  if (tmp && tmp[1] && r.test(tmp[1])) __webpack_public_path__ = tmp[1]; // eslint-disable-line
 }

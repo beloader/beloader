@@ -3,7 +3,7 @@ const path = require('path');
 const merge = require('webpack-merge');
 const base = require('./base.js');
 const UglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = merge(base, {

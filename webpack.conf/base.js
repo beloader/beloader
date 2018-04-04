@@ -17,7 +17,7 @@ module.exports = {
         loader: 'eslint-loader',
         exclude: /node_modules/,
         options: {
-          fix: true,
+          fix: true
         }
       },
       {
@@ -25,7 +25,7 @@ module.exports = {
         use: [
           'style-loader',
           {
-            loader : 'css-loader',              
+            loader: 'css-loader',
             options: {
               minimize: true,
               sourceMap: false,
@@ -36,7 +36,7 @@ module.exports = {
         ]
       },
       {
-        test: /\.(html)$/,      
+        test: /\.(html)$/,
         use: {
           loader: 'html-loader',
           options: {
@@ -49,5 +49,5 @@ module.exports = {
   resolve: {
     modules: [path.resolve('./node_modules'), path.resolve('./src')],
     extensions: ['.json', '.js']
-  },
-}
+  }
+};
