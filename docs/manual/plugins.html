@@ -93,6 +93,7 @@
 <li data-ice="manualNav" class="indent-h3" data-link="manual/plugins.html"><a href="manual/plugins.html#fetch-plugins" data-ice="link">Fetch plugins</a></li>
 <li data-ice="manualNav" class="indent-h3" data-link="manual/plugins.html"><a href="manual/plugins.html#fetch-plugins-at-beloader-instance-creation" data-ice="link">Fetch plugins at Beloader instance creation</a></li>
 <li data-ice="manualNav" class="indent-h2" data-link="manual/plugins.html"><a href="manual/plugins.html#custom-instant-plugins" data-ice="link">Custom instant plugins</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/plugins.html"><a href="manual/plugins.html#async-plugins" data-ice="link">Async Plugins</a></li>
 </ul>
   </div>
 </div>
@@ -112,7 +113,7 @@ to access plugin properties and methods. If not provided, the <code>name</code> 
 </ul>
 <p>Only the plugin name is mandatory. Plugin architecture is designed to avoid using <code>eval</code>.
 Therefore, plugin are always loaded and evaluated in global namespace that may cause
-some conflicts.</p>
+some conflicts for short plugins name.</p>
 <h3 id="fetch-plugins">Fetch plugins</h3><p>You can directly use the plugin loader to fetch plugins. As soon as they will be loaded, they will be available
 in Beloader, QueueItem, Loader and other Plugin instances.</p>
 <p>In case of long name, you can provide an alias that will be used as var name when using plugin</p>
@@ -197,6 +198,10 @@ loader.ready.then(() =&gt; {
   });
 });</code>
 </code></pre>
+<h2 id="async-plugins">Async Plugins</h2><p>A plugin can expose a <code>promise</code> property to be treated asynchronously.
+PluginLoader will wait for this promise to be resolved for considering
+that plugin is ready. It can be useful if plugin have to require some dependencies to be loaded
+before being usable.</p>
 </div>
 </div>
 

@@ -429,7 +429,6 @@
 <li>Just after insertion of the requesting inline tag for sync loading</li>
 <li>After XMLHttpRequest instance initialization but before sending request for async loading</li>
 </ul>
-<p> If you want to tweak XHR instance without providing a full one, you can use this callback.</p>
 </div>
       </div>
     </td>
@@ -1705,7 +1704,7 @@
   <div class="example-doc" data-ice="exampleDoc">
       
       <pre class="prettyprint source-code"><code data-ice="exampleCode"> var loader = new Beloader() ;
- 
+
  loader.fetch(&apos;json&apos;, {
   url: &apos;http://jsonserverwithbadheaders.com/api&apos;,
   on: {

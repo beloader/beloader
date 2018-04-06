@@ -152,7 +152,7 @@ describe(&apos;Plugins&apos;, function () {
     });
 
     return loader.ready.then(() =&gt; {
-      loader.ani.should.respondTo(&apos;animejs&apos;);
+      loader.ani.should.be.an(&apos;object&apos;);
     });
   });
 
@@ -164,7 +164,7 @@ describe(&apos;Plugins&apos;, function () {
     });
 
     return loader.ready.then(() =&gt; {
-      loader.animations.should.respondTo(&apos;animejs&apos;);
+      loader.animations.should.be.an(&apos;object&apos;);
     });
   });
 
@@ -177,7 +177,24 @@ describe(&apos;Plugins&apos;, function () {
     });
 
     return loader.ready.then(() =&gt; {
-      loader.animations.should.respondTo(&apos;animejs&apos;);
+      loader.animations.should.be.an(&apos;object&apos;);
+    });
+  });
+
+  it(&apos;should wait for plugin ready promise&apos;, function () {
+    var p = {
+      init: function () {
+        this.promise = new Promise((resolve, reject) =&gt; {
+          setTimeout(resolve, 1000);
+        });
+      }
+    };
+    var loader = new Beloader();
+
+    loader.pluginize(&apos;p&apos;, p);
+
+    return loader.p.promise.then(() =&gt; {
+      loader.p.should.be.an(&apos;object&apos;);
     });
   });
 });

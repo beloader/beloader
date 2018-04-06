@@ -98,7 +98,7 @@ var myPluginClass = function() {
   this.init = function(options) {
     this.index = options.index;
   };
-  
+
   this.mystuff = function() {
     console.log('Yuups' + this.index);
   };
@@ -118,3 +118,9 @@ loader.ready.then(() => {
   });
 });
 ```
+
+## Async Plugins
+A plugin can expose a `promise` property to be treated asynchronously.
+PluginLoader will wait for this promise to be resolved for considering
+that plugin is ready. It can be useful if plugin have to require some dependencies to be loaded
+before being usable.

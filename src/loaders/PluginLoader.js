@@ -110,8 +110,14 @@ export default class PluginLoader extends AbstractLoader {
         }
 
         try {
-          beloader.pluginize(_this.options.data.name, window[_this.options.data.name], _this.options);
-          resolve();
+          let plugin = beloader.pluginize(_this.options.data.name, window[_this.options.data.name], _this.options);
+
+          if (plugin.promise) {
+            plugin.promise.then(
+              () => resolve(),
+              (e) => reject('Unable to load plugin : ' + _this.options.name + ' [' + e + ']')
+            );
+          } else resolve();
         } catch (e) {
           reject('Unable to load plugin : ' + _this.options.name + ' [' + e + ']');
         }

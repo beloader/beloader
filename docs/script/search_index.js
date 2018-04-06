@@ -427,6 +427,12 @@ window.esdocSearchIndex = [
   ],
   [
     "",
+    "test-file/tests/plugins.spec.js.html#lineNumber112",
+    "Plugins should wait for plugin ready promise",
+    "test"
+  ],
+  [
+    "",
     "test-file/tests/beloader.spec.js.html#lineNumber214",
     "fetchAll method",
     "test"

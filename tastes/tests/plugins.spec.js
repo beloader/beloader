@@ -80,7 +80,7 @@ describe('Plugins', function () {
     });
 
     return loader.ready.then(() => {
-      loader.ani.should.respondTo('animejs');
+      loader.ani.should.be.an('object');
     });
   });
 
@@ -92,7 +92,7 @@ describe('Plugins', function () {
     });
 
     return loader.ready.then(() => {
-      loader.animations.should.respondTo('animejs');
+      loader.animations.should.be.an('object');
     });
   });
 
@@ -105,7 +105,24 @@ describe('Plugins', function () {
     });
 
     return loader.ready.then(() => {
-      loader.animations.should.respondTo('animejs');
+      loader.animations.should.be.an('object');
+    });
+  });
+
+  it('should wait for plugin ready promise', function () {
+    var p = {
+      init: function () {
+        this.promise = new Promise((resolve, reject) => {
+          setTimeout(resolve, 1000);
+        });
+      }
+    };
+    var loader = new Beloader();
+
+    loader.pluginize('p', p);
+
+    return loader.p.promise.then(() => {
+      loader.p.should.be.an('object');
     });
   });
 });

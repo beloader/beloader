@@ -350,6 +350,7 @@ export default class Beloader extends AbstractEventManager {
   *  @param {string} name Name for the plugin
   *  @param {Object|Function} Plugin Plugin constructor or singleton
   *  @param {Object} [options={}] Plugin's options passed to constructor
+  *  @return {Object} Plugin instance
   *  @throws {Error}  If unable to load plugin
   */
   pluginize(name, Plugin, options = {}) {
@@ -377,6 +378,7 @@ export default class Beloader extends AbstractEventManager {
       /** @ignore */
       /* istanbul ignore else */
       this[options.data.alias] = plugin;
+      return plugin;
     } catch (e) {
       throw new Error('Unable to pluginize : ' + name + ' [' + e + ']');
     }
