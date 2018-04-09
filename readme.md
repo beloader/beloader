@@ -15,6 +15,8 @@
 
 <p align="center"><a href="https://liqueurdetoile.com" target="\_blank"><img src="https://hosting.liqueurdetoile.com/logo_lqdt.png" alt="Liqueur de Toile"></a></p>
 
+__This plugin is not already functional__
+
 # Beloader
 Beloader is a lightweight asset loader library. It provides simple means to trigger and monitor download of any asset (css, script, font...).
 
