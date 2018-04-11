@@ -113,7 +113,6 @@ export default class PluginLoader extends AbstractLoader {
       p.then((response) => {
         let beloader = _this.parent.parent;
 
-        console.log(_this.options.data.inline);
         if (response && _this.options.data.inline) {
           _this.node.innerHTML = response;
           document.querySelector('head').appendChild(_this.node);
