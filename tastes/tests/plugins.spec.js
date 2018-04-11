@@ -70,7 +70,7 @@ describe('Plugins', function () {
       });
   });
 
-  it('should load plugin from Beloader options with full description', function () {
+  it('should load plugin async from Beloader options with full options and alias', function () {
     var loader = new Beloader({
       plugins: {
         name: 'animations',
@@ -86,8 +86,21 @@ describe('Plugins', function () {
     });
   });
 
-  it('should load plugin from Beloader options with short call', function () {
+  it('should load plugin async from Beloader options with short call', function () {
     var loader = new Beloader({
+      plugins: [
+        { animations: 'https://rawgit.com/beloader/beloader-animations/master/dist/beloader-animations.min.js' }
+      ]
+    });
+
+    return loader.ready.then(() => {
+      loader.animations.should.be.an('object');
+    });
+  });
+
+  it('should load plugin async and inline from Beloader options with short call', function () {
+    var loader = new Beloader({
+      inline: true,
       plugins: [
         { animations: 'https://rawgit.com/beloader/beloader-animations/master/dist/beloader-animations.min.js' }
       ]

@@ -427,19 +427,25 @@ window.esdocSearchIndex = [
   ],
   [
     "",
+    "test-file/tests/plugins.spec.js.html#lineNumber101",
+    "Plugins should load plugin async and inline from Beloader options with short call",
+    "test"
+  ],
+  [
+    "",
     "test-file/tests/plugins.spec.js.html#lineNumber73",
-    "Plugins should load plugin from Beloader options with full description",
+    "Plugins should load plugin async from Beloader options with full options and alias",
     "test"
   ],
   [
     "",
     "test-file/tests/plugins.spec.js.html#lineNumber89",
-    "Plugins should load plugin from Beloader options with short call",
+    "Plugins should load plugin async from Beloader options with short call",
     "test"
   ],
   [
     "",
-    "test-file/tests/plugins.spec.js.html#lineNumber101",
+    "test-file/tests/plugins.spec.js.html#lineNumber114",
     "Plugins should load plugin sync from Beloader options with short call",
     "test"
   ],
@@ -469,7 +475,7 @@ window.esdocSearchIndex = [
   ],
   [
     "",
-    "test-file/tests/plugins.spec.js.html#lineNumber116",
+    "test-file/tests/plugins.spec.js.html#lineNumber129",
     "Plugins should wait for plugin ready promise",
     "test"
   ],
@@ -481,25 +487,25 @@ window.esdocSearchIndex = [
   ],
   [
     "",
-    "test-file/tests/publicpath.spec.js.html#lineNumber24",
-    "URI checker for CDN should return false",
-    "test"
-  ],
-  [
-    "",
     "test-file/tests/publicpath.spec.js.html#lineNumber20",
     "URI checker for CDN should return false",
     "test"
   ],
   [
     "",
-    "test-file/tests/publicpath.spec.js.html#lineNumber8",
-    "URI checker for CDN should set wpp",
+    "test-file/tests/publicpath.spec.js.html#lineNumber24",
+    "URI checker for CDN should return false",
     "test"
   ],
   [
     "",
     "test-file/tests/publicpath.spec.js.html#lineNumber4",
+    "URI checker for CDN should set wpp",
+    "test"
+  ],
+  [
+    "",
+    "test-file/tests/publicpath.spec.js.html#lineNumber8",
     "URI checker for CDN should set wpp",
     "test"
   ],

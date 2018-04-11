@@ -3733,7 +3733,7 @@
     "__docId__": 160,
     "kind": "file",
     "name": "src/loaders/PluginLoader.js",
-    "content": "/**\n*  @file ScriptLoader.js\n*  @author Liqueur de Toile <contact@liqueurdetoile.com>\n*  @licence AGPL-3.0 {@link https://github.com/liqueurdetoile/beloader/blob/master/LICENSE}\n*/\n\nimport AbstractLoader from 'core/AbstractLoader';\n\n/**\n*  Loads a beloader plugin\n*\n*  @version 1.0.0\n*  @since 1.0.0\n*  @author Liqueur de Toile <contact@liqueurdetoile.com>\n*  @extends {AbstractLoader}\n*/\nexport default class PluginLoader extends AbstractLoader {\n  /**\n  *  @version 1.0.0\n  *  @since 1.0.0\n  *  @author Liqueur de Toile <contact@liqueurdetoile.com>\n  *\n  *  @param {QueueItem} parent Calling QueueItem\n  *  @param {DotObjectArray} options Options for the loader\n  *  @throw {TypeError} If plugin name is missing\n  */\n  constructor(parent, options) {\n    if (!options.has('name')) throw new TypeError('Beloader : Plugin must have a name');\n    if (!options.has('url')) {\n      options.data.url = 'https://cdn.jsdelivr.net/gh/beloader/beloader-' + options.data.name + '@latest';\n    }\n    super(parent, options);\n\n    /**\n    *  Underlying node for insertion\n    *  @type {HTMLElement}\n    */\n    this._node = undefined;\n  }\n\n  /**\n  *  Getter that generates HTMLElement to contain script (sync or async)\n  *\n  *  @version 1.0.0\n  *  @since 1.0.0\n  *  @author Liqueur de Toile <contact@liqueurdetoile.com>\n  *  @type {HTMLElement} HTMLElement <script></script>\n  */\n  get node() {\n    if (typeof this._node === 'undefined') {\n      this._node = document.createElement('script');\n      this._node.setAttribute('type', 'text/javascript');\n      if (!this.options.data.async) {\n        this._node.setAttribute('src', this.options.data.url);\n      }\n    }\n    return this._node;\n  }\n\n  /**\n  *  Insert plugin code in <script> tag with src for sync loading\n  *  and import in plugins when finished\n  *\n  *  @version 1.0.0\n  *  @since 1.0.0\n  *  @author Liqueur de Toile <contact@liqueurdetoile.com>\n  *\n  *  @returns {Promise} Loading promise\n  */\n  sync() {\n    document.querySelector('head').appendChild(this.node);\n    return this._loadPlugin(super.sync());\n\n  }\n\n  /**\n  *  Load plugin script, insert response in a <script> tag\n  *  and import in plugins when finished\n  *\n  *  @version 1.0.0\n  *  @since 1.0.0\n  *  @author Liqueur de Toile <contact@liqueurdetoile.com>\n  *\n  *  @returns {Promise} Loading promise\n  */\n  async() {\n    return this._loadPlugin(super.async());\n  }\n\n  /**\n  *  Description for _load\n  *\n  *  @version 1.0.0\n  *  @since 1.0.0\n  *  @author Liqueur de Toile <contact@liqueurdetoile.com>\n  *\n  *  @param {$type} p Description for p\n  *  @returns {type} Return description\n  */\n  _loadPlugin(p) {\n    const _this = this;\n\n    return new Promise((resolve, reject) => {\n      p.then((response) => {\n        let beloader = _this.parent.parent;\n\n        if (response) {\n          _this.node.innerHTML = response;\n          document.querySelector('head').appendChild(_this.node);\n        }\n\n        try {\n          let plugin = beloader.pluginize(_this.options.data.name, window[_this.options.data.name], _this.options);\n\n          if (plugin.promise) {\n            plugin.promise.then(\n              () => resolve(),\n              (e) => reject('Unable to load plugin : ' + _this.options.name + ' [' + e + ']')\n            );\n          } else resolve();\n        } catch (e) {\n          reject('Unable to load plugin : ' + _this.options.name + ' [' + e + ']');\n        }\n      });\n    });\n  }\n}\n",
+    "content": "/**\n*  @file ScriptLoader.js\n*  @author Liqueur de Toile <contact@liqueurdetoile.com>\n*  @licence AGPL-3.0 {@link https://github.com/liqueurdetoile/beloader/blob/master/LICENSE}\n*/\n\nimport AbstractLoader from 'core/AbstractLoader';\n\n/**\n*  Loads a beloader plugin\n*\n*  @version 1.0.0\n*  @since 1.0.0\n*  @author Liqueur de Toile <contact@liqueurdetoile.com>\n*  @extends {AbstractLoader}\n*/\nexport default class PluginLoader extends AbstractLoader {\n  /**\n  *  @version 1.0.0\n  *  @since 1.0.0\n  *  @author Liqueur de Toile <contact@liqueurdetoile.com>\n  *\n  *  @param {QueueItem} parent Calling QueueItem\n  *  @param {DotObjectArray} options Options for the loader\n  *  @param {string} options.name Plugin var name\n  *  @param {string} [options.url] Plugin script url\n  *  @param {boolean} [options.inline=false]  If `true`,\n  *  the plugin script will be evaluated inline\n  *  @throw {TypeError} If plugin name is missing\n  */\n  constructor(parent, options) {\n    if (!options.has('name')) throw new TypeError('Beloader : Plugin must have a name');\n    if (!options.has('url')) {\n      options.data.url = 'https://cdn.jsdelivr.net/gh/beloader/beloader-' + options.data.name + '@latest';\n    }\n    options.define('inline', false);\n    super(parent, options);\n\n    /**\n    *  Underlying node for insertion\n    *  @type {HTMLElement}\n    */\n    this._node = undefined;\n  }\n\n  /**\n  *  Getter that generates HTMLElement to contain script (sync or async)\n  *\n  *  @version 1.0.0\n  *  @since 1.0.0\n  *  @author Liqueur de Toile <contact@liqueurdetoile.com>\n  *  @type {HTMLElement} HTMLElement <script></script>\n  */\n  get node() {\n    if (typeof this._node === 'undefined') {\n      this._node = document.createElement('script');\n      this._node.setAttribute('type', 'text/javascript');\n      if (!this.options.data.async) {\n        this._node.setAttribute('src', this.options.data.url);\n      }\n    }\n    return this._node;\n  }\n\n  /**\n  *  Insert plugin code in <script> tag with src for sync loading\n  *  and import in plugins when finished\n  *\n  *  @version 1.0.0\n  *  @since 1.0.0\n  *  @author Liqueur de Toile <contact@liqueurdetoile.com>\n  *\n  *  @returns {Promise} Loading promise\n  */\n  sync() {\n    document.querySelector('head').appendChild(this.node);\n    return this._loadPlugin(super.sync());\n\n  }\n\n  /**\n  *  Load plugin script, insert response in a <script> tag\n  *  and import in plugins when finished\n  *\n  *  @version 1.0.0\n  *  @since 1.0.0\n  *  @author Liqueur de Toile <contact@liqueurdetoile.com>\n  *\n  *  @returns {Promise} Loading promise\n  */\n  async() {\n    if (this.options.data.inline) return this._loadPlugin(super.async());\n    this.options.data.async = false;\n    this.node.setAttribute('async', '');\n    document.querySelector('head').appendChild(this.node);\n    return this._loadPlugin(super.sync());\n  }\n\n  /**\n  *  Description for _load\n  *\n  *  @version 1.0.0\n  *  @since 1.0.0\n  *  @author Liqueur de Toile <contact@liqueurdetoile.com>\n  *\n  *  @param {$type} p Description for p\n  *  @returns {type} Return description\n  */\n  _loadPlugin(p) {\n    const _this = this;\n\n    return new Promise((resolve, reject) => {\n      p.then((response) => {\n        let beloader = _this.parent.parent;\n\n        console.log(_this.options.data.inline);\n        if (response && _this.options.data.inline) {\n          _this.node.innerHTML = response;\n          document.querySelector('head').appendChild(_this.node);\n        }\n\n        try {\n          let plugin = beloader.pluginize(_this.options.data.name, window[_this.options.data.name], _this.options);\n\n          if (plugin.promise) {\n            plugin.promise.then(\n              () => resolve(),\n              (e) => reject('Unable to load plugin : ' + _this.options.name + ' [' + e + ']')\n            );\n          } else resolve();\n        } catch (e) {\n          reject('Unable to load plugin : ' + _this.options.name + ' [' + e + ']');\n        }\n      });\n    });\n  }\n}\n",
     "static": true,
     "longname": "F:/Projets/beloader/src/loaders/PluginLoader.js",
     "access": "public",
@@ -3777,7 +3777,7 @@
     "longname": "src/loaders/PluginLoader.js~PluginLoader#constructor",
     "access": "public",
     "description": "",
-    "lineNumber": 27,
+    "lineNumber": 31,
     "since": "1.0.0",
     "version": "1.0.0",
     "unknown": [
@@ -3810,6 +3810,38 @@
         "optional": false,
         "name": "options",
         "description": "Options for the loader"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options.name",
+        "description": "Plugin var name"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "options.url",
+        "description": "Plugin script url"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "boolean"
+        ],
+        "spread": false,
+        "optional": true,
+        "defaultValue": "false",
+        "defaultRaw": false,
+        "name": "options.inline",
+        "description": "If `true`,\n the plugin script will be evaluated inline"
       }
     ]
   },
@@ -3822,7 +3854,7 @@
     "longname": "src/loaders/PluginLoader.js~PluginLoader#_node",
     "access": "private",
     "description": " Underlying node for insertion",
-    "lineNumber": 38,
+    "lineNumber": 43,
     "type": {
       "nullable": null,
       "types": [
@@ -3843,7 +3875,7 @@
     "longname": "src/loaders/PluginLoader.js~PluginLoader#node",
     "access": "public",
     "description": " Getter that generates HTMLElement to contain script (sync or async)",
-    "lineNumber": 49,
+    "lineNumber": 54,
     "since": "1.0.0",
     "version": "1.0.0",
     "unknown": [
@@ -3872,7 +3904,7 @@
     "longname": "src/loaders/PluginLoader.js~PluginLoader#sync",
     "access": "public",
     "description": " Insert plugin code in <script> tag with src for sync loading\n and import in plugins when finished",
-    "lineNumber": 70,
+    "lineNumber": 75,
     "since": "1.0.0",
     "version": "1.0.0",
     "unknown": [
@@ -3906,7 +3938,7 @@
     "longname": "src/loaders/PluginLoader.js~PluginLoader#async",
     "access": "public",
     "description": " Load plugin script, insert response in a <script> tag\n and import in plugins when finished",
-    "lineNumber": 86,
+    "lineNumber": 91,
     "since": "1.0.0",
     "version": "1.0.0",
     "unknown": [
@@ -3940,7 +3972,7 @@
     "longname": "src/loaders/PluginLoader.js~PluginLoader#_loadPlugin",
     "access": "private",
     "description": " Description for _load",
-    "lineNumber": 100,
+    "lineNumber": 109,
     "since": "1.0.0",
     "version": "1.0.0",
     "unknown": [
@@ -3978,7 +4010,7 @@
     "__docId__": 169,
     "kind": "file",
     "name": "src/loaders/ScriptLoader.js",
-    "content": "/**\n*  @file ScriptLoader.js\n*  @author Liqueur de Toile <contact@liqueurdetoile.com>\n*  @licence AGPL-3.0 {@link https://github.com/liqueurdetoile/beloader/blob/master/LICENSE}\n*/\n\nimport AbstractLoader from 'core/AbstractLoader';\n\n/**\n*  Loads external javascript\n*\n*  @version 1.0.0\n*  @since 1.0.0\n*  @author Liqueur de Toile <contact@liqueurdetoile.com>\n*  @extends {AbstractLoader}\n*/\nexport default class ScriptLoader extends AbstractLoader {\n  /**\n  *  @version 1.0.0\n  *  @since 1.0.0\n  *  @author Liqueur de Toile <contact@liqueurdetoile.com>\n  *\n  *  @param {QueueItem} parent Calling QueueItem\n  *  @param {DotObjectArray} options Options for the loader\n  *  @param {string} options.url  URL of the script\n  *  @param {boolean} [options.inline=false]  If loaded async,\n  *  the script will be parsed inline. Otherwise, it will\n  *  be loaded through a <script async> tag\n  *  @param {Object} [options.attributes] Attributes for the resulting HTML node\n  *  @throw {TypeError} If script url is missing\n  */\n  constructor(parent, options) {\n    super(parent, options);\n    if (!options.has('url')) throw new TypeError('Beloader : Script url must be defined');\n    this.options.define('inline', false);\n    /**\n    *  Underlying node for insertion\n    *  @type {HTMLElement}\n    */\n    this._node = undefined;\n  }\n\n  /**\n  *  Getter that generates HTMLElement to contain script (sync or async)\n  *\n  *  @version 1.0.0\n  *  @since 1.0.0\n  *  @author Liqueur de Toile <contact@liqueurdetoile.com>\n  *  @type {HTMLElement} HTMLElement <script></script>\n  */\n  get node() {\n    if (typeof this._node === 'undefined') {\n      this._node = document.createElement('script');\n      this._node.setAttribute('type', 'text/javascript');\n      if (!this.options.data.async) {\n        this._node.setAttribute('src', this.options.data.url);\n      }\n      this.options.forEach(function (val, attr) {\n        this._node.setAttribute(attr, val);\n      }.bind(this), 'attributes', null, false);\n    }\n    return this._node;\n  }\n\n  /**\n  *  Insert <script> tag with src for sync loading\n  *\n  *  @version 1.0.0\n  *  @since 1.0.0\n  *  @author Liqueur de Toile <contact@liqueurdetoile.com>\n  *\n  *  @returns {Promise} Loading promise\n  */\n  sync() {\n    document.querySelector('head').appendChild(this.node);\n    return super.sync();\n  }\n\n  /**\n  *  Load script and insert response in a <script> tag if\n  *  options.inline set to `true` or load the script\n  *  with async attribute\n  *\n  *  @version 1.0.0\n  *  @since 1.0.0\n  *  @author Liqueur de Toile <contact@liqueurdetoile.com>\n  *\n  *  @returns {Promise} Loading promise\n  */\n  async() {\n    const _this = this;\n\n    if (this.options.data.inline) {\n      let p = super.async();\n\n      p.then(response => {\n        if (response) {\n          _this.node.innerHTML = response;\n          document.querySelector('head').appendChild(_this.node);\n        }\n      });\n\n      return p;\n    }\n\n    this.options.data.async = false;\n    if (this.options.has('loader.async')) this.options.push('loader.sync', this.options.pull('loader.async'));\n    this.node.setAttribute('async', true);\n    return this.sync();\n  }\n}\n",
+    "content": "/**\n*  @file ScriptLoader.js\n*  @author Liqueur de Toile <contact@liqueurdetoile.com>\n*  @licence AGPL-3.0 {@link https://github.com/liqueurdetoile/beloader/blob/master/LICENSE}\n*/\n\nimport AbstractLoader from 'core/AbstractLoader';\n\n/**\n*  Loads external javascript\n*\n*  @version 1.0.0\n*  @since 1.0.0\n*  @author Liqueur de Toile <contact@liqueurdetoile.com>\n*  @extends {AbstractLoader}\n*/\nexport default class ScriptLoader extends AbstractLoader {\n  /**\n  *  @version 1.0.0\n  *  @since 1.0.0\n  *  @author Liqueur de Toile <contact@liqueurdetoile.com>\n  *\n  *  @param {QueueItem} parent Calling QueueItem\n  *  @param {DotObjectArray} options Options for the loader\n  *  @param {string} options.url  URL of the script\n  *  @param {boolean} [options.inline=false]  If loaded async,\n  *  the script will be parsed inline. Otherwise, it will\n  *  be loaded through a <script async> tag\n  *  @param {Object} [options.attributes] Attributes for the resulting HTML node\n  *  @throw {TypeError} If script url is missing\n  */\n  constructor(parent, options) {\n    super(parent, options);\n    if (!options.has('url')) throw new TypeError('Beloader : Script url must be defined');\n    this.options.define('inline', false);\n    /**\n    *  Underlying node for insertion\n    *  @type {HTMLElement}\n    */\n    this._node = undefined;\n  }\n\n  /**\n  *  Getter that generates HTMLElement to contain script (sync or async)\n  *\n  *  @version 1.0.0\n  *  @since 1.0.0\n  *  @author Liqueur de Toile <contact@liqueurdetoile.com>\n  *  @type {HTMLElement} HTMLElement <script></script>\n  */\n  get node() {\n    if (typeof this._node === 'undefined') {\n      this._node = document.createElement('script');\n      this._node.setAttribute('type', 'text/javascript');\n      if (!this.options.data.async) {\n        this._node.setAttribute('src', this.options.data.url);\n      }\n      this.options.forEach(function (val, attr) {\n        this._node.setAttribute(attr, val);\n      }.bind(this), 'attributes', null, false);\n    }\n    return this._node;\n  }\n\n  /**\n  *  Insert <script> tag with src for sync loading\n  *\n  *  @version 1.0.0\n  *  @since 1.0.0\n  *  @author Liqueur de Toile <contact@liqueurdetoile.com>\n  *\n  *  @returns {Promise} Loading promise\n  */\n  sync() {\n    document.querySelector('head').appendChild(this.node);\n    return super.sync();\n  }\n\n  /**\n  *  Load script and insert response in a <script> tag if\n  *  options.inline set to `true` or load the script\n  *  with async attribute\n  *\n  *  @version 1.0.0\n  *  @since 1.0.0\n  *  @author Liqueur de Toile <contact@liqueurdetoile.com>\n  *\n  *  @returns {Promise} Loading promise\n  */\n  async() {\n    const _this = this;\n\n    if (this.options.data.inline) {\n      let p = super.async();\n\n      p.then(response => {\n        if (response) {\n          _this.node.innerHTML = response;\n          document.querySelector('head').appendChild(_this.node);\n        }\n      });\n\n      return p;\n    }\n\n    this.options.data.async = false;\n    if (this.options.has('loader.async')) this.options.push('loader.sync', this.options.pull('loader.async'));\n    this.node.setAttribute('async', '');\n    return this.sync();\n  }\n}\n",
     "static": true,
     "longname": "F:/Projets/beloader/src/loaders/ScriptLoader.js",
     "access": "public",
@@ -6588,7 +6620,7 @@
     "__docId__": 284,
     "kind": "testFile",
     "name": "tests/plugins.spec.js",
-    "content": "const {Beloader} = require('beloader');\n\ndescribe('Plugins', function () {\n  it('should pluginize a function and call init', function () {\n    var loader = new Beloader();\n    var spy = sinon.spy();\n\n    var plugin = function () {\n      this.fixture = 'fixture';\n      this.init = function () {\n        spy();\n      };\n    };\n\n    loader.pluginize('plugin', plugin);\n    loader.plugin.fixture.should.equal('fixture');\n    spy.called.should.be.true;\n  });\n\n  it('should pluginize a singleton and call init', function () {\n    var loader = new Beloader();\n    var spy = sinon.spy();\n\n    var plugin = {\n      fixture: 'fixture',\n      init: function () {\n        spy();\n      }\n    };\n\n    loader.pluginize('plugin', plugin);\n    loader.plugin.fixture.should.equal('fixture');\n    spy.called.should.be.true;\n  });\n\n  it('should fail on pluginize with error', function () {\n    var loader = new Beloader();\n\n    var plugin = {\n      fixture: 'fixture',\n      init: function () {\n        spy(); // eslint-disable-line\n      }\n    };\n\n    expect(loader.pluginize.bind(loader, 'plugin', plugin)).to.throw(Error);\n  });\n\n  it('should throw an exception if name is missing', function () {\n    var loader = new Beloader();\n\n    return loader.fetch('plugin').promise['catch'](error => {\n      expect(error).to.be.instanceof(TypeError);\n    });\n  });\n\n  it('should propagate a plugin to item and loader', function () {\n    var loader = new Beloader();\n\n    var plugin = {\n      fixture: 'fixture'\n    };\n\n    loader.pluginize('plugin', plugin);\n\n    return loader.fetch('script', 'https://cdn.jsdelivr.net/npm/elementify@latest')\n      .promise.then(item => {\n        item.plugin.fixture.should.equal('fixture');\n        item.loader.plugin.fixture.should.equal('fixture');\n      });\n  });\n\n  it('should load plugin from Beloader options with full description', function () {\n    var loader = new Beloader({\n      plugins: {\n        name: 'animations',\n        url: 'https://rawgit.com/beloader/beloader-animations/master/dist/beloader-animations.min.js',\n        alias: 'ani'\n      }\n    });\n\n    this.timeout(5000);\n\n    return loader.ready.then(() => {\n      loader.ani.should.be.an('object');\n    });\n  });\n\n  it('should load plugin from Beloader options with short call', function () {\n    var loader = new Beloader({\n      plugins: [\n        { animations: 'https://rawgit.com/beloader/beloader-animations/master/dist/beloader-animations.min.js' }\n      ]\n    });\n\n    return loader.ready.then(() => {\n      loader.animations.should.be.an('object');\n    });\n  });\n\n  it('should load plugin sync from Beloader options with short call', function () {\n    var loader = new Beloader({\n      async: false,\n      plugins: [\n        { animations: 'https://rawgit.com/beloader/beloader-animations/master/dist/beloader-animations.min.js' }\n      ]\n    });\n\n    this.timeout(5000);\n\n    return loader.ready.then(() => {\n      loader.animations.should.be.an('object');\n    });\n  });\n\n  it('should wait for plugin ready promise', function () {\n    var p = {\n      init: function () {\n        this.promise = new Promise((resolve, reject) => {\n          setTimeout(resolve, 1000);\n        });\n      }\n    };\n    var loader = new Beloader();\n\n    loader.pluginize('p', p);\n\n    return loader.p.promise.then(() => {\n      loader.p.should.be.an('object');\n    });\n  });\n});\n",
+    "content": "const {Beloader} = require('beloader');\n\ndescribe('Plugins', function () {\n  it('should pluginize a function and call init', function () {\n    var loader = new Beloader();\n    var spy = sinon.spy();\n\n    var plugin = function () {\n      this.fixture = 'fixture';\n      this.init = function () {\n        spy();\n      };\n    };\n\n    loader.pluginize('plugin', plugin);\n    loader.plugin.fixture.should.equal('fixture');\n    spy.called.should.be.true;\n  });\n\n  it('should pluginize a singleton and call init', function () {\n    var loader = new Beloader();\n    var spy = sinon.spy();\n\n    var plugin = {\n      fixture: 'fixture',\n      init: function () {\n        spy();\n      }\n    };\n\n    loader.pluginize('plugin', plugin);\n    loader.plugin.fixture.should.equal('fixture');\n    spy.called.should.be.true;\n  });\n\n  it('should fail on pluginize with error', function () {\n    var loader = new Beloader();\n\n    var plugin = {\n      fixture: 'fixture',\n      init: function () {\n        spy(); // eslint-disable-line\n      }\n    };\n\n    expect(loader.pluginize.bind(loader, 'plugin', plugin)).to.throw(Error);\n  });\n\n  it('should throw an exception if name is missing', function () {\n    var loader = new Beloader();\n\n    return loader.fetch('plugin').promise['catch'](error => {\n      expect(error).to.be.instanceof(TypeError);\n    });\n  });\n\n  it('should propagate a plugin to item and loader', function () {\n    var loader = new Beloader();\n\n    var plugin = {\n      fixture: 'fixture'\n    };\n\n    loader.pluginize('plugin', plugin);\n\n    return loader.fetch('script', 'https://cdn.jsdelivr.net/npm/elementify@latest')\n      .promise.then(item => {\n        item.plugin.fixture.should.equal('fixture');\n        item.loader.plugin.fixture.should.equal('fixture');\n      });\n  });\n\n  it('should load plugin async from Beloader options with full options and alias', function () {\n    var loader = new Beloader({\n      plugins: {\n        name: 'animations',\n        url: 'https://rawgit.com/beloader/beloader-animations/master/dist/beloader-animations.min.js',\n        alias: 'ani'\n      }\n    });\n\n    this.timeout(5000);\n\n    return loader.ready.then(() => {\n      loader.ani.should.be.an('object');\n    });\n  });\n\n  it('should load plugin async from Beloader options with short call', function () {\n    var loader = new Beloader({\n      plugins: [\n        { animations: 'https://rawgit.com/beloader/beloader-animations/master/dist/beloader-animations.min.js' }\n      ]\n    });\n\n    return loader.ready.then(() => {\n      loader.animations.should.be.an('object');\n    });\n  });\n\n  it('should load plugin async and inline from Beloader options with short call', function () {\n    var loader = new Beloader({\n      inline: true,\n      plugins: [\n        { animations: 'https://rawgit.com/beloader/beloader-animations/master/dist/beloader-animations.min.js' }\n      ]\n    });\n\n    return loader.ready.then(() => {\n      loader.animations.should.be.an('object');\n    });\n  });\n\n  it('should load plugin sync from Beloader options with short call', function () {\n    var loader = new Beloader({\n      async: false,\n      plugins: [\n        { animations: 'https://rawgit.com/beloader/beloader-animations/master/dist/beloader-animations.min.js' }\n      ]\n    });\n\n    this.timeout(5000);\n\n    return loader.ready.then(() => {\n      loader.animations.should.be.an('object');\n    });\n  });\n\n  it('should wait for plugin ready promise', function () {\n    var p = {\n      init: function () {\n        this.promise = new Promise((resolve, reject) => {\n          setTimeout(resolve, 1000);\n        });\n      }\n    };\n    var loader = new Beloader();\n\n    loader.pluginize('p', p);\n\n    return loader.p.promise.then(() => {\n      loader.p.should.be.an('object');\n    });\n  });\n});\n",
     "static": true,
     "longname": "F:/Projets/beloader/tastes/tests/plugins.spec.js",
     "access": null,
@@ -6683,7 +6715,7 @@
     "static": true,
     "longname": "tests/plugins.spec.js~describe54.it60",
     "access": null,
-    "description": "should load plugin from Beloader options with full description",
+    "description": "should load plugin async from Beloader options with full options and alias",
     "lineNumber": 73
   },
   {
@@ -6696,7 +6728,7 @@
     "static": true,
     "longname": "tests/plugins.spec.js~describe54.it61",
     "access": null,
-    "description": "should load plugin from Beloader options with short call",
+    "description": "should load plugin async from Beloader options with short call",
     "lineNumber": 89
   },
   {
@@ -6709,7 +6741,7 @@
     "static": true,
     "longname": "tests/plugins.spec.js~describe54.it62",
     "access": null,
-    "description": "should load plugin sync from Beloader options with short call",
+    "description": "should load plugin async and inline from Beloader options with short call",
     "lineNumber": 101
   },
   {
@@ -6722,11 +6754,24 @@
     "static": true,
     "longname": "tests/plugins.spec.js~describe54.it63",
     "access": null,
-    "description": "should wait for plugin ready promise",
-    "lineNumber": 116
+    "description": "should load plugin sync from Beloader options with short call",
+    "lineNumber": 114
   },
   {
     "__docId__": 295,
+    "kind": "test",
+    "name": "it64",
+    "testId": 64,
+    "memberof": "tests/plugins.spec.js~describe54",
+    "testDepth": 1,
+    "static": true,
+    "longname": "tests/plugins.spec.js~describe54.it64",
+    "access": null,
+    "description": "should wait for plugin ready promise",
+    "lineNumber": 129
+  },
+  {
+    "__docId__": 296,
     "kind": "testFile",
     "name": "tests/publicpath.spec.js",
     "content": "import {check} from 'core/publicpath';\r\n\r\ndescribe('URI checker for CDN', function () {\r\n  it('should set wpp', function () {\r\n    check('http://cdn.io/beloader').should.equal('http://cdn.io/beloader/dist/');\r\n  });\r\n\r\n  it('should set wpp', function () {\r\n    check('http://cdn.io/beloader@latest').should.equal('http://cdn.io/beloader@latest/dist/');\r\n  });\r\n\r\n  it('should set wpp', function () {\r\n    check('http://cdn.io/beloader@1.2.3').should.equal('http://cdn.io/beloader@1.2.3/dist/');\r\n  });\r\n\r\n  it('should set wpp', function () {\r\n    check('http://cdn.io/beloader@latest/dist/beloader.min.js').should.equal('http://cdn.io/beloader@latest/dist/');\r\n  });\r\n\r\n  it('should return false', function () {\r\n    check('http://cdn.io/beloader-animations@latest').should.be.false;\r\n  });\r\n\r\n  it('should return false', function () {\r\n    check('file://beloader.js').should.be.false;\r\n  });\r\n});\r\n",
@@ -6737,98 +6782,98 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 296,
+    "__docId__": 297,
     "kind": "test",
-    "name": "describe64",
-    "testId": 64,
+    "name": "describe65",
+    "testId": 65,
     "memberof": "tests/publicpath.spec.js",
     "testDepth": 0,
     "static": true,
-    "longname": "tests/publicpath.spec.js~describe64",
+    "longname": "tests/publicpath.spec.js~describe65",
     "access": null,
     "description": "URI checker for CDN",
     "lineNumber": 3
-  },
-  {
-    "__docId__": 297,
-    "kind": "test",
-    "name": "it65",
-    "testId": 65,
-    "memberof": "tests/publicpath.spec.js~describe64",
-    "testDepth": 1,
-    "static": true,
-    "longname": "tests/publicpath.spec.js~describe64.it65",
-    "access": null,
-    "description": "should set wpp",
-    "lineNumber": 4
   },
   {
     "__docId__": 298,
     "kind": "test",
     "name": "it66",
     "testId": 66,
-    "memberof": "tests/publicpath.spec.js~describe64",
+    "memberof": "tests/publicpath.spec.js~describe65",
     "testDepth": 1,
     "static": true,
-    "longname": "tests/publicpath.spec.js~describe64.it66",
+    "longname": "tests/publicpath.spec.js~describe65.it66",
     "access": null,
     "description": "should set wpp",
-    "lineNumber": 8
+    "lineNumber": 4
   },
   {
     "__docId__": 299,
     "kind": "test",
     "name": "it67",
     "testId": 67,
-    "memberof": "tests/publicpath.spec.js~describe64",
+    "memberof": "tests/publicpath.spec.js~describe65",
     "testDepth": 1,
     "static": true,
-    "longname": "tests/publicpath.spec.js~describe64.it67",
+    "longname": "tests/publicpath.spec.js~describe65.it67",
     "access": null,
     "description": "should set wpp",
-    "lineNumber": 12
+    "lineNumber": 8
   },
   {
     "__docId__": 300,
     "kind": "test",
     "name": "it68",
     "testId": 68,
-    "memberof": "tests/publicpath.spec.js~describe64",
+    "memberof": "tests/publicpath.spec.js~describe65",
     "testDepth": 1,
     "static": true,
-    "longname": "tests/publicpath.spec.js~describe64.it68",
+    "longname": "tests/publicpath.spec.js~describe65.it68",
     "access": null,
     "description": "should set wpp",
-    "lineNumber": 16
+    "lineNumber": 12
   },
   {
     "__docId__": 301,
     "kind": "test",
     "name": "it69",
     "testId": 69,
-    "memberof": "tests/publicpath.spec.js~describe64",
+    "memberof": "tests/publicpath.spec.js~describe65",
     "testDepth": 1,
     "static": true,
-    "longname": "tests/publicpath.spec.js~describe64.it69",
+    "longname": "tests/publicpath.spec.js~describe65.it69",
     "access": null,
-    "description": "should return false",
-    "lineNumber": 20
+    "description": "should set wpp",
+    "lineNumber": 16
   },
   {
     "__docId__": 302,
     "kind": "test",
     "name": "it70",
     "testId": 70,
-    "memberof": "tests/publicpath.spec.js~describe64",
+    "memberof": "tests/publicpath.spec.js~describe65",
     "testDepth": 1,
     "static": true,
-    "longname": "tests/publicpath.spec.js~describe64.it70",
+    "longname": "tests/publicpath.spec.js~describe65.it70",
+    "access": null,
+    "description": "should return false",
+    "lineNumber": 20
+  },
+  {
+    "__docId__": 303,
+    "kind": "test",
+    "name": "it71",
+    "testId": 71,
+    "memberof": "tests/publicpath.spec.js~describe65",
+    "testDepth": 1,
+    "static": true,
+    "longname": "tests/publicpath.spec.js~describe65.it71",
     "access": null,
     "description": "should return false",
     "lineNumber": 24
   },
   {
-    "__docId__": 303,
+    "__docId__": 304,
     "kind": "testFile",
     "name": "tests/queueitem.spec.js",
     "content": "import {Beloader} from 'beloader';\nimport QueueItem from 'queueitem';\n\ndescribe('CSS Loader', function () {\n  it('should create an instance of a css loader', function () {\n    var loader = new Beloader();\n    var item = loader.fetch('css', {\n      url: 'https://fonts.googleapis.com/css?family=Poppins:900'\n    });\n\n    item.should.be.instanceof(QueueItem);\n  });\n});\n",
@@ -6839,27 +6884,27 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 304,
+    "__docId__": 305,
     "kind": "test",
-    "name": "describe71",
-    "testId": 71,
+    "name": "describe72",
+    "testId": 72,
     "memberof": "tests/queueitem.spec.js",
     "testDepth": 0,
     "static": true,
-    "longname": "tests/queueitem.spec.js~describe71",
+    "longname": "tests/queueitem.spec.js~describe72",
     "access": null,
     "description": "CSS Loader",
     "lineNumber": 4
   },
   {
-    "__docId__": 305,
+    "__docId__": 306,
     "kind": "test",
-    "name": "it72",
-    "testId": 72,
-    "memberof": "tests/queueitem.spec.js~describe71",
+    "name": "it73",
+    "testId": 73,
+    "memberof": "tests/queueitem.spec.js~describe72",
     "testDepth": 1,
     "static": true,
-    "longname": "tests/queueitem.spec.js~describe71.it72",
+    "longname": "tests/queueitem.spec.js~describe72.it73",
     "access": null,
     "description": "should create an instance of a css loader",
     "lineNumber": 5

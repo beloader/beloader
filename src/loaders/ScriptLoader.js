@@ -105,7 +105,7 @@ export default class ScriptLoader extends AbstractLoader {
 
     this.options.data.async = false;
     if (this.options.has('loader.async')) this.options.push('loader.sync', this.options.pull('loader.async'));
-    this.node.setAttribute('async', true);
+    this.node.setAttribute('async', '');
     return this.sync();
   }
 }

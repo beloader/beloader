@@ -95,6 +95,10 @@ export default class PluginLoader extends AbstractLoader {
   *
   *  @param {QueueItem} parent Calling QueueItem
   *  @param {DotObjectArray} options Options for the loader
+  *  @param {string} options.name Plugin var name
+  *  @param {string} [options.url] Plugin script url
+  *  @param {boolean} [options.inline=false]  If `true`,
+  *  the plugin script will be evaluated inline
   *  @throw {TypeError} If plugin name is missing
   */
   constructor(parent, options) {
@@ -102,6 +106,7 @@ export default class PluginLoader extends AbstractLoader {
     if (!options.has(&apos;url&apos;)) {
       options.data.url = &apos;https://cdn.jsdelivr.net/gh/beloader/beloader-&apos; + options.data.name + &apos;@latest&apos;;
     }
+    options.define(&apos;inline&apos;, false);
     super(parent, options);
 
     /**
@@ -157,7 +162,11 @@ export default class PluginLoader extends AbstractLoader {
   *  @returns {Promise} Loading promise
   */
   async() {
-    return this._loadPlugin(super.async());
+    if (this.options.data.inline) return this._loadPlugin(super.async());
+    this.options.data.async = false;
+    this.node.setAttribute(&apos;async&apos;, &apos;&apos;);
+    document.querySelector(&apos;head&apos;).appendChild(this.node);
+    return this._loadPlugin(super.sync());
   }
 
   /**
@@ -177,7 +186,8 @@ export default class PluginLoader extends AbstractLoader {
       p.then((response) =&gt; {
         let beloader = _this.parent.parent;
 
-        if (response) {
+        console.log(_this.options.data.inline);
+        if (response &amp;&amp; _this.options.data.inline) {
           _this.node.innerHTML = response;
           document.querySelector(&apos;head&apos;).appendChild(_this.node);
         }
