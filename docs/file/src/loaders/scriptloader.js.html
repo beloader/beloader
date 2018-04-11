@@ -34,6 +34,7 @@
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#core">core</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/core/AbstractEventManager.js~AbstractEventManager.html">AbstractEventManager</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/core/AbstractLoader.js~AbstractLoader.html">AbstractLoader</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/core/AbstractPlugin.js~AbstractPlugin.html">AbstractPlugin</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-check">check</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#events">events</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/events/BeloaderEvent.js~BeloaderEvent.html">BeloaderEvent</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-abort">abort</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-afterprocess">afterprocess</a></span></span></li>
@@ -94,11 +95,17 @@ export default class ScriptLoader extends AbstractLoader {
   *
   *  @param {QueueItem} parent Calling QueueItem
   *  @param {DotObjectArray} options Options for the loader
+  *  @param {string} options.url  URL of the script
+  *  @param {boolean} [options.inline=false]  If loaded async,
+  *  the script will be parsed inline. Otherwise, it will
+  *  be loaded through a &lt;script async&gt; tag
+  *  @param {Object} [options.attributes] Attributes for the resulting HTML node
   *  @throw {TypeError} If script url is missing
   */
   constructor(parent, options) {
     super(parent, options);
     if (!options.has(&apos;url&apos;)) throw new TypeError(&apos;Beloader : Script url must be defined&apos;);
+    this.options.define(&apos;inline&apos;, false);
     /**
     *  Underlying node for insertion
     *  @type {HTMLElement}
@@ -121,6 +128,9 @@ export default class ScriptLoader extends AbstractLoader {
       if (!this.options.data.async) {
         this._node.setAttribute(&apos;src&apos;, this.options.data.url);
       }
+      this.options.forEach(function (val, attr) {
+        this._node.setAttribute(attr, val);
+      }.bind(this), &apos;attributes&apos;, null, false);
     }
     return this._node;
   }
@@ -140,7 +150,9 @@ export default class ScriptLoader extends AbstractLoader {
   }
 
   /**
-  *  Load script and insert response in a &lt;script&gt; tag
+  *  Load script and insert response in a &lt;script&gt; tag if
+  *  options.inline set to `true` or load the script
+  *  with async attribute
   *
   *  @version 1.0.0
   *  @since 1.0.0
@@ -150,16 +162,24 @@ export default class ScriptLoader extends AbstractLoader {
   */
   async() {
     const _this = this;
-    let p = super.async();
 
-    p.then(response =&gt; {
-      if (response) {
-        _this.node.innerHTML = response;
-        document.querySelector(&apos;head&apos;).appendChild(_this.node);
-      }
-    });
+    if (this.options.data.inline) {
+      let p = super.async();
 
-    return p;
+      p.then(response =&gt; {
+        if (response) {
+          _this.node.innerHTML = response;
+          document.querySelector(&apos;head&apos;).appendChild(_this.node);
+        }
+      });
+
+      return p;
+    }
+
+    this.options.data.async = false;
+    if (this.options.has(&apos;loader.async&apos;)) this.options.push(&apos;loader.sync&apos;, this.options.pull(&apos;loader.async&apos;));
+    this.node.setAttribute(&apos;async&apos;, true);
+    return this.sync();
   }
 }
 </code></pre>

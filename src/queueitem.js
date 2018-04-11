@@ -221,15 +221,19 @@ export default class QueueItem extends AbstractEventManager {
     const _this = this;
 
     this.loaderReady.then(function () {
-      _this.loader.promise.then(
-        function () {
-          _this.loader.fire('load', _this.loader);
-        },
-        function (error) {
-          _this.error = error; // Store error string/object
-          _this.loader.fire('error', _this.loader);
-        }
-      ).then(() => _this.fire('loadend', _this));
+      try {
+        _this.loader.promise.then(
+          () => {
+            _this.loader.fire('load', _this.loader);
+          },
+          (e) => {
+            _this.loader.fire('error', _this.loader, e);
+          }
+        ).then(() => _this.fire('loadend', _this));
+      } catch (e) {
+        _this.loader.fire('error', _this.loader, e);
+        _this.fire('loadend', _this);
+      }
     });
 
     return this;
@@ -285,8 +289,9 @@ export default class QueueItem extends AbstractEventManager {
   *  @since 1.0.0
   *  @author Liqueur de Toile <contact@liqueurdetoile.com>
   */
-  _error() {
+  _error(ev) {
     this.state.error = true;
+    this.error = ev.data; // Store error string/object
   }
 
   /**

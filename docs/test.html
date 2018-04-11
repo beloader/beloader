@@ -34,6 +34,7 @@
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#core">core</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/core/AbstractEventManager.js~AbstractEventManager.html">AbstractEventManager</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/core/AbstractLoader.js~AbstractLoader.html">AbstractLoader</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/core/AbstractPlugin.js~AbstractPlugin.html">AbstractPlugin</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-check">check</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#events">events</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/events/BeloaderEvent.js~BeloaderEvent.html">BeloaderEvent</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-abort">abort</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-afterprocess">afterprocess</a></span></span></li>
@@ -289,6 +290,42 @@
 </tr>
 
 <tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="0">
+  <td data-ice="testDescription" style="padding-left: 10px"><span data-ice="testInterfaceToggle" class="toggle closed"></span><span><a href="test-file/tests/fontloader.spec.js.html#lineNumber3"><p>Font loader tests</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target">-</td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="1">
+  <td data-ice="testDescription" style="padding-left: 20px"><span><a href="test-file/tests/fontloader.spec.js.html#lineNumber4"><p>should throw an exception if no webfont object provided</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target">-</td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="1">
+  <td data-ice="testDescription" style="padding-left: 20px"><span><a href="test-file/tests/fontloader.spec.js.html#lineNumber12"><p>should throw an exception if async option is false</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target">-</td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="1">
+  <td data-ice="testDescription" style="padding-left: 20px"><span><a href="test-file/tests/fontloader.spec.js.html#lineNumber28"><p>should fail loading</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target">-</td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="1">
+  <td data-ice="testDescription" style="padding-left: 20px"><span><a href="test-file/tests/fontloader.spec.js.html#lineNumber44"><p>should run callbacks for webfont</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target">-</td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="1">
+  <td data-ice="testDescription" style="padding-left: 20px"><span><a href="test-file/tests/fontloader.spec.js.html#lineNumber67"><p>should fail loading and run callbacks for webfont</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target">-</td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="0">
   <td data-ice="testDescription" style="padding-left: 10px"><span data-ice="testInterfaceToggle" class="toggle closed"></span><span><a href="test-file/tests/imageloader.spec.js.html#lineNumber3"><p>Image loader</p>
 </a></span></td>
   <td data-ice="testTarget" class="test-target">-</td>
@@ -409,19 +446,61 @@
 </tr>
 
 <tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="1">
-  <td data-ice="testDescription" style="padding-left: 20px"><span><a href="test-file/tests/plugins.spec.js.html#lineNumber87"><p>should load plugin from Beloader options with short call</p>
+  <td data-ice="testDescription" style="padding-left: 20px"><span><a href="test-file/tests/plugins.spec.js.html#lineNumber89"><p>should load plugin from Beloader options with short call</p>
 </a></span></td>
   <td data-ice="testTarget" class="test-target">-</td>
 </tr>
 
 <tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="1">
-  <td data-ice="testDescription" style="padding-left: 20px"><span><a href="test-file/tests/plugins.spec.js.html#lineNumber99"><p>should load plugin sync from Beloader options with short call</p>
+  <td data-ice="testDescription" style="padding-left: 20px"><span><a href="test-file/tests/plugins.spec.js.html#lineNumber101"><p>should load plugin sync from Beloader options with short call</p>
 </a></span></td>
   <td data-ice="testTarget" class="test-target">-</td>
 </tr>
 
 <tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="1">
-  <td data-ice="testDescription" style="padding-left: 20px"><span><a href="test-file/tests/plugins.spec.js.html#lineNumber112"><p>should wait for plugin ready promise</p>
+  <td data-ice="testDescription" style="padding-left: 20px"><span><a href="test-file/tests/plugins.spec.js.html#lineNumber116"><p>should wait for plugin ready promise</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target">-</td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="0">
+  <td data-ice="testDescription" style="padding-left: 10px"><span data-ice="testInterfaceToggle" class="toggle closed"></span><span><a href="test-file/tests/publicpath.spec.js.html#lineNumber3"><p>URI checker for CDN</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target">-</td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="1">
+  <td data-ice="testDescription" style="padding-left: 20px"><span><a href="test-file/tests/publicpath.spec.js.html#lineNumber4"><p>should set wpp</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target">-</td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="1">
+  <td data-ice="testDescription" style="padding-left: 20px"><span><a href="test-file/tests/publicpath.spec.js.html#lineNumber8"><p>should set wpp</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target">-</td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="1">
+  <td data-ice="testDescription" style="padding-left: 20px"><span><a href="test-file/tests/publicpath.spec.js.html#lineNumber12"><p>should set wpp</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target">-</td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="1">
+  <td data-ice="testDescription" style="padding-left: 20px"><span><a href="test-file/tests/publicpath.spec.js.html#lineNumber16"><p>should set wpp</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target">-</td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="1">
+  <td data-ice="testDescription" style="padding-left: 20px"><span><a href="test-file/tests/publicpath.spec.js.html#lineNumber20"><p>should return false</p>
+</a></span></td>
+  <td data-ice="testTarget" class="test-target">-</td>
+</tr>
+
+<tr class="test-interface" data-ice="testInterface" style="display: none;" data-test-depth="1">
+  <td data-ice="testDescription" style="padding-left: 20px"><span><a href="test-file/tests/publicpath.spec.js.html#lineNumber24"><p>should return false</p>
 </a></span></td>
   <td data-ice="testTarget" class="test-target">-</td>
 </tr>

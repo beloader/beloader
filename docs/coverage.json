@@ -1,6 +1,6 @@
 {
-  "coverage": "100%",
-  "expectCount": 124,
+  "coverage": "98.41%",
+  "expectCount": 126,
   "actualCount": 124,
   "files": {
     "src/beloader.js": {
@@ -24,9 +24,11 @@
       "undocumentLines": []
     },
     "src/core/publicpath.js": {
-      "expectCount": 2,
+      "expectCount": 3,
       "actualCount": 2,
-      "undocumentLines": []
+      "undocumentLines": [
+        20
+      ]
     },
     "src/events/BeloaderEvent.js": {
       "expectCount": 12,
@@ -74,9 +76,11 @@
       "undocumentLines": []
     },
     "src/queueitem.js": {
-      "expectCount": 23,
+      "expectCount": 24,
       "actualCount": 23,
-      "undocumentLines": []
+      "undocumentLines": [
+        294
+      ]
     }
   }
 }

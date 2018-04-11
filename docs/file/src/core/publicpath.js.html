@@ -34,6 +34,7 @@
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#core">core</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/core/AbstractEventManager.js~AbstractEventManager.html">AbstractEventManager</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/core/AbstractLoader.js~AbstractLoader.html">AbstractLoader</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/core/AbstractPlugin.js~AbstractPlugin.html">AbstractPlugin</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-check">check</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#events">events</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/events/BeloaderEvent.js~BeloaderEvent.html">BeloaderEvent</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-abort">abort</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-afterprocess">afterprocess</a></span></span></li>
@@ -87,13 +88,27 @@
 let scripts = document.getElementsByTagName(&apos;script&apos;);
 /** @ignore */
 let r = new RegExp(&apos;^(?:[a-z]+:)?//&apos;, &apos;i&apos;);
+let wpp;
 
-for (let i = 0; i &lt; scripts.length; i++) {
-  let script = scripts[i];
-  let tmp = script.src.match(/(.+)beloader/);
+export function check(uri) {
+  // Dot not forget to change target string beloader
+  let tmp = uri.match(/((http.+)beloader(?:[@\.\w]+|$))/);
 
   // Only set public path if beloader path is absolute
-  if (tmp &amp;&amp; tmp[1] &amp;&amp; r.test(tmp[1])) __webpack_public_path__ = tmp[1]; // eslint-disable-line
+  if (tmp &amp;&amp; tmp[1] &amp;&amp; r.test(tmp[1])) {
+    if (tmp[1].indexOf(&apos;dist&apos;) &gt;= 0) return tmp[2];
+    return tmp[1] + &apos;/dist/&apos;;
+  }
+  return false;
+}
+
+for (let i = 0; i &lt; scripts.length; i++) {
+  wpp = check(scripts[i].src);
+
+  if (wpp) {
+    __webpack_public_path__ = wpp; // eslint-disable-line
+    break;
+  }
 }
 </code></pre>
 

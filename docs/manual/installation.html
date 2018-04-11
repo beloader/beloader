@@ -112,14 +112,14 @@ const Beloader = require(&apos;beloader&apos;).Beloader;</code>
 <p>Beloader have been built on a ECMA6 class pattern and transpiled.</p>
 <h2 id="in-browser">In browser</h2><p>Beloader is available as CDN external library or can easily be installed locally. Beloader is using dynamic imports
 with modules. You must require the full path, otherwise Beloader won&apos;t be able to resolve modules URL.</p>
-<h3 id="bundle">Bundle</h3><pre><code class="lang-html"><code class="source-code prettyprint">&lt;script type=&quot;text/javascript&quot; src=&quot;https://bundle.run/beloader@latest/dist/beloader.min.js&quot;&gt;&lt;/script&gt;</code>
+<h3 id="bundle">Bundle</h3><pre><code class="lang-html"><code class="source-code prettyprint">&lt;script type=&quot;text/javascript&quot; src=&quot;https://bundle.run/beloader@latest&quot;&gt;&lt;/script&gt;</code>
 </code></pre>
 <p>Bundle generate a beloader object that hoist Beloader constructor. So, you must call it like this :</p>
 <pre><code class="lang-javascript"><code class="source-code prettyprint">var loader = new beloader.Beloader();</code>
 </code></pre>
-<h3 id="jsdelivr">JsDelivr</h3><pre><code class="lang-html"><code class="source-code prettyprint">&lt;script type=&quot;text/javascript&quot; src=&quot;https://cdn.jsdelivr.net/npm/beloader@latest/dist/beloader.min.js&quot;&gt;&lt;/script&gt;</code>
+<h3 id="jsdelivr">JsDelivr</h3><pre><code class="lang-html"><code class="source-code prettyprint">&lt;script type=&quot;text/javascript&quot; src=&quot;https://cdn.jsdelivr.net/npm/beloader@latest&quot;&gt;&lt;/script&gt;</code>
 </code></pre>
-<h3 id="unpkg">Unpkg</h3><pre><code class="lang-html"><code class="source-code prettyprint">&lt;script type=&quot;text/javascript&quot; src=&quot;https://unpkg.com/beloader@latest/dist/beloader.min.js&quot;&gt;&lt;/script&gt;</code>
+<h3 id="unpkg">Unpkg</h3><pre><code class="lang-html"><code class="source-code prettyprint">&lt;script type=&quot;text/javascript&quot; src=&quot;https://unpkg.com/beloader@latest&quot;&gt;&lt;/script&gt;</code>
 </code></pre>
 <h3 id="local-install">Local install</h3><p>For browser install, you can simply fetch folder <code>dist</code> in <a href="https://github.com/liqueurdetoile/beloader">this repo</a> (or clone it) and load the script :</p>
 <pre><code class="lang-html"><code class="source-code prettyprint">&lt;script type=&quot;text/javascript&quot; src=&quot;myJsFolder/beloader/dist/beloader.min.js&quot;&gt;&lt;/script&gt;</code>
@@ -137,7 +137,7 @@ with modules. You must require the full path, otherwise Beloader won&apos;t be a
   function start() { //stuff here }
 &lt;/script&gt;</code>
 </code></pre>
-<h2 id="browser-compatibility">Browser compatibility</h2><p>Beloader should work with no tweaks in all modern browsers and IE &gt;= 10.</p>
+<h2 id="browser-compatibility">Browser compatibility</h2><p>Beloader should work with no tweaks in all modern browsers and IE &gt;= 10 (even 8 if not using webfontloader).</p>
 </div>
 </div>
 

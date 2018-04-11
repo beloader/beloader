@@ -105,7 +105,11 @@ provided to <code>fetch</code> or option provided to <code>fetchAll</code>.</p>
 <p>Each QueueItem instance exposes a <code>loader</code> property where the given loader instance is accessible.</p>
 <h3 id="script-loader">Script loader</h3><p>This loader is designed to load scripts sync or async (default).
 It is triggered when requested <code>type</code> value is set to <code>js</code>, <code>script</code>, <code>javascript</code> or <code>ecmascript</code>.</p>
-<p>When loaded async, the script is not evaluated programmatically but inserted in a &lt;SCRIPT&gt; tag.</p>
+<p>When loaded async, you can provide <code>inline</code> options :</p>
+<ul>
+<li>If <code>false</code> (by default), the script is loaded through a <code>&lt;script src=&quot;url&quot; async&gt;&lt;/script&gt;</code> tag</li>
+<li>If <code>true</code>, the script is fetched through XHR and inserted in a <code>&lt;script&gt;&lt;/script&gt;</code> tag</li>
+</ul>
 <h3 id="stylesheet-loader">Stylesheet loader</h3><p>This loader is designed to load stylesheets sync or async (default).
 It is triggered when requested <code>type</code> value is set to <code>css</code>, <code>style</code>, <code>styles</code> or <code>stylesheet</code>.</p>
 <h3 id="font-loader">Font loader</h3><p>This loader is designed to load fonts sync (default).

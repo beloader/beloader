@@ -27,6 +27,9 @@ export default class StylesheetLoader extends AbstractLoader {
   *
   *  @param {QueueItem} parent Calling QueueItem
   *  @param {DotObjectArray} options Options for the loader
+  *  @param {string} options.url  URL of the script
+  *  @param {Object} [options.attributes] Attributes for the resulting HTML node
+  *  @throw {TypeError} If script url is missing
   *  @throws {TypeError}  if `options.url` is not defined
   */
   constructor(parent, options) {
@@ -58,6 +61,9 @@ export default class StylesheetLoader extends AbstractLoader {
         this._node.setAttribute('type', 'text/css');
         this._node.setAttribute('href', this.options.data.url);
       }
+      this.options.forEach(function (val, attr) {
+        this._node.setAttribute(attr, val);
+      }.bind(this), 'attributes', null, false);
     }
     return this._node;
   }

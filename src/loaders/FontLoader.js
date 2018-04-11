@@ -29,6 +29,7 @@ export default class FontLoader extends AbstractLoader {
   *
   *  @param {QueueItem} parent Calling QueueItem
   *  @param {DotObjectArray} options Options for the loader
+  *  @param {Object} options.webfont Options object for webfontloader
   *  @throws {TypeError}  if `options.webfont` not provided
   */
   constructor(parent, options) {
@@ -68,27 +69,22 @@ export default class FontLoader extends AbstractLoader {
   *  @see https://github.com/typekit/webfontloader
   */
   async() {
-    let p, cb, _resolve, _reject;
+    let p, cb1, cb2, _resolve, _reject;
 
     p = new Promise(function (resolve, reject) {
       _resolve = resolve;
       _reject = reject;
     });
 
-    cb = this.options.pull('webfont.loading');
-    this.options.push('webfont.loading', function () {
-      if (cb instanceof Function) cb();
-    });
-
-    cb = this.options.pull('webfont.active');
+    cb1 = this.options.pull('webfont.active');
     this.options.push('webfont.active', function () {
-      if (cb instanceof Function) cb();
+      if (cb1 instanceof Function) cb1();
       _resolve();
     });
 
-    cb = this.options.pull('webfont.inactive');
+    cb2 = this.options.pull('webfont.inactive');
     this.options.push('webfont.inactive', function () {
-      if (cb instanceof Function) cb();
+      if (cb2 instanceof Function) cb2();
       _reject();
     });
 

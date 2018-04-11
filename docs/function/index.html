@@ -2,8 +2,8 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <base data-ice="baseUrl" href="../../">
-  <title data-ice="title">tests/jsonloader.spec.js | BeLoader | Highly customizable and lightweight loader based on dynamic imports with splash screen, animated blocks and more</title>
+  <base data-ice="baseUrl" href="../">
+  <title data-ice="title">Function | BeLoader | Highly customizable and lightweight loader based on dynamic imports with splash screen, animated blocks and more</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
@@ -70,71 +70,116 @@
 </div>
 </nav>
 
-<div class="content" data-ice="content"><h1 data-ice="title">tests/jsonloader.spec.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import Beloader from &apos;beloader&apos;;
+<div class="content" data-ice="content"><h1 data-ice="title">Function</h1>
+<div data-ice="summaries"><table class="summary" data-ice="summary">
+  <thead><tr><td data-ice="title" colspan="3">Static Public Summary</td></tr></thead>
+  <tbody>
+  
+  <tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-check">check</a></span></span><span class="code" data-ice="signature">(uri: <span>*</span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+</tbody>
+</table>
+</div>
+<div data-ice="details"><h2 data-ice="title">Static Public </h2>
 
-/**
-*  @test {JsonLoader}
-*/
-describe(&apos;JsonLoader tests&apos;, function () {
-  it(&apos;should load JSON&apos;, function () {
-    var loader = new Beloader();
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-function-check">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">check</span><span class="code" data-ice="signature">(uri: <span>*</span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/core/publicpath.js.html#lineNumber20">source</a></span></span>
+    </span>
+  </h3>
 
-    return loader
-      .fetch(&apos;json&apos;, &apos;https://reqres.in/api/users/2&apos;)
-      .promise
-      .then(function (item) {
-        item.response.should.eql({
-          data: {
-            &apos;id&apos;: 2,
-            &apos;first_name&apos;: &apos;Janet&apos;,
-            &apos;last_name&apos;: &apos;Weaver&apos;,
-            &apos;avatar&apos;: &apos;https://s3.amazonaws.com/uifaces/faces/twitter/josephstein/128.jpg&apos;
-          }
-        });
-      },
-      function (item) {
-        console.log(&apos;error&apos;);
-      });
-  });
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {check} from &apos;<span><a href="file/src/core/publicpath.js.html#lineNumber20">beloader/src/core/publicpath.js</a></span>&apos;</code></pre></div>
+  
+  
+  
 
-  describe(&apos;JsonLoader errors&apos;, function () {
+  
 
-    it(&apos;should throw a type error if no URL provided&apos;, function () {
-      var loader = new Beloader();
+  <div data-ice="properties"><div data-ice="properties">
+  <h4 data-ice="title">Params:</h4>
+  <table class="params">
+    <thead>
+    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+    
+    <tr data-ice="property" data-depth="0">
+      <td data-ice="name" class="code" data-depth="0">uri</td>
+      <td data-ice="type" class="code"><span>*</span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"></td>
+    </tr>
+</tbody>
+  </table>
+</div>
+</div>
 
-      return loader.fetch(&apos;json&apos;).promise[&apos;catch&apos;](error =&gt; {
-        error.should.be.instanceof(TypeError);
-      });
-    });
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tbody>
+        <tr>
+          <td class="return-type code" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span></td>
+          
+        </tr>
+      </tbody>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
 
-    it(&apos;should throw a type error if sync method called&apos;, function () {
-      var loader = new Beloader();
+  
 
-      return loader.fetch(&apos;json&apos;, &apos;https://reqres.in/api/users/2&apos;).promise.then(item =&gt; {
-        expect(item.loader.sync.bind(item.loader)).to.throw(TypeError);
-      });
-    });
+  
 
-    it(&apos;should report a 404 error&apos;, function () {
-      var loader = new Beloader();
+  
 
-      return loader.fetch(&apos;json&apos;, &apos;/api/unknown/23&apos;).promise[&apos;catch&apos;](item =&gt; {
-        item.error.should.be.equal(404);
-      });
-    });
+  
 
-    it(&apos;should report a JSON syntax error&apos;, function () {
-      var loader = new Beloader();
+  
 
-      return loader.fetch(&apos;json&apos;, &apos;https://cdn.jsdelivr.net/npm/elementify@latest&apos;).promise[&apos;catch&apos;](item =&gt; {
-        item.state.error.should.be.true;
-      });
-    });
-  });
-});
-</code></pre>
+  
 
+  
+  
+</div>
+</div>
 </div>
 
 <footer class="footer">

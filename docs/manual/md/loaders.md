@@ -14,7 +14,9 @@ Each QueueItem instance exposes a `loader` property where the given loader insta
 This loader is designed to load scripts sync or async (default).
 It is triggered when requested `type` value is set to `js`, `script`, `javascript` or `ecmascript`.
 
-When loaded async, the script is not evaluated programmatically but inserted in a <SCRIPT> tag.
+When loaded async, you can provide `inline` options :
+- If `false` (by default), the script is loaded through a `<script src="url" async></script>` tag
+- If `true`, the script is fetched through XHR and inserted in a `<script></script>` tag
 
 ### Stylesheet loader
 This loader is designed to load stylesheets sync or async (default).
@@ -133,7 +135,7 @@ loader.fetch({
       var xhr = event.target.xhr; // Target is Loader
       // or
       var xhr = this.loader.xhr: // Context is QueueItem
-      
+
       xhr.setRequestHeader('Accept', 'weird/mimetype');
     }
   }

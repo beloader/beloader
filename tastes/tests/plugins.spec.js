@@ -79,6 +79,8 @@ describe('Plugins', function () {
       }
     });
 
+    this.timeout(5000);
+
     return loader.ready.then(() => {
       loader.ani.should.be.an('object');
     });
@@ -103,6 +105,8 @@ describe('Plugins', function () {
         { animations: 'https://rawgit.com/beloader/beloader-animations/master/dist/beloader-animations.min.js' }
       ]
     });
+
+    this.timeout(5000);
 
     return loader.ready.then(() => {
       loader.animations.should.be.an('object');

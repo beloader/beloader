@@ -115,10 +115,10 @@ const {Beloader} = require(&apos;beloader&apos;);
 const Beloader = require(&apos;beloader&apos;).default;
 const Beloader = require(&apos;beloader&apos;).Beloader;</code>
 </code></pre><p>Beloader have been built on a ECMA6 class pattern and transpiled.</p><h2>In browser</h2><p>Beloader is available as CDN external library or can easily be installed locally. Beloader is using dynamic imports
-with modules. You must require the full path, otherwise Beloader won&apos;t be able to resolve modules URL.</p><h3>Bundle</h3><pre><code class="lang-html"><code class="source-code prettyprint">&lt;script type=&quot;text/javascript&quot; src=&quot;https://bundle.run/beloader@latest/dist/beloader.min.js&quot;&gt;&lt;/script&gt;</code>
+with modules. You must require the full path, otherwise Beloader won&apos;t be able to resolve modules URL.</p><h3>Bundle</h3><pre><code class="lang-html"><code class="source-code prettyprint">&lt;script type=&quot;text/javascript&quot; src=&quot;https://bundle.run/beloader@latest&quot;&gt;&lt;/script&gt;</code>
 </code></pre><p>Bundle generate a beloader object that hoist Beloader constructor. So, you must call it like this :</p><pre><code class="lang-javascript"><code class="source-code prettyprint">var loader = new beloader.Beloader();</code>
-</code></pre><h3>JsDelivr</h3><pre><code class="lang-html"><code class="source-code prettyprint">&lt;script type=&quot;text/javascript&quot; src=&quot;https://cdn.jsdelivr.net/npm/beloader@latest/dist/beloader.min.js&quot;&gt;&lt;/script&gt;</code>
-</code></pre><h3>Unpkg</h3><pre><code class="lang-html"><code class="source-code prettyprint">&lt;script type=&quot;text/javascript&quot; src=&quot;https://unpkg.com/beloader@latest/dist/beloader.min.js&quot;&gt;&lt;/script&gt;</code>
+</code></pre><h3>JsDelivr</h3><pre><code class="lang-html"><code class="source-code prettyprint">&lt;script type=&quot;text/javascript&quot; src=&quot;https://cdn.jsdelivr.net/npm/beloader@latest&quot;&gt;&lt;/script&gt;</code>
+</code></pre><h3>Unpkg</h3><pre><code class="lang-html"><code class="source-code prettyprint">&lt;script type=&quot;text/javascript&quot; src=&quot;https://unpkg.com/beloader@latest&quot;&gt;&lt;/script&gt;</code>
 </code></pre><h3>Local install</h3><p>For browser install, you can simply fetch folder <code>dist</code> in <a href="https://github.com/liqueurdetoile/beloader">this repo</a> (or clone it) and load the script :</p><pre><code class="lang-html"><code class="source-code prettyprint">&lt;script type=&quot;text/javascript&quot; src=&quot;myJsFolder/beloader/dist/beloader.min.js&quot;&gt;&lt;/script&gt;</code>
 </code></pre><h2>Using Beloader in browser</h2><p>There is two ways to embed Beloader in browser to be sure it will be available at runtime :</p><p><strong>Calling it synchronously (in &lt;HEAD&gt; or &lt;BODY&gt; but before subsequent calls)</strong></p><pre><code class="lang-html"><code class="source-code prettyprint">&lt;script type=&quot;text/javascript&quot; src=&quot;beloader.min.js&quot;&gt;&lt;/script&gt;</code>
 </code></pre><p><strong>Add a callback when loading asynchronously</strong></p><pre><code class="lang-html"><code class="source-code prettyprint">&lt;script type=&quot;text/javascript&quot; src=&quot;beloader.min.js&quot; onload=&quot;start()&quot; async&gt;&lt;/script&gt;
@@ -128,7 +128,7 @@ with modules. You must require the full path, otherwise Beloader won&apos;t be a
 &lt;script&gt;
   function start() { //stuff here }
 &lt;/script&gt;</code>
-</code></pre><h2>Browser compatibility</h2><p>Beloader should work with no tweaks in all modern browsers and IE &gt;= 10.</p></div>
+</code></pre><h2>Browser compatibility</h2><p>Beloader should work with no tweaks in all modern browsers and IE &gt;= 10 (even 8 if not using webfontloader).</p></div>
         <a data-ice="link" href="manual/installation.html"></a>
       </div>
     </div>
@@ -284,7 +284,10 @@ loader.process(); // Order Beloader to process the loading queue</code>
       <div class="manual-card">
         <div data-ice="card"><h1>Loaders</h1><h2>Built-in loaders</h2><h3>Using built-in loaders</h3><p>Loaders are automatically selected given the <code>type</code> parameter value
 provided to <code>fetch</code> or option provided to <code>fetchAll</code>.</p><p>See <a href="./manual/../class/src/beloader.js~Beloader.html#instance-method-fetch">API</a> for the list of loaders.</p><p>Each QueueItem instance exposes a <code>loader</code> property where the given loader instance is accessible.</p><h3>Script loader</h3><p>This loader is designed to load scripts sync or async (default).
-It is triggered when requested <code>type</code> value is set to <code>js</code>, <code>script</code>, <code>javascript</code> or <code>ecmascript</code>.</p><p>When loaded async, the script is not evaluated programmatically but inserted in a &lt;SCRIPT&gt; tag.</p><h3>Stylesheet loader</h3><p>This loader is designed to load stylesheets sync or async (default).
+It is triggered when requested <code>type</code> value is set to <code>js</code>, <code>script</code>, <code>javascript</code> or <code>ecmascript</code>.</p><p>When loaded async, you can provide <code>inline</code> options :</p><ul>
+<li>If <code>false</code> (by default), the script is loaded through a <code>&lt;script src=&quot;url&quot; async&gt;&lt;/script&gt;</code> tag</li>
+<li>If <code>true</code>, the script is fetched through XHR and inserted in a <code>&lt;script&gt;&lt;/script&gt;</code> tag</li>
+</ul><h3>Stylesheet loader</h3><p>This loader is designed to load stylesheets sync or async (default).
 It is triggered when requested <code>type</code> value is set to <code>css</code>, <code>style</code>, <code>styles</code> or <code>stylesheet</code>.</p><h3>Font loader</h3><p>This loader is designed to load fonts sync (default).
 It is triggered when requested <code>type</code> value is set to <code>font</code> or <code>webfont</code>.</p><p>The font loader relies on webfontloader api to manager font loading. It takes two steps :</p><ul>
 <li>Loading the stylesheet which describes the font</li>

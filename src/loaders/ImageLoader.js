@@ -75,13 +75,16 @@ export default class ImageLoader extends AbstractLoader {
   *
   *  @param {QueueItem} parent Calling QueueItem
   *  @param {DotObjectArray} options Options for the loader
+  *  @param {string} options.url  URL of the asset
+  *  @param {boolean} [options.base64=false]  If set to `true` and loaded async, the asset
+  *  will be parsed as a base64 data string. Otherwise, it will be parsed as binary blob
+  *  @param {Object} [options.attributes] Attributes for the resulting HTML node
   *  @throws {TypeError}  if `options.url` is not defined
   */
   constructor(parent, options) {
     super(parent, options);
     if (!options.has('url')) throw new TypeError('Beloader : image url must be defined');
     options.define('base64', false);
-    this.options.define('attributes', {});
     /**
     *  Underlying node for insertion
     *  @type {HTMLElement}
@@ -103,7 +106,7 @@ export default class ImageLoader extends AbstractLoader {
       this._node = document.createElement('img');
       this.options.forEach(function (val, attr) {
         this._node.setAttribute(attr, val);
-      }.bind(this), 'attributes');
+      }.bind(this), 'attributes', null, false);
     }
 
     return this._node;

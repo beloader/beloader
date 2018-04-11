@@ -84,6 +84,12 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "beloader/src/core/publicpath.js~check",
+    "function/index.html#static-function-check",
+    "<span>check</span> <span class=\"search-result-import-path\">beloader/src/core/publicpath.js</span>",
+    "function"
+  ],
+  [
     "",
     "test-file/tests/events.spec.js.html#lineNumber3",
     "Beloader events",
@@ -283,6 +289,42 @@ window.esdocSearchIndex = [
   ],
   [
     "",
+    "test-file/tests/fontloader.spec.js.html#lineNumber3",
+    "Font loader tests",
+    "test"
+  ],
+  [
+    "",
+    "test-file/tests/fontloader.spec.js.html#lineNumber28",
+    "Font loader tests should fail loading",
+    "test"
+  ],
+  [
+    "",
+    "test-file/tests/fontloader.spec.js.html#lineNumber67",
+    "Font loader tests should fail loading and run callbacks for webfont",
+    "test"
+  ],
+  [
+    "",
+    "test-file/tests/fontloader.spec.js.html#lineNumber44",
+    "Font loader tests should run callbacks for webfont",
+    "test"
+  ],
+  [
+    "",
+    "test-file/tests/fontloader.spec.js.html#lineNumber12",
+    "Font loader tests should throw an exception if async option is false",
+    "test"
+  ],
+  [
+    "",
+    "test-file/tests/fontloader.spec.js.html#lineNumber4",
+    "Font loader tests should throw an exception if no webfont object provided",
+    "test"
+  ],
+  [
+    "",
     "test-file/tests/imageloader.spec.js.html#lineNumber3",
     "Image loader",
     "test"
@@ -391,13 +433,13 @@ window.esdocSearchIndex = [
   ],
   [
     "",
-    "test-file/tests/plugins.spec.js.html#lineNumber87",
+    "test-file/tests/plugins.spec.js.html#lineNumber89",
     "Plugins should load plugin from Beloader options with short call",
     "test"
   ],
   [
     "",
-    "test-file/tests/plugins.spec.js.html#lineNumber99",
+    "test-file/tests/plugins.spec.js.html#lineNumber101",
     "Plugins should load plugin sync from Beloader options with short call",
     "test"
   ],
@@ -427,8 +469,50 @@ window.esdocSearchIndex = [
   ],
   [
     "",
-    "test-file/tests/plugins.spec.js.html#lineNumber112",
+    "test-file/tests/plugins.spec.js.html#lineNumber116",
     "Plugins should wait for plugin ready promise",
+    "test"
+  ],
+  [
+    "",
+    "test-file/tests/publicpath.spec.js.html#lineNumber3",
+    "URI checker for CDN",
+    "test"
+  ],
+  [
+    "",
+    "test-file/tests/publicpath.spec.js.html#lineNumber24",
+    "URI checker for CDN should return false",
+    "test"
+  ],
+  [
+    "",
+    "test-file/tests/publicpath.spec.js.html#lineNumber20",
+    "URI checker for CDN should return false",
+    "test"
+  ],
+  [
+    "",
+    "test-file/tests/publicpath.spec.js.html#lineNumber8",
+    "URI checker for CDN should set wpp",
+    "test"
+  ],
+  [
+    "",
+    "test-file/tests/publicpath.spec.js.html#lineNumber4",
+    "URI checker for CDN should set wpp",
+    "test"
+  ],
+  [
+    "",
+    "test-file/tests/publicpath.spec.js.html#lineNumber12",
+    "URI checker for CDN should set wpp",
+    "test"
+  ],
+  [
+    "",
+    "test-file/tests/publicpath.spec.js.html#lineNumber16",
+    "URI checker for CDN should set wpp",
     "test"
   ],
   [
@@ -1476,6 +1560,12 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
+    "src/queueitem.js~queueitem#error",
+    "class/src/queueitem.js~QueueItem.html#instance-member-error",
+    "src/queueitem.js~QueueItem#error",
+    "member"
+  ],
+  [
     "src/queueitem.js~queueitem#id",
     "class/src/queueitem.js~QueueItem.html#instance-member-id",
     "src/queueitem.js~QueueItem#id",
@@ -1608,6 +1698,12 @@ window.esdocSearchIndex = [
     "testFile"
   ],
   [
+    "tests/fontloader.spec.js",
+    "test-file/tests/fontloader.spec.js.html",
+    "tests/fontloader.spec.js",
+    "testFile"
+  ],
+  [
     "tests/imageloader.spec.js",
     "test-file/tests/imageloader.spec.js.html",
     "tests/imageloader.spec.js",
@@ -1623,6 +1719,12 @@ window.esdocSearchIndex = [
     "tests/plugins.spec.js",
     "test-file/tests/plugins.spec.js.html",
     "tests/plugins.spec.js",
+    "testFile"
+  ],
+  [
+    "tests/publicpath.spec.js",
+    "test-file/tests/publicpath.spec.js.html",
+    "tests/publicpath.spec.js",
     "testFile"
   ],
   [

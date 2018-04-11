@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <base data-ice="baseUrl" href="../../">
-  <title data-ice="title">tests/jsonloader.spec.js | BeLoader | Highly customizable and lightweight loader based on dynamic imports with splash screen, animated blocks and more</title>
+  <title data-ice="title">tests/publicpath.spec.js | BeLoader | Highly customizable and lightweight loader based on dynamic imports with splash screen, animated blocks and more</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
@@ -70,67 +70,32 @@
 </div>
 </nav>
 
-<div class="content" data-ice="content"><h1 data-ice="title">tests/jsonloader.spec.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import Beloader from &apos;beloader&apos;;
+<div class="content" data-ice="content"><h1 data-ice="title">tests/publicpath.spec.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import {check} from &apos;core/publicpath&apos;;
 
-/**
-*  @test {JsonLoader}
-*/
-describe(&apos;JsonLoader tests&apos;, function () {
-  it(&apos;should load JSON&apos;, function () {
-    var loader = new Beloader();
-
-    return loader
-      .fetch(&apos;json&apos;, &apos;https://reqres.in/api/users/2&apos;)
-      .promise
-      .then(function (item) {
-        item.response.should.eql({
-          data: {
-            &apos;id&apos;: 2,
-            &apos;first_name&apos;: &apos;Janet&apos;,
-            &apos;last_name&apos;: &apos;Weaver&apos;,
-            &apos;avatar&apos;: &apos;https://s3.amazonaws.com/uifaces/faces/twitter/josephstein/128.jpg&apos;
-          }
-        });
-      },
-      function (item) {
-        console.log(&apos;error&apos;);
-      });
+describe(&apos;URI checker for CDN&apos;, function () {
+  it(&apos;should set wpp&apos;, function () {
+    check(&apos;http://cdn.io/beloader&apos;).should.equal(&apos;http://cdn.io/beloader/dist/&apos;);
   });
 
-  describe(&apos;JsonLoader errors&apos;, function () {
+  it(&apos;should set wpp&apos;, function () {
+    check(&apos;http://cdn.io/beloader@latest&apos;).should.equal(&apos;http://cdn.io/beloader@latest/dist/&apos;);
+  });
 
-    it(&apos;should throw a type error if no URL provided&apos;, function () {
-      var loader = new Beloader();
+  it(&apos;should set wpp&apos;, function () {
+    check(&apos;http://cdn.io/beloader@1.2.3&apos;).should.equal(&apos;http://cdn.io/beloader@1.2.3/dist/&apos;);
+  });
 
-      return loader.fetch(&apos;json&apos;).promise[&apos;catch&apos;](error =&gt; {
-        error.should.be.instanceof(TypeError);
-      });
-    });
+  it(&apos;should set wpp&apos;, function () {
+    check(&apos;http://cdn.io/beloader@latest/dist/beloader.min.js&apos;).should.equal(&apos;http://cdn.io/beloader@latest/dist/&apos;);
+  });
 
-    it(&apos;should throw a type error if sync method called&apos;, function () {
-      var loader = new Beloader();
+  it(&apos;should return false&apos;, function () {
+    check(&apos;http://cdn.io/beloader-animations@latest&apos;).should.be.false;
+  });
 
-      return loader.fetch(&apos;json&apos;, &apos;https://reqres.in/api/users/2&apos;).promise.then(item =&gt; {
-        expect(item.loader.sync.bind(item.loader)).to.throw(TypeError);
-      });
-    });
-
-    it(&apos;should report a 404 error&apos;, function () {
-      var loader = new Beloader();
-
-      return loader.fetch(&apos;json&apos;, &apos;/api/unknown/23&apos;).promise[&apos;catch&apos;](item =&gt; {
-        item.error.should.be.equal(404);
-      });
-    });
-
-    it(&apos;should report a JSON syntax error&apos;, function () {
-      var loader = new Beloader();
-
-      return loader.fetch(&apos;json&apos;, &apos;https://cdn.jsdelivr.net/npm/elementify@latest&apos;).promise[&apos;catch&apos;](item =&gt; {
-        item.state.error.should.be.true;
-      });
-    });
+  it(&apos;should return false&apos;, function () {
+    check(&apos;file://beloader.js&apos;).should.be.false;
   });
 });
 </code></pre>

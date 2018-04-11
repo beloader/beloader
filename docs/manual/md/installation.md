@@ -28,7 +28,7 @@ with modules. You must require the full path, otherwise Beloader won't be able t
 
 ### Bundle
 ```html
-<script type="text/javascript" src="https://bundle.run/beloader@latest/dist/beloader.min.js"></script>
+<script type="text/javascript" src="https://bundle.run/beloader@latest"></script>
 ```
 Bundle generate a beloader object that hoist Beloader constructor. So, you must call it like this :
 ```javascript
@@ -37,12 +37,12 @@ var loader = new beloader.Beloader();
 
 ### JsDelivr
 ```html
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/beloader@latest/dist/beloader.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/beloader@latest"></script>
 ```
 
 ### Unpkg
 ```html
-<script type="text/javascript" src="https://unpkg.com/beloader@latest/dist/beloader.min.js"></script>
+<script type="text/javascript" src="https://unpkg.com/beloader@latest"></script>
 ```
 
 ### Local install
@@ -73,4 +73,4 @@ __Add a callback when loading asynchronously__
 ```
 
 ## Browser compatibility
-Beloader should work with no tweaks in all modern browsers and IE >= 10.
+Beloader should work with no tweaks in all modern browsers and IE >= 10 (even 8 if not using webfontloader).
