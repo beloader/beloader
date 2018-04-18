@@ -125,3 +125,5 @@ export default class JsonLoader extends AbstractLoader {
     });
   }
 }
+
+export {JsonLoader};

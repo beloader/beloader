@@ -17,7 +17,7 @@ import AbstractEventManager from 'core/AbstractEventManager';
 *  @author Liqueur de Toile <contact@liqueurdetoile.com>
 *  @extends {AbstractEventManager}
 */
-export default class AbstractLoader extends AbstractEventManager {
+export default class NoneLoader extends AbstractEventManager {
   /**
   *  @version 1.0.0
   *  @since 1.0.0
@@ -67,3 +67,5 @@ export default class AbstractLoader extends AbstractEventManager {
     return this.parent.loaderReady;
   }
 }
+
+export {NoneLoader};

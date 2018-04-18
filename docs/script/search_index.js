@@ -12,12 +12,6 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
-    "beloader/src/loaders/noneloader.js~abstractloader",
-    "class/src/loaders/NoneLoader.js~AbstractLoader.html",
-    "<span>AbstractLoader</span> <span class=\"search-result-import-path\">beloader/src/loaders/NoneLoader.js</span>",
-    "class"
-  ],
-  [
     "beloader/src/core/abstractplugin.js~abstractplugin",
     "class/src/core/AbstractPlugin.js~AbstractPlugin.html",
     "<span>AbstractPlugin</span> <span class=\"search-result-import-path\">beloader/src/core/AbstractPlugin.js</span>",
@@ -57,6 +51,12 @@ window.esdocSearchIndex = [
     "beloader/src/loaders/jsonloader.js~jsonloader",
     "class/src/loaders/JsonLoader.js~JsonLoader.html",
     "<span>JsonLoader</span> <span class=\"search-result-import-path\">beloader/src/loaders/JsonLoader.js</span>",
+    "class"
+  ],
+  [
+    "beloader/src/loaders/noneloader.js~noneloader",
+    "class/src/loaders/NoneLoader.js~NoneLoader.html",
+    "<span>NoneLoader</span> <span class=\"search-result-import-path\">beloader/src/loaders/NoneLoader.js</span>",
     "class"
   ],
   [
@@ -1332,33 +1332,33 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/loaders/noneloader.js~abstractloader#_plugins",
-    "class/src/loaders/NoneLoader.js~AbstractLoader.html#instance-member-_plugins",
-    "src/loaders/NoneLoader.js~AbstractLoader#_plugins",
+    "src/loaders/noneloader.js~noneloader#_plugins",
+    "class/src/loaders/NoneLoader.js~NoneLoader.html#instance-member-_plugins",
+    "src/loaders/NoneLoader.js~NoneLoader#_plugins",
     "member"
   ],
   [
-    "src/loaders/noneloader.js~abstractloader#constructor",
-    "class/src/loaders/NoneLoader.js~AbstractLoader.html#instance-constructor-constructor",
-    "src/loaders/NoneLoader.js~AbstractLoader#constructor",
+    "src/loaders/noneloader.js~noneloader#constructor",
+    "class/src/loaders/NoneLoader.js~NoneLoader.html#instance-constructor-constructor",
+    "src/loaders/NoneLoader.js~NoneLoader#constructor",
     "method"
   ],
   [
-    "src/loaders/noneloader.js~abstractloader#options",
-    "class/src/loaders/NoneLoader.js~AbstractLoader.html#instance-member-options",
-    "src/loaders/NoneLoader.js~AbstractLoader#options",
+    "src/loaders/noneloader.js~noneloader#options",
+    "class/src/loaders/NoneLoader.js~NoneLoader.html#instance-member-options",
+    "src/loaders/NoneLoader.js~NoneLoader#options",
     "member"
   ],
   [
-    "src/loaders/noneloader.js~abstractloader#parent",
-    "class/src/loaders/NoneLoader.js~AbstractLoader.html#instance-member-parent",
-    "src/loaders/NoneLoader.js~AbstractLoader#parent",
+    "src/loaders/noneloader.js~noneloader#parent",
+    "class/src/loaders/NoneLoader.js~NoneLoader.html#instance-member-parent",
+    "src/loaders/NoneLoader.js~NoneLoader#parent",
     "member"
   ],
   [
-    "src/loaders/noneloader.js~abstractloader#promise",
-    "class/src/loaders/NoneLoader.js~AbstractLoader.html#instance-get-promise",
-    "src/loaders/NoneLoader.js~AbstractLoader#promise",
+    "src/loaders/noneloader.js~noneloader#promise",
+    "class/src/loaders/NoneLoader.js~NoneLoader.html#instance-get-promise",
+    "src/loaders/NoneLoader.js~NoneLoader#promise",
     "member"
   ],
   [

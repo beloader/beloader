@@ -109,3 +109,5 @@ export default class ScriptLoader extends AbstractLoader {
     return this.sync();
   }
 }
+
+export {ScriptLoader};

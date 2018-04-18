@@ -95,3 +95,5 @@ export default class FontLoader extends AbstractLoader {
     return p;
   }
 }
+
+export {FontLoader};

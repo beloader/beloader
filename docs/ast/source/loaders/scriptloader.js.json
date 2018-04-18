@@ -1,28 +1,28 @@
 {
   "type": "File",
   "start": 0,
-  "end": 3146,
+  "end": 3170,
   "loc": {
     "start": {
       "line": 1,
       "column": 0
     },
     "end": {
-      "line": 112,
+      "line": 114,
       "column": 0
     }
   },
   "program": {
     "type": "Program",
     "start": 0,
-    "end": 3146,
+    "end": 3170,
     "loc": {
       "start": {
         "line": 1,
         "column": 0
       },
       "end": {
-        "line": 112,
+        "line": 114,
         "column": 0
       }
     },
@@ -4531,6 +4531,74 @@
             }
           }
         ]
+      },
+      {
+        "type": "ExportNamedDeclaration",
+        "start": 3147,
+        "end": 3169,
+        "loc": {
+          "start": {
+            "line": 113,
+            "column": 0
+          },
+          "end": {
+            "line": 113,
+            "column": 22
+          }
+        },
+        "declaration": null,
+        "specifiers": [
+          {
+            "type": "ExportSpecifier",
+            "start": 3155,
+            "end": 3167,
+            "loc": {
+              "start": {
+                "line": 113,
+                "column": 8
+              },
+              "end": {
+                "line": 113,
+                "column": 20
+              }
+            },
+            "local": {
+              "type": "Identifier",
+              "start": 3155,
+              "end": 3167,
+              "loc": {
+                "start": {
+                  "line": 113,
+                  "column": 8
+                },
+                "end": {
+                  "line": 113,
+                  "column": 20
+                },
+                "identifierName": "ScriptLoader"
+              },
+              "name": "ScriptLoader"
+            },
+            "exported": {
+              "type": "Identifier",
+              "start": 3155,
+              "end": 3167,
+              "loc": {
+                "start": {
+                  "line": 113,
+                  "column": 8
+                },
+                "end": {
+                  "line": 113,
+                  "column": 20
+                },
+                "identifierName": "ScriptLoader"
+              },
+              "name": "ScriptLoader"
+            }
+          }
+        ],
+        "source": null
       }
     ],
     "directives": []
@@ -13353,6 +13421,136 @@
     },
     {
       "type": {
+        "label": "export",
+        "keyword": "export",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "export",
+      "start": 3147,
+      "end": 3153,
+      "loc": {
+        "start": {
+          "line": 113,
+          "column": 0
+        },
+        "end": {
+          "line": 113,
+          "column": 6
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "{",
+        "beforeExpr": true,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 3154,
+      "end": 3155,
+      "loc": {
+        "start": {
+          "line": 113,
+          "column": 7
+        },
+        "end": {
+          "line": 113,
+          "column": 8
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "ScriptLoader",
+      "start": 3155,
+      "end": 3167,
+      "loc": {
+        "start": {
+          "line": 113,
+          "column": 8
+        },
+        "end": {
+          "line": 113,
+          "column": 20
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "}",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 3167,
+      "end": 3168,
+      "loc": {
+        "start": {
+          "line": 113,
+          "column": 20
+        },
+        "end": {
+          "line": 113,
+          "column": 21
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ";",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 3168,
+      "end": 3169,
+      "loc": {
+        "start": {
+          "line": 113,
+          "column": 21
+        },
+        "end": {
+          "line": 113,
+          "column": 22
+        }
+      }
+    },
+    {
+      "type": {
         "label": "eof",
         "beforeExpr": false,
         "startsExpr": false,
@@ -13364,15 +13562,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 3146,
-      "end": 3146,
+      "start": 3170,
+      "end": 3170,
       "loc": {
         "start": {
-          "line": 112,
+          "line": 114,
           "column": 0
         },
         "end": {
-          "line": 112,
+          "line": 114,
           "column": 0
         }
       }

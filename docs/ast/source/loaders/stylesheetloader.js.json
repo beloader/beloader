@@ -1,28 +1,28 @@
 {
   "type": "File",
   "start": 0,
-  "end": 2948,
+  "end": 2976,
   "loc": {
     "start": {
       "line": 1,
       "column": 0
     },
     "end": {
-      "line": 108,
+      "line": 110,
       "column": 0
     }
   },
   "program": {
     "type": "Program",
     "start": 0,
-    "end": 2948,
+    "end": 2976,
     "loc": {
       "start": {
         "line": 1,
         "column": 0
       },
       "end": {
-        "line": 108,
+        "line": 110,
         "column": 0
       }
     },
@@ -3926,6 +3926,74 @@
             }
           }
         ]
+      },
+      {
+        "type": "ExportNamedDeclaration",
+        "start": 2949,
+        "end": 2975,
+        "loc": {
+          "start": {
+            "line": 109,
+            "column": 0
+          },
+          "end": {
+            "line": 109,
+            "column": 26
+          }
+        },
+        "declaration": null,
+        "specifiers": [
+          {
+            "type": "ExportSpecifier",
+            "start": 2957,
+            "end": 2973,
+            "loc": {
+              "start": {
+                "line": 109,
+                "column": 8
+              },
+              "end": {
+                "line": 109,
+                "column": 24
+              }
+            },
+            "local": {
+              "type": "Identifier",
+              "start": 2957,
+              "end": 2973,
+              "loc": {
+                "start": {
+                  "line": 109,
+                  "column": 8
+                },
+                "end": {
+                  "line": 109,
+                  "column": 24
+                },
+                "identifierName": "StylesheetLoader"
+              },
+              "name": "StylesheetLoader"
+            },
+            "exported": {
+              "type": "Identifier",
+              "start": 2957,
+              "end": 2973,
+              "loc": {
+                "start": {
+                  "line": 109,
+                  "column": 8
+                },
+                "end": {
+                  "line": 109,
+                  "column": 24
+                },
+                "identifierName": "StylesheetLoader"
+              },
+              "name": "StylesheetLoader"
+            }
+          }
+        ],
+        "source": null
       }
     ],
     "directives": []
@@ -11568,6 +11636,136 @@
     },
     {
       "type": {
+        "label": "export",
+        "keyword": "export",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "export",
+      "start": 2949,
+      "end": 2955,
+      "loc": {
+        "start": {
+          "line": 109,
+          "column": 0
+        },
+        "end": {
+          "line": 109,
+          "column": 6
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "{",
+        "beforeExpr": true,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 2956,
+      "end": 2957,
+      "loc": {
+        "start": {
+          "line": 109,
+          "column": 7
+        },
+        "end": {
+          "line": 109,
+          "column": 8
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "StylesheetLoader",
+      "start": 2957,
+      "end": 2973,
+      "loc": {
+        "start": {
+          "line": 109,
+          "column": 8
+        },
+        "end": {
+          "line": 109,
+          "column": 24
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "}",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 2973,
+      "end": 2974,
+      "loc": {
+        "start": {
+          "line": 109,
+          "column": 24
+        },
+        "end": {
+          "line": 109,
+          "column": 25
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ";",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 2974,
+      "end": 2975,
+      "loc": {
+        "start": {
+          "line": 109,
+          "column": 25
+        },
+        "end": {
+          "line": 109,
+          "column": 26
+        }
+      }
+    },
+    {
+      "type": {
         "label": "eof",
         "beforeExpr": false,
         "startsExpr": false,
@@ -11579,15 +11777,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 2948,
-      "end": 2948,
+      "start": 2976,
+      "end": 2976,
       "loc": {
         "start": {
-          "line": 108,
+          "line": 110,
           "column": 0
         },
         "end": {
-          "line": 108,
+          "line": 110,
           "column": 0
         }
       }

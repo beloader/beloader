@@ -178,3 +178,5 @@ export default class ImageLoader extends AbstractLoader {
     });
   }
 }
+
+export {ImageLoader};

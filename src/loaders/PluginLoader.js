@@ -134,3 +134,5 @@ export default class PluginLoader extends AbstractLoader {
     });
   }
 }
+
+export {PluginLoader};

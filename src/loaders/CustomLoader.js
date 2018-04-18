@@ -70,3 +70,5 @@ export default class CustomLoader extends AbstractLoader {
     return this.options.data.loader.call(this);
   }
 }
+
+export {CustomLoader};

@@ -1,28 +1,28 @@
 {
   "type": "File",
   "start": 0,
-  "end": 4982,
+  "end": 5005,
   "loc": {
     "start": {
       "line": 1,
       "column": 0
     },
     "end": {
-      "line": 181,
+      "line": 183,
       "column": 0
     }
   },
   "program": {
     "type": "Program",
     "start": 0,
-    "end": 4982,
+    "end": 5005,
     "loc": {
       "start": {
         "line": 1,
         "column": 0
       },
       "end": {
-        "line": 181,
+        "line": 183,
         "column": 0
       }
     },
@@ -4688,6 +4688,74 @@
             }
           }
         ]
+      },
+      {
+        "type": "ExportNamedDeclaration",
+        "start": 4983,
+        "end": 5004,
+        "loc": {
+          "start": {
+            "line": 182,
+            "column": 0
+          },
+          "end": {
+            "line": 182,
+            "column": 21
+          }
+        },
+        "declaration": null,
+        "specifiers": [
+          {
+            "type": "ExportSpecifier",
+            "start": 4991,
+            "end": 5002,
+            "loc": {
+              "start": {
+                "line": 182,
+                "column": 8
+              },
+              "end": {
+                "line": 182,
+                "column": 19
+              }
+            },
+            "local": {
+              "type": "Identifier",
+              "start": 4991,
+              "end": 5002,
+              "loc": {
+                "start": {
+                  "line": 182,
+                  "column": 8
+                },
+                "end": {
+                  "line": 182,
+                  "column": 19
+                },
+                "identifierName": "ImageLoader"
+              },
+              "name": "ImageLoader"
+            },
+            "exported": {
+              "type": "Identifier",
+              "start": 4991,
+              "end": 5002,
+              "loc": {
+                "start": {
+                  "line": 182,
+                  "column": 8
+                },
+                "end": {
+                  "line": 182,
+                  "column": 19
+                },
+                "identifierName": "ImageLoader"
+              },
+              "name": "ImageLoader"
+            }
+          }
+        ],
+        "source": null
       }
     ],
     "directives": []
@@ -13897,6 +13965,136 @@
     },
     {
       "type": {
+        "label": "export",
+        "keyword": "export",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "export",
+      "start": 4983,
+      "end": 4989,
+      "loc": {
+        "start": {
+          "line": 182,
+          "column": 0
+        },
+        "end": {
+          "line": 182,
+          "column": 6
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "{",
+        "beforeExpr": true,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 4990,
+      "end": 4991,
+      "loc": {
+        "start": {
+          "line": 182,
+          "column": 7
+        },
+        "end": {
+          "line": 182,
+          "column": 8
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "ImageLoader",
+      "start": 4991,
+      "end": 5002,
+      "loc": {
+        "start": {
+          "line": 182,
+          "column": 8
+        },
+        "end": {
+          "line": 182,
+          "column": 19
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "}",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 5002,
+      "end": 5003,
+      "loc": {
+        "start": {
+          "line": 182,
+          "column": 19
+        },
+        "end": {
+          "line": 182,
+          "column": 20
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ";",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 5003,
+      "end": 5004,
+      "loc": {
+        "start": {
+          "line": 182,
+          "column": 20
+        },
+        "end": {
+          "line": 182,
+          "column": 21
+        }
+      }
+    },
+    {
+      "type": {
         "label": "eof",
         "beforeExpr": false,
         "startsExpr": false,
@@ -13908,15 +14106,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 4982,
-      "end": 4982,
+      "start": 5005,
+      "end": 5005,
       "loc": {
         "start": {
-          "line": 181,
+          "line": 183,
           "column": 0
         },
         "end": {
-          "line": 181,
+          "line": 183,
           "column": 0
         }
       }

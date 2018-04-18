@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <base data-ice="baseUrl" href="../../../">
-  <title data-ice="title">CustomLoader | BeLoader | Highly customizable and lightweight loader based on dynamic imports with splash screen, animated blocks and more</title>
+  <title data-ice="title">NoneLoader | BeLoader | Highly customizable and lightweight loader based on dynamic imports with splash screen, animated blocks and more</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
@@ -71,23 +71,23 @@
 </nav>
 
 <div class="content" data-ice="content"><div class="header-notice">
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import CustomLoader from &apos;<span><a href="file/src/loaders/CustomLoader.js.html#lineNumber45">beloader/src/loaders/CustomLoader.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import NoneLoader from &apos;<span><a href="file/src/loaders/NoneLoader.js.html#lineNumber20">beloader/src/loaders/NoneLoader.js</a></span>&apos;</code></pre></div>
   <span data-ice="access">public</span>
   <span data-ice="kind">class</span>
   
   <span data-ice="version">| version 1.0.0</span>
   <span data-ice="since">| since 1.0.0</span>
-  <span data-ice="source">| <span><a href="file/src/loaders/CustomLoader.js.html#lineNumber45">source</a></span></span>
+  <span data-ice="source">| <span><a href="file/src/loaders/NoneLoader.js.html#lineNumber20">source</a></span></span>
 </div>
 
 <div class="self-detail detail">
-  <h1 data-ice="name">CustomLoader</h1>
+  <h1 data-ice="name">NoneLoader</h1>
 
   
 
   
   
-  <div class="flat-list" data-ice="extendsChain"><h4>Extends:</h4><div><span><a href="class/src/core/AbstractEventManager.js~AbstractEventManager.html">AbstractEventManager</a></span> &#x2192; <span><a href="class/src/core/AbstractLoader.js~AbstractLoader.html">AbstractLoader</a></span> &#x2192; CustomLoader</div></div>
+  <div class="flat-list" data-ice="extendsChain"><h4>Extends:</h4><div><span><a href="class/src/core/AbstractEventManager.js~AbstractEventManager.html">AbstractEventManager</a></span> &#x2192; NoneLoader</div></div>
   
   
   
@@ -97,43 +97,15 @@
 
   
   
-  <div class="description" data-ice="description"><p> Custom loader let user provide a custom callback
- as a loader instance</p>
-<p> The callback must be provided through <code>options.loader</code> and
- must return a promise. It can also throw events if needed.</p>
-<p> It will always be called whenever <code>options.async</code> is set to <code>true</code>
- or <code>false</code>. Only calling QueueItem will be exposed in the
- latter promise. For bringing back data, you can use event or
- add a custom property to the QueueItem. You can access item via the
- <code>parent</code> property of the loader.</p>
+  <div class="description" data-ice="description"><p> NoneLoader is a special loader that loads nothing.</p>
+<p> Its prupose is to produce side-effect with
+ an ever resolved and loaded item.</p>
 </div>
   
 
   
 
-  <div data-ice="exampleDocs">
-    <h4>Example:</h4>
-    
-  <div class="example-doc" data-ice="exampleDoc">
-      
-      <pre class="prettyprint source-code"><code data-ice="exampleCode"> var loader = new Beloader();
- var myLoader = function() {
-  return new Promise(function(resolve, reject) {
-    // Do things
-    this.parent.response = things;
-    if(OK) resolve();
-    else reject(&apos;error on things&apos;); // Will be available in item.error
-  }.bind(this));
- }
-
- loader.fetch(&apos;custom&apos;, {loader: myLoader})
-  .promise
-  .then(
-    function(item) { item.response // yields &quot;things&quot; value },
-    function(item) { console.log(item.error) // display &quot;error on things&quot; }
-  );</code></pre>
-    </div>
-</div>
+  
 
   
 
@@ -160,7 +132,7 @@
           
           
           
-          <span class="code" data-ice="name"><span><a href="class/src/loaders/CustomLoader.js~CustomLoader.html#instance-constructor-constructor">constructor</a></span></span><span class="code" data-ice="signature">(parent: <span><a href="class/src/queueitem.js~QueueItem.html">QueueItem</a></span>, options: <span><a href="https://liqueurdetoile.github.io/DotObjectArray/">DotObjectArray</a></span>)</span>
+          <span class="code" data-ice="name"><span><a href="class/src/loaders/NoneLoader.js~NoneLoader.html#instance-constructor-constructor">constructor</a></span></span><span class="code" data-ice="signature">(item: <span><a href="class/src/queueitem.js~QueueItem.html">QueueItem</a></span>, options: <span><a href="https://liqueurdetoile.github.io/DotObjectArray/">DotObjectArray</a></span>)</span>
         </p>
       </div>
       <div>
@@ -185,6 +157,64 @@
     <td>
       <span class="access" data-ice="access">public</span>
       
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/loaders/NoneLoader.js~NoneLoader.html#instance-member-options">options</a></span></span><span class="code" data-ice="signature">: <span><a href="https://liqueurdetoile.github.io/DotObjectArray/">DotObjectArray</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p> Loader options</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      <span class="since" data-ice="since">since 1.0.0</span>
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/loaders/NoneLoader.js~NoneLoader.html#instance-member-parent">parent</a></span></span><span class="code" data-ice="signature">: <span><a href="class/src/queueitem.js~QueueItem.html">QueueItem</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p> Requesting parent item</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      <span class="since" data-ice="since">since 1.0.0</span>
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
       <span class="kind" data-ice="kind">get</span>
       
       <span class="override" data-ice="override"></span>
@@ -195,17 +225,53 @@
           
           
           
-          <span class="code" data-ice="name"><span><a href="class/src/loaders/CustomLoader.js~CustomLoader.html#instance-get-promise">promise</a></span></span><span class="code" data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
+          <span class="code" data-ice="name"><span><a href="class/src/loaders/NoneLoader.js~NoneLoader.html#instance-get-promise">promise</a></span></span><span class="code" data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
         </p>
       </div>
       <div>
         
         
-        
+        <div data-ice="description"><p> Loader promise</p>
+</div>
       </div>
     </td>
     <td>
       <span class="version" data-ice="version">version 1.0.0</span>
+      <span class="since" data-ice="since">since 1.0.0</span>
+    </td>
+  </tr>
+</tbody>
+</table>
+<table class="summary" data-ice="summary">
+  <thead><tr><td data-ice="title" colspan="3">Private Members</td></tr></thead>
+  <tbody>
+  
+  <tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">private</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/loaders/NoneLoader.js~NoneLoader.html#instance-member-_plugins">_plugins</a></span></span><span class="code" data-ice="signature">: <span><a href="https://liqueurdetoile.github.io/DotObjectArray/">DotObjectArray</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p> Map plugins</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
       <span class="since" data-ice="since">since 1.0.0</span>
     </td>
   </tr>
@@ -336,189 +402,6 @@
   </tr>
 </tbody>
 </table>
-
-<table class="summary" data-ice="summary">
-  <thead><tr><td data-ice="title" colspan="3"><span class="toggle closed"></span> From class <span><a href="class/src/core/AbstractLoader.js~AbstractLoader.html">AbstractLoader</a></span></td></tr></thead>
-  <tbody>
-  
-  <tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">public</span>
-      
-      <span class="kind" data-ice="kind">get</span>
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-          
-          
-          
-          <span class="code" data-ice="name"><span><a href="class/src/core/AbstractLoader.js~AbstractLoader.html#instance-get-promise">promise</a></span></span><span class="code" data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
-        </p>
-      </div>
-      <div>
-        
-        
-        <div data-ice="description"><p> Loader promise</p>
-</div>
-      </div>
-    </td>
-    <td>
-      <span class="version" data-ice="version">version 1.0.0</span>
-      <span class="since" data-ice="since">since 1.0.0</span>
-    </td>
-  </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">public</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-          
-          
-          
-          <span class="code" data-ice="name"><span><a href="class/src/core/AbstractLoader.js~AbstractLoader.html#instance-member-options">options</a></span></span><span class="code" data-ice="signature">: <span><a href="https://liqueurdetoile.github.io/DotObjectArray/">DotObjectArray</a></span></span>
-        </p>
-      </div>
-      <div>
-        
-        
-        <div data-ice="description"><p> Loader options</p>
-</div>
-      </div>
-    </td>
-    <td>
-      
-      <span class="since" data-ice="since">since 1.0.0</span>
-    </td>
-  </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">public</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-          
-          
-          
-          <span class="code" data-ice="name"><span><a href="class/src/core/AbstractLoader.js~AbstractLoader.html#instance-member-parent">parent</a></span></span><span class="code" data-ice="signature">: <span><a href="class/src/queueitem.js~QueueItem.html">QueueItem</a></span></span>
-        </p>
-      </div>
-      <div>
-        
-        
-        <div data-ice="description"><p> Requesting parent item</p>
-</div>
-      </div>
-    </td>
-    <td>
-      
-      <span class="since" data-ice="since">since 1.0.0</span>
-    </td>
-  </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">private</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-          
-          
-          
-          <span class="code" data-ice="name"><span><a href="class/src/core/AbstractLoader.js~AbstractLoader.html#instance-member-_plugins">_plugins</a></span></span><span class="code" data-ice="signature">: <span><a href="https://liqueurdetoile.github.io/DotObjectArray/">DotObjectArray</a></span></span>
-        </p>
-      </div>
-      <div>
-        
-        
-        <div data-ice="description"><p> Map plugins</p>
-</div>
-      </div>
-    </td>
-    <td>
-      
-      <span class="since" data-ice="since">since 1.0.0</span>
-    </td>
-  </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">public</span>
-      
-      
-      <span class="abstract" data-ice="abstract">abstract</span>
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-          
-          
-          
-          <span class="code" data-ice="name"><span><a href="class/src/core/AbstractLoader.js~AbstractLoader.html#instance-method-async">async</a></span></span><span class="code" data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
-        </p>
-      </div>
-      <div>
-        
-        
-        <div data-ice="description"><p> The async method relies on fetching content with an XHR request
- and inserting it inline in the document, wrapped in right
- HTML container if needed</p>
-</div>
-      </div>
-    </td>
-    <td>
-      <span class="version" data-ice="version">version 1.0.0</span>
-      <span class="since" data-ice="since">since 1.0.0</span>
-    </td>
-  </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">public</span>
-      
-      
-      <span class="abstract" data-ice="abstract">abstract</span>
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-          
-          
-          
-          <span class="code" data-ice="name"><span><a href="class/src/core/AbstractLoader.js~AbstractLoader.html#instance-method-sync">sync</a></span></span><span class="code" data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
-        </p>
-      </div>
-      <div>
-        
-        
-        <div data-ice="description"><p> The sync method mostly relies on adding an HTMLElement to the DOM to load asset.</p>
-</div>
-      </div>
-    </td>
-    <td>
-      <span class="version" data-ice="version">version 1.0.0</span>
-      <span class="since" data-ice="since">since 1.0.0</span>
-    </td>
-  </tr>
-</tbody>
-</table>
 </div>
 
 
@@ -533,11 +416,11 @@
     
     
     
-    <span class="code" data-ice="name">constructor</span><span class="code" data-ice="signature">(parent: <span><a href="class/src/queueitem.js~QueueItem.html">QueueItem</a></span>, options: <span><a href="https://liqueurdetoile.github.io/DotObjectArray/">DotObjectArray</a></span>)</span>
+    <span class="code" data-ice="name">constructor</span><span class="code" data-ice="signature">(item: <span><a href="class/src/queueitem.js~QueueItem.html">QueueItem</a></span>, options: <span><a href="https://liqueurdetoile.github.io/DotObjectArray/">DotObjectArray</a></span>)</span>
     <span class="right-info">
       <span class="version" data-ice="version">version 1.0.0</span>
       <span class="since" data-ice="since">since 1.0.0</span>
-      <span data-ice="source"><span><a href="file/src/loaders/CustomLoader.js.html#lineNumber55">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/loaders/NoneLoader.js.html#lineNumber29">source</a></span></span>
     </span>
   </h3>
 
@@ -547,7 +430,7 @@
   <div data-ice="description"><p> Constructor</p>
 </div>
 
-  <div data-ice="override"><h4>Override:</h4><span><a href="class/src/core/AbstractLoader.js~AbstractLoader.html#instance-constructor-constructor">AbstractLoader#constructor</a></span></div>
+  <div data-ice="override"><h4>Override:</h4><span><a href="class/src/core/AbstractEventManager.js~AbstractEventManager.html#instance-constructor-constructor">AbstractEventManager#constructor</a></span></div>
 
   <div data-ice="properties"><div data-ice="properties">
   <h4 data-ice="title">Params:</h4>
@@ -558,17 +441,17 @@
     <tbody>
     
     <tr data-ice="property" data-depth="0">
-      <td data-ice="name" class="code" data-depth="0">parent</td>
+      <td data-ice="name" class="code" data-depth="0">item</td>
       <td data-ice="type" class="code"><span><a href="class/src/queueitem.js~QueueItem.html">QueueItem</a></span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"><p>Calling QueueItem</p>
+      <td data-ice="description"><p>Requesting item</p>
 </td>
     </tr>
 <tr data-ice="property" data-depth="0">
       <td data-ice="name" class="code" data-depth="0">options</td>
       <td data-ice="type" class="code"><span><a href="https://liqueurdetoile.github.io/DotObjectArray/">DotObjectArray</a></span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"><p>Loader options</p>
+      <td data-ice="description"><p>Options for the loader</p>
 </td>
     </tr>
 </tbody>
@@ -597,6 +480,94 @@
 <div data-ice="memberDetails"><h2 data-ice="title">Public Members</h2>
 
 <div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-member-options">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">options</span><span class="code" data-ice="signature">: <span><a href="https://liqueurdetoile.github.io/DotObjectArray/">DotObjectArray</a></span></span>
+    <span class="right-info">
+      
+      <span class="since" data-ice="since">since 1.0.0</span>
+      <span data-ice="source"><span><a href="file/src/loaders/NoneLoader.js.html#lineNumber56">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p> Loader options</p>
+</div>
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-member-parent">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">parent</span><span class="code" data-ice="signature">: <span><a href="class/src/queueitem.js~QueueItem.html">QueueItem</a></span></span>
+    <span class="right-info">
+      
+      <span class="since" data-ice="since">since 1.0.0</span>
+      <span data-ice="source"><span><a href="file/src/loaders/NoneLoader.js.html#lineNumber37">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p> Requesting parent item</p>
+</div>
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
   <h3 data-ice="anchor" id="instance-get-promise">
     <span class="access" data-ice="access">public</span>
     
@@ -608,7 +579,7 @@
     <span class="right-info">
       <span class="version" data-ice="version">version 1.0.0</span>
       <span class="since" data-ice="since">since 1.0.0</span>
-      <span data-ice="source"><span><a href="file/src/loaders/CustomLoader.js.html#lineNumber69">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/loaders/NoneLoader.js.html#lineNumber66">source</a></span></span>
     </span>
   </h3>
 
@@ -618,7 +589,53 @@
   <div data-ice="description"><p> Loader promise</p>
 </div>
 
-  <div data-ice="override"><h4>Override:</h4><span><a href="class/src/core/AbstractLoader.js~AbstractLoader.html#instance-get-promise">AbstractLoader#promise</a></span></div>
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<h2 data-ice="title">Private Members</h2>
+
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-member-_plugins">
+    <span class="access" data-ice="access">private</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">_plugins</span><span class="code" data-ice="signature">: <span><a href="https://liqueurdetoile.github.io/DotObjectArray/">DotObjectArray</a></span></span>
+    <span class="right-info">
+      
+      <span class="since" data-ice="since">since 1.0.0</span>
+      <span data-ice="source"><span><a href="file/src/loaders/NoneLoader.js.html#lineNumber44">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p> Map plugins</p>
+</div>
+
+  
 
   <div data-ice="properties">
 </div>

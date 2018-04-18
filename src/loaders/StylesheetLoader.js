@@ -105,3 +105,5 @@ export default class StylesheetLoader extends AbstractLoader {
     return p;
   }
 }
+
+export {StylesheetLoader};

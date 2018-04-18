@@ -1,28 +1,28 @@
 {
   "type": "File",
   "start": 0,
-  "end": 2903,
+  "end": 2925,
   "loc": {
     "start": {
       "line": 1,
       "column": 0
     },
     "end": {
-      "line": 98,
+      "line": 100,
       "column": 0
     }
   },
   "program": {
     "type": "Program",
     "start": 0,
-    "end": 2903,
+    "end": 2925,
     "loc": {
       "start": {
         "line": 1,
         "column": 0
       },
       "end": {
-        "line": 98,
+        "line": 100,
         "column": 0
       }
     },
@@ -3048,6 +3048,74 @@
             }
           }
         ]
+      },
+      {
+        "type": "ExportNamedDeclaration",
+        "start": 2904,
+        "end": 2924,
+        "loc": {
+          "start": {
+            "line": 99,
+            "column": 0
+          },
+          "end": {
+            "line": 99,
+            "column": 20
+          }
+        },
+        "declaration": null,
+        "specifiers": [
+          {
+            "type": "ExportSpecifier",
+            "start": 2912,
+            "end": 2922,
+            "loc": {
+              "start": {
+                "line": 99,
+                "column": 8
+              },
+              "end": {
+                "line": 99,
+                "column": 18
+              }
+            },
+            "local": {
+              "type": "Identifier",
+              "start": 2912,
+              "end": 2922,
+              "loc": {
+                "start": {
+                  "line": 99,
+                  "column": 8
+                },
+                "end": {
+                  "line": 99,
+                  "column": 18
+                },
+                "identifierName": "FontLoader"
+              },
+              "name": "FontLoader"
+            },
+            "exported": {
+              "type": "Identifier",
+              "start": 2912,
+              "end": 2922,
+              "loc": {
+                "start": {
+                  "line": 99,
+                  "column": 8
+                },
+                "end": {
+                  "line": 99,
+                  "column": 18
+                },
+                "identifierName": "FontLoader"
+              },
+              "name": "FontLoader"
+            }
+          }
+        ],
+        "source": null
       }
     ],
     "directives": []
@@ -9086,6 +9154,136 @@
     },
     {
       "type": {
+        "label": "export",
+        "keyword": "export",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "export",
+      "start": 2904,
+      "end": 2910,
+      "loc": {
+        "start": {
+          "line": 99,
+          "column": 0
+        },
+        "end": {
+          "line": 99,
+          "column": 6
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "{",
+        "beforeExpr": true,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 2911,
+      "end": 2912,
+      "loc": {
+        "start": {
+          "line": 99,
+          "column": 7
+        },
+        "end": {
+          "line": 99,
+          "column": 8
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "FontLoader",
+      "start": 2912,
+      "end": 2922,
+      "loc": {
+        "start": {
+          "line": 99,
+          "column": 8
+        },
+        "end": {
+          "line": 99,
+          "column": 18
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "}",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 2922,
+      "end": 2923,
+      "loc": {
+        "start": {
+          "line": 99,
+          "column": 18
+        },
+        "end": {
+          "line": 99,
+          "column": 19
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ";",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 2923,
+      "end": 2924,
+      "loc": {
+        "start": {
+          "line": 99,
+          "column": 19
+        },
+        "end": {
+          "line": 99,
+          "column": 20
+        }
+      }
+    },
+    {
+      "type": {
         "label": "eof",
         "beforeExpr": false,
         "startsExpr": false,
@@ -9097,15 +9295,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 2903,
-      "end": 2903,
+      "start": 2925,
+      "end": 2925,
       "loc": {
         "start": {
-          "line": 98,
+          "line": 100,
           "column": 0
         },
         "end": {
-          "line": 98,
+          "line": 100,
           "column": 0
         }
       }
