@@ -5829,6 +5829,14 @@
     "access": "public"
   },
   {
+    "kind": "manual",
+    "longname": "F:\\Projets\\beloader\\docs\\manual\\md\\umd.md",
+    "name": "./docs/manual/md/umd.md",
+    "content": "# Use Beloader as a module\r\nBeloader is based on dynamic imports for its own loaders. Therefore, the BeLoader modules\r\nwon't be automatically resolved in bundle when using webpack as modules for your\r\nown bundle.\r\n\r\nFor using Beloader as a module, you need to explicitly import then in your bundle.\r\n\r\n## Static import\r\n```javascript\r\nimport Beloader from 'beloader';\r\nimport 'beloader/dist/modules/FontLoader.min.js'; //will bundle the font loader into the main bundle\r\n\r\nconst loader = new Beloader();\r\n\r\nloader.fetch('font', { webfont: [..] });\r\n```\r\n\r\n## Lazy loading\r\n```javascript\r\nimport Beloader from 'beloader';\r\n\r\nconst loader = new Beloader();\r\n\r\nimport('beloader/dist/modules/FontLoader.min.js').then(() => {\r\n  loader.fetch('font', { webfont: [..] });\r\n});\r\n```\r\n",
+    "static": true,
+    "access": "public"
+  },
+  {
     "__docId__": 223,
     "kind": "testFile",
     "name": "tests/abstractloader.spec.js",

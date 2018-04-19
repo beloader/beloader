@@ -5,7 +5,7 @@ own bundle.
 
 For using Beloader as a module, you need to explicitly import then in your bundle.
 
-You can either import them statically like this :
+## Static import
 ```javascript
 import Beloader from 'beloader';
 import 'beloader/dist/modules/FontLoader.min.js'; //will bundle the font loader into the main bundle
@@ -15,7 +15,7 @@ const loader = new Beloader();
 loader.fetch('font', { webfont: [..] });
 ```
 
-Or if you want to keep the lazy loading behaviour :
+## Lazy loading
 ```javascript
 import Beloader from 'beloader';
 

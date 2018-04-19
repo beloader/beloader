@@ -3,6 +3,7 @@ const path = require('path');
 module.exports = {
   entry: './src/beloader.js',
   output: {
+    jsonpFunction: 'beloader',
     libraryTarget: 'umd'
   },
   module: {

@@ -96,6 +96,14 @@
 <li data-ice="manualNav" class="indent-h2" data-link="manual/plugins.html"><a href="manual/plugins.html#async-plugins" data-ice="link">Async Plugins</a></li>
 </ul>
   </div>
+<div data-ice="manual">
+    <ul class="manual-toc">
+      
+    <li data-ice="manualNav" class="indent-h1" data-link="manual/umd.html"><a href="manual/umd.html" data-ice="link">Use Beloader as a module</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/umd.html"><a href="manual/umd.html#static-import" data-ice="link">Static import</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/umd.html"><a href="manual/umd.html#lazy-loading" data-ice="link">Lazy loading</a></li>
+</ul>
+  </div>
 </div>
 </nav>
 
@@ -562,6 +570,27 @@ PluginLoader will wait for this promise to be resolved for considering
 that plugin is ready. It can be useful if plugin have to require some dependencies to be loaded
 before being usable.</p></div>
         <a data-ice="link" href="manual/plugins.html"></a>
+      </div>
+    </div>
+<div class="manual-card-wrap" data-ice="cards">
+      <div class="manual-card">
+        <div data-ice="card"><h1>Use Beloader as a module</h1><p>Beloader is based on dynamic imports for its own loaders. Therefore, the BeLoader modules
+won&apos;t be automatically resolved in bundle when using webpack as modules for your
+own bundle.</p><p>For using Beloader as a module, you need to explicitly import then in your bundle.</p><h2>Static import</h2><pre><code class="lang-javascript"><code class="source-code prettyprint">import Beloader from &apos;beloader&apos;;
+import &apos;beloader/dist/modules/FontLoader.min.js&apos;; //will bundle the font loader into the main bundle
+
+const loader = new Beloader();
+
+loader.fetch(&apos;font&apos;, { webfont: [..] });</code>
+</code></pre><h2>Lazy loading</h2><pre><code class="lang-javascript"><code class="source-code prettyprint">import Beloader from &apos;beloader&apos;;
+
+const loader = new Beloader();
+
+import(&apos;beloader/dist/modules/FontLoader.min.js&apos;).then(() =&gt; {
+  loader.fetch(&apos;font&apos;, { webfont: [..] });
+});</code>
+</code></pre></div>
+        <a data-ice="link" href="manual/umd.html"></a>
       </div>
     </div>
 </div>

@@ -20,7 +20,7 @@
             "./docs/manual/md/basic.md",
             "./docs/manual/md/loaders.md",
             "./docs/manual/md/events.md",
-            "./docs/manual/md/plugins.md"
+            "./docs/manual/md/plugins.md",
             "./docs/manual/md/umd.md"
           ]
         }
