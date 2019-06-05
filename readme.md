@@ -6,7 +6,7 @@
 [![Coverage Status](https://coveralls.io/repos/github/beloader/beloader/badge.svg?branch=master)](https://coveralls.io/github/beloader/beloader?branch=master)
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 [![Documentation](https://beloader.github.io/beloader/badge.svg)](https://beloader.github.io/beloader/)
-[![Known Vulnerabilities](https://snyk.io/test/github/beloader/beloader/badge.svg?targetFile=package.json)](https://snyk.io/test/github/beloader/beloader?targetFile=package.json)
+[![Known Vulnerabilities](https://snyk.io/test/github/beloader/beloader/badge.svg?targetFile=package.json)](https://snyk.io/test/github/beloader/beloader?targetFile=package.json) [![Greenkeeper badge](https://badges.greenkeeper.io/beloader/beloader.svg)](https://greenkeeper.io/)
 
 <p align="center"><a href="https://liqueurdetoile.com" target="\_blank"><img src="https://hosting.liqueurdetoile.com/logo_lqdt.png" alt="Liqueur de Toile"></a></p>
 
